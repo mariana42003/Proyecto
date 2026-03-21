@@ -1,0 +1,5 @@
+KRONOS INVENTORY CONTROL
+
+Objetivo general
+Desarrollar un sistema integral que permita gestionar y controlar el inventario, mediante el registro en línea de entradas y salidas de materiales, la validación del estado del stock y la administración de garantías, facilitando tanto los procesos administrativos como la interacción y atención a los clientes de la Ferretería y Perfilería Solmet.
+
