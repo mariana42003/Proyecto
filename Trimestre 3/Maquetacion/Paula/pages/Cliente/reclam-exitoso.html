@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kronos Inventory</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+    <header>
+  <nav class="navbar navbar-expand-lg navbar-kronos w-100">
+    <div class="container d-flex justify-content-between align-items-center">
+      
+      <a href="#" class="navbar-brand d-flex align-items-center gap-2 m-0 p-0">
+        <img src="/logo2-removebg-preview.png" alt="Logo Kronos" class="logo" />
+        <h1>Kronos Inventory <br>Control</h1>
+      </a>
+
+      <div class="search-container mx-auto">
+        <div class="input-group">
+          <input type="text" class="form-control buscador-input" placeholder="Buscar productos..." aria-label="Buscar productos">
+          <button class="btn btn-buscar-purple" type="button">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#menuPrincipal"
+        aria-controls="menuPrincipal"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse flex-grow-0" id="menuPrincipal">
+  <ul class="navbar-nav align-items-lg-center gap-4"> 
+    
+    <li class="nav-item d-flex align-items-center gap-2">
+      <i class="bi bi-person-fill"></i>
+      <form action="" class="m-0">
+        <select name="cuenta" class="form-select opcion-menu-select" id="">
+          <option value="micuenta">Mi Cuenta</option>
+          <option value="Cerrar"><a href="#">Cerrar Sesión</a></option>
+        </select>
+      </form>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link opcion-carrito-vert d-flex flex-column align-items-center" href="#">
+        <i class="bi bi-cart"></i>
+      </a>
+    </li>
+
+  </ul>
+</div>
+
+    </div>
+  </nav>
+</header>
+<hr>
+<main class="container-fluid mt-3">
+    <div class="row g-4">
+        <aside class="col-lg-2">
+
+    <div class="d-grid gap-2">
+
+        <a href="#" class="btn btn-outline-secondary text-start">
+            <i class="bi bi-tag-fill"></i> Categorías
+        </a>
+
+        <a href="#" class="btn btn-outline-secondary text-start">
+            <i class="bi bi-box-seam-fill"></i> Mis pedidos
+        </a>
+
+        <a href="#" class="btn btn-outline-secondary text-start">
+            <i class="fa-solid fa-clock-rotate-left"></i> Historial
+        </a>
+
+        <a href="#" class="btn btn-garantias text-start">
+            <i class="fa-solid fa-shield"></i> Garantías
+        </a>
+
+    </div>
+
+    
+        <div class="oferta">
+        <h4>No te pierdas nuestras OFERTAS</h4>
+        <button><a href="#"></a>Ver Ofertas</button>
+    </div>
+    <div class="informacion">
+        <a href="#">Información</a>
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Contáctenos</a>
+
+        <p>Síguenos</p>
+
+        <div class="redes">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+    </div>
+
+
+</aside>
+
+
+    
+    <!-- CONTENIDO -->
+        <section class="col-lg-7">
+
+            <div class="contenido-reclamoex">
+
+                <div class="mensaje-texto">
+
+                    <div class="icono-exito">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <h1 class="titulo-exito">
+
+                        ¡El <span class="rojo">reclamo</span>
+                        se realizó con
+
+                        <span class="azul">ÉXITO</span>!
+
+                    </h1>
+
+                    <h2 class="pedido">
+                        Pedido #4567
+                    </h2>
+
+                    <h3 class="total-pediidoo">
+
+                        Total pedido
+
+                        <br>
+
+                        <strong>$300.000</strong>
+
+                    </h3>
+
+                    <a href="#" class="btn-historial">
+
+                        Ver historial de garantías
+
+                    </a>
+
+                    <p class="texto-respuesta">
+
+                        Se esperará la respuesta
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- RESUMEN -->
+        <aside class="col-lg-3 seccion-resumen resumen-reclamo">
+
+    <div class="tarjeta-resumen tarjeta-resumen-garantia">
+
+        <div class="encabezado-revision">
+            <i class="fa-solid fa-circle-check"></i>
+            <h2>Revisa tu reclamo y envíalo</h2>
+        </div>
+
+        <div class="bloque-resumen-reclamo">
+
+            <h3 class="titulo-seccion-resumen">
+                Resumen del reclamo
+            </h3>
+
+            <div class="datos-pedido-resumen">
+                <p><strong>Pedido:</strong> #34567</p>
+                <p>Realizado el: 12/03/2026</p>
+            </div>
+
+            <hr class="divisor-resumen">
+
+            <div class="motivo-reclamo-seccion">
+
+                <p class="txt-motivo">
+                    <strong>Motivo del reclamo:</strong> producto defectuoso
+                </p>
+
+                <div class="fila-producto-mini">
+                    <img src="/img/images (3).jpg" alt="Producto">
+
+                    <div class="info-mini">
+                        <p class="nombre-prod-mini">
+                            Juego de Herramientas 85 piezas Pretul
+                        </p>
+
+                        <span class="precio-mini">
+                            $94.600
+                        </span>
+                    </div>
+                </div>
+
+                <div class="fila-descripcion-pulidora">
+                    <img src="/img/images (2).jpg" alt="Pulidora">
+
+                    <p class="texto-descripcion-problema">
+                        El problema de la pulidora es que no enciende, está rota.
+                    </p>
+                </div>
+
+            </div>
+
+            <hr class="divisor-resumen">
+
+            <div class="detalles-pedido-final">
+
+                <h4 class="subtitulo-detalles">
+                    Detalles de pedido
+                </h4>
+
+                <div class="tarjeta-producto-final">
+
+                    <img src="/img/images (2).jpg" alt="Producto">
+
+                    <div class="info-final-item">
+                        <p>Juego de Herramientas 85 piezas Pretul</p>
+
+                        <p class="meta-item">
+                            15 M &nbsp;&nbsp; <strong>$94.600</strong>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="fila-total-resumen">
+                    <span>Total:</span>
+                    <strong>$94.600</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</aside>
+
+
+    </div>
+
+
+</main>
+    
+</body>
+</html>

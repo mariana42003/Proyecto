@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kronos Inventory</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+    <header>
+  <nav class="navbar navbar-expand-lg navbar-kronos w-100">
+    <div class="container d-flex justify-content-between align-items-center">
+      
+      <a href="#" class="navbar-brand d-flex align-items-center gap-2 m-0 p-0">
+        <img src="/logo2-removebg-preview.png" alt="Logo Kronos" class="logo" />
+        <h1>Kronos Inventory <br>Control</h1>
+      </a>
+
+      <div class="search-container mx-auto">
+        <div class="input-group">
+          <input type="text" class="form-control buscador-input" placeholder="Buscar productos..." aria-label="Buscar productos">
+          <button class="btn btn-buscar-purple" type="button">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#menuPrincipal"
+        aria-controls="menuPrincipal"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse flex-grow-0" id="menuPrincipal">
+  <ul class="navbar-nav align-items-lg-center gap-4"> 
+    
+    <li class="nav-item d-flex align-items-center gap-2">
+      <i class="bi bi-person-fill"></i>
+      <form action="" class="m-0">
+        <select name="cuenta" class="form-select opcion-menu-select" id="">
+          <option value="micuenta">Mi Cuenta</option>
+          <option value="Cerrar"><a href="#"></a>Cerrar Sesión</option>
+        </select>
+      </form>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link opcion-carrito-vert d-flex flex-column align-items-center" href="#">
+        <i class="bi bi-cart"></i>
+      </a>
+    </li>
+
+  </ul>
+</div>
+
+    </div>
+  </nav>
+</header>
+<hr>
+<main class="container-fluid mt-3">
+    <div class="row g-4">
+        <aside class="col-lg-2">
+
+    <div class="d-grid gap-2">
+
+        <a href="#" class="btn btn-outline-secondary text-start">
+            <i class="bi bi-tag-fill"></i> Categorías
+        </a>
+
+        <a href="#" class="btn btn-outline-secondary text-start">
+            <i class="bi bi-box-seam-fill"></i> Mis pedidos
+        </a>
+
+        <a href="#" class="btn btn-outline-secondary text-start">
+            <i class="fa-solid fa-clock-rotate-left"></i> Historial
+        </a>
+
+        <a href="#" class="btn btn-garantias text-start">
+            <i class="fa-solid fa-shield"></i> Garantías
+        </a>
+
+    </div>
+
+    
+        <div class="oferta">
+        <h4>No te pierdas nuestras OFERTAS</h4>
+        <button><a href="#"></a>Ver Ofertas</button>
+    </div>
+    <div class="informacion">
+        <a href="#">Información</a>
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Contáctenos</a>
+
+        <p>Síguenos</p>
+
+        <div class="redes">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+    </div>
+
+
+</aside>
+
+<section class="contenido col-lg-7">
+
+    <div>
+
+        <h1>Garantías</h1>
+
+        <!-- Tabs -->
+
+        <div class="tabs">
+            <a href="/pages/Cliente/todo.html" class="act">Todos</a>
+            <a href="/pages/Cliente/revision.html">En revisión</a>
+            <a href="/pages/Cliente/aprobado.html">Aprobados</a>
+            <a href="/pages/Cliente/rechazado.html">Rechazados</a>
+        </div>
+
+        <!-- Estado -->
+
+        <div class="card">
+            <h2 class="card-header encabezado-reclamo">Estado de reclamación</h2>
+            <div class="card-body">
+           
+            <div class="producto">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <span>#345678</span>
+                <span>Taladro inalámbrico BLACK + DECKER</span>
+            </div>
+
+            <div class="datos">
+                <p><strong>Número compra:</strong> #345678</p>
+                <p><strong>Fecha:</strong> 10/02/2026</p>
+                <p><strong>Tienda:</strong> Ferretería</p>
+                <p><strong>Dirección:</strong> Bogotá calle 12 #33-223</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Observaciones -->
+
+        <div class="card mt-4">
+            <div class="card-header hed">
+                <h2 class="moro">Observaciones</h2>
+            </div>
+                <div class="card-body">
+            
+            <table class="table table-bordered tabla-observaciones">
+                <tr>
+                    <th>Producto</th>
+                    <th>Tipo de reclamo</th>
+                    <th>Motivo</th>
+                </tr>
+                <tr>
+                    <td>Taladro BLACK+DECKER 20v</td>
+                    <td>Producto defectuoso</td>
+                    <td>El taladro presenta fallas</td>
+                </tr>
+            </table>
+
+            <div class="fotos">
+
+            <h3>Fotos adjuntas</h3>
+
+            <div class="imagenes">
+                <img src="/img/images.jpg">
+                <img src="/img/images (2).jpg">
+            </div>
+            </div>
+            </div>
+            
+        </div>
+
+</section>
+<aside class="col-lg-3">
+
+    <div class="carrito-lateral ">
+
+        <h2>Mi Carrito</h2>
+        <div class="item">
+        <img src="/img/images (1).jpg" alt="Producto">
+        <div class="item-detalles">
+            <h4>Juego de Herramientas 85piezas Pretul</h4>
+            <div class="estrellas">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="item-fila-inferior">
+                <span class="precio">$94.600</span>
+                <div class="contador">
+                    <button>-</button>
+                    <input type="text" value="1" readonly>
+                    <button>+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+       <div class="item">
+        <img src="/img/images (2).jpg" alt="Producto">
+        <div class="item-detalles">
+            <h4>Taladro inalámbrico 3/8" 12v 1350 rpm 1 batería</h4>
+            <div class="estrellas">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="item-fila-inferior">
+                <span class="precio">$71.900</span>
+                <div class="contador">
+                    <button>-</button>
+                    <input type="text" value="1" readonly>
+                    <button>+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="subtotal-barra">
+        <span>Subtotal:</span>
+        <strong>$166.5</strong>
+    </div>
+
+    <button class="comprar">
+        Confirmar compra
+    </button>
+
+    <h2>Mis Favoritos</h2>
+
+    <div class="favorito">
+        <img src="/img/cb709145-2208-552e-8452-cde1f38ca6d3.jpg" alt="Favorito">
+        <div class="favorito-detalles">
+            <h4>Taladro Black and Decker + 43 Pieza</h4>
+            <div class="estrellas">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="favorito-acciones">
+                <i class="fa-regular fa-heart corazon"></i>
+                <button class="btn-agregar-carro">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+     <div class="favorito">
+        <img src="/img/images (3).jpg" alt="Favorito">
+        <div class="favorito-detalles">
+            <h4>Juego de Herramientas 142 Piezas Industrial Total Verde</h4>
+            <div class="estrellas">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="favorito-acciones">
+                <i class="fa-regular fa-heart corazon"></i>
+                <button class="btn-agregar-carro">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+     <div class="favorito">
+        <img src="/img/images (4).jpg" alt="Favorito">
+        <div class="favorito-detalles">
+            <h4>Set surtido de Herramientas Manuales X4</h4>
+            <div class="estrellas">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="favorito-acciones">
+                <i class="fa-regular fa-heart corazon"></i>
+                <button class="btn-agregar-carro">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    </div>
+
+</aside>
+    </div>
+
+</main>
+    
+</body>
+</html>

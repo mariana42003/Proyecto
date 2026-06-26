@@ -1,0 +1,1188 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Permite que el padding no deforme los anchos */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/* ----------- HEADER --------------- */ 
+/* --- LOGO Y TÍTULO (CON LOGO TRANSPARENTE) --- */
+/* ----------- EN GENERAL ---------------- */
+
+header {
+    background: rgb(224, 207, 243);
+}
+
+.navbar-brand {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+.logo {
+    width: 85px;
+    display: block;
+    background-color: transparent !important;
+    background: transparent !important;
+    mix-blend-mode: multiply; /* Mantiene el borrado mágico del fondo blanco interno del PNG */
+}
+
+header h1 {
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(95, 3, 95);
+    margin: 0; 
+}
+
+/* --- BARRA DE BÚSQUEDA (ESTILO LUPA MORADA) --- */
+.search-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.btn-buscar-purple {
+    background-color: #7a61e6 !important; /* El color morado de la lupa */
+    color: white !important;
+    border: none !important;
+    border-radius: 0 6px 6px 0 !important; /* Bordes redondeados solo a la derecha */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px; /* Asegura espacio suficiente para que se vea la lupa */
+}
+
+.btn-buscar-purple:hover {
+    background-color: #5b43c4 !important; /* Morado un poco más oscuro al pasar el cursor */
+    color: white !important;
+}
+
+/* --- NAVBAR Y MENÚ DE NAVEGACIÓN --- */
+.marca {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.bi-person-fill{
+    font-size: 30px;
+    color: white;
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+.opcion-carrito-vert{
+    background: linear-gradient(135deg, orange, rgb(243, 172, 41));
+}
+.bi-cart{
+    color: #ffffff;
+    font-size: 20px;
+    height: 25px;
+}
+.opcion-menu-select {
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+}
+
+.opcion-menu-select:hover {
+    color: #555555;      
+    transition: color 0.3s ease; 
+}
+
+
+
+/*------------------------------------------------*/
+/* ---------- Barra Lateral Opciones -------------*/
+/*------------------------------------------------*/
+
+.oferta{
+    margin-top:50px;
+    background:#e3bd9b;
+    border:1px solid #8b6de2;
+    border-radius:4px;
+    padding:15px;
+    text-align:center;
+}
+.oferta h4{
+    font-size:18px;
+    margin-bottom:15px;
+    color:#fff;
+}
+.oferta button{
+    width:100%;
+    background:#ff7b17;
+    color:white;
+    border:none;
+    padding:10px;
+    border-radius:4px;
+    cursor:pointer;
+}
+.informacion{
+    margin-top:80px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+.informacion a{
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+}
+.redes{
+    margin-top:10px;
+    display:flex;
+    gap:10px;
+}
+.redes i{
+    font-size:20px;
+    cursor:pointer;
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 12px;
+    
+}
+
+.btn-garantias{
+    background-color: #b3a3fc;
+    border-color: #b3a3fc;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-garantias:hover{
+    background-color: #9b87fa;
+    border-color: #9b87fa;
+    color: #fff;
+}
+
+
+
+
+/*------------------------------------------------*/
+/*--------------- Contenido del estado------------ */
+/*------------------------------------------------*/
+
+.contenido{
+    border:1px solid #444;
+    padding:20px;
+    border-radius:5px;
+}
+.tabs{
+    display:flex;
+    gap:40px;
+    margin:20px 0;
+}
+.tabs a{
+    text-decoration:none;
+    color:#999;
+    padding-bottom:8px;
+    font-size: 22px;
+}
+.tabs a.act{
+    color:#222;
+    border-bottom:3px solid #5d4bb7;
+    font-weight:bold;
+}
+
+.fotos h3{
+    color: black;
+}
+
+.producto{
+    background:#eee;
+    margin:15px;
+    padding:15px;
+    font-size:24px;
+    display:flex;
+    gap:20px;
+}
+
+
+.estado-proceso i{
+    font-size:30px;
+    margin-bottom:px;
+    margin-left: 20px;
+    line-height: 1;
+}
+
+.fotos{
+        color:#23245d;
+        margin-bottom: 20px;
+
+}
+.imagenes{
+   display: flex;
+   gap: 15px;
+   margin-top: 10px;
+   width: 100%;
+}
+.imagenes img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+/*Carrito Lateral */
+.carrito-lateral{
+    border:1px solid #444;
+    padding: 20px 15px;
+    background-color: #fcfbfe; /* Fondo sutilmente gris/morado como el diseño */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+.carrito-lateral h2{
+    font-size: 20px;
+    color: #555577;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: Arial, sans-serif;
+}
+
+/* Tarjetas Base (Items y Favoritos) */
+.item, .favorito {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 0; /* Controlado por el gap del padre */
+    display: flex;
+    gap: 12px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.02);
+}
+/* Imágenes dentro de las tarjetas */
+.item img, .favorito img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain; /* Evita que los productos se deformen */
+    align-self: center;
+}
+/* Contenedores de texto */
+.item-detalles, .favorito-detalles {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-detalles h4, .favorito-detalles h4 {
+    font-size: 13px;
+    color: #33334f;
+    margin: 0;
+    line-height: 1.3;
+    font-weight: 600;
+}
+/* Estrellas amarillas */
+.estrellas {
+    color: #ffcc00;
+    font-size: 12px;
+    display: flex;
+    gap: 2px;
+}
+/* Filas inferiores alineadas */
+.item-fila-inferior, .favorito-acciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Empuja el control al fondo de la tarjeta */
+}
+
+.precio {
+    font-weight: bold;
+    color: #222244;
+    font-size: 14px;
+}
+
+/* Selector de Cantidad (- 1 +) */
+.contador {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+.contador button {
+    border: none;
+    background: transparent;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #64748b;
+    transition: background 0.2s;
+}
+
+.contador button:hover {
+    background: #e2e8f0;
+}
+
+.contador input {
+    width: 25px;
+    text-align: center;
+    border: none;
+    border-left: 1px solid #cbd5e1;
+    border-right: 1px solid #cbd5e1;
+    background: white;
+    font-size: 12px;
+    height: 24px;
+    font-weight: bold;
+}
+
+/* Barra informativa de Subtotal */
+.subtotal-barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #222244;
+}
+
+.subtotal-barra strong {
+    font-size: 15px;
+    color: #111122;
+}
+/* Botón Naranja de Compra */
+.comprar {
+    width: 100%;
+    background: #ff7315; /* Naranja idéntico a tu captura */
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0px 2px 4px rgba(255, 115, 21, 0.2);
+    margin: 5px 0;
+}
+
+.comprar:hover {
+    background: #e05e07;
+}
+
+/* Sección específica de Favoritos */
+.favorito-acciones {
+    margin-top: 6px;
+}
+
+.corazon {
+    color: #ef4444;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-agregar-carro {
+    background: #fff3e6;
+    color: #ff7315;
+    border: 1px solid #ffcc99;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-agregar-carro:hover {
+    background: #ff7315;
+    color: white;
+}
+
+.producto{
+    color: rgb(87, 37, 87);
+    font-weight: 700;
+    background: gainsboro;
+}
+.encabezado-reclamo{
+    background: #bac5e8;
+}
+
+.hed{
+    background: gainsboro;
+}
+.tabla-observaciones, th {
+  border-radius: 6px !important;
+    overflow: hidden !important;
+    border: 1px 1px solid #dee2e6;
+}
+.tabla-observaciones th {
+    background-color: #8b7ad6 !important; /* Tono morado claro */
+    color: #ffffff !important;            /* Letra blanca */
+    font-weight: 600;
+    padding: 12px 10px !important;       /* Un poco más de espacio vertical para los títulos */
+    text-align: left;
+}
+.tabla-observaciones td {
+    padding: 6px !important;              /* Espaciado de 6px solicitado */
+    vertical-align: middle;
+    color: #333333;
+}
+.moro{
+    color: rgb(87, 37, 87);
+    
+}
+
+
+
+/*--------------------------------------------------*/
+/*--------------- EN REVISION ----------------------*/
+/*--------------------------------------------------*/
+
+.estado-reclamo{
+    background:#ff8c1a;
+    color:white;
+    padding:8px 15px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:bold;
+}
+.estado-reclamo i{
+    font-size:18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------*/
+/*-------------------- Aprobado--------------------*/
+/*-------------------------------------------------*/
+
+.encabezado-estado-ap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #79c579;
+    color: white;
+
+}
+
+.encabezado-estado-ap h2{
+    margin:0;
+}
+.estado-ap{
+    border:1px solid #ccc;
+    border-radius:5px;
+    overflow:hidden;
+}
+.estado-ap h2{
+    background: #79c579;
+    padding:15px;
+    color: white;
+}
+.apr,
+.estado-proceso-ap i{
+    color: #4CAF50;
+}
+.estado-reclamo-ap{
+    width: 120px;
+    height: 40px;
+    background-color: #c5d8c5;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-right: 20px;
+}
+.apr,
+.estado-reclamo-ap i{
+    color: #4CAF50;
+}
+.estado-proceso-ap {
+    width: 120px;
+    height: 50px;
+    background-color: #c5d8c5;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/*-------------------------------------------*/
+/*------------------ RECHAZO ----------------*/
+/*-------------------------------------------*/
+
+
+/* Rechazado */
+.encabezado-estado-re {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #e65858;
+    color: white;
+
+}
+.coloor{
+    margin:0;
+    color: #e65858;
+    font-weight: 700;
+}
+.estado-reclamo-re{
+    width: 120px;
+    height: 40px;
+    background-color: #deb4b4;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-right: 20px;
+}
+.estado-reclamo-re i, h3{
+    color: rgb(193, 41, 41);
+}
+.estado-proceso-re{
+    width: 120px;
+    height: 50px;
+    background: #deb4b4;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.estado-proceso-re i{
+    color: rgb(193, 41, 41);
+}
+.user{
+    color: rgb(21, 225, 21);
+    font-size: 40px;
+}
+.motivo{
+    color: rgb(192, 158, 38);
+    font-size: 20px;
+    align-items: center;
+}
+.dan{
+    color: red;
+    font-size: 23px;
+}
+
+/*------------------------------------------*/
+/*----------------- TODOS ------------------*/
+/*------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*-------------------------------------*/
+/* AUN NO SE HA DEFINIDO*/
+
+
+.observaciones{
+    border:1px solid #dcdcdc;
+    border-radius:5px;
+    overflow:hidden;
+    background:white;
+    margin-top: 25px;
+}
+
+
+
+
+.estado-re{
+    border:1px solid #ccc;
+    border-radius:5px;
+    overflow:hidden;
+}
+.estado-re h2{
+    background: #e65858;
+    padding:15px;
+    color: white;
+}
+
+.titulo-ob{
+    background: #ececef;
+    padding:15px 20px;
+}
+.titulo-ob h2{
+    margin:0;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:25px;
+    color:#23245d;
+}
+.titulo-ob i{
+    color:#4CAF50;
+}
+.detalle-ob{
+    padding:35px 25px;
+    min-height:180px;
+}
+.detalle-ob p{
+    color:#1c1c4b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Solicitudes de garantia de cliente  */
+
+
+.titulo-pagina{
+    font-size:62px;
+    color:#1d2948;
+    font-weight:400;
+    padding:60px;
+    margin:0;
+    line-height:1.15;
+}
+
+.pasos-progreso{
+     display:flex;
+    width:100%;
+    
+}
+.paso{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 50px;
+    padding: 14px 25px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.activo-paso{
+    background:#6f42d8;
+    color:white;
+}
+.paso:not(.activo-paso){
+    background:#d9d7e8;
+    color:#666;
+}
+.numero-paso{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:rgba(255,255,255,.25);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:22px;
+    font-weight:bold;
+}
+.tarjeta-formulario{
+    background:white;
+    border-radius:0 0 6px 6px;
+
+    margin-top:-2px;
+
+    padding:40px;
+
+    border:1px solid #ddd;
+}
+.td{
+    color: #2432af;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.grupo-formulario label{
+    font-size: 22px;
+    color: #222;
+}
+.control-formulario{
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #8f70ff;
+    border-radius: 4px;
+    font-size: 15px;
+    background: white;
+}
+
+textarea.control-formulario{
+    resize: none;
+}
+.pie-formulario{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+.nota-obligatoria{
+    color: #444;
+    font-size: 15px;
+}
+.btn-continuar{
+    width: 240px;
+    border: none;
+    padding: 15px;
+    color: white;
+    background: #2f73e8;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+/* DATOS DE LA COMPRA*/
+.seccion-formulario{
+    padding-right:20px;
+}
+
+.seccion-resumen{
+    padding-left:20px;
+}
+.tarjeta-resumen{
+    background: white;
+    border: 1px solid #d8d8d8;
+    padding: 25px;
+}
+.producto-resumen{
+    display: flex;
+    gap: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+}
+.producto-resumen img{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+.garantia-activa{
+    display: block;
+    background: #f9deb5;
+    color: #c57d00;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.producto-resumen a{
+    display: block;
+    margin-top: 5px;
+    text-decoration: none;
+}
+.total-pedido{
+    margin-top: 25px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.prown{
+    color: black;
+}
+.banner-garantia{
+    background: url("/img/preFondo.png") center/cover no-repeat;
+    border-radius:8px 8px 0 0;
+    height:310px;
+    position:relative;
+    overflow:hidden;
+}
+.zona-carga-fotos{
+    border: 1.5px solid #8f708f;
+    border-radius: 6px;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+/* Icono de la cámara */
+.zona-carga-fotos .icono-camara {
+    font-size: 45px !important;
+    color: #8f70ff !important;
+    background: transparent !important;
+}
+
+/* Texto de arrastrar */
+.zona-carga-fotos .texto-arrastrar {
+    font-size: 24px !important;
+    font-weight: bold !important;
+    color: #222222 !important;
+    background: transparent !important;
+    margin: 0 !important;
+}
+
+/* Botón estilizado para subir archivos */
+.btn-subir-imagenes {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 8px 24px !important;
+    border: 1.5px solid #8f70ff !important;
+    border-radius: 6px !important;
+    color: #222222 !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    background-color: #ffffff !important;
+    transition: background 0.2s ease !important;
+}
+
+.btn-subir-imagenes:hover {
+    background-color: #f5f2ff !important;
+}
+
+.btn-subir-imagenes i {
+    color: #8f70ff !important;
+    background: transparent !important;
+}
+
+/* Espaciado del input inferior informativo */
+.input-indicativo-carga {
+    margin-bottom: 25px !important;
+}
+
+.input-indicativo-carga input {
+    color: #777777 !important;
+    background-color: #ffffff !important;
+    cursor: default !important;
+}
+
+/* Contenedor de las vistas previas */
+.galeria-vistas-previas {
+    display: flex !important;
+    gap: 15px !important;
+    margin-bottom: 25px !important;
+    background: transparent !important;
+}
+
+/* Caja de miniatura con borde punteado oscuro */
+.miniatura-foto-item {
+    width: 140px !important;
+    height: 95px !important;
+    border: 1.5px dashed #222222 !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+    padding: 3px !important;
+    background: #ffffff !important;
+    display: block !important;
+}
+
+.miniatura-foto-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 2px !important;
+}
+
+/* Nota informativa en la parte inferior */
+.pie-info-carga {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    color: #555555 !important;
+    font-size: 15px !important;
+    background: transparent !important;
+}
+
+.pie-info-carga i {
+    color: #555555 !important;
+    font-size: 16px !important;
+    background: transparent !important;
+}
+/* ===========================
+   RESUMEN GARANTIA
+=========================== */
+
+.resumen-reclamo{
+    width: 370px;
+    flex-shrink: 0;
+}
+
+.tarjeta-resumen-garantia{
+    background: white;
+    border: 1px solid #cfcfcf;
+    padding: 15px;
+}
+
+.encabezado-revision{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.encabezado-revision i{
+    color: #4CAF50;
+    font-size: 24px;
+}
+
+.encabezado-revision h2{
+    font-size: 24px;
+    color: #000;
+    margin: 0;
+}
+
+.bloque-resumen-reclamo{
+    border: 1px solid #d8d8d8;
+}
+
+.titulo-seccion-resumen{
+    background: #e9e0f5;
+    padding: 10px;
+    font-size: 18px;
+    color: #555;
+    margin: 0;
+}
+
+.datos-pedido-resumen{
+    padding: 15px;
+}
+
+.divisor-resumen{
+    border: none;
+    border-top: 1px solid #d8d8d8;
+}
+
+.motivo-reclamo-seccion{
+    padding: 15px;
+}
+
+.fila-producto-mini{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.fila-producto-mini img{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+.info-mini{
+    flex: 1;
+}
+
+.nombre-prod-mini{
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.precio-mini{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.fila-descripcion-pulidora{
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.fila-descripcion-pulidora img{
+    width: 110px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.texto-descripcion-problema{
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.detalles-pedido-final{
+    padding: 15px;
+}
+
+.subtitulo-detalles{
+    margin-bottom: 10px;
+}
+
+.tarjeta-producto-final{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #d8d8d8;
+    padding: 8px;
+}
+
+.tarjeta-producto-final img{
+    width: 90px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.info-final-item{
+    font-size: 14px;
+}
+
+.meta-item{
+    margin-top: 5px;
+}
+
+.fila-total-resumen{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #d8d8d8;
+}
+
+.fila-total-resumen strong{
+    font-size: 22px;
+}
+
+.botones-accion-resumen{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 15px;
+}
+.btn-regresar-resumen,
+.btn-enviar-resumen{
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-regresar-resumen{
+    background: #fff;
+    color: #333;
+    border: 1px solid #bdbdbd;
+}
+
+.btn-regresar-resumen:hover{
+    background: #f5f5f5;
+}
+.btn-enviar-resumen{
+    background: #2f73e8;
+    color: #fff;
+    border: none;
+}
+
+.btn-enviar-resumen:hover{
+    background: #1d5ed4;
+}
+/* RECLAMO EXITOSO*/
+.contenido-reclamoex{
+    background:#fff;
+    border:1px solid #d8d8d8;
+    border-radius:6px;
+    min-height:760px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:50px;
+}
+.mensaje-exito{
+    text-align: center;
+}
+.icono-exito{
+    width: 70px;
+    height: 70px;
+    background: #b25a8c;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icono-exito i{
+    color: white;
+    font-size: 35px;
+}
+.titulo-exito{
+    margin-top: 25px;
+    font-size: 45px;
+    font-weight: bold;
+}
+.rojo{
+    color: red;
+}
+.azul{
+    color: #0d4f8b;
+}
+.pedido{
+    margin-top: 35px;
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+}
+.total-pediidoo{
+    margin-top: 25px;
+    font-size: 28px;
+    line-height: 1.5;
+    color: #000;
+    text-align: center;
+}
+.btn-historial{
+    background: #ff7300;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin: 45px auto 0;
+
+}
+.btn-historial:hover{
+    opacity: 0.9;
+}
+.texto-respuesta{
+    margin-top: 70px;
+    color: #b25a8c;
+    font-size: 24px;
+    text-align: center;
+}
+
+ 
+   
