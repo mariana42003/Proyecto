@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/vistaJefe-proveedores.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <title>Generar orden de compra - verificar estado</title>
+  </head>
+  <body>
+    <input type="checkbox" id="menu" />
+
+
+    <label for="menu" class="menus">
+
+      <i class="bi bi-list"></i>
+
+    </label>
+
+    <div class="contenedor">
+
+      <header>
+        <h1 class="nombreUsuario"><i class="bi bi-person-circle"></i></h1>
+        <img src="../img/logo.png" alt="Logo" />
+        <div class="cerrarSesion">
+          <a href="../indexLoginJefe.html"><i class="bi bi-box-arrow-right"></i></a>
+        </div>
+      </header>
+
+
+      <aside>
+        <div class="opciones">
+          <a href="#"><i class="bi bi-eye"></i> Panel de control</a>
+          
+          <div class="item-acordeon">
+
+            <input type="radio" name="menu-acordeon" id="check-inventario" class="radio-check">
+
+            <label for="check-inventario" class="titulo-menu">  <i class="bi bi-box-seam"></i> Gestión de Inventario </label>
+
+
+            <div class="submenu">
+
+              <a href="#"><i class="bi bi-journal-text"></i> Historial</a>
+              <a href="#"><i class="bi bi-pencil"></i> Reportes</a>
+
+            </div>
+          </div>
+
+
+          <div class="item-acordeon">
+
+            <input type="radio" name="menu-acordeon" id="check-movimientos" class="radio-check">
+
+            <label for="check-movimientos" class="titulo-menu"> <i class="bi bi-cart"></i> Movimientos de entrada/salida </label>
+
+            <div class="submenu">
+              <a href="#"><i class="bi bi-box-arrow-in-down"></i> Registro de Entradas</a>
+              <a href="#"><i class="bi bi-box-arrow-up"></i> Registro de Salidas</a>
+
+            </div>
+          </div>
+          
+          <div class="item-acordeon">
+
+            <input type="radio" name="menu-acordeon" id="check-proveedores" class="radio-check">
+
+            <label for="check-proveedores" class="titulo-menu">  <i class="bi bi-people"></i> Proveedores  </label>
+
+            <div class="submenu">
+
+              <a href="../pagesJefe/registrarProveedores.html"><i class="bi bi-card-list"></i> Registrar</a>
+
+              <a href="../pagesJefe/consultarProveedores.html"><i class="bi bi-person-lines-fill"></i> Consultar proveedores</a>
+
+            </div>
+          </div>
+
+          <div class="item-acordeon">
+
+            <input type="radio" name="menu-acordeon" id="check-ordenes" class="radio-check">
+
+            <label for="check-ordenes" class="titulo-menu"> <i class="bi bi-file-earmark-arrow-down"></i> Generar orden de compra </label>
+
+            <div class="submenu">
+              <a href="../pagesJefe/historialCompras.html"><i class="bi bi-journal-check"></i> Consultar historial de compras</a>
+
+              <a href="../pagesJefe/materialCantidad.html"><i class="bi bi-boxes"></i> Asociar materiales y cantidades</a>
+
+              <a href="../pagesJefe/verificarEstado.html"><i class="bi bi-arrow-repeat"></i> Verificar estado de la orden</a>
+
+            </div>
+          </div>
+
+          <div class="item-acordeon">
+
+            <input type="radio" name="menu-acordeon" id="check-garantias" class="radio-check">
+
+            <label for="check-garantias" class="titulo-menu"> <i class="bi bi-shield-check"></i> Garantías </label>
+
+            <div class="submenu">
+
+              <a href="#"><i class="bi bi-pencil-square"></i> Solicitudes de Garantía</a>
+
+              <a href="#"><i class="bi bi-file-earmark-text"></i> Consultar Orden de Compra</a>
+
+              <a href="#"><i class="bi bi-clock-history"></i> Historial de Garantías</a>
+
+              <a href="#"><i class="bi bi-arrow-left-right"></i> Ver estado de la Garantia</a>
+
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+
+
+
+      <main>
+        <h1><i class="bi bi-receipt"></i> Historial de compras</h1>
+        <br /><br />
+
+           <div class="volverAnterior">
+      <a href="../pagesJefe/verificarEstado.html" class="btnVolver">
+        <i class="bi bi-chevron-double-left"></i>   
+        Volver
+      </a>
+    </div>
+    <br><br>
+
+        <div class="infoOrden">
+          <h2>Numero de orden: CO-7654</h2>
+          <p>Fecha: 09/09/2027</p>
+          <p>Area solicitante: Soacha calle 55</p>
+        </div>
+<div class="contenedorColumnas">
+        <div class="tabla1">
+            <br>
+
+            <h2>Observaciones </h2>
+            <br><br>
+          <table>
+            <tr>
+              <th>Material</th>
+              <th>Cantidad a comprar</th>
+              <th>Proveedor asignado</th>
+            </tr>
+            <tr>
+              <td>Confirmadas</td>
+              <td>4</td>
+              <td>jose antonio</td>
+            </tr>
+            <tr>
+              <td>Pendiente</td>
+              <td>6</td>
+              <td>juan ramirez</td>
+            </tr>
+          </table>
+        </div>
+        
+
+           <div class="tarjetaEstado">
+  <div class="tarjetaHeader">Orden de compra</div>
+  <div class="tarjetaBody">
+    <p class="tituloEstado">Estado de la orden</p>
+    
+    <div class="opcionNormal">
+      <input type="radio" id="pendiente" name="estado" class="radioPendiente" checked>
+      <label for="pendiente">Pendiente</label>
+    </div>
+
+    <div class="opcionNormal">
+      <input type="radio" id="confirmada" name="estado" class="radioVacio">
+      <label for="confirmada">Confirmada</label>
+    </div>
+
+    <div class="opcionNormal">
+      <input type="radio" id="rechazada" name="estado" class="radioVacio">
+      <label for="rechazada">Rechazada</label>
+    </div>
+
+    <button type="button" class="btnCancelar">
+      <i class="bi bi-x-circle"></i> Cancelar pedido
+    </button>
+  </div>
+</div>
+</div>
+      </main>
+    </div>
+  </body>
+</html>

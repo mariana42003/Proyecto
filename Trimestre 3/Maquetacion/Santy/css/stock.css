@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(235, 235, 231);
+    font-family: Arial, sans-serif;
+}
+
+.contenedor {
+    width: 100%;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    height: 100px;
+    background-color: #7d7dd8;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header img {
+    width: 280px;
+}
+
+.nombreUsuario {
+    position: absolute;
+    left: 20px;
+}
+
+.nombreUsuario i {
+    color: rgb(210, 202, 255);
+    font-size: 40px;
+}
+
+.cerrarSesion {
+    position: absolute;
+    right: 20px;
+}
+
+.cerrarSesion a {
+    text-decoration: none;
+}
+
+.cerrarSesion i {
+    color: rgb(212, 215, 250);
+    font-size: 30px;
+}
+
+/* =========================
+   SIDEBAR (Menú Lateral)
+========================= */
+
+    aside {
+        width: 220px;
+        height: 100vh;
+        background-color: #c5d7f3;
+        float: left;
+    }
+
+.opciones {
+    padding-top: 30px;
+}
+
+.opciones a,
+.titulo-menu {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.opciones a i,
+.titulo-menu i {
+    color: #6b2d91;
+    font-size: 22px;
+    margin-right: 11px;
+}
+
+.opciones a:hover,
+.titulo-menu:hover {
+    border: 2px solid rgb(90, 90, 177);
+    border-radius: 20px;
+}
+
+/* --- ACORDEÓN --- */
+
+.radio-check {
+    display: none;
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+    padding-left: 15px;      /* Ajustado ligeramente para mejorar alineación */
+    position: relative;
+    margin-left: 28px;
+}
+
+.submenu::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    border-left: 2px dashed #6b2d91;
+}
+
+.submenu a {
+    display: block;
+    padding: 12px 10px;
+    font-size: 14px;
+}
+
+.submenu a i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #6b2d91;
+}
+
+.radio-check:checked ~ .submenu {
+    max-height: 300px;
+}
+
+/* --- SUBMENUS INTERNOS --- */
+
+.submenu a::before {
+    content: "→";
+    color: #6b2d91;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* --- ESTADOS ACTIVOS --- */
+
+.activo {
+    border: 2px solid #6b2d91;
+    border-radius: 20px;
+    background-color: #dce7fa;
+    font-weight: bold;
+}
+
+.submenu-activo {
+    border: 2px solid #6b2d91;
+    border-radius: 15px;
+    background-color: #dce7fa;
+    font-weight: bold;
+    display: block;
+}
+
+
+/* =========================
+   MAIN (Área de Trabajo Nueva)
+========================= */
+
+main {
+    margin-left: 220px;
+    min-height: calc(100vh - 100px);
+    padding: 40px;
+    background-color: #ffffff; /* Fondo blanco limpio para la gestión de datos */
+}
+
+/* Encabezado del contenido */
+.content-header h1 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #212529;
+    margin-bottom: 30px;
+}
+
+/* --- FILTROS Y BÚSQUEDA --- */
+
+.filters-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Buscador principal */
+.search-container {
+    position: relative;
+    max-width: 450px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 12px 45px 12px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #555555;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Selectores Dropdown (Categoría, Marca, Proveedor) */
+.select-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.select-container select {
+    min-width: 250px;
+    padding: 10px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-size: 15px;
+    color: #333333;
+    outline: none;
+    cursor: pointer;
+}
+
+
+/* --- TABLAS (Gestión de Inventario / Panel) --- */
+
+.table-section {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    text-align: left;
+}
+
+/* Encabezados de columnas */
+.inventory-table th {
+    background-color: #f8f9fa;
+    color: #212529;
+    font-weight: bold;
+    padding: 15px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* Filas y celdas */
+.inventory-table td {
+    padding: 15px;
+    border-bottom: 1px solid #efefef;
+    color: #495057;
+    vertical-align: middle;
+}
+
+/* Efecto hover interactivo para las filas */
+.inventory-table tbody tr:hover {
+    background-color: #f7f1f9;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+/* 1. Ajuste obligatorio para la tabla para que permita bordes redondeados independientes */
+table, 
+#tablaReportes,
+.table {
+    border-collapse: separate !important;
+    border-spacing: 4px 8px !important; /* Añade una pequeña separación entre celdas si lo deseas */
+}
+
+/* 2. Cabeceras de la tabla (th) con forzado de prioridad */
+th {
+    background-color: #7d7dd8 !important; /* Fuerza tu color de fondo */
+    color: white !important;
+    padding: 12px !important;
+    border: 2px solid #7d7dd8 !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+    font-weight: bold !important;
+}
+
+/* 3. Estilos generales para th y td */
+th,
+td {
+    padding: 12px !important;
+    border: 2px solid #0000ff !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+}
+
+/* 4. Celdas de datos (td) */
+td {
+    background-color: white !important;
+}

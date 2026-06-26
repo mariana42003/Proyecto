@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Kronos</title>
+	<link rel="stylesheet" type="text/css" href="../css/styleLogin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+
+
+    <div class="contenedorR">
+
+        <img src="../img/logo.png" alt="">
+
+        <hr>
+
+
+        <h1>Registrarse</h1>
+
+        <div class="llenarDatos">
+
+            <form action="../indexLoginJefe.html" >
+               <label for="rol">Rol  <i class="bi bi-person-fill-exclamation"></i></label>
+                    <select id="rol" required>
+
+                        <option value="" disabled selected hidden>Seleccione un rol</option>
+                     <option>Jefe</option>
+                     <option>Empleado</option>
+                      <option>Proveedor</option>
+                    </select>
+
+                    <br><br>
+
+                <label for="nombre">Nombre  <i class="bi bi-tag"></i></label>
+                <input type="text" id="nombre" placeholder="Ingrese el nombre" required >
+                    <br><br>
+
+                <label for="usuario">Usuario  <i class="bi bi-person-circle"></i></label>
+                <input type="text" id="usuario"  placeholder="Ingrese su NIT o numero de identificacion" required>
+                    <br><br>
+                 
+                <label for="correo">Correo electronico  <i class="bi bi-envelope"></i></label>  
+                <input type="email" id="correo" placeholder="Ingrese su correo electronico" required>  
+                    <br><br>
+                
+                <label for="telefono">Telefono  <i class="bi bi-telephone"></i></label>    
+                <input type="text" id="telefono" placeholder="Ingrese su numero de telefono" required>  
+                    <br><br>
+                 <label for="direccion">Direccion  <i class="bi bi-geo-alt"></i></label>   
+                 <input type="text" id="direccion" placeholder="Ingrese su direccion" required>   
+                    <br><br>
+         
+                  <h1>Contraseña</h1>
+    
+        
+       
+
+          
+                <label for="contraseña">Contraseña  <i class="bi bi-lock"></i></label>
+                <input type="password" id="contraseña" placeholder="Ingrese su contraseña" required>
+                    <br><br>
+
+                <label for="confirmarContraseña">Confirmar Contraseña  <i class="bi bi-lock-fill"></i></label>
+                <input type="password" id="confirmarContraseña" placeholder="Confirme su contraseña" required>
+                    <br><br>
+                    <hr>
+
+
+             
+                 <button type="submit">Confirmar Registro</button>
+            
+                
+            </form>
+
+        </div>
+
+        <div class="volverInicio">
+
+        <a href="../indexLoginJefe.html">
+            <button type="button">Volver a Inicio</button>
+        </a>
+        </div>
+
+    </div>
+    
+</body>
+</html>
