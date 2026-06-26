@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Permite que el padding no deforme los anchos */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/* ----------- HEADER --------------- */ 
+/* --- LOGO Y TÍTULO (CON LOGO TRANSPARENTE) --- */
+/* ----------- EN GENERAL ---------------- */
+
+header {
+    background: rgb(224, 207, 243);
+}
+
+.navbar-brand {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+.logo {
+    width: 85px;
+    display: block;
+    background-color: transparent !important;
+    background: transparent !important;
+    mix-blend-mode: multiply; /* Mantiene el borrado mágico del fondo blanco interno del PNG */
+}
+
+header h1 {
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(95, 3, 95);
+    margin: 0; 
+}
+
+/* --- BARRA DE BÚSQUEDA (ESTILO LUPA MORADA) --- */
+.search-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.btn-buscar-purple {
+    background-color: #7a61e6 !important; /* El color morado de la lupa */
+    color: white !important;
+    border: none !important;
+    border-radius: 0 6px 6px 0 !important; /* Bordes redondeados solo a la derecha */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px; /* Asegura espacio suficiente para que se vea la lupa */
+}
+
+.btn-buscar-purple:hover {
+    background-color: #5b43c4 !important; /* Morado un poco más oscuro al pasar el cursor */
+    color: white !important;
+}
+
+/* --- NAVBAR Y MENÚ DE NAVEGACIÓN --- */
+.marca {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.bi-person-fill{
+    font-size: 30px;
+    color: white;
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+.opcion-carrito-vert{
+    background: linear-gradient(135deg, orange, rgb(243, 172, 41));
+}
+.bi-cart{
+    color: #ffffff;
+    font-size: 20px;
+    height: 25px;
+}
+.opcion-menu-select {
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+}
+
+.opcion-menu-select:hover {
+    color: #555555;      
+    transition: color 0.3s ease; 
+}
+
+
+
+/* Solicitudes de garantia de cliente  */
+
+
+.titulo-pagina{
+    font-size:62px;
+    color:#1d2948;
+    font-weight:400;
+    padding:60px;
+    margin:0;
+    line-height:1.15;
+}
+
+.pasos-progreso{
+     display:flex;
+    width:100%;
+    
+}
+.paso{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 50px;
+    padding: 14px 25px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.activo-paso{
+    background:#6f42d8;
+    color:white;
+}
+.paso:not(.activo-paso){
+    background:#d9d7e8;
+    color:#666;
+}
+.numero-paso{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:rgba(255,255,255,.25);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:22px;
+    font-weight:bold;
+}
+.tarjeta-formulario{
+    background:white;
+    border-radius:0 0 6px 6px;
+
+    margin-top:-2px;
+
+    padding:40px;
+
+    border:1px solid #ddd;
+}
+.td{
+    color: #2432af;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.grupo-formulario label{
+    font-size: 22px;
+    color: #222;
+}
+.control-formulario{
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #8f70ff;
+    border-radius: 4px;
+    font-size: 15px;
+    background: white;
+}
+
+textarea.control-formulario{
+    resize: none;
+}
+.pie-formulario{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+.nota-obligatoria{
+    color: #444;
+    font-size: 15px;
+}
+.btn-continuar{
+    width: 240px;
+    border: none;
+    padding: 15px;
+    color: white;
+    background: #2f73e8;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* DATOS DE LA COMPRA*/
+.seccion-formulario{
+    padding-right:20px;
+}
+
+.seccion-resumen{
+    padding-left:20px;
+}
+.tarjeta-resumen{
+    background: white;
+    border: 1px solid #d8d8d8;
+    padding: 25px;
+}
+.producto-resumen{
+    display: flex;
+    gap: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+}
+.producto-resumen img{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+.garantia-activa{
+    display: block;
+    background: #f9deb5;
+    color: #c57d00;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.producto-resumen a{
+    display: block;
+    margin-top: 5px;
+    text-decoration: none;
+}
+.total-pedido{
+    margin-top: 25px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.prown{
+    color: black;
+}
+.banner-garantia{
+    background: url("../img/preFondo.png") center/cover no-repeat;
+    border-radius:8px 8px 0 0;
+    height:310px;
+    position:relative;
+    overflow:hidden;
+}

@@ -1,0 +1,499 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Permite que el padding no deforme los anchos */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/* ----------- HEADER --------------- */ 
+/* --- LOGO Y TÍTULO (CON LOGO TRANSPARENTE) --- */
+/* ----------- EN GENERAL ---------------- */
+
+header {
+    background: rgb(224, 207, 243);
+}
+
+.navbar-brand {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+.logo {
+    width: 85px;
+    display: block;
+    background-color: transparent !important;
+    background: transparent !important;
+    mix-blend-mode: multiply; /* Mantiene el borrado mágico del fondo blanco interno del PNG */
+}
+
+header h1 {
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(95, 3, 95);
+    margin: 0; 
+}
+
+/* --- BARRA DE BÚSQUEDA (ESTILO LUPA MORADA) --- */
+.search-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.btn-buscar-purple {
+    background-color: #7a61e6 !important; /* El color morado de la lupa */
+    color: white !important;
+    border: none !important;
+    border-radius: 0 6px 6px 0 !important; /* Bordes redondeados solo a la derecha */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px; /* Asegura espacio suficiente para que se vea la lupa */
+}
+
+.btn-buscar-purple:hover {
+    background-color: #5b43c4 !important; /* Morado un poco más oscuro al pasar el cursor */
+    color: white !important;
+}
+
+/* --- NAVBAR Y MENÚ DE NAVEGACIÓN --- */
+.marca {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.bi-person-fill{
+    font-size: 30px;
+    color: white;
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+.opcion-carrito-vert{
+    background: linear-gradient(135deg, orange, rgb(243, 172, 41));
+}
+.bi-cart{
+    color: #ffffff;
+    font-size: 20px;
+    height: 25px;
+}
+.opcion-menu-select {
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+}
+
+.opcion-menu-select:hover {
+    color: #555555;      
+    transition: color 0.3s ease; 
+}
+
+
+
+/*------------------------------------------------*/
+/* ---------- Barra Lateral Opciones -------------*/
+/*------------------------------------------------*/
+
+.oferta{
+    margin-top:50px;
+    background:#e3bd9b;
+    border:1px solid #8b6de2;
+    border-radius:4px;
+    padding:15px;
+    text-align:center;
+}
+.oferta h4{
+    font-size:18px;
+    margin-bottom:15px;
+    color:#fff;
+}
+.oferta button{
+    width:100%;
+    background:#ff7b17;
+    color:white;
+    border:none;
+    padding:10px;
+    border-radius:4px;
+    cursor:pointer;
+}
+.informacion{
+    margin-top:80px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+.informacion a{
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+}
+.redes{
+    margin-top:10px;
+    display:flex;
+    gap:10px;
+}
+.redes i{
+    font-size:20px;
+    cursor:pointer;
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 12px;
+    
+}
+
+.btn-garantias{
+    background-color: #b3a3fc;
+    border-color: #b3a3fc;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-garantias:hover{
+    background-color: #9b87fa;
+    border-color: #9b87fa;
+    color: #fff;
+}
+
+/*------------------------------------------------*/
+/*--------------- Contenido del estado------------ */
+/*------------------------------------------------*/
+
+.contenido{
+    border:1px solid #444;
+    padding:20px;
+    border-radius:5px;
+}
+.tabs{
+    display:flex;
+    gap:40px;
+    margin:20px 0;
+}
+.tabs a{
+    text-decoration:none;
+    color:#999;
+    padding-bottom:8px;
+    font-size: 22px;
+}
+.tabs a.act{
+    color:#222;
+    border-bottom:3px solid #5d4bb7;
+    font-weight:bold;
+}
+
+.fotos h3{
+    color: black;
+}
+
+.producto{
+    background:#eee;
+    margin:15px;
+    padding:15px;
+    font-size:24px;
+    display:flex;
+    gap:20px;
+}
+
+
+.estado-proceso i{
+    font-size:30px;
+    margin-bottom:px;
+    margin-left: 20px;
+    line-height: 1;
+}
+
+.fotos{
+        color:#23245d;
+        margin-bottom: 20px;
+
+}
+.imagenes{
+   display: flex;
+   gap: 15px;
+   margin-top: 10px;
+   width: 100%;
+}
+.imagenes img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+/*Carrito Lateral */
+.carrito-lateral{
+    border:1px solid #444;
+    padding: 20px 15px;
+    background-color: #fcfbfe; /* Fondo sutilmente gris/morado como el diseño */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+.carrito-lateral h2{
+    font-size: 20px;
+    color: #555577;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: Arial, sans-serif;
+}
+
+/* Tarjetas Base (Items y Favoritos) */
+.item, .favorito {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 0; /* Controlado por el gap del padre */
+    display: flex;
+    gap: 12px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.02);
+}
+/* Imágenes dentro de las tarjetas */
+.item img, .favorito img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain; /* Evita que los productos se deformen */
+    align-self: center;
+}
+/* Contenedores de texto */
+.item-detalles, .favorito-detalles {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-detalles h4, .favorito-detalles h4 {
+    font-size: 13px;
+    color: #33334f;
+    margin: 0;
+    line-height: 1.3;
+    font-weight: 600;
+}
+/* Estrellas amarillas */
+.estrellas {
+    color: #ffcc00;
+    font-size: 12px;
+    display: flex;
+    gap: 2px;
+}
+/* Filas inferiores alineadas */
+.item-fila-inferior, .favorito-acciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Empuja el control al fondo de la tarjeta */
+}
+
+.precio {
+    font-weight: bold;
+    color: #222244;
+    font-size: 14px;
+}
+
+/* Selector de Cantidad (- 1 +) */
+.contador {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+.contador button {
+    border: none;
+    background: transparent;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #64748b;
+    transition: background 0.2s;
+}
+
+.contador button:hover {
+    background: #e2e8f0;
+}
+
+.contador input {
+    width: 25px;
+    text-align: center;
+    border: none;
+    border-left: 1px solid #cbd5e1;
+    border-right: 1px solid #cbd5e1;
+    background: white;
+    font-size: 12px;
+    height: 24px;
+    font-weight: bold;
+}
+
+/* Barra informativa de Subtotal */
+.subtotal-barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #222244;
+}
+
+.subtotal-barra strong {
+    font-size: 15px;
+    color: #111122;
+}
+/* Botón Naranja de Compra */
+.comprar {
+    width: 100%;
+    background: #ff7315; /* Naranja idéntico a tu captura */
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0px 2px 4px rgba(255, 115, 21, 0.2);
+    margin: 5px 0;
+}
+
+.comprar:hover {
+    background: #e05e07;
+}
+
+/* Sección específica de Favoritos */
+.favorito-acciones {
+    margin-top: 6px;
+}
+
+.corazon {
+    color: #ef4444;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-agregar-carro {
+    background: #fff3e6;
+    color: #ff7315;
+    border: 1px solid #ffcc99;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-agregar-carro:hover {
+    background: #ff7315;
+    color: white;
+}
+
+.producto{
+    color: rgb(87, 37, 87);
+    font-weight: 700;
+    background: gainsboro;
+}
+.encabezado-reclamo{
+    background: #bac5e8;
+}
+
+.hed{
+    background: gainsboro;
+}
+.tabla-observaciones, th {
+  border-radius: 6px !important;
+    overflow: hidden !important;
+    border: 1px 1px solid #dee2e6;
+}
+.tabla-observaciones th {
+    background-color: #8b7ad6 !important; /* Tono morado claro */
+    color: #ffffff !important;            /* Letra blanca */
+    font-weight: 600;
+    padding: 12px 10px !important;       /* Un poco más de espacio vertical para los títulos */
+    text-align: left;
+}
+.tabla-observaciones td {
+    padding: 6px !important;              /* Espaciado de 6px solicitado */
+    vertical-align: middle;
+    color: #333333;
+}
+.moro{
+    color: rgb(87, 37, 87);
+    
+}
+
+
+
+
+/*-------------------------------------------------*/
+/*-------------------- Aprobado--------------------*/
+/*-------------------------------------------------*/
+
+.encabezado-estado-ap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #79c579;
+    color: white;
+
+}
+
+.encabezado-estado-ap h2{
+    margin:0;
+}
+.estado-ap{
+    border:1px solid #ccc;
+    border-radius:5px;
+    overflow:hidden;
+}
+.estado-ap h2{
+    background: #79c579;
+    padding:15px;
+    color: white;
+}
+.apr,
+.estado-proceso-ap i{
+    color: #4CAF50;
+}
+.estado-reclamo-ap{
+    width: 120px;
+    height: 40px;
+    background-color: #c5d8c5;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-right: 20px;
+}
+.apr,
+.estado-reclamo-ap i{
+    color: #4CAF50;
+}
+.estado-proceso-ap {
+    width: 120px;
+    height: 50px;
+    background-color: #c5d8c5;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.user{
+    color: rgb(21, 225, 21);
+    font-size: 40px;
+}
