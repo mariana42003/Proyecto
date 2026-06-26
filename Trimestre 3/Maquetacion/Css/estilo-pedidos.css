@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh; 
+    background: linear-gradient(125deg, #8E72E3, #74A7E6);
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 350px;
+    color: white;
+}
