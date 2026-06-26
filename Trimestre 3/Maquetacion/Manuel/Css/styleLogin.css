@@ -1,0 +1,1336 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html{
+
+  min-height: 100%;
+
+
+}
+
+
+
+body{
+    min-height: 200vh;
+
+background: linear-gradient(rgb(178, 42, 216), rgb(125, 181, 246) ) no-repeat;
+  background-attachment: fixed;
+
+
+}
+
+/*----------------------------- Esto es el index osea la parte de inicio -------------------------------*/
+
+
+.contenedorIS{
+
+    background-color: rgb(248, 240, 255);
+    padding: 30px;
+    border-radius: 15px;
+    width: 600px;
+    height: 650px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.contenedorIS img{
+
+  
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+
+
+}
+
+
+
+.contenedorIS .iniciarSesion{
+
+  display: flex;
+  justify-content: center;  
+
+}
+
+
+.contenedorIS .iniciarSesion form{
+
+    display: flex;
+    flex-direction: column;
+  
+
+}
+
+.contenedorIS  .iniciarSesion form label{
+  font-size: 22px;
+  margin: 10px;
+  margin-bottom: 0px;
+  color: rgb(6, 6, 94);
+  font-weight: 700;
+
+}
+
+
+.contenedorIS .iniciarSesion form input{
+
+    width: 450px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 20px;
+    border-color:rgb(173, 173, 244) ;
+
+}
+
+
+.contenedorIS .iniciarSesion form select{
+  height: 40px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid rgb(90, 90, 177);
+  padding: 5px; 
+  background-color: white;
+  color: black;
+}
+
+.contenedorIS .iniciarSesion form select:focus{
+  background-color: rgb(236, 183, 250);
+  color: black;
+  outline: none;
+}
+
+
+.contenedorIS option{
+  background-color: white;
+  color: black;
+}
+
+
+.contenedorIS .iniciarSesion form button{
+  width: 450px;
+  height: 50px;
+  margin: 10px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border-color:rgb(117, 126, 224);
+  background-color: rgb(35, 35, 119);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contenedorIS .iniciarSesion form button:active{
+  background-color: rgb(163, 165, 181);
+  color: white;
+  cursor: pointer;
+}
+.contenedorIS .iniciarSesion form button:hover{
+
+  background-color: rgb(10, 16, 67);
+  color: white;
+  transition: 0.5s;
+}
+
+
+
+
+.contenedorIS .OR{
+
+display: flex;
+justify-content: space-around;
+margin: 10px;
+}
+
+.contenedorIS .OR a{
+  color: rgb(94, 6, 91);
+  font-weight: 700;
+}
+
+
+/*-------------------------- Esto es el fin de la pagina de index osea la parte de inicio --------------------------*/
+
+
+
+
+
+/*----------------------------------- Esto es el css de la parte de registrarse ----------------------------------*/
+.contenedorR{
+    margin: 30px auto;
+    background-color: rgb(248, 240, 255);
+    padding: 80px;
+    border-radius: 15px;
+    width: 550px;
+    height: auto;
+    min-height: 500px;
+
+  
+
+}
+
+.contenedorR img{
+    width: 70%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 50px;
+
+
+}
+
+.contenedorR h1{
+
+
+    margin-top: 50px;
+   text-align:center;
+    color:#6d2d91;
+    font-size:24px;
+    
+    margin-bottom:50px;
+
+
+}
+
+.contenedorR h1::after{
+    content:"";
+    display:block;
+    width:190px;
+    height:6px;
+    margin:10px auto 0;
+    border-radius:20px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #c27df5,
+        transparent
+    );
+}
+
+.contenedorR form{
+
+  display: flex;
+  flex-direction: column;
+
+}
+  
+.contenedorR form label{
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: rgb(6, 6, 94);
+  font-weight: 700;
+}
+
+.contenedorR form select {
+
+  background-color: white;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid rgb(90, 90, 177);
+  padding: 5px;
+  font-size: 14px;
+
+}
+
+.contenedorR form select:focus{
+  background-color: rgb(236, 183, 250);
+  color: black;
+  outline: none;
+}
+
+.contenedorR form input{
+  height: 40px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid rgb(90, 90, 177);
+  font-size: 14px;
+
+}
+
+
+.contenedorR hr{
+
+width: auto;      
+    margin-left: -40px;  
+    margin-right: -40px;    
+    margin-top: 25px;      
+    margin-bottom:15px;   
+    border: none;
+    border-top: 3px solid #ccc;
+}
+
+
+.contenedorR button{
+
+width: 390px;
+height: 45px;
+border-radius: 5px;
+  border-color:rgb(117, 126, 224);
+  background-color: rgb(35, 35, 119);
+color: white;
+font-size: 16px;
+font-weight: bold;
+margin-top: 20px;
+margin-bottom: 10px;
+cursor: pointer;
+}
+
+.contenedorR .volverInicio{
+  display: flex;
+  justify-content: center;
+
+
+}
+
+
+.contenedorR .volverInicio button{
+
+  width: 290px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: white;
+  color: blue;
+  cursor: pointer;
+}
+
+  
+  .contenedorR .volverInicio button:hover {
+  background-color: rgb(156, 164, 229);
+  color: white;
+  transition: 0.5s;
+  
+
+}
+
+
+/*--------------------------------- Esto es el fin de la pagina de registrarse --------------------------------*/
+
+/*----------------------------- Esto es la parte de olvidar contraseña  -------------------------------*/
+
+
+.contenedorOC{
+   background-color: rgb(248, 240, 255);
+    padding: 40px;
+    border-radius: 15px;
+    width: 600px;
+    height: 560px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contenedorOC img{
+
+    width: 60%;
+  display: block;
+  margin: 0 auto;
+
+  margin-bottom: 20px;
+
+
+}
+
+.contenedorOC h1{
+
+    
+    margin-top: 10px;
+   text-align:center;
+    color:#6d2d91;
+    font-size:24px;
+    
+    margin-bottom:50px;
+
+
+}
+
+.contenedorOC h1::after{
+    content:"";
+    display:block;
+    width:190px;
+    height:6px;
+    margin:10px auto 0;
+    border-radius:20px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #c27df5,
+        transparent
+    );
+}
+
+
+
+
+.contenedorOC form {
+   
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedorOC form label {
+   
+  display: flex;
+  justify-content: center;
+   margin-bottom: 10px;
+   font-size: 17px;
+   font-weight: bold;
+}
+
+.contenedorOC form input{
+
+height: 50px;
+padding: 15px;
+border-radius: 5px;
+border: 2px solid rgb(90, 90, 177);
+margin-bottom: 30px;
+margin: 20px;
+
+  
+}
+
+.contenedorOC button{
+    width: 420px;
+    height: 45px;
+
+    margin: 20px auto;
+
+    border-radius: 10px;
+    border-color: rgb(117, 126, 224);
+    background-color: rgb(35, 35, 119);
+
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.contenedorOC form button:active{
+  background-color: rgb(163, 165, 181);
+  color: white;
+  cursor: pointer;
+}
+
+.contenedorOC .volverInicio{
+  display: flex;
+  justify-content: center;
+  
+
+}
+
+
+
+
+.contenedorOC .volverInicio button{
+
+   
+  height: 40px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: white;
+  color: blue;
+  width: 290px;
+  cursor: pointer;
+  
+
+}
+
+.contenedorOC .volverInicio button:hover {
+  background-color: rgb(156, 164, 229);
+  color: white;
+  transition: 0.5s;
+  
+}
+
+
+
+/*--------------------------------- Esto es el fin de la pagina de olvidar contraseña  --------------------------------*/
+
+
+
+/*----------------------------- Esto es la parte de restablecer contraseña va despues de registrar el correo en olvidar contraseña  -------------------------------*/
+
+
+.contenedorRestablecimiento{
+
+    background-color: rgb(248, 240, 255);
+    padding: 40px;
+    border-radius: 15px;
+    width: 600px;
+    height: 1000px;
+    min-height: 1090px;
+    position: absolute;
+    margin-top: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.contenedorRestablecimiento img{
+
+    width: 60%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 40px;
+
+}
+
+.contenedorRestablecimiento .volverAnterior {
+width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+.contenedorRestablecimiento .btn-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  
+  background-color: #ffffff;
+  color: #3b5998;
+  
+  padding: 1px 17px;
+  border: 2px solid #3136af;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 17 px;
+  font-weight: bold;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.contenedorRestablecimiento .btn-volver:active {
+  transform: translateY(2px);
+  box-shadow: 0px 2px 0px #888888;
+}
+
+.contenedorRestablecimiento h1{
+
+    margin-top: 50px;
+   text-align:center;
+    color:#6d2d91;
+    font-size:24px;
+    
+    margin-bottom:50px;
+
+
+}
+
+.contenedorRestablecimiento h1::after{
+    content:"";
+    display:block;
+    width:190px;
+    height:6px;
+    margin:10px auto 0;
+    border-radius:20px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #c27df5,
+        transparent
+    );
+}
+
+
+
+.contenedorRestablecimiento p {
+  text-align: center;
+  font-size: 17px;
+  margin-bottom: 30px;
+  
+}
+
+.contenedorRestablecimiento .modificarCorreo{
+  
+background-color: rgb(172, 172, 232);
+border-radius: 5px;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+padding: 12px;
+margin-bottom: 40px;
+
+}
+
+.contenedorRestablecimiento .modificarCorreo i{
+
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin: 12px;
+  margin-bottom: 15px;
+}
+
+.contenedorRestablecimiento .modificarCorreo button{
+   padding: 12px;
+   border-radius: 18px;
+   background-color: #3a67c7;
+   color: white;
+   border: #320fdf;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-weight: bold;
+   cursor: pointer;
+
+}
+
+
+
+
+.contenedorRestablecimiento .modificarCorreo button:hover{
+ background-color: rgb(15, 4, 57);
+ transition: 0.5s;
+
+}
+
+.contenedorRestablecimiento .correoCorrecto{
+background-color: rgb(172, 172, 232);
+border-radius: 5px;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+padding: 12px;
+margin-bottom: 40px;
+
+}
+
+.contenedorRestablecimiento .correoCorrecto i{
+text-align: center;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin: 12px;
+  margin-bottom: 24px;
+
+}
+
+.contenedorRestablecimiento .restablecerContraseña{
+
+  background-color: rgb(118, 19, 160);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 80px;
+  border-radius: 14px;
+  
+}
+
+.restablecerContraseña:hover{
+
+background-color: rgb(15, 4, 57);
+transition: 0.5s;
+
+
+}
+
+
+.contenedorRestablecimiento .restablecerContraseña i{
+
+  color: #cdcaf4;
+  padding: 10px;
+  font-size: 23px;
+
+}
+
+.contenedorRestablecimiento .restablecerContraseña a{
+
+
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+
+
+
+}
+
+
+/*----------------------------- Esto es el final de la parte de restablecer contraseña va despues de registrar el correo en olvidar contraseña  -------------------------------*/
+
+
+
+/*--------------------------------------------- Esto es la parte de modificar contraseña va despues en olvidar contraseña  -------------------------------*/
+
+
+.arreglarCorreo{
+
+    background-color: rgb(248, 240, 255);
+    padding: 50px;
+    border-radius: 15px;
+    width: 600px;
+    height: 900px;
+    min-height: 950px;
+    position: absolute;
+    margin-top: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.arreglarCorreo img{
+
+    width: 60%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 40px;
+
+}
+
+.arreglarCorreo .volverAnterior {
+width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+.arreglarCorreo .volverAnterior .btn-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  
+  background-color: #ffffff;
+  color: #3b5998;
+  
+  padding: 1px 17px;
+ border: 2px solid #3136af;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 17 px;
+  font-weight: bold;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.arreglarCorreo .volverAnterior .btn-volver:active {
+  transform: translateY(2px);
+  box-shadow: 0px 2px 0px #888888;
+}
+
+.arreglarCorreo h1{
+    text-align:center;
+    color:#6d2d91;
+    font-size:26px;
+    position:relative;
+    margin-bottom:50px;
+}
+
+.arreglarCorreo h1::after{
+    content:"";
+    display:block;
+    width:180px;
+    height:6px;
+    margin:10px auto 0;
+    border-radius:20px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #c27df5,
+        transparent
+    );
+}
+
+.arreglarCorreo p{
+
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.arreglarCorreo form{
+  
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+
+}
+
+.arreglarCorreo form label{
+  margin-top: 20px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: rgb(6, 6, 94);
+  font-weight: 700;
+}
+
+.arreglarCorreo form input{
+  height: 40px;
+  padding: 17px;
+  border-radius: 5px;
+  border: 2px solid rgb(90, 90, 177);
+  font-size: 14px;
+  background-color: rgb(236, 208, 245);
+}
+
+.arreglarCorreo form button{
+  width: 370px;
+  height: 60px;
+  margin: 20px ;
+  margin-top: 60px;
+  border-radius: 5px;
+  border-color:rgb(117, 126, 224);
+  background-color: rgb(90, 90, 177);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.arreglarCorreo form button:hover{
+  background-color: rgb(10, 16, 67);
+  color: white;
+  cursor: pointer;
+}
+
+/*----------------------------- Esto es el inicio de la parte de cambiar la contraseña   -------------------------------*/
+
+
+.nuevaContraseña{
+
+    background-color: rgb(248, 240, 255);
+    padding: 50px;
+    border-radius: 15px;
+    width: 1000px;
+    height: 700px;
+    min-height: 870px;
+    min-width: 950px;
+    position: absolute;
+    margin-top: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nuevaContraseña img{
+
+    width: 40%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 40px;
+
+}
+
+
+.nuevaContraseña .volverAnterior {
+width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+.nuevaContraseña .volverAnterior .btn-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  
+  background-color: #ffffff;
+  color: #3b5998;
+  
+  padding: 1px 17px;
+  border: 2px solid #3136af;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 17 px;
+  font-weight: bold;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.nuevaContraseña .volverAnterior .btn-volver:active {
+  transform: translateY(2px);
+  box-shadow: 0px 2px 0px #888888;
+}
+
+.nuevaContraseña h1{
+     text-align:center;
+    color:#2d3591;
+    font-size:26px;
+    position:relative;
+    margin-bottom:100px;
+}
+
+.nuevaContraseña h1::after{
+    content:"";
+    display:block;
+    width:180px;
+    height:6px;
+    margin:10px auto 0;
+    border-radius:20px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #2d3591,
+        transparent
+    );
+}
+
+.cajaGrande form{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+
+
+.nuevaContraseña .pinRestablecimiento label,
+.nuevaContraseña .ingresarNuevaContraseña label{
+  margin-top: 20px;
+  font-size: 18px;
+
+  color: rgb(6, 6, 94);
+  font-weight: 700;
+  margin-bottom: 90px;
+}
+
+.nuevaContraseña .pinRestablecimiento input{
+  height: 40px;
+  padding: 17px;
+  width: 400px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 2px solid rgb(192, 192, 246);
+  font-size: 14px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 30px;
+}
+
+.nuevaContraseña .ingresarNuevaContraseña input{
+ height: 40px;
+  padding: 17px;
+  width: 400px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 2px solid rgb(192, 192, 246);
+  font-size: 14px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 30px;
+  display: flex;
+
+}
+
+.lineaVertical{
+    width: 2px;
+    height: 240px;
+    background-color: #2d3591;
+    border-radius: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 80px;
+}
+
+
+.nuevaContraseña  button{
+  width: 370px;
+  height: 60px;
+  margin: 20px ;
+  margin-top: 60px;
+  border-radius: 7px;
+  border-color:rgb(117, 126, 224);
+  background-color: rgb(90, 90, 177);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+ 
+   position: absolute;
+    margin-top: 200px;
+    top: 60%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+.nuevaContraseña button:hover{
+  background-color: rgb(10, 16, 67);
+  color: white;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================= */
+/* ================= RESPONSIVE ==================== */
+/* ================================================= */
+
+
+
+/* INICIAR SESION */
+
+
+
+@media screen and (max-width: 768px){
+
+  .contenedorIS{
+    width: 90%;
+    height: auto;
+    padding: 25px;
+  }
+
+  .contenedorIS img{
+    width: 75%;
+  }
+
+  .contenedorIS .iniciarSesion form{
+    width: 100%;
+  }
+
+  .contenedorIS .iniciarSesion form input,
+  .contenedorIS .iniciarSesion form select,
+  .contenedorIS .iniciarSesion form button{
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .contenedorIS .iniciarSesion form label{
+    margin: 10px 0 5px;
+  }
+
+  .contenedorIS .OR{
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+}
+
+
+
+@media screen and (max-width: 480px){
+
+  .contenedorIS{
+    width: 95%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .contenedorIS img{
+    width: 85%;
+    margin-bottom: 20px;
+  }
+
+  .contenedorIS .iniciarSesion form label{
+    font-size: 18px;
+  }
+
+  .contenedorIS .iniciarSesion form input,
+  .contenedorIS .iniciarSesion form select{
+    height: 45px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .contenedorIS .iniciarSesion form button{
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .contenedorIS .OR a{
+    font-size: 14px;
+    text-align: center;
+  }
+
+}
+
+
+
+@media screen and (max-width: 360px){
+
+  .contenedorIS{
+    width: 98%;
+    padding: 15px;
+  }
+
+  .contenedorIS img{
+    width: 90%;
+  }
+
+  .contenedorIS .iniciarSesion form label{
+    font-size: 16px;
+  }
+
+  .contenedorIS .iniciarSesion form input,
+  .contenedorIS .iniciarSesion form select{
+    font-size: 13px;
+  }
+
+  .contenedorIS .iniciarSesion form button{
+    font-size: 14px;
+  }
+
+  .contenedorIS .OR a{
+    font-size: 12px;
+  }
+
+}
+
+
+
+@media screen and (max-width: 768px){
+
+  /* REGISTRO */
+  .contenedorR{
+    width: 95%;
+    padding: 30px;
+  }
+
+  .contenedorR img{
+    width: 80%;
+  }
+
+  .contenedorR button,
+  .contenedorR .volverInicio button{
+    width: 100%;
+  }
+
+  /* OLVIDAR CONTRASEÑA */
+  .contenedorOC{
+    width: 95%;
+    height: auto;
+    padding: 25px;
+  }
+
+  .contenedorOC h1{
+    font-size: 22px;
+    padding: 12px 25px;
+  }
+
+  .contenedorOC form input{
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .contenedorOC button,
+  .contenedorOC .volverInicio button{
+    width: 100%;
+  }
+
+  /* RESTABLECER CONTRASEÑA */
+  .contenedorRestablecimiento{
+    width: 95%;
+    height: auto;
+    min-height: auto;
+    padding: 25px;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 20px auto;
+  }
+
+  .contenedorRestablecimiento img{
+    width: 80%;
+  }
+
+  .contenedorRestablecimiento .restablecerContraseña{
+    margin: 30px 0;
+  }
+
+  /* MODIFICAR CORREO */
+  .arreglarCorreo{
+    width: 95%;
+    height: auto;
+    min-height: auto;
+    padding: 25px;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 20px auto;
+  }
+
+  .arreglarCorreo img{
+    width: 80%;
+  }
+
+  .arreglarCorreo form{
+    margin: 0;
+  }
+
+  .arreglarCorreo form button{
+    width: 100%;
+    margin: 30px 0;
+  }
+
+}
+
+
+/* ================== CELULARES ================== */
+
+@media screen and (max-width: 480px){
+
+  /* REGISTRO */
+  .contenedorR{
+    width: 95%;
+    padding: 20px;
+  }
+
+  .contenedorR h1{
+    font-size: 20px;
+  }
+
+  .contenedorR img{
+    width: 90%;
+  }
+
+  .contenedorR form input,
+  .contenedorR form select,
+  .contenedorR button,
+  .contenedorR .volverInicio button{
+    width: 100%;
+  }
+
+  /* OLVIDAR CONTRASEÑA */
+  .contenedorOC{
+    width: 95%;
+    padding: 20px;
+  }
+
+  .contenedorOC h1{
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+
+  .contenedorOC form input,
+  .contenedorOC button,
+  .contenedorOC .volverInicio button{
+    width: 100%;
+  }
+
+  /* RESTABLECER CONTRASEÑA */
+  .contenedorRestablecimiento{
+    width: 95%;
+    padding: 20px;
+  }
+
+  .contenedorRestablecimiento h1{
+    font-size: 20px;
+  }
+
+  .contenedorRestablecimiento p{
+    font-size: 15px;
+  }
+
+  .contenedorRestablecimiento img{
+    width: 90%;
+  }
+
+  .contenedorRestablecimiento .restablecerContraseña{
+    margin: 20px 0;
+    padding: 15px;
+  }
+
+  .contenedorRestablecimiento .restablecerContraseña a{
+    font-size: 16px;
+  }
+
+  /* MODIFICAR CORREO */
+  .arreglarCorreo{
+    width: 95%;
+    padding: 20px;
+  }
+
+  .arreglarCorreo h1{
+    font-size: 20px;
+  }
+
+  .arreglarCorreo p{
+    font-size: 15px;
+  }
+
+  .arreglarCorreo img{
+    width: 90%;
+  }
+
+  .arreglarCorreo form input,
+  .arreglarCorreo form button{
+    width: 100%;
+  }
+
+}
+
+
+
+@media screen and (max-width: 360px){
+
+  .contenedorR,
+  .contenedorOC,
+  .contenedorRestablecimiento,
+  .arreglarCorreo{
+    width: 98%;
+    padding: 15px;
+  }
+
+  .contenedorR h1,
+  .contenedorOC h1,
+  .contenedorRestablecimiento h1,
+  .arreglarCorreo h1{
+    font-size: 18px;
+  }
+
+  .contenedorRestablecimiento .restablecerContraseña a{
+    font-size: 14px;
+  }
+
+}
