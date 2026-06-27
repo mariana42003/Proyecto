@@ -159,92 +159,116 @@ header img {
 }
 
 
-
-
 /* --- FORMULARIO DE CONSULTA --- */
 .fondo{
-    background-color: white ;
+    background-color: white;
   }
 .form-consulta-card {
     border-radius: 8px !important;
     overflow: hidden;
 }
 
-/* El banner azul celeste clarito de la cabecera */
-.bg-kronos-banner {
-    background-color: #cceeff !important; /* Tono celeste del diseño */
-    border-bottom: 1px solid #b3e0ff !important;
+/* Banner Superior de Orden Seleccionada */
+.banner-seleccionada {
+    background-color: #cbd5e1 !important; /* Gris suave */
+    border: 2px solid #4a5568 !important;
+    border-radius: 8px;
 }
 
-.titulo-consulta {
-    color: #1a3a5f !important; /* Azul oscuro nítido */
-    font-size: 26px;
-    font-weight: bold;
-    font-family: 'Trebuchet MS', sans-serif;
+/* Inputs simulados (Deshabilitados pero legibles) */
+.custom-disabled-input {
+    background-color: #edf2f7 !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #2d3748 !important;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* --- TABLA MATERIAL / CANTIDAD (Estilo Morado) --- */
+.table-material {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    width: 100%;
+}
+
+.table-material thead tr th {
+    background-color: #7c7ec2 !important; /* Color Morado del Menú */
+    color: #ffffff !important;
+    font-weight: bold !important;
+    border: 2px solid #5a5ca6 !important;
+    padding: 10px !important;
+}
+
+.table-material tbody tr td {
+    background-color: #ffffff !important;
+    border: 2px solid #5a5ca6 !important;
+    padding: 12px !important;
+}
+
+/* --- DETALLES DE VIGENCIA DE GARANTÍA --- */
+.card-detalles-garantia {
+    border: 2px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+.info-row {
+    background-color: #ffffff;
+    font-size: 1rem;
+}
+
+.info-row:nth-child(even) {
+    background-color: #f8fafc; /* Alternancia de color sutil */
+}
+
+/* --- BANNER GARANTÍA VIGENTE --- */
+.banner-alerta-vigente {
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+.bg-success-light {
+    background-color: #c6f6d5 !important; /* Verde claro suave */
+    border: 2px solid #e26d6d !important;
+    border-bottom: none !important;
+}
+
+.card-body-alerta {
+    border: 2px solid #e26d6d !important;
+    border-top: none !important;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Icono de check cuadrado de la maqueta */
+.x-box-icon {
+    background-color: #e07d7d;
+    color: white;
+    width: 28px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    border-radius: 4px;
+    border: 1px solid #e07d7d;
 }
-
-.titulo-consulta i {
-    font-size: 22px;
-}
-/* Labels e Inputs */
-.label-kronos {
-    color: #69477c;
-    font-size: 15px;
-    margin-bottom: 6px;
-    height: 40px;
-}
-
-.input-kronos {
-    padding: 10px 12px !important;
-    border: 1px solid #cccccc !important;
-    border-radius: 5px !important;
-    font-size: 14px;
-    background-color: gainsboro !important;
-    color: #333333 !important;
-
-}
-
-.input-kronos:focus {
-    border-color: #8b7ad6 !important;
-    box-shadow: 0 0 0 0.25rem rgba(139, 122, 214, 0.15) !important;
-}
-
-/* Botón de Buscar (Azul Intenso) */
-.btn-kronos-search, .lick{
-    background-color: #0066ff !important;
+/* Botón de Registro de Observación con relieve y bordes redondeados */
+.btn-registro-observacion {
+    background-color: #3b82f6 !important; /* Azul corporativo */
     color: white !important;
-    border: none !important;
-    border-radius: 5px !important;
-    padding: 8px 24px !important;
-    transition: background 0.2s;
-    text-decoration: none;
-}
-.btn-kronos-search:hover {
-    background-color: #0052cc !important;
-}
-
-/* Botón de Limpiar (Gris Corporativo) */
-.btn-kronos-clear, .lic {
-    background-color: #c19cc6 !important;
-    color: rgb(192, 125, 136) !important;
-    border: none !important;
-    border-radius: 5px !important;
-    padding: 8px 24px !important;
-    font-weight: 700;
-    text-decoration: none;
-
+    font-weight: bold !important;
+    font-size: 1.05rem !important;
+    border: 2px solid #1d4ed8 !important; /* Borde oscuro tridimensional */
+    border-radius: 12px !important; /* Bordes muy redondeados como en el boceto */
+    padding: 8px 30px !important; /* Espaciado interno cómodo */
+    box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.1) !important; /* Sombra interna para el relieve inferior */
+    transition: all 0.1s ease;
 }
 
-.btn-kronos-clear:hover {
-    background-color: #cb92d8 !important;
-}
-.icono{
-    border-radius: 6px;
-    border: 1px solid rgb(185, 128, 138);
+/* Efecto al hacer clic (simula hundirse) */
+.btn-registro-observacion:active {
+    box-shadow: inset 0 2px 0px rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(2px);
 }
 
 #menu, .menus {

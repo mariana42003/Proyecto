@@ -158,95 +158,83 @@ header img {
     margin-bottom: 30px;
 }
 
-
-
-
-/* --- FORMULARIO DE CONSULTA --- */
-.fondo{
-    background-color: white ;
-  }
-.form-consulta-card {
-    border-radius: 8px !important;
-    overflow: hidden;
+/* Banner de Título */
+.banner-historial {
+    background-color: #cbd5e1 !important;
+    border: 2px solid #4a5568 !important;
+    border-radius: 8px;
 }
 
-/* El banner azul celeste clarito de la cabecera */
-.bg-kronos-banner {
-    background-color: #cceeff !important; /* Tono celeste del diseño */
-    border-bottom: 1px solid #b3e0ff !important;
+/* Tarjeta contenedora */
+.card-historial {
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 12px !important;
+    background-color: #ffffff;
 }
 
-.titulo-consulta {
-    color: #1a3a5f !important; /* Azul oscuro nítido */
-    font-size: 26px;
-    font-weight: bold;
-    font-family: 'Trebuchet MS', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+/* --- ESTILOS DE LA TABLA ESTILO CÓMIC --- */
+.custom-table-historial {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    width: 100%;
 }
 
-.titulo-consulta i {
-    font-size: 22px;
-}
-/* Labels e Inputs */
-.label-kronos {
-    color: #69477c;
-    font-size: 15px;
-    margin-bottom: 6px;
-    height: 40px;
+/* Encabezado Morado */
+.custom-table-historial thead tr th {
+    background-color: #7c7ec2 !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+    border: 2px solid #5a5ca6 !important;
+    padding: 12px !important;
 }
 
-.input-kronos {
-    padding: 10px 12px !important;
-    border: 1px solid #cccccc !important;
-    border-radius: 5px !important;
-    font-size: 14px;
-    background-color: gainsboro !important;
+/* Celdas del cuerpo con bordes redondeados/definidos */
+.custom-table-historial tbody tr td {
+    background-color: #ffffff !important;
+    border: 2px solid #5a5ca6 !important;
+    padding: 12px !important;
+    color: #333333;
+}
+
+/* Color oscuro para las opciones de adentro al desplegar */
+#tablaHistorial .form-select.select-estado-fijo option {
+    background-color: #ffffff !important;
     color: #333333 !important;
-
 }
 
-.input-kronos:focus {
-    border-color: #8b7ad6 !important;
-    box-shadow: 0 0 0 0.25rem rgba(139, 122, 214, 0.15) !important;
+
+/* --- ESTILIZACIÓN DE COMPONENTES DATATABLES --- */
+.dataTables_wrapper .dataTables_filter input {
+    border: 2px solid #cbd5e1 ;
+    border-radius: 8px ;
+    padding: 6px 12px ;
+    background-color: #f8fafc ;
+    margin-left: 10px;
 }
 
-/* Botón de Buscar (Azul Intenso) */
-.btn-kronos-search, .lick{
-    background-color: #0066ff !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 5px !important;
-    padding: 8px 24px !important;
-    transition: background 0.2s;
-    text-decoration: none;
-}
-.btn-kronos-search:hover {
-    background-color: #0052cc !important;
+.dataTables_wrapper .dataTables_length select {
+    border: 2px solid #cbd5e1 ;
+    border-radius: 6px ;
+    padding: 4px 8px ;
 }
 
-/* Botón de Limpiar (Gris Corporativo) */
-.btn-kronos-clear, .lic {
-    background-color: #c19cc6 !important;
-    color: rgb(192, 125, 136) !important;
-    border: none !important;
-    border-radius: 5px !important;
-    padding: 8px 24px !important;
-    font-weight: 700;
-    text-decoration: none;
-
+.dataTables_wrapper .dataTables_info {
+    font-weight: bold;
+    color: #4a5568 ;
+    margin-top: 15px;
 }
 
-.btn-kronos-clear:hover {
-    background-color: #cb92d8 !important;
-}
-.icono{
-    border-radius: 6px;
-    border: 1px solid rgb(185, 128, 138);
+.dataTables_wrapper .dataTables_paginate {
+    margin-top: 15px;
 }
 
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #7c7ec2 ;
+    color: white;
+    border: 2px solid #5a5ca6 ;
+    border-radius: 6px ;
+    font-weight: bold;
+}
 #menu, .menus {
     display: none;
 }

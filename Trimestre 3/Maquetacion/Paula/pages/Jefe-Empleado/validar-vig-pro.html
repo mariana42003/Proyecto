@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/Trimestre 3/Maquetacion/Paula/css/Jefe-Empleado/observacion.css ">
+    <link rel="stylesheet" href="/Trimestre 3/Maquetacion/Paula/css/Jefe-Empleado/validar-vigencia.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
     <link rel="stylesheet"
 href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
-    <title>Observacion</title>
+    <title>Validar Vigencia</title>
   </head>
   <body class="fondo">
     <input type="checkbox" id="menu" />
@@ -32,7 +32,7 @@ href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
 
 
       <aside>
-        <br> <br> 
+        <br> <br> <br>
         <div class="opciones">
           <a href="#"><i class="bi bi-eye"></i> Panel de control</a>
           
@@ -117,59 +117,93 @@ href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
 
         </div>
       </aside>
-      <main class="fondo col-lg-10 p-4">
+
+<div class="mt-4 container-garantia">
     <div class="row">
         <div class="col-lg-10 mx-auto">
-            <div class="text-center py-2 mb-4 banner-observacion">
-                <h2 class="mb-0 fs-3 text-dark">Registro de Observacion de Garantía</h2>
+            
+            <div class="text-center py-2 mb-4 banner-seleccionada">
+                <h2 class="mb-0 fs-4 text-dark">Orden de Compra Seleccionada</h2>
             </div>
 
-            <div class="row g-4 mb-4">
+            <div class="row g-3 mb-4">
                 <div class="col-md-6">
-                    <label class="form-label fw-bold fs-5 letra-ob">Material:</label>
-                    <input type="text" class="form-control input-observacion" placeholder="Ej: Tornillos">
+                    <label class="form-label fw-bold text-secondary">Número de Orden de compra</label>
+                    <input type="text" class="form-control custom-disabled-input" value="90239638" readonly>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label fw-bold fs-5 letra-ob">Nombre Cliente:</label>
-                    <input type="text" class="form-control input-observacion" placeholder="Ej: Mauricio">
+                    <label class="form-label fw-bold text-secondary">Cliente</label>
+                    <input type="text" class="form-control custom-disabled-input" value="Pepito Pelaez" readonly>
                 </div>
             </div>
 
-            <div class="mb-4">
-                <label class="form-label fw-bold fs-5 letra-ob">Observación (Obligatorio):</label>
-                <textarea class="form-control textarea-observacion" rows="6" placeholder="Ej: El material esta dañado"></textarea>
+            <div class="table-responsive mb-5">
+                <table class="table align-middle text-center table-material">
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Material</th>
+                            <th style="width: 50%;">Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-secondary fw-semibold">Martillo</td>
+                            <td class="text-secondary fw-semibold">2</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <div class="d-flex justify-content-end">
-                <button class="btn btn-siguiente px-5" data-bs-toggle="modal" data-bs-target="#modalExito">
-                    Siguiente
-                </button>
-            </div>
-        </div>
-    </div>
-</main>
-
-<div class="modal fade" id="modalExito" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content custom-modal">
-            <div class="modal-body text-center p-5">
-                <img src="/Trimestre 3/Maquetacion/Paula/img/logo.png" alt="Logo" class="mb-4 modal-logo">
-                
-                <h2 class="fw-bold text-dark mb-4 mt-2">SU GARANTÍA FUE EXITOSA</h2>
-                
-                <div class="check-container-modal mx-auto mb-4">
-                    <i class="bi bi-check-lg"></i>
+            <h3 class="fs-4 fw-bold text-dark mb-3 title-vigencia">Vigencia de Garantía</h3>
+            
+            <div class="card card-detalles-garantia mb-4">
+                <div class="card-body p-0">
+                    <div class="info-row d-flex justify-content-between p-2 border-bottom">
+                        <span class="fw-bold text-muted ps-2">Garantía con:</span>
+                        <span class="fw-bold text-dark pe-2">Proveedor</span>
+                    </div>
+                    <div class="info-row d-flex justify-content-between p-2 border-bottom">
+                        <span class="fw-bold text-muted ps-2">Fecha de compra:</span>
+                        <span class="fw-bold text-dark pe-2">10/01/2026</span>
+                    </div>
+                    <div class="info-row d-flex justify-content-between p-2 border-bottom">
+                        <span class="fw-bold text-muted ps-2">Fecha Actual:</span>
+                        <span class="fw-bold text-dark pe-2">31/03/2026</span>
+                    </div>
+                    <div class="info-row d-flex justify-content-between p-2 border-bottom">
+                        <span class="fw-bold text-muted ps-2">Dias Transcurridos:</span>
+                        <span class="fw-bold text-dark pe-2">80 Dias</span>
+                    </div>
+                    <div class="info-row d-flex justify-content-between p-2">
+                        <span class="fw-bold text-muted ps-2">Limite de Garantía:</span>
+                        <span class="fw-bold text-dark pe-2">90 Dias</span>
+                    </div>
                 </div>
-                
-                <a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/historial-garantias.html"><button type="button" class="btn btn-cerrar-modal" data-bs-dismiss="modal">Cerrar</button></a>
             </div>
+
+            <div class="card banner-alerta-vigente border-0 shadow-sm">
+                <div class="card-header bg-success-light text-success d-flex align-items-center py-3">
+                    <div class="check-box-icon me-3">
+                        <i class="bi bi-check fs-4"></i>
+                    </div>
+                    <h5 class="mb-0 fw-bold">Garantía Vigente</h5>
+                </div>
+                <div class="card-body bg-white text-dark py-3 border-top-0 border card-body-alerta">
+                    <p class="mb-1 fw-bold">El material se encuentra dentro del periodo de garantía</p>
+                    <p class="mb-0 text-secondary">Puede continuar con el registro de la solicitud</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
 
+      <div class="row mt-4">
+    <div class="col-lg-10 mx-auto d-flex justify-content-end">
+        <a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/observacion.html"><button class="btn btn-registro-observacion">Registro Observacion</button></a>
+    </div>
+</div>
     
-                    
-      
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
@@ -178,3 +212,4 @@ href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
 <script src="https://cdn.datatables.net/2.3.2/js/dataTables.bootstrap5.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </body>
+</html>

@@ -161,6 +161,100 @@ header img {
 
 
 
+
+
+/* Contenedor principal de la tarjeta de resultados */
+.card-resultado {
+    border: 1px solid #b8b8b8 !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05) !important;
+}
+
+/* Encabezado Verde */
+.custom-card-header {
+    background-color: #2b7d42 !important; 
+    border-bottom: 1px solid #b8b8b8 !important;
+}
+
+/* Fila de metadatos (Orden, Cliente, Fecha) */
+.metadata-row {
+    font-size: 1.1rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+/* --- AJUSTE DE RECUADROS DE LA TABLA --- */
+.custom-table {
+    border-collapse: separate !important;
+    border-spacing: 0 !important; 
+    width: 100%;
+    margin-bottom: 0 !important;
+}
+
+/* Cabecera gris claro */
+.custom-table thead tr th {
+    background-color: #eaeef7 !important;
+    color: #222222 !important;
+    font-weight: bold !important;
+    border: 1px solid #b8b8b8 !important;
+    padding: 10px !important;
+}
+
+/* Celdas del cuerpo con bordes individuales */
+.custom-table tbody tr td {
+    background-color: #ffffff !important;
+    border: 1px solid #b8b8b8 !important;
+    padding: 12px !important;
+}
+
+/* Nombre de los productos */
+.text-product {
+    color: #333333 !important;
+    font-size: 1rem;
+}
+
+/* --- BOTONES CON RELIEVE Y TAMAÑO FIJO (NO ESTIRADOS) --- */
+
+/* Botón azul "Ver" */
+.btn-ver {
+    background-color: #3b82f6 !important;
+    color: white !important;
+    font-weight: bold !important;
+    border: 2px solid #1d4ed8 !important; 
+    border-radius: 8px !important;
+    padding: 4px 22px !important;
+    box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.25); 
+    display: inline-block;
+}
+
+/* Botón "Validar Vigencia Garantía" */
+.btn-validar {
+    background-color: #3b82f6 !important;
+    color: white !important;
+    font-weight: bold !important;
+    border: 2px solid #1d4ed8 !important;
+    border-radius: 12px !important;
+    padding: 5px 25px !important;
+    box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.25);
+    font-size: 0.95rem !important;
+    display: inline-block;
+    max-width: 280px; /* Evita que el botón crezca de más hacia los lados */
+}
+
+/* Efecto presionado para ambos botones */
+.btn-ver:active, .btn-validar:active {
+    box-shadow: inset 0 2px 0px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+}
+
+/* Lupa */
+.bi-search {
+    -webkit-text-stroke: 0.3px black;
+}
+
+
 /* --- FORMULARIO DE CONSULTA --- */
 .fondo{
     background-color: white ;
@@ -211,20 +305,6 @@ header img {
 .input-kronos:focus {
     border-color: #8b7ad6 !important;
     box-shadow: 0 0 0 0.25rem rgba(139, 122, 214, 0.15) !important;
-}
-
-/* Botón de Buscar (Azul Intenso) */
-.btn-kronos-search, .lick{
-    background-color: #0066ff !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 5px !important;
-    padding: 8px 24px !important;
-    transition: background 0.2s;
-    text-decoration: none;
-}
-.btn-kronos-search:hover {
-    background-color: #0052cc !important;
 }
 
 /* Botón de Limpiar (Gris Corporativo) */

@@ -158,93 +158,138 @@ header img {
     margin-bottom: 30px;
 }
 
+/* Banner de Título (Copiado de tus vistas anteriores) */
+.banner-estado-solicitud {
+    background-color: #dee2e6 !important;
+    border: 2px solid #343a40 !important;
+    border-radius: 8px;
+}
 
-
-
-/* --- FORMULARIO DE CONSULTA --- */
-.fondo{
-    background-color: white ;
-  }
-.form-consulta-card {
-    border-radius: 8px !important;
+/* Contenedor principal de la tabla para aplicar el borde redondeado exterior */
+.container-tabla-comic {
+    border: 2px solid #5a5ca6 !important;
+    border-radius: 12px !important;
     overflow: hidden;
+    background-color: #ffffff;
 }
 
-/* El banner azul celeste clarito de la cabecera */
-.bg-kronos-banner {
-    background-color: #cceeff !important; /* Tono celeste del diseño */
-    border-bottom: 1px solid #b3e0ff !important;
+/* --- ESTILO DE LA TABLA EXACTO A LA IMAGEN --- */
+.custom-table-estado {
+    border-collapse: collapse !important; /* Celdas juntas sin espacios */
+    margin-bottom: 0 !important;
 }
 
-.titulo-consulta {
-    color: #1a3a5f !important; /* Azul oscuro nítido */
-    font-size: 26px;
-    font-weight: bold;
-    font-family: 'Trebuchet MS', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+/* Encabezados Morados */
+.custom-table-estado thead tr th {
+    background-color: #7c7ec2 !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+    border: 2px solid #5a5ca6 !important;
+    padding: 12px !important;
 }
 
-.titulo-consulta i {
-    font-size: 22px;
-}
-/* Labels e Inputs */
-.label-kronos {
-    color: #69477c;
-    font-size: 15px;
-    margin-bottom: 6px;
-    height: 40px;
+/* Celdas del cuerpo con sus bordes morados delgados */
+.custom-table-estado tbody tr td {
+    background-color: #ffffff !important;
+    border: 2px solid #5a5ca6 !important;
+    padding: 12px !important;
+    color: #333333;
 }
 
-.input-kronos {
-    padding: 10px 12px !important;
-    border: 1px solid #cccccc !important;
-    border-radius: 5px !important;
-    font-size: 14px;
-    background-color: gainsboro !important;
-    color: #333333 !important;
-
-}
-
-.input-kronos:focus {
-    border-color: #8b7ad6 !important;
-    box-shadow: 0 0 0 0.25rem rgba(139, 122, 214, 0.15) !important;
-}
-
-/* Botón de Buscar (Azul Intenso) */
-.btn-kronos-search, .lick{
-    background-color: #0066ff !important;
+/* --- BOTÓN ACTUALIZACIÓN (Color vino/magenta con relieve 3D) --- */
+.btn-ver-actualizacion {
+    background-color: #a24675 !important;
     color: white !important;
-    border: none !important;
-    border-radius: 5px !important;
-    padding: 8px 24px !important;
-    transition: background 0.2s;
-    text-decoration: none;
-}
-.btn-kronos-search:hover {
-    background-color: #0052cc !important;
+    font-weight: normal !important;
+    border: 2px solid #5b2141 !important;
+    border-radius: 8px !important;
+    padding: 6px 30px !important;
+    box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.3);
 }
 
-/* Botón de Limpiar (Gris Corporativo) */
-.btn-kronos-clear, .lic {
-    background-color: #c19cc6 !important;
-    color: rgb(192, 125, 136) !important;
-    border: none !important;
-    border-radius: 5px !important;
-    padding: 8px 24px !important;
-    font-weight: 700;
-    text-decoration: none;
-
+.btn-ver-actualizacion:hover {
+    background-color: #893b63 !important;
+    color: white !important;
 }
 
-.btn-kronos-clear:hover {
-    background-color: #cb92d8 !important;
+/* Ajustes para que los textos de DataTable sigan la línea limpia */
+.dataTables_wrapper .dataTables_filter input,
+.dataTables_wrapper .dataTables_length select {
+    border: 1px solid #ced4da !important;
+    border-radius: 6px !important;
+    padding: 5px !important;
 }
-.icono{
-    border-radius: 6px;
-    border: 1px solid rgb(185, 128, 138);
+/* --- ESTILOS ADICIONALES PARA LOS MODALES --- */
+
+/* Tarjeta base blanca del modal */
+.card-modal-comic {
+    border: 2px solid #5a5ca6 !important;
+    border-radius: 12px !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Cajas contenedoras moradas de la información interna */
+.caja-info-modal {
+    border: 2px solid #7c7ec2 !important;
+    border-radius: 10px !important;
+    background-color: #fafafa;
+}
+
+/* Tipografía de la descripción */
+.text-modal-desc {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #3f3f46 !important;
+}
+
+/* --- BADGES INTERNOS DE ESTADO --- */
+.badge-status-comic {
+    font-weight: bold !important;
+    font-size: 1rem !important;
+    padding: 4px 12px !important;
+    border-radius: 6px !important;
+}
+.badge-status-comic.aprobado {
+    background-color: #e6f4ea !important;
+    color: #48bb78 !important; /* Verde */
+}
+.badge-status-comic.rechazado {
+    background-color: #fce8e6 !important;
+    color: #f56565 !important; /* Rojo */
+}
+
+/* --- BOTÓN VOLVER (Estilo Lavanda/Morado Claro con Relieve) --- */
+.btn-volver-modal {
+    background-color: #a78bfa !important; /* Color lavanda */
+    color: #2d3748 !important;
+    font-weight: bold !important;
+    border: 2px solid #4a4b82 !important;
+    border-radius: 8px !important;
+    padding: 6px 20px !important;
+    box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.2);
+    transition: all 0.1s ease;
+}
+
+.btn-volver-modal:active {
+    transform: translateY(2px);
+    box-shadow: inset 0 -1px 0px rgba(0, 0, 0, 0.2);
+}
+/* Control del tamaño y centrado del logo en el modal */
+.logo-modal-kronos {
+    max-height: 55px; /* Evita que sea gigante */
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
+
+/* En caso de que uses el nombre en texto estilizado de Kronos */
+.logo-texto-kronos {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    color: #4a4b82;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
 }
 
 #menu, .menus {
