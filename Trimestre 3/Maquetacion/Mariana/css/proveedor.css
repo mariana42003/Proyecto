@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(235, 235, 231);
+    font-family: sans-serif;
+}
+
+/* Contenedor Grid Principal */
+.contenedor {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    grid-column: 1 / span 2;
+    height: 100px;
+    background-color: #7d7dd8;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header img {
+    width: 280px;
+    height: auto;
+}
+
+.nombreUsuario {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nombreUsuario i {
+    color: rgb(210, 202, 255);
+    font-size: 36px;
+}
+
+.cerrarSesion {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cerrarSesion a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.cerrarSesion i {
+    color: rgb(212, 215, 250);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Sidebar / Aside */
+.contenedor aside {
+    grid-column: 1;
+    background-color: #c5d7f3;
+    border-radius: 6px;
+}
+
+.opciones {
+    padding-top: 30px;
+}
+
+.opciones a {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.opciones a i {
+    color: #6b2d91;
+    font-size: 22px;
+    margin-right: 11px;
+}
+
+.opciones a:hover {
+    border: 2px solid rgb(90, 90, 177);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main */
+.contenedor main {
+    grid-column: 2;
+    padding: 30px;
+    min-width: 0; /* Previene desbordamientos */
+}
+
+.contenedor h1,
+.contenedor h2 {
+    color: #1f3f8c;
+}
+
+/* Tarjeta del número de orden */
+.numeroOrden {
+    border: 4px dotted #7d7dd8;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.numeroOrden h2 {
+    color: rgb(35, 5, 143);
+    font-size: 24px;
+}
+
+/* Tablas Responsivas Estilizadas */
+.table-responsive {
+    width: 100%;
+    white-space: nowrap;
+}
+
+.tablaPersonalizada thead th {
+    background-color: #8b8bda !important;
+    color: white !important;
+    border: 1px solid #7d7dd8;
+}
+
+.tablaPersonalizada tbody td {
+    border: 1px solid #cbd5e1;
+    background-color: #ffffff;
+}
+
+/* Botones de acción dentro de la tabla */
+.si, .no {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 15px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.si {
+    background-color: rgb(144, 226, 187);
+    color: green !important;
+    margin-right: 5px;
+}
+
+.si:hover {
+    background-color: #062f08;
+    color: white !important;
+}
+
+.no {
+    background-color: #e490a9;
+    color: #780f24 !important;
+}
+
+.no:hover {
+    background-color: #780f24;
+    color: white !important;
+}
+
+/* Botones inferiores (Confirmar / Rechazar) */
+.confirmaRechaza {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.confirmaRechaza button {
+    flex: 1;
+    max-width: 200px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.confirmaOrden {
+    background-color: rgb(9, 66, 38);
+}
+
+.confirmaOrden:hover {
+    background-color: #062f08;
+}
+
+.rechazaOrden {
+    background-color: #651a31;
+}
+
+.rechazaOrden:hover {
+    background-color: #421020;
+}
+
+/* Menú Toggle Invisible por defecto */
+#menu, .menus {
+    display: none;
+}
+
+/* 📱 RESPONSIVE DESIGN (Móviles y Tablets) */
+@media (max-width: 768px) {
+    .contenedor {
+        display: block; /* Rompe el Grid en móviles */
+        position: relative;
+    }
+
+    .menus {
+        display: block;
+        position: absolute;
+        top: 32px;
+        left: 20px;
+        z-index: 3000;
+        font-size: 35px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .contenedor aside {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 240px;
+        height: 100vh;
+        z-index: 2000;
+        transition: left .4s ease;
+        border-radius: 0;
+    }
+
+    .opciones {
+        margin-top: 80px;
+    }
+
+    /* Mostrar menú al hacer clic */
+    #menu:checked ~ .contenedor aside {
+        left: 0;
+    }
+
+    .contenedor header {
+        height: 100px;
+        padding: 0 20px;
+    }
+
+    .contenedor header img {
+        width: 180px;
+    }
+
+    .nombreUsuario {
+        left: auto;
+        right: 70px;
+    }
+
+    .cerrarSesion {
+        right: 20px;
+    }
+
+    .contenedor main {
+        padding: 15px;
+    }
+
+    .confirmaRechaza {
+        flex-direction: column;
+    }
+    
+    .confirmaRechaza button {
+        max-width: 100%;
+    }
+}

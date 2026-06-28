@@ -1,0 +1,316 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    min-height: 100%;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(rgb(200, 143, 216), rgb(159, 184, 212) ) no-repeat;
+    background-attachment: fixed;
+}
+
+ .contenedorR, .contenedorOC, .contenedorRestablecimiento, .arreglarCorreo, .nuevaContraseña {
+    background-color: rgb(248, 240, 255);
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px; 
+    height: auto;
+    margin: auto;
+    box-shadow: rgba(8, 2, 53, 0.3) !important;
+}
+
+.nuevaContraseña{
+    padding: 60px;
+
+}
+
+
+.btn-registro {
+
+    margin-bottom: -9px;
+    margin-top: 40px;
+}
+
+
+.contenedorR {
+    max-width: 550px;
+    padding: 80px;
+}
+
+.contenedorIS img, .contenedorR img, .contenedorOC img, .contenedorRestablecimiento img, .arreglarCorreo img, .nuevaContraseña img {
+    width: 100%;
+    max-width: 250px;
+    display: block;
+    margin: 0 auto 30px auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    font-size: 16px;
+    margin: 10px 0 5px 0;
+    color: rgb(6, 6, 94);
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.cajaGrande {
+    box-shadow: 0 10px 30px rgba(8, 2, 53, 0.3) !important;
+    background-color: white !important;
+    border: none; 
+}
+
+.botonSalir{
+    margin-top: -10px !important;
+    margin-bottom: 20px  !important;
+}
+
+.usuContra  {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    border: 2px solid rgb(173, 173, 244 ) !important;
+    background-color: white;
+}
+
+input{
+        width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    border: 2px solid rgb(173, 173, 244 ) !important;
+    background-color: white;
+}
+
+select:focus, input:focus {
+    background-color: rgb(236, 183, 250);
+    color: black;
+    outline: none;
+}
+
+.btn-volver-inicio {
+    width: 40%;
+    max-width: 190px; 
+    height: 35px;
+    background-color: white !important;
+    color: blue !important;
+    border: 2px solid rgb(156, 164, 229) !important;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 15px auto 0 ; 
+}
+
+.btn-volver-inicio:hover {
+    background-color: rgb(156, 164, 229) !important;
+    color: white !important;
+}
+
+
+.modificarCorreo button{
+    background-color: #0b1974;
+    border-radius: 100px;
+
+}
+
+.btn-botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-iniciarSesion{
+    width: 100%;
+    height: 50px;
+    margin: 15px 0;
+    border-radius: 10px;
+    border: 1px solid rgb(117, 126, 224);
+    background-color: rgb(35, 35, 119);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.logoLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 60%;
+    height: 50px;
+    margin: 15px 0;
+    border-radius: 10px;
+    border: 1px solid rgb(117, 126, 224);
+    background-color: rgb(35, 35, 119);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-alarmasCorreo{
+    margin-bottom: -8px;
+}
+
+button:hover {
+    background-color: rgb(10, 16, 67);
+}
+
+.OR {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.OR a {
+    color: rgb(94, 6, 91);
+    font-weight: 700;
+   
+}
+.OR a:hover{
+  color: #6b3fb7;
+}
+
+h1 {
+    text-align: center;
+    color: #6d2d91;
+    font-size: 24px;
+    margin-bottom: 35px;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 190px;
+    height: 6px;
+    margin: 10px auto 0;
+    border-radius: 20px;
+    background: linear-gradient(90deg, transparent, #c27df5, transparent);
+}
+
+.volverAnterior {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.btn-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #ffffff;
+    color: #3b5998;
+    padding: 2px 10px;
+    border: 2px solid #3136af;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px
+}
+
+.modificarCorreo, .correoCorrecto {
+    background-color: rgb(172, 172, 232);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.restablecerContraseña {
+    background-color: rgb(118, 19, 160);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 14px;
+    width: 300px !important;
+}
+
+.restablecerContraseña a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.restablecerContraseña i {
+    color: #cdcaf4;
+    padding: 0 10px;
+    font-size: 20px;
+}
+
+
+
+
+
+.alertaU{
+    width: 500px;
+    background-color: #e2e4f1;
+   
+    border-radius: 15px;
+    padding: 20px;
+    height: 400px;
+}
+
+.tituloU{
+    color: #080235;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.textoU{
+    color: #7156ab;
+    font-size: 20px;
+}
+
+.botonU{
+    width: 200px;
+    height: 45px;
+    background-color: #1d2bac;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botonU:hover{
+    transform: scale(1.05);
+    background-color: #3b5998;
+}
+
+.iconoExclamacion{
+    border-color: #0b1974 !important;
+    color: #0b1974 !important;
+}
