@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Permite que el padding no deforme los anchos */
+    box-sizing: border-box; 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -29,9 +29,8 @@ body, html {
     display: block;
     background-color: transparent !important;
     background: transparent !important;
-    mix-blend-mode: multiply; /* Mantiene el borrado mágico del fondo blanco interno del PNG */
+    mix-blend-mode: multiply; 
 }
-
 header h1 {
     font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -54,7 +53,7 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 45px; /
+    min-width: 45px; 
 }
 
 .btn-buscar-purple:hover {
@@ -75,6 +74,7 @@ header h1 {
 
 .opcion{
     text-decoration: none;
+    border: 2px solid black!important;
 }
 
 .opcion:hover{
@@ -88,7 +88,7 @@ header h1 {
     position: relative;
     color: #000000; 
     border: none;
-    border-radius: 5px;
+    border-radius: px;
     height: 43px;
     cursor: pointer;
 }
@@ -131,6 +131,46 @@ header h1 {
     font-size: 20px;
     height: 25px;
 }
+
+.carrito-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100vh;
+    background-color: #f8f6fc;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1060; 
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out; 
+}
+
+/* Clase que añadiremos con JS para mostrarlo */
+.carrito-sidebar.active {
+    transform: translateX(0);
+}
+
+.carrito-body {
+    flex: 1;
+    overflow-y: auto; 
+}
+
+.redes{
+    margin-top:10px;
+    display:flex;
+    gap:10px;
+}
+.redes i{
+    font-size:20px;
+    cursor:pointer;
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 12px;
+    
+}
+
 .opcion-menu-select {
     font-weight: 700;
     font-size: 18px;
@@ -144,6 +184,7 @@ header h1 {
     color: #555555;      
     transition: color 0.3s ease; 
 }
+
 
 /* --- BOTÓN LOGIN NAV --- */
 .btn-login-nav {
@@ -197,6 +238,70 @@ header h1 {
 
 .modal-title {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Estilos del modal de Mis Pedidos */
+.b-modal-custom {
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+}
+
+/* Encabezado usando el morado principal de Kronos */
+.header-pedidos {
+    background-color: #6f42c1; 
+}
+
+/* Tarjetas de compras anteriores */
+.card-pedido {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card-pedido:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08) !important;
+}
+
+/* Miniaturas de los productos de ferretería */
+.img-historial-thumb {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 4px;
+    background-color: #fefefe;
+}
+
+/* Cantidad interna de cada miniatura */
+.badge-cantidad {
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    background-color: #6c757d;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+/* Color naranja para el botón */
+.btn-orange {
+    background-color: #fd7e14;
+    border-color: #fd7e14;
+}
+.btn-orange:hover {
+    background-color: #e46a07;
+    border-color: #e46a07;
+}
+
+/* Estilo y sombra para la burbuja del contador flotante */
+.btn-add-carrito .contador-badge {
+    font-size: 11px;
+    padding: 4px 7px;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 /* --- RESPONSIVE: SEPARACIÓN AUTOMÁTICA EN ESCRITORIO --- */
@@ -286,7 +391,7 @@ header a{
 
 #carouselExampleInterval {
     width: 100%;
-    overflow: hidden; /* Evita que las imágenes se salgan de los límites del banner */
+    overflow: hidden; 
 }
 
 .banner, .banner2 {
@@ -351,26 +456,33 @@ header a{
     padding: 20px 40px;
     gap: 30px; 
 }
-.barralateral{
-    width: 20%;
+.barra-lateral{
+    width: 240px;             
+    flex-shrink: 0;           
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 20px;
 }
 .menu{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
 }
 .opcion{
+    display: block;           
     background-color: #b3a3fc;
     color: white;
     border: 4px solid black;
     border-radius: 5px;
     padding: 12px 20px;
-    text-align: center;
-    width: 180px;
+    text-align: left;         
+    width: 100%;              
+    box-sizing: border-box;   
     cursor: pointer;
+    text-decoration: none;   
+    font-weight: bold;
 }
 
 .bi-stars{
@@ -383,7 +495,7 @@ header a{
     background-color: rgb(255, 176, 31);
     color: white;
     margin-top: 35px;
-    border: 4px solid black;
+    border: 3px solid black;
     border-radius: 8px;
     padding: 30px 20px;
     text-align: center;
@@ -408,6 +520,7 @@ header a{
     flex-direction: column;
     flex: 1;
     padding: 20px;
+    min-width: 0;
 }
 
 /* --- BARRA DE PESTAÑAS CONTENEDORA --- */

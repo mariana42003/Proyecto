@@ -56,7 +56,7 @@
             </form>
           </li>
           <li class="nav-item">
-            <a class="nav-link opcion-carrito-vert d-flex flex-column align-items-center" href="#">
+            <a class="nav-link opcion-carrito-vert d-flex flex-column align-items-center" href="#" id="btnCarrito">
               <i class="bi bi-cart"></i>
             </a>
           </li>
@@ -211,8 +211,8 @@
     <aside class="barra-lateral">
         <div class="menu">
             <a href="/index.html" class="opcion"><i class="bi bi-tag-fill"></i> Categorías</a>
-            <a href="/Secciones/Pedidos.html" class="opcion"><i class="bi bi-box-seam-fill"></i> Mis pedidos</a>
-            <a href="/Secciones/Historial.html" class="opcion"><i class="fa-solid fa-clock-rotate-left"></i> Historial</a>
+            <a href="#" class="opcion" data-bs-toggle="modal" data-bs-target="#modalMisPedidos">
+    <i class="bi bi-box-seam-fill"></i> Mis pedidos</a>
             <a href="../Cliente/todo.html" class="opcion"><i class="bi bi-shield-fill"></i> Garantia</a>
         </div>
         <div class="ofertas">
@@ -221,10 +221,21 @@
         </div>
 
         <br><br>
-        <a style="font-size: 20px;"><strong>Información</strong></a><br>
-        <a>Politica de Privacidad</a><br>
-        <a>Terminos y Condiciones</a><br>
-        <a>Contactanos</a>
+        <div class="seccion-info">
+    <span class="titulo-info"><strong style="font-size: 20px;">Información</strong></span><br>
+    <a href="#" style="text-decoration: none; color: black;">Politica de Privacidad</a><br>
+    <a href="#" style="text-decoration: none; color: black;">Terminos y Condiciones</a>
+    <a href="#" style="text-decoration: none; color: black;">Contactanos</a>
+        </div>
+
+    <div class="seccion-redes">
+    <p class="titulo-redes" style="font-size: 20px;"><strong>¡Síguenos!</strong></p>
+    <div class="redes">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+    </div>
+</div>
     </aside>
 
     <div class="zona-derecha">
@@ -300,8 +311,31 @@
         <div class="col"><div class="card h-100"><img src="/img/Producto1.webp" class="card-img-top p-3"><div class="card-body"><h5 class="card-title">Producto 10</h5><p class="descrip">Lorem ipsum dolor...<br> $70.000</p><button class="agregar-b">Agregar al Carrito</button></div></div></div>
       </div>
     </div>
-
+    </div>
+   </div>
   </div>
+</div>
+  
+<div id="carritoSidebar" class="carrito-sidebar">
+    <div class="carrito-header d-flex justify-content-between align-items-center p-3 border-bottom">
+        <h5 class="m-0 fw-bold">Mi Carrito</h5>
+        <button type="button" class="btn-close" id="btnCerrarCarrito" aria-label="Close"></button>
+    </div>
+    
+    <div class="carrito-body p-3">
+        <p class="text-center text-muted mt-4">Tu carrito está vacío.</p>
+    </div>
+
+    <div class="carrito-footer p-3 border-top bg-white">
+        <div class="d-flex justify-content-between mb-3 fw-bold">
+            <span>Subtotal:</span>
+            <span>$0</span>
+        </div>
+        <button class="btn w-100 text-white fw-bold" style="background-color: #ff7315;">
+            Confirmar compra
+        </button>
+    </div>
+</div>
 
   <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -310,7 +344,87 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
   </button>
 </div> 
+   <div class="modal fade" id="modalMisPedidos" tabindex="-1" aria-labelledby="modalMisPedidosLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content b-modal-custom">
+      
+      <div class="modal-header header-pedidos text-white">
+        <h5 class="modal-title" id="modalMisPedidosLabel">
+          <i class="bi bi-box-seam-fill me-2"></i> Mis Pedidos Realizados
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
 
+      <div class="modal-body bg-light">
+        
+        <div class="card-pedido mb-3 p-3 bg-white border rounded shadow-sm">
+          <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2">
+            <span class="fw-bold text-muted"><i class="bi bi-calendar-check me-1"></i> Entregado el 25 de junio, 2026</span>
+            <span class="badge bg-success">Completado</span>
+          </div>
+          
+          <div class="d-flex flex-wrap justify-content-between align-items-center">
+            <div class="d-flex gap-2 mb-2 mb-md-0 container-miniaturas">
+              <div class="position-relative">
+                <img src="/img/Pulidora.jpeg" class="img-historial-thumb" alt="Pulidora">
+                <span class="badge-cantidad">x1</span>
+              </div>
+              <div class="position-relative">
+                <img src="/img/Pulidora2.jpeg" class="img-historial-thumb" alt="Taladro">
+                <span class="badge-cantidad">x2</span>
+              </div>
+            </div>
+
+            <div class="text-md-end mb-2 mb-md-0">
+              <small class="text-decoration-line-through text-muted">$627.000</small>
+              <div class="fw-bold text-dark fs-5">$539.500</div>
+              <small class="text-secondary">3 artículos</small>
+            </div>
+          </div>
+
+      <div class="d-flex justify-content-end mt-3 pt-2 border-top">
+             <a href="/Secciones/Pedidos.html" class="btn btn-orange text-white btn-add-carrito">
+            <i class="bi bi-cart-plus me-2 fs-5"></i> Ver Detalles
+            </a>
+      </div>
+        </div>
+
+        <div class="card-pedido mb-3 p-3 bg-white border rounded shadow-sm">
+          <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2">
+            <span class="fw-bold text-muted"><i class="bi bi-calendar-check me-1"></i> Entregado el 12 de mayo, 2026</span>
+            <span class="badge bg-success">Completado</span>
+          </div>
+          
+          <div class="d-flex flex-wrap justify-content-between align-items-center">
+            <div class="d-flex gap-2 mb-2 mb-md-0 container-miniaturas">
+              <div class="position-relative">
+                <img src="/img/Kit herramientas.jpeg" class="img-historial-thumb" alt="Kit de Herramientas">
+                <span class="badge-cantidad">x1</span>
+              </div>
+            </div>
+
+            <div class="text-md-end mb-2 mb-md-0">
+              <div class="fw-bold text-dark fs-5">$248.100</div>
+              <small class="text-secondary">1 artículo</small>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-end mt-3 pt-2 border-top">
+             <a href="/Secciones/Pedidos.html" class="btn btn-orange text-white btn-add-carrito">
+            <i class="bi bi-cart-plus me-2 fs-5"></i> Ver Detalles
+             </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
