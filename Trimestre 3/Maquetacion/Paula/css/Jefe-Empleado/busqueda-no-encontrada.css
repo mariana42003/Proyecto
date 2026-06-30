@@ -157,247 +157,216 @@ header img {
     text-align: center;
     margin-bottom: 30px;
 }
-/* Estilo para el banner de título */
-.banner-observacion {
-    background-color: #dee2e6 !important;
-    border: 2px solid #343a40 !important;
-    border-radius: 8px;
-}
 
-/* Inputs y Textarea */
-.input-observacion, .textarea-observacion {
-    background-color: #f1f3f5 !important;
-    border: 1px solid #ced4da !important;
+
+
+
+/* Encabezado Verde */
+.custom-card-header {
+    background-color: gainsboro !important; 
+    border-bottom: 1px solid #b8b8b8 !important;
+    color: black;
+}
+.card-resultado i{
+    color: #dc3545 !important;
+    border: 2px solid #dc3545;
+    border-radius: 6px;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+/* --- FORMULARIO DE CONSULTA --- */
+.fondo{
+    background-color: white ;
+  }
+.form-consulta-card {
     border-radius: 8px !important;
-    padding: 12px !important;
+    overflow: hidden;
 }
 
-/* Botón Siguiente (3D) */
-.btn-siguiente {
-    background-color: #3b82f6 !important;
-    color: white !important;
-    font-weight: bold !important;
-    border: 2px solid #1d4ed8 !important;
-    border-radius: 10px !important;
-    box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.2);
-}
 
-/* --- ESTILOS DE LA MODAL --- */
-.custom-modal {
-    border-radius: 15px !important;
-    border: none !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+/* El banner azul celeste clarito de la cabecera */
+.bg-kronos-banner {
+    background-color: #cceeff !important; /* Tono celeste del diseño */
+    border-bottom: 1px solid #b3e0ff !important;
 }
-
-.modal-logo {
-    max-width: 180px;
-}
-
-/* El recuadro azul del check en la modal */
-.check-container-modal {
-    background-color: #4467bb;
-    color: white;
-    width: 60px;
-    height: 60px;
+.titulo-consulta {
+    color: #1a3a5f !important; /* Azul oscuro nítido */
+    font-size: 26px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
-    font-size: 2.5rem;
+    gap: 15px;
 }
-
-/* Botón Cerrar de la Modal */
-.btn-cerrar-modal {
-    background-color: #2c428a !important; /* Azul más oscuro como la imagen */
-    color: white !important;
-    font-weight: bold !important;
-    border-radius: 8px !important;
-    padding: 8px 50px !important;
-    border: none !important;
-    font-size: 1.2rem;
+.titulo-consulta i {
+    font-size: 22px;
 }
-
-.btn-cerrar-modal:hover {
-    background-color: #1e2d5f !important;
-}
-
-.letra-ob{
+/* Labels e Inputs */
+.label-kronos {
     color: #69477c;
+    font-size: 15px;
+    margin-bottom: 6px;
+    height: 40px;
+}
+
+.input-kronos {
+    padding: 10px 12px !important;
+    border: 1px solid #cccccc !important;
+    border-radius: 5px !important;
+    font-size: 14px;
+    background-color: gainsboro !important;
+    color: #333333 !important;
+
+}
+
+.input-kronos:focus {
+    border-color: #8b7ad6 !important;
+    box-shadow: 0 0 0 0.25rem rgba(139, 122, 214, 0.15) !important;
+}
+/* Botón de Limpiar (Gris Corporativo) */
+.btn-kronos-clear, .lic {
+    background-color: #c19cc6 !important;
+    color: rgb(192, 125, 136) !important;
+    border: none !important;
+    border-radius: 5px !important;
+    padding: 8px 24px !important;
+    font-weight: 700;
+    text-decoration: none;
+
+}
+
+.btn-kronos-clear:hover {
+    background-color: #cb92d8 !important;
+}
+.icono{
+    border-radius: 6px;
+    border: 1px solid rgb(185, 128, 138);
 }
 #menu, .menus {
     display: none;
 }
 
-
 @media (max-width: 992px) {
 
+    /* Hamburguesa */
     .menus {
         display: block;
         position: fixed;
         top: 15px;
         left: 15px;
         z-index: 3000;
-        font-size: 35px;
-        color: white ;
-        cursor: pointer;
+        font-size: 34px;
+        color: white;
     }
-    .menus i {
-    color: white !important;
-}
 
+    .menus i {
+        color: white !important;
+    }
+
+    /* Aside oculto */
     .contenedor aside {
         position: fixed;
-        top: 0px;
+        top: 0;
         left: -100%;
-        width: 220px;
+        width: 240px;
         height: 100vh;
         background-color: #c5d7f3;
         z-index: 2000;
         transition: left .4s ease;
+        box-shadow: 4px 0 15px rgba(0,0,0,0.2);
     }
 
     #menu:checked ~ .contenedor aside {
         left: 0;
     }
 
-    /* HEADER MEJORADO */
+    /* Opciones más separadas (IMPORTANTE LO QUE QUERÍAS) */
+    .opciones {
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Header ajustado */
     .contenedor header {
         height: auto;
         padding: 15px 20px;
         display: grid;
         grid-template-columns: 1fr auto;
         align-items: center;
-        gap: 10px;
     }
 
     .contenedor header img {
         width: 200px;
-        max-width: 70%;
         justify-self: center;
-        grid-column: 1;
-        grid-row: 1 / span 2;
     }
 
-    .nombreUsuario {
-        position: static;
-        grid-column: 2;
-        grid-row: 1;
-        justify-self: end;
-    }
-
+    .nombreUsuario,
     .cerrarSesion {
         position: static;
-        grid-column: 2;
-        grid-row: 2;
         justify-self: end;
     }
 
-    /* MAIN */
+    /* Main */
     .contenedor main {
         margin-left: 0;
         padding: 15px;
     }
 
-    /* FORMULARIO */
-    .row.g-4 {
-        gap: 20px;
-    }
-
-    .btn-siguiente {
-        width: 100%;
-        text-align: center;
-    }
-
-    /* MODAL */
-    .custom-modal {
-        margin: 15px;
-    }
-
-    .modal-logo {
-        max-width: 140px;
-    }
-
-    .check-container-modal {
-        width: 55px;
-        height: 55px;
-        font-size: 2rem;
+    /* Resultado card */
+    .container-resultado {
+        padding: 0 10px;
     }
 }
 @media (max-width: 600px) {
 
-    body {
-        overflow-x: hidden;
+    /* Logo más pequeño */
+    .contenedor header img {
+        width: 150px;
     }
 
-    /* HEADER MÁS PEQUEÑO */
-    header {
-        height: 100px;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
+    /* Títulos */
+    h1 {
+        font-size: 22px;
     }
 
-    header img {
-        width: 140px;
+    .titulo-consulta {
+        font-size: 18px;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
-    .nombreUsuario,
-    .cerrarSesion {
-        position: absolute;
-        top: 10px;
+    /* Inputs */
+    .input-kronos {
+        font-size: 13px;
     }
 
-    .cerrarSesion {
-        right: 10px;
+    /* Botón */
+    .btn-kronos-clear {
+        width: 100%;
+        text-align: center;
     }
 
-    .nombreUsuario {
-        left: 10px;
+    /* Opciones del menú más cómodas */
+    .opciones a,
+    .titulo-menu {
+        font-size: 14px;
+        padding: 14px;
     }
 
-    /* TITULO */
-    .banner-observacion h2 {
+    .opciones a i,
+    .titulo-menu i {
         font-size: 18px;
     }
 
-    /* FORMULARIO EN COLUMNA */
-    .row.g-4 {
-        flex-direction: column;
-    }
-
-    .col-md-6 {
-        width: 100%;
-    }
-
-    input,
-    textarea {
+    /* Resultado mensaje */
+    .card-resultado h5 {
         font-size: 14px;
-    }
-
-    /* BOTÓN */
-    .btn-siguiente {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    /* MODAL */
-    .custom-modal {
-        padding: 20px;
-    }
-
-    .modal-logo {
-        max-width: 120px;
-    }
-
-    .check-container-modal {
-        width: 50px;
-        height: 50px;
-        font-size: 1.8rem;
-    }
-
-    .btn-cerrar-modal {
-        width: 100%;
-        font-size: 1rem;
-        padding: 10px;
+        text-align: center;
     }
 }

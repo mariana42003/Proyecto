@@ -1,247 +1,382 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/Trimestre 3/Maquetacion/Paula/css/Jefe-Empleado/simulacion-consulta.css ">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
-    <link rel="stylesheet"
-href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
     <title>simulacion Consulta</title>
-  </head>
-  <body class="fondo">
+</head>
+
+<body class="fondo">
     <input type="checkbox" id="menu" />
 
 
     <label for="menu" class="menus">
 
-      <i class="bi bi-list"></i>
+        <i class="bi bi-list"></i>
 
     </label>
 
     <div class="contenedor">
 
-      <header>
-        <h1 class="nombreUsuario"><i class="bi bi-person-circle"></i></h1>
-        <img src="/Trimestre 3/Maquetacion/Paula/img/logo.png" alt="Logo" />
-        <div class="cerrarSesion">
-          <a href="../index.html"><i class="bi bi-box-arrow-right"></i></a>
-        </div>
-      </header>
-
-
-      <aside>
-        <br> <br> 
-        <div class="opciones">
-          <a href="#"><i class="bi bi-eye"></i> Panel de control</a>
-          
-          <div class="item-acordeon">
-
-            <input type="radio" name="menu-acordeon" id="check-inventario" class="radio-check">
-
-            <label for="check-inventario" class="titulo-menu">  <i class="bi bi-box-seam"></i> Gestión de Inventario </label>
-
-
-            <div class="submenu">
-
-              <a href="#"><i class="bi bi-journal-text"></i> Historial</a>
-              <a href="#"><i class="bi bi-pencil"></i> Reportes</a>
-
+        <header>
+            <h1 class="nombreUsuario"><i class="bi bi-person-circle"></i></h1>
+            <img src="/Trimestre 3/Maquetacion/Paula/img/logo.png" alt="Logo" />
+            <div class="cerrarSesion">
+                <a href="../index.html"><i class="bi bi-box-arrow-right"></i></a>
             </div>
-          </div>
+        </header>
 
 
-          <div class="item-acordeon">
+        <aside>
+            <br> <br>
+            <div class="opciones">
+                <a href="#"><i class="bi bi-eye"></i> Panel de control</a>
 
-            <input type="radio" name="menu-acordeon" id="check-movimientos" class="radio-check">
+                <div class="item-acordeon">
 
-            <label for="check-movimientos" class="titulo-menu"> <i class="bi bi-cart"></i> Movimientos de entrada/salida </label>
+                    <input type="radio" name="menu-acordeon" id="check-inventario" class="radio-check">
 
-            <div class="submenu">
-              <a href="#"><i class="bi bi-box-arrow-in-down"></i> Registro de Entradas</a>
-              <a href="#"><i class="bi bi-box-arrow-up"></i> Registro de Salidas</a>
+                    <label for="check-inventario" class="titulo-menu"> <i class="bi bi-box-seam"></i> Gestión de
+                        Inventario </label>
 
-            </div>
-          </div>
-          
-          <div class="item-acordeon">
 
-            <input type="radio" name="menu-acordeon" id="check-proveedores" class="radio-check">
+                    <div class="submenu">
 
-            <label for="check-proveedores" class="titulo-menu">  <i class="bi bi-people"></i> Proveedores  </label>
+                        <a href="#"><i class="bi bi-journal-text"></i> Historial</a>
+                        <a href="#"><i class="bi bi-pencil"></i> Reportes</a>
 
-            <div class="submenu">
-
-              <a href="../pagesJefe/registrarProveedores.html"><i class="bi bi-card-list"></i> Registrar</a>
-
-              <a href="../pagesJefe/consultarProveedores.html"><i class="bi bi-person-lines-fill"></i> Consultar proveedores</a>
-
-            </div>
-          </div>
-
-          <div class="item-acordeon">
-
-            <input type="radio" name="menu-acordeon" id="check-ordenes" class="radio-check">
-
-            <label for="check-ordenes" class="titulo-menu"> <i class="bi bi-file-earmark-arrow-down"></i> Generar orden de compra </label>
-
-            <div class="submenu">
-              <a href="../pagesJefe/historialCompras.html"><i class="bi bi-journal-check"></i> Consultar historial de compras</a>
-
-              <a href="../pagesJefe/materialCantidad.html"><i class="bi bi-boxes"></i> Asociar materiales y cantidades</a>
-
-              <a href="../pagesJefe/verificarEstado.html"><i class="bi bi-arrow-repeat"></i> Verificar estado de la orden</a>
-
-            </div>
-          </div>
-
-          <div class="item-acordeon">
-
-            <input type="radio" name="menu-acordeon" id="check-garantias" class="radio-check">
-
-            <label for="check-garantias" class="titulo-menu"> <i class="bi bi-shield-check"></i> Garantías </label>
-
-            <div class="submenu">
-
-              <a href="#"><i class="bi bi-pencil-square"></i> Solicitudes de Garantía</a>
-
-              <a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/consultar.html"><i class="bi bi-file-earmark-text"></i> Consultar Orden de Compra</a>
-
-              <a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/historial-garantias.html"><i class="bi bi-clock-history"></i> Historial de Garantías</a>
-
-              <a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/estado-gar-pro.html"><i class="bi bi-arrow-left-right"></i> Ver estado de la Garantia</a>
-
-            </div>
-          </div>
-
-        </div>
-      </aside>
-
-      <main class="fondo col-lg-10 p-4">
-        <br> <br> <br> <br>
-
-    <div class="card shadow-sm border-0 mb-4 form-consulta-card">
-        <div class="card-header text-center bg-kronos-banner py-3">
-            <h2 class="mb-0 titulo-consulta">
-                <i class="bi bi-search"></i><i class="bi bi-search"></i> Consultar Orden de Compra <i class="bi bi-search"></i><i class="bi bi-search"></i>
-            </h2>
-        </div>
-
-        <div class="card-body p-4">
-            <form action="" method="GET">
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <label class="form-label fw-bold label-kronos">Número de orden <i class="icono bi bi-123"></i> </label>
-                        <input type="text" class="form-control input-kronos" placeholder="Ingrese el número de orden">
-                    </div>
-
-                    <div class="col-md-6">
-                        <label class="form-label fw-bold label-kronos">Cliente <i class="bi bi-person"></i></label>
-                        <input type="text" class="form-control input-kronos" placeholder="Ingrese el nombre del cliente">
-                    </div>
-
-                    <div class="col-md-6">
-                        <label class="form-label fw-bold label-kronos">Fecha <i class="bi bi-calendar3"></i></label>
-                        <input type="date" class="form-control input-kronos">
                     </div>
                 </div>
 
-                <div class="mt-4 d-flex gap-3">
-                    <button type="reset" class="btn btn-kronos-clear px-4 fw-bold"><a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/consultar.html" class="lic">Limpiar</a></button>
-                </div>
-            </form>
-        </div>
-    </div>
 
-  
-      </main>
-     <div class="mt-5 container-resultado">
-    <div class="row">
-        <div class="col-lg-10 mx-auto">
-            <h3 class="fs-4 border-bottom pb-2 mb-4 text-dark title-resultado">Resultado</h3>
-        </div>
-    </div>
+                <div class="item-acordeon">
 
-    <div class="row">
-        <div class="col-lg-10 mx-auto"> 
-            <div class="card shadow-sm card-resultado">
-                <div class="card-header bg-success text-white d-flex align-items-center py-3 custom-card-header">
-                    <h5 class="mb-0 fw-bold d-flex align-items-center">
-                        <i class="bi bi-check-square-fill me-2"></i> Resultado de la Orden de compra
-                    </h5>
+                    <input type="radio" name="menu-acordeon" id="check-movimientos" class="radio-check">
+
+                    <label for="check-movimientos" class="titulo-menu"> <i class="bi bi-cart"></i> Movimientos de
+                        entrada/salida </label>
+
+                    <div class="submenu">
+                        <a href="#"><i class="bi bi-box-arrow-in-down"></i> Registro de Entradas</a>
+                        <a href="#"><i class="bi bi-box-arrow-up"></i> Registro de Salidas</a>
+
+                    </div>
                 </div>
-                
+
+                <div class="item-acordeon">
+
+                    <input type="radio" name="menu-acordeon" id="check-proveedores" class="radio-check">
+
+                    <label for="check-proveedores" class="titulo-menu"> <i class="bi bi-people"></i> Proveedores
+                    </label>
+
+                    <div class="submenu">
+
+                        <a href="../pagesJefe/registrarProveedores.html"><i class="bi bi-card-list"></i> Registrar</a>
+
+                        <a href="../pagesJefe/consultarProveedores.html"><i class="bi bi-person-lines-fill"></i>
+                            Consultar proveedores</a>
+
+                    </div>
+                </div>
+
+                <div class="item-acordeon">
+
+                    <input type="radio" name="menu-acordeon" id="check-ordenes" class="radio-check">
+
+                    <label for="check-ordenes" class="titulo-menu"> <i class="bi bi-file-earmark-arrow-down"></i>
+                        Generar orden de compra </label>
+
+                    <div class="submenu">
+                        <a href="../pagesJefe/historialCompras.html"><i class="bi bi-journal-check"></i> Consultar
+                            historial de compras</a>
+
+                        <a href="../pagesJefe/materialCantidad.html"><i class="bi bi-boxes"></i> Asociar materiales y
+                            cantidades</a>
+
+                        <a href="../pagesJefe/verificarEstado.html"><i class="bi bi-arrow-repeat"></i> Verificar estado
+                            de la orden</a>
+
+                    </div>
+                </div>
+
+                <div class="item-acordeon">
+
+                    <input type="radio" name="menu-acordeon" id="check-garantias" class="radio-check">
+
+                    <label for="check-garantias" class="titulo-menu"> <i class="bi bi-shield-check"></i> Garantías
+                    </label>
+
+                    <div class="submenu">
+
+                        <a href="#"><i class="bi bi-pencil-square"></i> Solicitudes de Garantía</a>
+
+                        <a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/consultar.html"><i
+                                class="bi bi-file-earmark-text"></i> Consultar Orden de Compra</a>
+
+                        <a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/historial-garantias.html"><i
+                                class="bi bi-clock-history"></i> Historial de Garantías</a>
+
+                        <a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/estado-gar-pro.html"><i
+                                class="bi bi-arrow-left-right"></i> Ver estado de la Garantia</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
+        <main class="fondo col-lg-10 p-4">
+            <br> <br>
+
+            <div class="card shadow-sm border-0 mb-4 form-consulta-card">
+                <div class="card-header text-center bg-kronos-banner py-3">
+                    <h2 class="mb-0 titulo-consulta">
+                        <i class="bi bi-search"></i><i class="bi bi-search"></i> Consultar Orden de Compra <i
+                            class="bi bi-search"></i><i class="bi bi-search"></i>
+                    </h2>
+                </div>
+
                 <div class="card-body p-4">
-                    <div class="row text-center fw-bold mb-4 text-muted metadata-row">
-                        <div class="col-4">Orden : <span class="text-dark">1033</span></div>
-                        <div class="col-4">Cliente : <span class="text-dark">Luis Quintana</span></div>
-                        <div class="col-4">Fecha : <span class="text-dark">10/02/2026</span></div>
+                    <form action="" method="GET">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold label-kronos">Número de orden <i
+                                        class="icono bi bi-123"></i> </label>
+                                <input type="text" class="form-control input-kronos"
+                                    placeholder="Ingrese el número de orden">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold label-kronos">Cliente <i
+                                        class="bi bi-person"></i></label>
+                                <input type="text" class="form-control input-kronos"
+                                    placeholder="Ingrese el nombre del cliente">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold label-kronos">Fecha <i
+                                        class="bi bi-calendar3"></i></label>
+                                <input type="date" class="form-control input-kronos">
+                            </div>
+                        </div>
+
+                        <div class="mt-4 d-flex gap-3">
+                            <button type="reset" class="btn btn-kronos-clear px-4 fw-bold"><a
+                                    href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/consultar.html"
+                                    class="lic">Limpiar</a></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </main>
+        <div class="mt-5 container-resultado">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h3 class="fs-4 border-bottom pb-2 mb-4 text-dark title-resultado">Resultado</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card shadow-sm card-resultado">
+                        <div
+                            class="card-header bg-success text-white d-flex align-items-center py-3 custom-card-header">
+                            <h5 class="mb-0 fw-bold d-flex align-items-center">
+                                <i class="bi bi-check-square-fill me-2"></i> Resultado de la Orden de compra
+                            </h5>
+                        </div>
+
+                        <div class="card-body p-4">
+                            <div class="row text-center fw-bold mb-4 text-muted metadata-row">
+                                <div class="col-4">Orden : <span class="text-dark">1033</span></div>
+                                <div class="col-4">Cliente : <span class="text-dark">Luis Quintana</span></div>
+                                <div class="col-4">Fecha : <span class="text-dark">10/02/2026</span></div>
+                            </div>
+
+                            <div class="table-responsive px-2">
+                                <table id="tablaResultados" class="table align-middle text-center custom-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 35%;">Producto</th>
+                                            <th style="width: 30%;">Ver Orden de compra</th>
+                                            <th style="width: 35%;">Accion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="fw-bold text-product">Tornillos 1/2</td>
+                                            <td>
+                                                <div class="d-flex justify-content-center align-items-center gap-2">
+                                                    <i class="bi bi-search fs-5 text-dark fw-bold"></i>
+                                                    <button class="btn btn-ver" data-bs-toggle="modal"
+                                                        data-bs-target="#modalComprobante">Ver</button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a
+                                                    href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/validar-vigencia.html"><button
+                                                        class="btn btn-validar">Validar Vigencia Garantía</button></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold text-product">Martillo</td>
+                                            <td>
+                                                <div class="d-flex justify-content-center align-items-center gap-2">
+                                                    <i class="bi bi-search fs-5 text-dark fw-bold"></i>
+                                                    <button class="btn btn-ver" data-bs-toggle="modal"
+                                                        data-bs-target="#modalComprobante">Ver</button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a
+                                                    href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/validar-vig-pro.html"><button
+                                                        class="btn btn-validar">Validar Vigencia Garantía</button></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold text-product">Taladro Electrico</td>
+                                            <td>
+                                                <div class="d-flex justify-content-center align-items-center gap-2">
+                                                    <i class="bi bi-search fs-5 text-dark fw-bold"></i>
+                                                    <button class="btn btn-ver" data-bs-toggle="modal"
+                                                        data-bs-target="#modalComprobante">Ver</button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a
+                                                    href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/validar-vig-recha.html"><button
+                                                        class="btn btn-validar">Validar Vigencia Garantía</button></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="modal fade" id="modalComprobante" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content custom-modal-content">
+
+                <div class="modal-body p-4 p-md-5">
+                    <div class="d-flex justify-content-between align-items-start mb-4">
+                        <h1 class="comprobante-title">Comprobante de Compra</h1>
+                        <div class="comprobante-logo text-end">
+                            <img src="/Trimestre 3/Maquetacion/Paula/img/logo.png" alt="Logo Kronos" class="logo-modal">
+                        </div>
                     </div>
 
-                    <div class="table-responsive px-2">
-                        <table id="tablaResultados" class="table align-middle text-center custom-table">
+                    <div class="row align-items-center mb-4">
+                        <div class="col-auto">
+                            <div class="order-box">
+                                Orden No : OR - 1033
+                            </div>
+                        </div>
+                        <div class="col text-end">
+                            <p class="fecha-text m-0">Fecha: 10/02/2026</p>
+                        </div>
+                    </div>
+
+                    <div class="cliente-info mb-4">
+                        <p class="m-0">Cliente: <span class="fw-normal">Luis Quintana</span></p>
+                        <hr class="blue-line">
+                    </div>
+
+                    <div class="table-responsive mb-4">
+                        <table class="table comprobante-table">
                             <thead>
                                 <tr>
-                                    <th style="width: 35%;">Producto</th>
-                                    <th style="width: 30%;">Ver Orden de compra</th>
-                                    <th style="width: 35%;">Accion</th>
+                                    <th>CODIGO</th>
+                                    <th>Material</th>
+                                    <th>Cantidad</th>
+                                    <th>Unidad</th>
+                                    <th>Precio Unitario</th>
+                                    <th>Garantía por</th>
+                                    <th>Total</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="fw-bold text-product">Tornillos 1/2</td>
-                                    <td>
-                                        <div class="d-flex justify-content-center align-items-center gap-2">
-                                            <i class="bi bi-search fs-5 text-dark fw-bold"></i>
-                                            <button class="btn btn-ver">Ver</button>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/validar-vigencia.html"><button class="btn btn-validar">Validar Vigencia Garantía</button></a>
-                                    </td>
+                                    <td>MAT001</td>
+                                    <td>Taladro Eléctrico</td>
+                                    <td>1</td>
+                                    <td>Unidad</td>
+                                    <td>150.000</td>
+                                    <td>Ferretería</td>
+                                    <td>$ 150.000</td>
                                 </tr>
                                 <tr>
-                                    <td class="fw-bold text-product">Martillo</td>
-                                    <td>
-                                        <div class="d-flex justify-content-center align-items-center gap-2">
-                                            <i class="bi bi-search fs-5 text-dark fw-bold"></i>
-                                            <button class="btn btn-ver">Ver</button>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/validar-vig-pro.html"><button class="btn btn-validar">Validar Vigencia Garantía</button></a>
-                                    </td>
+                                    <td>MAT002</td>
+                                    <td>Tornillos 1/2</td>
+                                    <td>50</td>
+                                    <td>Cantidad</td>
+                                    <td>200</td>
+                                    <td>Ferretería</td>
+                                    <td>$ 10.000</td>
                                 </tr>
                                 <tr>
-                                    <td class="fw-bold text-product">Taladro Electrico</td>
-                                    <td>
-                                        <div class="d-flex justify-content-center align-items-center gap-2">
-                                            <i class="bi bi-search fs-5 text-dark fw-bold"></i>
-                                            <button class="btn btn-ver">Ver</button>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/validar-vig-recha.html"><button class="btn btn-validar">Validar Vigencia Garantía</button></a>
-                                    </td>
+                                    <td>MAT003</td>
+                                    <td>Martillo</td>
+                                    <td>1</td>
+                                    <td>Unidad</td>
+                                    <td>35.000</td>
+                                    <td>Proveedor</td>
+                                    <td>$ 35.000</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+
+                    <div class="total-row py-2 px-3 mb-4 d-flex justify-content-end">
+                        <p class="m-0 fw-bold">Total: <span class="ms-3">$ 195.000</span></p>
+                    </div>
+
+                    <div class="success-alert-box py-2 px-3 mb-4 d-flex align-items-center">
+                        <span>Orden de compra generada con Éxito</span>
+                        <i class="bi bi-info-circle-fill ms-2"></i>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-5">
+                        <small class="text-muted italic-note">Este documento no es una factura, es solo para control
+                            interno</small>
+                        <a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/simulacion-consulta.html"><button type="button" class="btn btn-regresar px-4" data-bs-dismiss="modal">Regresar</button></a>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
-      
-    </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-<script src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>
 
-<script src="https://cdn.datatables.net/2.3.2/js/dataTables.bootstrap5.js"></script>
+    <script src="https://cdn.datatables.net/2.3.2/js/dataTables.bootstrap5.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+</body>
+
 </html>

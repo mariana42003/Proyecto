@@ -1,0 +1,488 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(235,235,231);
+}
+
+/* ---------------- Header y Navegación ---------------- */
+
+header {
+    height: 100px;
+    background-color: #7d7dd8;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header img {
+    width: 280px;
+}
+
+.nombreUsuario {
+    position: absolute;
+    left: 20px;
+    top: 29px;
+}
+
+.nombreUsuario i {
+    color: rgb(210, 202, 255);
+    font-size: 36px;
+    align-items: center;
+}
+
+.cerrarSesion {
+    position: absolute;
+    right: 20px;
+    top: 32px;
+}
+
+.cerrarSesion a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.cerrarSesion i {
+    color: rgb(212, 215, 250);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ---------------- Menú Lateral (Aside) ---------------- */
+
+.contenedor aside {
+    width: 220px;
+    min-height: 1000px;
+    background-color: #c5d7f3;
+    border-radius: 6px;
+    float: left;
+}
+
+.opciones {
+    padding-top: 30px;
+}
+
+.opciones a {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.opciones a i {
+    color: #6b2d91;
+    font-size: 22px;
+    margin-right: 11px;
+}
+
+.opciones a:hover {
+    border: 2px solid rgb(90, 90, 177);
+    border-radius: 20px;
+}
+
+/* ---------------- Contenido Principal (Main) ---------------- */
+
+.contenedor main {
+    margin-left: 260px;
+    padding: 30px;
+}
+
+.contenedor h1,
+.contenedor h2 {
+    color: #1f3f8c;
+}
+
+.contenedor h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+/* ================================================= */
+/* ================= RESPONDER ESTADO ============== */
+/* ================================================= */
+
+.detalle-or h2{
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    background: #1e5be0;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-size: 22px;
+
+}
+
+.datos-client{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.datos-client h2{
+    display: inline-block;
+    width: fit-content;
+    background: #d3dff2;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: #222;
+    font-size: 20px;
+}
+.observa-producto{
+    margin-top: 40px;
+    width: 70%;
+}
+.observa-producto h2{
+    color: #1f3d8a;
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+.producto{
+    border: 2px solid #8d5cff;
+    border-radius: 5px;
+    padding: 18px;
+    background: white;
+    line-height: 1.5;
+    font-size: 22px;
+}
+.observa-producto a{
+    display: block;
+    width: 250px;
+    text-align: center;
+    text-decoration: none;
+    background: #6558e8;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: auto;
+    font-weight: bold;
+}
+.est{
+    position: absolute;
+    right: 40px;
+    top: 280px;
+    width: 300px;
+    height: 385px;
+    border: 2px solid #4d87ff;
+    border-radius: 5px;
+    background: white;
+}
+.est::before{
+    content: "GARANTIA";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background: #d3dff2;
+    font-weight: bold;
+    font-size: 25px;
+}
+.estado-garantia{
+    padding: 15px;
+}
+.estado-garantia h3{
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+.estado-garantia label{
+    display: block;
+    margin: 12px 0;
+}
+
+.estado-garantia label{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+}
+.aprobar,
+.rechazar{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+.aprobar{
+    background: #208c85;
+    cursor: pointer;
+}
+
+.rechazar{
+    background: #d33d7d;
+}
+.pendiente{
+    width: 18px;
+    appearance: none;
+    height: 18px;
+    border-radius: 50%;
+    background: #ffd000;
+    cursor: pointer;
+}
+
+.summary , i{
+    color: rgb(163, 98, 112);
+}
+/*---------------------------------------*/
+/*---------------- MODAL ----------------*/
+/*---------------------------------------*/
+/* ==========================================
+   MODAL: SOLICITUD DE GARANTÍA APROBADA
+   ========================================== */
+
+/* Contenedor blanco con bordes redondeados idénticos */
+.modal-content-aprobado {
+    border-radius: 16px !important;
+    border: none !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+    max-width: 480px;
+    margin: auto;
+}
+
+/* Banner superior color lila/morado pastel */
+.banner-estado-aprobado {
+    background-color: #e2d9ea; /* Tono morado claro de la imagen */
+    border: 1px solid #d3c5df;
+}
+
+.texto-banner-aprobado {
+    color: #5b4675; /* Texto morado oscuro */
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.text-purple-dark {
+    color: #5b4675;
+}
+
+/* Caja del Check Azul */
+.box-check-azul {
+    background-color: #1e4ea1; /* Azul marino de la imagen */
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(30, 78, 161, 0.2);
+}
+
+.box-check-azul i {
+    font-weight: bold;
+    line-height: 1;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* Botón Volver al inicio */
+.btn-volver-inicio-custom {
+    background-color: #ffffff;
+    color: #1e4ea1;
+    border: 1px solid #1e4ea1;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-volver-inicio-custom:hover {
+    background-color: #1e4ea1;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(30, 78, 161, 0.15);
+}
+.garpro{
+    text-decoration: none;
+}
+
+/* ================================================= */
+/* ================= RESPONSIVE ==================== */
+/* ================================================= */
+
+#menu {
+    display: none;
+}
+
+.menus {
+    display: none;
+}
+
+/* ================================================= */
+/* =============== RESPONSIVE ====================== */
+/* ================================================= */
+
+#menu {
+    display: none;
+}
+
+/* =========================
+   📱 TABLET (992px)
+   ========================= */
+@media (max-width: 992px) {
+.menus {
+        display: block;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 3000;
+        font-size: 35px;
+        color: white ;
+        cursor: pointer;
+    }
+    .menus i {
+    color: white !important;
+}
+
+    .contenedor aside {
+        position: fixed;
+        top: 0px;
+        left: -100%;
+        width: 220px;
+        height: 100vh;
+        background-color: #c5d7f3;
+        z-index: 2000;
+        transition: left .4s ease;
+    }
+
+    #menu:checked ~ .contenedor aside {
+        left: 0;
+    }
+
+    /* HEADER MEJORADO */
+    .contenedor header {
+        height: auto;
+        padding: 15px 20px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contenedor header img {
+        width: 200px;
+        max-width: 70%;
+        justify-self: center;
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+
+    .nombreUsuario {
+        position: static;
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+    }
+
+    .cerrarSesion {
+        position: static;
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: end;
+    }
+
+    /* MAIN */
+    .contenedor main {
+        margin-left: 0;
+        padding: 15px;
+    }
+    .opciones {
+        padding-top: 70px;
+
+    }
+
+    /* CONTENIDO */
+    .datos-client {
+        flex-direction: column;
+    }
+
+    .observa-producto {
+        width: 100%;
+    }
+
+    .producto {
+        font-size: 18px;
+    }
+
+    /* FIX IMPORTANTE (GARANTÍA) */
+    .est {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        height: auto;
+        margin-top: 30px;
+    }
+}
+
+/* =========================
+   📱 MÓVIL (600px)
+   ========================= */
+@media (max-width: 600px) {
+
+    /* HEADER */
+    .contenedor header img {
+        width: 160px;
+    }
+
+    .nombreUsuario i,
+    .cerrarSesion i {
+        font-size: 22px;
+    }
+
+    /* TITULOS */
+    h1 {
+        font-size: 20px;
+    }
+
+    .detalle-or h2 {
+        font-size: 18px;
+    }
+
+    .datos-client h2 {
+        font-size: 16px;
+    }
+
+    .observa-producto h2 {
+        font-size: 24px;
+    }
+
+    /* TEXTO */
+    .producto {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    /* BOTÓN */
+    .observa-producto a {
+        width: 100%;
+    }
+
+    /* MENÚ LINKS */
+    .opciones a {
+        font-size: 14px;
+        padding: 14px;
+    }
+
+    .opciones a i {
+        font-size: 18px;
+    }
+
+    /* BOTONES ESTADO */
+    .aprobar,
+    .rechazar {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,345 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(235,235,231);
+}
+
+
+
+/* ---------------- Esta es la pagina principal de proveedores ---------------- */
+
+header{
+    height: 100px;
+    background-color: #7d7dd8;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header img{
+    width: 280px;
+}
+
+.nombreUsuario{
+    position: absolute;
+    left: 20px;
+    top: 29px;
+}
+
+.nombreUsuario  i{
+    color: rgb(210, 202, 255);
+    font-size: 36px;
+    align-items: center;
+}
+.cerrarSesion {
+    position: absolute;
+    right: 20px;
+    top: 32px;
+}
+
+.cerrarSesion a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.cerrarSesion i {
+    color: rgb(212, 215, 250);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.contenedor aside{
+    width: 220px;
+    min-height: 1000px;
+    background-color: #c5d7f3;
+    border-radius: 6px;
+    float: left;
+}
+
+.opciones{
+    padding-top: 30px;
+}
+.opciones a{
+    display: block;
+    width: 100%;
+    padding: 18px;
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.opciones a i{
+    color: #6b2d91;
+    font-size: 22px;
+    margin-right: 11px;
+}
+
+.opciones a:hover{
+    border: 2px solid rgb(90, 90, 177);
+    border-radius: 20px;
+}
+
+.contenedor main{
+    margin-left: 260px;
+    padding: 30px;
+}
+
+.contenedor h1,
+.contenedor h2{
+    color: #1f3f8c;
+}
+
+.contenedor h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.contenedor table{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+.contenedor th{
+    background-color: #7d7dd8;
+    color: white;
+}
+
+.contenedor th,
+.contenedor td{
+    padding: 12px;
+    border: 2px solid #7d7dd8;
+    border-radius: 10px;
+}
+
+.contenedor td{
+    background-color: white;
+}
+.estadoOrden td{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.contenedor td:last-child {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* ========================================== */
+/* =========== Garantias Proveedor ========== */
+/* ========================================== */
+
+.solicitudga{
+    text-decoration: none;
+    color: white;
+    background: rgb(189, 137, 148);
+    padding: 8px;
+    border: 1px solid rgb(99, 68, 73);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.summary h2, i{
+    color: rgb(163, 98, 112);
+}
+
+.cant-reports{
+    border-radius: 8px;
+    border: 1.5px solid #532d6d;
+    background: #ffffff;
+    width: 250px;
+    height: 100px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.cant-reports p{
+    margin: 0;
+    color: #334e68;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+.cant-reports .numero {
+    font-size: 28px; /* Más grande como en la imagen */
+    font-weight: bold;
+    color: #222222; /* Casi negro */
+    display: block; /* Asegura que salte de línea correctamente */
+    margin-top: 4px;
+}
+
+
+
+
+
+/* ================================================= */
+/* ================= RESPONSIVE ==================== */
+/* ================================================= */
+
+#menu {
+    display: none;
+}
+
+.menus {
+    display: none;
+}
+
+@media (max-width: 992px) {
+
+menus {
+        display: block;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 3000;
+        font-size: 35px;
+        color: white ;
+        cursor: pointer;
+    }
+    .menus i {
+    color: white !important;
+}
+
+    .contenedor aside {
+        position: fixed;
+        top: 0px;
+        left: -100%;
+        width: 220px;
+        height: 100vh;
+        background-color: #c5d7f3;
+        z-index: 2000;
+        transition: left .4s ease;
+    }
+
+    #menu:checked ~ .contenedor aside {
+        left: 0;
+    }
+
+    /* HEADER MEJORADO */
+    .contenedor header {
+        height: auto;
+        padding: 15px 20px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contenedor header img {
+        width: 200px;
+        max-width: 70%;
+        justify-self: center;
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+
+    .nombreUsuario {
+        position: static;
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+    }
+
+    .cerrarSesion {
+        position: static;
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: end;
+    }
+
+    /* MAIN */
+    .contenedor main {
+        margin-left: 0;
+        padding: 15px;
+    }
+    .opciones {
+        padding-top: 70px;
+
+    }
+    /* TABLA MÁS CONTROLADA */
+    .contenedor table {
+        min-width: 650px;
+    }
+
+    .estadoOrden {
+        overflow-x: auto;
+    }
+
+    /* CARDS */
+    .cant-reports {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .solicitudga {
+        display: inline-block;
+        font-size: 13px;
+        padding: 6px;
+        white-space: nowrap;
+    }
+}
+@media (max-width: 600px) {
+
+    .contenedor header img {
+        width: 160px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .contenedor h2 {
+        font-size: 18px;
+    }
+
+    /* TABLA MÁS COMPACTA */
+    .contenedor th,
+    .contenedor td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .contenedor table {
+        min-width: 600px;
+    }
+
+    /* BOTÓN ACCIÓN */
+    .solicitudga {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    /* CARD REPORTE */
+    .cant-reports {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .cant-reports .numero {
+        font-size: 24px;
+    }
+
+    /* SIDEBAR LINKS */
+    .opciones a {
+        font-size: 14px;
+        padding: 14px;
+    }
+
+    .opciones a i {
+        font-size: 18px;
+    }
+}

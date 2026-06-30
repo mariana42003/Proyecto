@@ -5,15 +5,15 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-
-/* ----------- HEADER --------------- */ 
-/* --- LOGO Y TÍTULO (CON LOGO TRANSPARENTE) --- */
-/* ----------- EN GENERAL ---------------- */
-
 header {
     background: rgb(224, 207, 243);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
+/* --- LOGO Y TÍTULO (CON LOGO TRANSPARENTE) --- */
 .navbar-brand {
     background-color: transparent !important;
     background: transparent !important;
@@ -58,11 +58,42 @@ header h1 {
 }
 
 /* --- NAVBAR Y MENÚ DE NAVEGACIÓN --- */
+.navbar-kronos {
+    padding: 10px 0;
+    width: 100%;
+}
+
 .marca {
     font-size: 32px;
     font-weight: 700;
 }
 
+.opcion-menu {
+    font-weight: 700;
+    font-size: 18px;
+    position: relative;
+    color: #000000; 
+    border: none;
+    border-radius: 5px;
+    height: 43px;
+    cursor: pointer;
+}
+
+.opcion-menu::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    transition: 0.3s;
+    
+}
+
+.opcion-menu:hover::after {
+    width: 100%;
+    
+}
 .bi-person-fill{
     font-size: 30px;
     color: white;
@@ -86,6 +117,9 @@ header h1 {
     font-weight: 700;
     font-size: 18px;
     color: #000000;
+    cursor: pointer;                   
+    border: none;                  
+    padding: 6px 25px 6px 10px;      
 }
 
 .opcion-menu-select:hover {
@@ -93,8 +127,99 @@ header h1 {
     transition: color 0.3s ease; 
 }
 
+/* --- BOTÓN LOGIN NAV --- */
+.btn-login-nav {
+    background-color: white; 
+    border-radius: 30px;
+    padding: 8px ;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+}
 
+.btn-login-nav:hover {
+    background-color: rebeccapurple ;
+    border: solid 2px black;
+}
 
+/* --- MODAL Y OTROS ELEMENTOS --- */
+.btn-close {
+    background-color: rgb(235, 243, 243);
+    border-radius: 5px;
+    border: solid 2px rebeccapurple;
+}
+
+.model-header {
+    display: flex;
+}
+
+.model-login {
+    border-radius: 12px;
+}
+
+.modal-login h2 {
+    color: var(--negro, #000000);
+    font-weight: 700;
+}
+
+.btn-login {
+    color: white;
+    font-size: 15px;
+    font-weight: 752;
+}
+
+.btn-login:hover {
+    background: rgb(122, 122, 231);
+    color: white;
+}
+
+.link-login {
+    text-decoration: none;
+}
+
+.modal-title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* --- RESPONSIVE: SEPARACIÓN AUTOMÁTICA EN ESCRITORIO --- */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto !important;
+    }
+    
+    /* El contenedor de búsqueda se auto-margina centrándose y empujando el menú a la derecha */
+    .search-container {
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+}
+hr{
+    border: 2px solid;
+    color: rgb(95, 3, 95);
+    margin: 0;
+}
+
+.lista{
+    width: 150px;
+    padding: 5px;
+    border-radius: 7px;
+    background-color: #fcfcfc;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+option{
+    color: rgb(122, 122, 231);
+}
+header a{
+    width: 120px;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 8px;
+}
 /*------------------------------------------------*/
 /* ---------- Barra Lateral Opciones -------------*/
 /*------------------------------------------------*/
@@ -145,7 +270,6 @@ header h1 {
     padding: 12px;
     
 }
-
 .btn-garantias{
     background-color: #b3a3fc;
     border-color: #b3a3fc;
@@ -188,7 +312,6 @@ header h1 {
 .fotos h3{
     color: black;
 }
-
 .producto{
     background:#eee;
     margin:15px;
@@ -197,8 +320,14 @@ header h1 {
     display:flex;
     gap:20px;
 }
-
-
+.producto{
+    color: rgb(87, 37, 87);
+    font-weight: 700;
+    background: gainsboro;
+}
+.moro{
+    color: rgb(87, 37, 87);
+}
 .estado-proceso i{
     font-size:30px;
     margin-bottom:px;
@@ -225,217 +354,6 @@ header h1 {
     border: 1px solid #ddd;
 }
 
-/*Carrito Lateral */
-.carrito-lateral{
-    border:1px solid #444;
-    padding: 20px 15px;
-    background-color: #fcfbfe; /* Fondo sutilmente gris/morado como el diseño */
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px
-}
-.carrito-lateral h2{
-    font-size: 20px;
-    color: #555577;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-family: Arial, sans-serif;
-}
-
-/* Tarjetas Base (Items y Favoritos) */
-.item, .favorito {
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    padding: 10px;
-    margin-bottom: 0; /* Controlado por el gap del padre */
-    display: flex;
-    gap: 12px;
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.02);
-}
-/* Imágenes dentro de las tarjetas */
-.item img, .favorito img {
-    width: 70px;
-    height: 70px;
-    object-fit: contain; /* Evita que los productos se deformen */
-    align-self: center;
-}
-/* Contenedores de texto */
-.item-detalles, .favorito-detalles {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.item-detalles h4, .favorito-detalles h4 {
-    font-size: 13px;
-    color: #33334f;
-    margin: 0;
-    line-height: 1.3;
-    font-weight: 600;
-}
-/* Estrellas amarillas */
-.estrellas {
-    color: #ffcc00;
-    font-size: 12px;
-    display: flex;
-    gap: 2px;
-}
-/* Filas inferiores alineadas */
-.item-fila-inferior, .favorito-acciones {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto; /* Empuja el control al fondo de la tarjeta */
-}
-
-.precio {
-    font-weight: bold;
-    color: #222244;
-    font-size: 14px;
-}
-
-/* Selector de Cantidad (- 1 +) */
-.contador {
-    display: flex;
-    align-items: center;
-    border: 1px solid #cbd5e1;
-    border-radius: 4px;
-    overflow: hidden;
-    background: #f8fafc;
-}
-
-.contador button {
-    border: none;
-    background: transparent;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    font-weight: bold;
-    color: #64748b;
-    transition: background 0.2s;
-}
-
-.contador button:hover {
-    background: #e2e8f0;
-}
-
-.contador input {
-    width: 25px;
-    text-align: center;
-    border: none;
-    border-left: 1px solid #cbd5e1;
-    border-right: 1px solid #cbd5e1;
-    background: white;
-    font-size: 12px;
-    height: 24px;
-    font-weight: bold;
-}
-
-/* Barra informativa de Subtotal */
-.subtotal-barra {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #e2e8f0;
-    background: white;
-    padding: 10px;
-    border-radius: 6px;
-    font-size: 14px;
-    color: #222244;
-}
-
-.subtotal-barra strong {
-    font-size: 15px;
-    color: #111122;
-}
-/* Botón Naranja de Compra */
-.comprar {
-    width: 100%;
-    background: #ff7315; /* Naranja idéntico a tu captura */
-    color: white;
-    border: none;
-    padding: 14px;
-    border-radius: 6px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s;
-    box-shadow: 0px 2px 4px rgba(255, 115, 21, 0.2);
-    margin: 5px 0;
-}
-
-.comprar:hover {
-    background: #e05e07;
-}
-
-/* Sección específica de Favoritos */
-.favorito-acciones {
-    margin-top: 6px;
-}
-
-.corazon {
-    color: #ef4444;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.btn-agregar-carro {
-    background: #fff3e6;
-    color: #ff7315;
-    border: 1px solid #ffcc99;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.btn-agregar-carro:hover {
-    background: #ff7315;
-    color: white;
-}
-
-.producto{
-    color: rgb(87, 37, 87);
-    font-weight: 700;
-    background: gainsboro;
-}
-.encabezado-reclamo{
-    background: #bac5e8;
-}
-
-.hed{
-    background: gainsboro;
-}
-.tabla-observaciones, th {
-  border-radius: 6px !important;
-    overflow: hidden !important;
-    border: 1px 1px solid #dee2e6;
-}
-.tabla-observaciones th {
-    background-color: #8b7ad6 !important; /* Tono morado claro */
-    color: #ffffff !important;            /* Letra blanca */
-    font-weight: 600;
-    padding: 12px 10px !important;       /* Un poco más de espacio vertical para los títulos */
-    text-align: left;
-}
-.tabla-observaciones td {
-    padding: 6px !important;              /* Espaciado de 6px solicitado */
-    vertical-align: middle;
-    color: #333333;
-}
-.moro{
-    color: rgb(87, 37, 87);
-    
-}
-
-
-
-
 /*-------------------------------------------------*/
 /*-------------------- Aprobado--------------------*/
 /*-------------------------------------------------*/
@@ -448,7 +366,6 @@ header h1 {
     color: white;
 
 }
-
 .encabezado-estado-ap h2{
     margin:0;
 }
@@ -496,4 +413,28 @@ header h1 {
 .user{
     color: rgb(21, 225, 21);
     font-size: 40px;
+}
+.carrito-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100vh;
+    background-color: #f8f6fc;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1060; 
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out; 
+}
+
+/* Clase que añadiremos con JS para mostrarlo */
+.carrito-sidebar.active {
+    transform: translateX(0);
+}
+
+.carrito-body {
+    flex: 1;
+    overflow-y: auto; 
 }

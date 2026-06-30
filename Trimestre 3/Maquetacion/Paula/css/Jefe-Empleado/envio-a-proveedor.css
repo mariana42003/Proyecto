@@ -157,31 +157,88 @@ header img {
     text-align: center;
     margin-bottom: 30px;
 }
-/* Estilo para el banner de título */
-.banner-observacion {
-    background-color: #dee2e6 !important;
-    border: 2px solid #343a40 !important;
-    border-radius: 8px;
+
+/* Contenedor Principal */
+.main-container {
+  background-color: #ffffff;
+  min-height: 100vh;
 }
 
-/* Inputs y Textarea */
-.input-observacion, .textarea-observacion {
-    background-color: #f1f3f5 !important;
-    border: 1px solid #ced4da !important;
-    border-radius: 8px !important;
-    padding: 12px !important;
+/* Contenedor del título superior */
+.container-titulo {
+  background-color: #e3ecf7; /* Un tono sutilmente más claro y limpio */
+  border: 1px solid #9aa4b2;
 }
 
-/* Botón Siguiente (3D) */
-.btn-siguiente {
-    background-color: #3b82f6 !important;
-    color: white !important;
-    font-weight: bold !important;
-    border: 2px solid #1d4ed8 !important;
-    border-radius: 10px !important;
-    box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.2);
+/* Texto del título principal */
+.txt-titulo {
+  color: #1a237e;
+  font-family: 'Comic Sans MS', sans-serif;
+  letter-spacing: 0.5px;
 }
 
+/* Subtítulos de las secciones */
+.seccion-subtitulo {
+  color: #1a237e;
+}
+
+/* Etiquetas de los inputs (Labels) */
+.custom-label {
+  color: #1a237e;
+  font-size: 1.05rem;
+}
+
+/* Inputs, Selects y Textareas más pálidos */
+.custom-input, 
+.custom-textarea, 
+.custom-select {
+  background-color: #f2f2f2 !important; /* Gris más claro y pálido */
+  border: 1px solid #cfcfcf !important; /* Borde más suave */
+  border-radius: 12px !important;       /* Bordes curvos idénticos */
+  padding: 11px 15px;
+  color: #555555;
+}
+
+/* Marcador de posición (Placeholder) más sutil */
+.custom-input::placeholder,
+.custom-textarea::placeholder {
+  color: #888888;
+  font-size: 0.95rem;
+}
+
+/* Altura calculada para la caja de observación */
+.custom-textarea {
+  height: calc(100% - 32px);
+  min-height: 175px;
+  resize: none; /* Evita que el usuario la deforme */
+}
+
+/* Efecto Focus suave */
+.custom-input:focus, 
+.custom-textarea:focus, 
+.custom-select:focus {
+  background-color: #f7f7f7 !important;
+  border-color: #1a237e !important;
+  box-shadow: 0 0 0 0.25rem rgba(26, 35, 126, 0.15) !important;
+}
+
+/* Botón Enviar Personalizado */
+.btn-enviar {
+  background-color: #2b76d2 !important; /* Azul vibrante de tu imagen */
+  color: #ffffff !important;            /* Texto blanco */
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 8px 45px;                   /* Ancho generoso como el de la imagen */
+  border-radius: 10px !important;       /* Bordes muy redondeados */
+  border: 1px solid #333333 !important; /* Borde oscuro que le da relieve */
+  transition: all 0.1s ease;
+}
+
+/* Efecto al pasar el mouse por encima */
+.btn-enviar:hover {
+  background-color: #1e63bd !important; /* Azul un poquito más oscuro */
+  color: #ffffff !important;
+}
 /* --- ESTILOS DE LA MODAL --- */
 .custom-modal {
     border-radius: 15px !important;
@@ -224,14 +281,17 @@ header img {
 .letra-ob{
     color: #69477c;
 }
+
 #menu, .menus {
     display: none;
 }
 
-
+/* =========================
+   📱 RESPONSIVE 992px
+========================= */
 @media (max-width: 992px) {
 
-    .menus {
+  .menus {
         display: block;
         position: fixed;
         top: 15px;
@@ -298,106 +358,110 @@ header img {
         padding: 15px;
     }
 
-    /* FORMULARIO */
-    .row.g-4 {
-        gap: 20px;
-    }
+  /* inputs más cómodos */
+  .custom-input,
+  .custom-select,
+  .custom-textarea {
+    font-size: 14px;
+  }
 
-    .btn-siguiente {
-        width: 100%;
-        text-align: center;
-    }
+  .btn-enviar {
+    width: 100%;
+    justify-content: center;
+  }
 
-    /* MODAL */
-    .custom-modal {
-        margin: 15px;
-    }
-
-    .modal-logo {
-        max-width: 140px;
-    }
-
-    .check-container-modal {
-        width: 55px;
-        height: 55px;
-        font-size: 2rem;
-    }
+  /* modal más pequeña */
+  .modal-logo {
+    max-width: 140px;
+  }
 }
+
+
+/* =========================
+   📱 RESPONSIVE 600px
+========================= */
 @media (max-width: 600px) {
 
-    body {
-        overflow-x: hidden;
-    }
+  /* 🔥 menú hamburguesa sidebar */
+  .contenedor aside {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 260px;
+    height: 100vh;
+    z-index: 2000;
+    transition: 0.3s ease;
+    float: none;
+  }
 
-    /* HEADER MÁS PEQUEÑO */
-    header {
-        height: 100px;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-    }
+  #menu:checked ~ .contenedor aside {
+    left: 0;
+  }
 
-    header img {
-        width: 140px;
-    }
+  /* main ocupa todo */
+  .contenedor main {
+    margin-left: 0 !important;
+    padding: 15px;
+    width: 100%;
+  }
 
-    .nombreUsuario,
-    .cerrarSesion {
-        position: absolute;
-        top: 10px;
-    }
+  /* header más compacto */
+  header {
+    height: 90px;
+  }
 
-    .cerrarSesion {
-        right: 10px;
-    }
+  header img {
+    width: 140px;
+  }
 
-    .nombreUsuario {
-        left: 10px;
-    }
+  .nombreUsuario i {
+    font-size: 24px;
+  }
 
-    /* TITULO */
-    .banner-observacion h2 {
-        font-size: 18px;
-    }
+  .cerrarSesion i {
+    font-size: 22px;
+  }
 
-    /* FORMULARIO EN COLUMNA */
-    .row.g-4 {
-        flex-direction: column;
-    }
+  /* título más pequeño */
+  .txt-titulo {
+    font-size: 18px;
+  }
 
-    .col-md-6 {
-        width: 100%;
-    }
+  .seccion-subtitulo {
+    font-size: 16px;
+  }
 
-    input,
-    textarea {
-        font-size: 14px;
-    }
+  /* inputs full width */
+  .custom-input,
+  .custom-select,
+  .custom-textarea {
+    width: 100%;
+  }
 
-    /* BOTÓN */
-    .btn-siguiente {
-        font-size: 14px;
-        padding: 10px;
-    }
+  /* textarea no se desborda */
+  .custom-textarea {
+    min-height: 120px;
+  }
 
-    /* MODAL */
-    .custom-modal {
-        padding: 20px;
-    }
+  /* botón */
+  .btn-enviar {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
 
-    .modal-logo {
-        max-width: 120px;
-    }
+  /* modal */
+  .modal-dialog {
+    margin: 10px;
+  }
 
-    .check-container-modal {
-        width: 50px;
-        height: 50px;
-        font-size: 1.8rem;
-    }
+  .modal-logo {
+    max-width: 120px;
+  }
 
-    .btn-cerrar-modal {
-        width: 100%;
-        font-size: 1rem;
-        padding: 10px;
-    }
+  .check-container-modal {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
 }

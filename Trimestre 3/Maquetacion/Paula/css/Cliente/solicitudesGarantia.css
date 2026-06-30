@@ -245,7 +245,7 @@ textarea.control-formulario{
     color: black;
 }
 .banner-garantia{
-    background: url("../img/preFondo.png") center/cover no-repeat;
+    background: url("../../img/preFondo.png") center/cover no-repeat;
     border-radius:8px 8px 0 0;
     height:310px;
     position:relative;

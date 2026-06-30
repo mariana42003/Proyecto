@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/Trimestre 3/Maquetacion/Paula/css/Jefe-Empleado/consultar.css">
+    <link rel="stylesheet" href="/Trimestre 3/Maquetacion/Paula/css/Jefe-Empleado/busqueda-no-encontrada.css ">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
     <link rel="stylesheet"
 href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
-    <title>Consultar Garantia</title>
+    <title>Kronos Iventory</title>
   </head>
   <body class="fondo">
     <input type="checkbox" id="menu" />
@@ -32,7 +32,7 @@ href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
 
 
       <aside>
-        <br> <br> <br>
+        <br> <br> 
         <div class="opciones">
           <a href="#"><i class="bi bi-eye"></i> Panel de control</a>
           
@@ -118,7 +118,7 @@ href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
         </div>
       </aside>
 
-      <main class="fondo col-lg-9 p-4">
+      <main class="fondo col-lg-10 p-4">
         <br> <br> 
 
     <div class="card shadow-sm border-0 mb-4 form-consulta-card">
@@ -148,8 +148,7 @@ href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
                 </div>
 
                 <div class="mt-4 d-flex gap-3">
-                    <button type="submit" class="btn btn-kronos-search px-4 fw-bold"><a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/simulacion-consulta.html" class="lick">Buscar</a></button>
-                    <button type="reset" class="btn btn-kronos-clear px-4 fw-bold">Limpiar</button>
+                    <button type="reset" class="btn btn-kronos-clear px-4 fw-bold"><a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/consultar.html" class="lic">Limpiar</a></button>
                 </div>
             </form>
         </div>
@@ -157,10 +156,29 @@ href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
 
   
       </main>
-
-
-      
+     <div class="mt-5 container-resultado">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <h3 class="fs-4 border-bottom pb-2 mb-4 text-dark title-resultado">Resultado</h3>
+        </div>
     </div>
+
+    <div class="row">
+        <div class="col-lg-10 mx-auto"> 
+            <div class="card shadow-sm card-resultado">
+                <div class="card-header bg-success text-black d-flex align-items-center py-3 custom-card-header">
+                    <h5 class="mb-0 fw-bold d-flex align-items-center">
+                        <i class="bi bi-x me-2"></i> No se encontraron números de órdenes de compra asociados a este cliente
+                    </h5>
+                </div>
+
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <script src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>

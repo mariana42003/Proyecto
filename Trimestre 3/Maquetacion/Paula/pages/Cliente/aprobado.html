@@ -8,199 +8,163 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="/Trimestre 3/Maquetacion/Paula/css/Cliente/aprobado.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
 </head>
 <body>
     <header>
-  <nav class="navbar navbar-expand-lg navbar-kronos w-100">
-    <div class="container d-flex justify-content-between align-items-center">
-      
-      <a href="#" class="navbar-brand d-flex align-items-center gap-2 m-0 p-0">
-        <img src="/Trimestre 3/Maquetacion/Paula/img/logo2-removebg-preview.png" alt="Logo Kronos" class="logo" />
-        <h1>Kronos Inventory <br>Control</h1>
-      </a>
+        <nav class="navbar navbar-expand-lg navbar-kronos w-100">
+            <div class="container d-flex justify-content-between align-items-center">
+              
+                <a href="#" class="navbar-brand d-flex align-items-center gap-2 m-0 p-0">
+                    <img src="/Trimestre 3/Maquetacion/Paula/img/logo2-removebg-preview.png" alt="Logo Kronos" class="logo" />
+                    <h1>Kronos Inventory <br>Control</h1>
+                </a>
 
-      <div class="search-container mx-auto">
-        <div class="input-group">
-          <input type="text" class="form-control buscador-input" placeholder="Buscar productos..." aria-label="Buscar productos">
-          <button class="btn btn-buscar-purple" type="button">
-            <i class="bi bi-search"></i>
-          </button>
-        </div>
-      </div>
+                <div class="search-container mx-auto">
+                    <div class="input-group">
+                        <input type="text" class="form-control buscador-input" placeholder="Buscar productos..." aria-label="Buscar productos">
+                        <button class="btn btn-buscar-purple" type="button">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#menuPrincipal"
-        aria-controls="menuPrincipal"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-      <div class="collapse navbar-collapse flex-grow-0" id="menuPrincipal">
-  <ul class="navbar-nav align-items-lg-center gap-4"> 
-    
-    <li class="nav-item d-flex align-items-center gap-2">
-      <i class="bi bi-person-fill"></i>
-      <form action="" class="m-0">
-        <select name="cuenta" class="form-select opcion-menu-select" id="">
-          <option value="micuenta">Mi Cuenta</option>
-          <option value="Cerrar"><a href="#"></a>Cerrar Sesión</option>
-        </select>
-      </form>
-    </li>
+                <div class="collapse navbar-collapse flex-grow-0" id="menuPrincipal">
+                    <ul class="navbar-nav align-items-lg-center gap-4"> 
+                        
+                        <li class="nav-item d-flex align-items-center gap-2">
+                            <i class="bi bi-person-fill"></i>
+                            <form action="" class="m-0">
+                                <select name="cuenta" class="form-select opcion-menu-select" id="">
+                                    <option value="micuenta">Mi Cuenta</option>
+                                    <option value="Cerrar">Cerrar Sesión</option>
+                                </select>
+                            </form>
+                        </li>
 
-    <li class="nav-item">
-      <a class="nav-link opcion-carrito-vert d-flex flex-column align-items-center" href="#">
-        <i class="bi bi-cart"></i>
-      </a>
-    </li>
+                        <li class="nav-item">
+<a class="nav-link opcion-carrito-vert d-flex flex-column align-items-center" href="#" id="btnCarrito">
+              <i class="bi bi-cart"></i>
+            </a>
+                        </li>
 
-  </ul>
-</div>
-
-    </div>
-  </nav>
-</header>
-<hr>
-<main class="container-fluid mt-3">
-    <div class="row g-4">
-        <aside class="col-lg-2">
-
-    <div class="d-grid gap-2">
-
-        <a href="#" class="btn btn-outline-secondary text-start">
-            <i class="bi bi-tag-fill"></i> Categorías
-        </a>
-
-        <a href="#" class="btn btn-outline-secondary text-start">
-            <i class="bi bi-box-seam-fill"></i> Mis pedidos
-        </a>
-
-        <a href="#" class="btn btn-outline-secondary text-start">
-            <i class="fa-solid fa-clock-rotate-left"></i> Historial
-        </a>
-
-        <a href="#" class="btn btn-garantias text-start">
-            <i class="fa-solid fa-shield"></i> Garantías
-        </a>
-
-    </div>
-
-    
-        <div class="oferta">
-        <h4>No te pierdas nuestras OFERTAS</h4>
-        <button><a href="#"></a>Ver Ofertas</button>
-    </div>
-    <div class="informacion">
-        <a href="#">Información</a>
-        <a href="#">Política de privacidad</a>
-        <a href="#">Términos y condiciones</a>
-        <a href="#">Contáctenos</a>
-
-        <p>Síguenos</p>
-
-        <div class="redes">
-            <i class="fa-brands fa-facebook-f"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-instagram"></i>
-        </div>
-    </div>
-
-
-</aside>
-
-<section class="contenido col-lg-10">
-
-    <div>
-
-        <h1>Garantías</h1>
-
-        <!-- Tabs -->
-
-        <div class="tabs">
-            <a href="/Trimestre 3/Maquetacion/Paula/pages/Cliente/todo.html">Todos</a>
-            <a href="/Trimestre 3/Maquetacion/Paula/pages/Cliente/revision.html">En revisión</a>
-            <a href="/Trimestre 3/Maquetacion/Paula/pages/Cliente/aprobado.html" class="act">Aprobados</a>
-            <a href="/Trimestre 3/Maquetacion/Paula/pages/Cliente/rechazado.html">Rechazados</a>
-        </div>
-
-        <!-- Estado -->
-
-<div class="card">
-
-    <div class="card-header encabezado-estado-ap d-flex justify-content-between align-items-center">
-        <h2 class="m-0">
-            <i class="fa-regular fa-square-check"></i>
-            Reclamación Aprobada
-        </h2>
-
-        <div class="estado-reclamo-ap">
-            <i class="fa-solid fa-check"></i>
-            <span class="apr">Aprobada</span>
-        </div>
-    </div>
-
-    <div class="card-body">
-
-        <div class="producto">
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-            <span>#345678</span>
-            <span>Taladro inalámbrico BLACK + DECKER</span>
-        </div>
-
-        <div class="row mt-3">
-
-            <div class="col-md-8">
-                <p><strong>Número compra:</strong> #345678</p>
-                <p><strong>Fecha:</strong> 10/02/2026</p>
-                <p><strong>Tienda:</strong> Ferretería</p>
-                <p><strong>Dirección:</strong> Bogotá calle 12 #33-223</p>
-            </div>
-
-            <div class="col-md-4 d-flex justify-content-end align-items-center">
-                <div class="estado-proceso-ap">
-                    <i class="fa-regular fa-square-check"></i>
-                    <span class="apr">Aprobada</span>
+                    </ul>
                 </div>
             </div>
+        </nav>
+    </header>
+    <hr>
+    <main class="container-fluid mt-3">
+        <div class="row g-4">
+            <aside class="col-lg-2">
+                <div class="d-grid gap-2">
+                    <a href="#" class="btn btn-outline-secondary text-start">
+                        <i class="bi bi-tag-fill"></i> Categorías
+                    </a>
+                    <a href="#" class="btn btn-outline-secondary text-start">
+                        <i class="bi bi-box-seam-fill"></i> Mis pedidos
+                    </a>
+                    <a href="#" class="btn btn-outline-secondary text-start">
+                        <i class="fa-solid fa-clock-rotate-left"></i> Historial
+                    </a>
+                    <a href="#" class="btn btn-garantias text-start">
+                        <i class="fa-solid fa-shield"></i> Garantías
+                    </a>
+                </div>
 
+                <div class="oferta">
+                    <h4>No te pierdas nuestras OFERTAS</h4>
+                    <button>Ver Ofertas</button>
+                </div>
+                <div class="informacion">
+                    <a href="#"><strong style="font-size: 20px;">Información</strong></a>
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Contáctenos</a>
+                    <p><strong style="font-size: 20px;">¡Síguenos!</strong></p>
+                    <div class="redes">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="contenido col-lg-9">
+                <div>
+                    <h1>Garantías</h1>
+                    <div class="tabs">
+                        <a href="/Trimestre 3/Maquetacion/Paula/pages/Cliente/todo.html">Todos</a>
+                        <a href="/Trimestre 3/Maquetacion/Paula/pages/Cliente/revision.html">En revisión</a>
+                        <a href="/Trimestre 3/Maquetacion/Paula/pages/Cliente/aprobado.html" class="act">Aprobados</a>
+                        <a href="/Trimestre 3/Maquetacion/Paula/pages/Cliente/rechazado.html">Rechazados</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header encabezado-estado-ap d-flex justify-content-between align-items-center">
+                            <h2 class="m-0">
+                                <i class="fa-regular fa-square-check"></i> Reclamación Aprobada
+                            </h2>
+                            <div class="estado-reclamo-ap">
+                                <i class="fa-solid fa-check"></i>
+                                <span class="apr">Aprobada</span>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="producto">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                                <span>#345678</span>
+                                <span>Taladro inalámbrico BLACK + DECKER</span>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-8">
+                                    <p><strong>Número compra:</strong> #345678</p>
+                                    <p><strong>Fecha:</strong> 10/02/2026</p>
+                                    <p><strong>Tienda:</strong> Ferretería</p>
+                                    <p><strong>Dirección:</strong> Bogotá calle 12 #33-223</p>
+                                </div>
+                                <div class="col-md-4 d-flex justify-content-end align-items-center">
+                                    <div class="estado-proceso-ap">
+                                        <i class="fa-regular fa-square-check"></i>
+                                        <span class="apr">Aprobada</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-4">
+                        <div class="card-header d-flex align-items-center gap-2">
+                            <i class="user fa-solid fa-circle-user"></i>
+                            <h2 class="m-0 moro">Observaciones</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Tu reclamación ha sido aprobada. Nos pondremos en contacto contigo en breve para coordinar el reemplazo o la reparación del producto.
+                            </p>
+                            <p class="mt-4">
+                                <strong>Número de compra aprobada:</strong> #234567
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-
-    </div>
-
-</div>
- 
-
-        <!-- Observaciones -->
-<div class="card mt-4">
-
-    <div class="card-header d-flex align-items-center gap-2">
-        <i class="user fa-solid fa-circle-user"></i>
-        <h2 class="m-0">Observaciones</h2>
-    </div>
-
-    <div class="card-body">
-        <p>
-            Tu reclamación ha sido aprobada. Nos pondremos en contacto contigo en breve para coordinar el reemplazo o la reparación del producto.
-        </p>
-
-        <p class="mt-4">
-            <strong>Número de compra aprobada:</strong> #234567
-        </p>
-    </div>
-
-</div>
-</section>
-
-    </div>
-
-</main>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
+    <script src="/Trimestre 3/Maquetacion/Paula/js/prueba.js"></script>
 </body>
 </html>

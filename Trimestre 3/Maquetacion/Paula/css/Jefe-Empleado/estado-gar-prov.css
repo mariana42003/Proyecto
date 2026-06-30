@@ -296,248 +296,174 @@ header img {
     display: none;
 }
 
-
-
-
-
-@media (max-width: 1024px) {
-    .contenedorColumnas {
-        gap: 30px;
-    }
-
-    .historialCompras input {
-        width: 100%;
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        overflow-x: hidden;
-        width: 100vw;
-    }
-
-    .contenedor {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        overflow-x: hidden;
-    }
-
-    header {
-        height: 110px;
-        padding: 0 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
-    header img {
-        width: 150px;
-    }
-
-    .nombreUsuario, .cerrarSesion {
-        position: absolute;
-        left: auto;
-        right: 20px;
-        transform: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 35px;
-        height: 35px;
-    }
-
-    .nombreUsuario {
-        top: 15px;
-    }
-
-    .nombreUsuario i {
-        font-size: 28px;
-    }
-
-    .cerrarSesion {
-        top: 60px;
-    }
-
-    .cerrarSesion i {
-        font-size: 24px;
-    }
+@media (max-width: 992px) {
 
     .menus {
         display: block;
-        position: absolute;
-        top: 40px;
-        left: 20px;
+        position: fixed;
+        top: 15px;
+        left: 15px;
         z-index: 3000;
-        font-size: 30px;
-        color: white;
+        font-size: 35px;
+        color: white ;
         cursor: pointer;
     }
+    .menus i {
+    color: white !important;
+}
 
     .contenedor aside {
         position: fixed;
-        top: 0;
+        top: 0px;
         left: -100%;
-        width: 260px;
+        width: 220px;
         height: 100vh;
+        background-color: #c5d7f3;
         z-index: 2000;
-        float: none;
-        transition: left 0.4s ease-in-out;
-        border-radius: 0;
-        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+        transition: left .4s ease;
     }
 
     #menu:checked ~ .contenedor aside {
         left: 0;
     }
 
+    /* HEADER MEJORADO */
+    .contenedor header {
+        height: auto;
+        padding: 15px 20px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contenedor header img {
+        width: 200px;
+        max-width: 70%;
+        justify-self: center;
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+
+    .nombreUsuario {
+        position: static;
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+    }
+
+    .cerrarSesion {
+        position: static;
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: end;
+    }
+
+    /* MAIN */
     .contenedor main {
-        margin-left: 0 !important;
-        padding: 20px 15px;
-        width: 100% !important;
-        max-width: 100vw;
-        overflow-x: hidden !important;
-        display: block;
+        margin-left: 0;
+        padding: 15px;
     }
 
-    .contenedor h1, 
-    .contenedor main h1 {
+    /* ===== TABLA ===== */
+    .container-tabla-comic {
+        overflow-x: auto;
+    }
+
+    .custom-table-estado {
+        min-width: 750px;
+    }
+
+    /* ===== TEXTO ===== */
+    .contenedor h1 {
         font-size: 22px;
-        margin-top: 15px;
-        margin-bottom: 20px;
-    }
-
-    .buscarOrden, 
-    .contenedorBusquedas, 
-    .historialCompras {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 15px;
-        padding: 20px;
-        width: 100% !important;
-    }
-
-    .datosProveedor {
-        width: 100% !important;
-    }
-
-    .buscarOrden input,
-    .datosProveedor input, 
-    .historialCompras input {
-        width: 100% !important;
-        max-width: 100%;
-    }
-
-    .buscarOrden i {
-        text-align: center;
-        margin-top: 5px;
-    }
-
-    .contenedorBusquedas button, 
-    .historialCompras button {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    /* --- CONTENEDORES DE TABLAS EXPLÍCITOS --- */
-    .resultadoBusqueda,
-    .tablaHistorial,
-    .seccionTabla, 
-    .tablaProductos, 
-    .tabla1, 
-    .ordenesCompra {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: auto !important;
-        display: block !important;
-        -webkit-overflow-scrolling: touch !important;
-        margin-top: 25px;
-        padding: 0 0 10px 0 !important;
-    }
-
-    /* --- SOLUCIÓN INTEGRAL PARA TODAS LAS TABLAS DE LA APP --- */
-    /* Mantiene las tablas intactas sin romper sus estructuras internas */
-    .contenedor main table {
-        display: table !important; /* Mantiene comportamiento de tabla real */
-        width: 100% !important;
-        min-width: 780px !important; /* Fuerza el ancho mínimo para generar el scroll horizontal */
-        table-layout: auto !important; /* Permite que las columnas calculen su espacio */
-    }
-
-    /* Asegura que el elemento contenedor inmediatamente superior permita el desplazamiento */
-    .contenedor main table pacifist, 
-    .contenedor main div:has(> table) {
-        overflow-x: auto !important;
-        width: 100% !important;
-        display: block !important;
-        -webkit-overflow-scrolling: touch !important;
-    }
-
-    /* Estilos estables para las celdas de las tablas */
-    .contenedor th,
-    .contenedor td {
-        word-wrap: normal !important;
-        white-space: nowrap !important; /* Evita que los textos colapsen hacia abajo */
-        padding: 12px 10px !important;
-        text-align: center !important;
-    }
-
-    /* Tratamiento especial para celdas con botones de acciones */
-    .contenedor td.celdaAcciones {
-        display: flex !important;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        gap: 5px;
-    }
-
-    .btnEditar, 
-    .btnEliminar {
-        padding: 6px 15px !important;
-        font-size: 13px;
-        flex: none;
-    }
-
-    .resu, 
-    .infoOrden {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .infoOrden h2 {
-        width: 100%;
-        font-size: 18px;
-        padding: 5px 10px;
-    }
-
-    .registrarNuevo {
-        margin: 20px auto;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .confirmarMaterialesCantidades button, 
-    .confirmarPerdidoP button {
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 40px;
-    }
-
-    .confirmarPerdidoP {
-        margin-top: 40px;
-    }
-
-    .contenedorColumnas {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 40px;
-    }
-
-    .tarjetaEstado {
-        max-width: 100%;
-        min-width: 100%;
-        margin-top: 0;
     }
 }
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* ===== HEADER MÁS COMPACTO ===== */
+    header {
+        height: 90px;
+        padding: 0 10px;
+    }
+
+    header img {
+        width: 130px;
+    }
+
+    .nombreUsuario {
+        left: 10px;
+        top: 10px;
+    }
+
+    .cerrarSesion {
+        right: 10px;
+        top: 10px;
+    }
+
+    .nombreUsuario i {
+        font-size: 22px;
+    }
+
+    .cerrarSesion i {
+        font-size: 20px;
+    }
+
+    /* ===== HAMBURGUESA ===== */
+    .menus {
+        display: block;
+        position: absolute;
+        top: 30px;
+        left: 10px;
+        font-size: 26px;
+        z-index: 3000;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .contenedor aside {
+        width: 230px;
+    }
+
+    /* ===== TÍTULOS ===== */
+    .contenedor h1 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    /* ===== TABLA RESPONSIVE REAL ===== */
+    .container-tabla-comic {
+        overflow-x: auto;
+    }
+
+    .custom-table-estado {
+        min-width: 650px;
+    }
+
+    .custom-table-estado th,
+    .custom-table-estado td {
+        font-size: 12px;
+        padding: 8px;
+        white-space: nowrap;
+    }
+
+    /* ===== BOTÓN ===== */
+    .btn-ver-actualizacion {
+        font-size: 11px !important;
+        padding: 5px 12px !important;
+    }
+
+    /* ===== MODAL ===== */
+    .modal-dialog {
+        margin: 10px;
+    }
+
+    .card-modal-comic {
+        padding: 12px !important;
+    }
+}
+
+

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/Trimestre 3/Maquetacion/Paula/css/Jefe-Empleado/consultar.css">
+    <link rel="stylesheet" href="/Trimestre 3/Maquetacion/Paula/css/Jefe-Empleado/envio-a-proveedor.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
     <link rel="stylesheet"
 href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
@@ -118,45 +118,100 @@ href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
         </div>
       </aside>
 
-      <main class="fondo col-lg-9 p-4">
-        <br> <br> 
+      <main class="main-container py-4 px-3 px-md-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-11 col-xl-10">
+      
+      <div class="row mb-4">
+        <div class="col-12 text-center py-2 rounded-3 container-titulo">
+          <h2 class="fs-4 mb-0 fw-normal txt-titulo">Enviar Garantía a Proveedor</h2>
+        </div>
+      </div>
 
-    <div class="card shadow-sm border-0 mb-4 form-consulta-card">
-        <div class="card-header text-center bg-kronos-banner py-3">
-            <h2 class="mb-0 titulo-consulta">
-                <i class="bi bi-search"></i><i class="bi bi-search"></i> Consultar Orden de Compra <i class="bi bi-search"></i><i class="bi bi-search"></i>
-            </h2>
+      <form>
+        <h3 class="fs-5 fw-bold mb-3 seccion-subtitulo">Información de la Garantía:</h3>
+        
+        <div class="row g-4 mb-4">
+          <div class="col-12 col-md-6">
+            <div class="mb-3">
+              <label class="form-label fw-semibold custom-label">Nombre del Cliente:</label>
+              <input type="text" class="form-control custom-input" placeholder="Ingrese el nombre del cliente">
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label fw-semibold custom-label">Material:</label>
+              <input type="text" class="form-control custom-input" placeholder="Ej: Tornillos">
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label fw-semibold custom-label">Número Orden de compra:</label>
+              <input type="text" class="form-control custom-input" placeholder="Ej: 9083010484">
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="mb-3">
+              <label class="form-label fw-semibold custom-label">Fecha de Registro:</label>
+              <input type="date" class="form-control custom-input">
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label fw-semibold custom-label">Observación:</label>
+              <textarea class="form-control custom-textarea" rows="6" placeholder="Fecha o detalles adicionales"></textarea>
+            </div>
+          </div>
         </div>
 
-        <div class="card-body p-4">
-            <form action="" method="GET">
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <label class="form-label fw-bold label-kronos">Número de orden <i class="icono bi bi-123"></i> </label>
-                        <input type="text" class="form-control input-kronos" placeholder="Ingrese el número de orden">
-                    </div>
+        <hr class="my-4 text-muted">
 
-                    <div class="col-md-6">
-                        <label class="form-label fw-bold label-kronos">Cliente <i class="bi bi-person"></i></label>
-                        <input type="text" class="form-control input-kronos" placeholder="Ingrese el nombre del cliente">
-                    </div>
+        <h3 class="fs-5 fw-bold mb-3 seccion-subtitulo">Seleccion de Proveedor:</h3>
+        
+        <div class="row g-4 mb-5">
+          <div class="col-12 col-md-6">
+            <label class="form-label fw-semibold custom-label">Proveedor:</label>
+            <select class="form-select custom-select">
+              <option selected disabled>Seleccione</option>
+              <option value="1">Enrique Mendoza</option>
+              <option value="2">Sergio Castañeda</option>
+              <option value="3">Miguel Duarte</option>
+            </select>
+          </div>
 
-                    <div class="col-md-6">
-                        <label class="form-label fw-bold label-kronos">Fecha <i class="bi bi-calendar3"></i></label>
-                        <input type="date" class="form-control input-kronos">
-                    </div>
+          <div class="col-12 col-md-6">
+            <label class="form-label fw-semibold custom-label">Fecha de Envío:</label>
+            <input type="date" class="form-control custom-input">
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <div class="row">
+     <div class="d-flex justify-content-end">
+                <button class="btn btn-enviar px-5" data-bs-toggle="modal" data-bs-target="#modalExito">
+                    Siguiente
+                </button>
+            </div>
+</div>
+</main>
+<div class="modal fade" id="modalExito" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-modal">
+            <div class="modal-body text-center p-5">
+                <img src="/Trimestre 3/Maquetacion/Paula/img/logo.png" alt="Logo" class="mb-4 modal-logo">
+                
+                <h2 class="fw-bold text-dark mb-4 mt-2">ENVIO DE GARANTíA EXITOSA A PROVEEDOR</h2>
+                
+                <div class="check-container-modal mx-auto mb-4">
+                    <i class="bi bi-check-lg"></i>
                 </div>
-
-                <div class="mt-4 d-flex gap-3">
-                    <button type="submit" class="btn btn-kronos-search px-4 fw-bold"><a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/simulacion-consulta.html" class="lick">Buscar</a></button>
-                    <button type="reset" class="btn btn-kronos-clear px-4 fw-bold">Limpiar</button>
-                </div>
-            </form>
+                
+                <a href="/Trimestre 3/Maquetacion/Paula/pages/Jefe-Empleado/historial-garantias.html"><button type="button" class="btn btn-cerrar-modal" data-bs-dismiss="modal">Cerrar</button></a>
+            </div>
         </div>
     </div>
-
-  
-      </main>
+</div>
+        
 
 
       

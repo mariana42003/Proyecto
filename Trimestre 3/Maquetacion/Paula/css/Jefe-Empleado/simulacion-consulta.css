@@ -326,14 +326,128 @@ header img {
     border-radius: 6px;
     border: 1px solid rgb(185, 128, 138);
 }
+/* ==========================================
+   ESTILOS COMPROBANTE MODAL (KRONOS)
+============================================= */
+
+/* Caja contenedora blanca del modal */
+.custom-modal-content {
+    border-radius: 20px !important;
+    border: none !important;
+}
+
+/* Título de Comprobante */
+.comprobante-title {
+    color: #1a237e;
+    font-weight: 800;
+    font-size: 2.2rem;
+    font-family: sans-serif;
+}
+
+.brand-name {
+    color: #1a237e;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+/* Etiqueta de la Orden (Azul) */
+.order-box {
+    background-color: #bbdefb; /* Azul pálido suave */
+    color: #1a237e;
+    padding: 6px 20px;
+    border-radius: 8px;
+    border: 1.5px solid #1a237e;
+    font-weight: bold;
+}
+
+.fecha-text {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.cliente-info {
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.blue-line {
+    border-top: 2px solid #b0bec5;
+    opacity: 1;
+    margin-top: 5px;
+}
+
+/* Tabla interna del Comprobante */
+.comprobante-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #8e99f3;
+}
+
+.comprobante-table thead th {
+    background-color: #8e99f3 !important;
+    color: white !important;
+    text-align: center;
+    border: 1px solid white;
+    font-weight: 500;
+    padding: 10px;
+}
+
+.comprobante-table tbody td {
+    border: 1px solid #8e99f3;
+    text-align: center;
+    padding: 10px;
+    color: #444;
+}
+
+/* Fila del Total */
+.total-row {
+    border: 2px solid #8e99f3;
+    border-radius: 8px;
+    color: #1a237e;
+    font-size: 1.1rem;
+}
+
+/* Alerta Informativa (Orden generada con Éxito) */
+.success-alert-box {
+    background-color: #8e99f3;
+    color: white;
+    border-radius: 8px;
+    width: fit-content;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Leyenda inferior y Botón de cierre */
+.italic-note {
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+.btn-regresar {
+    background-color: #8e99f3;
+    color: white;
+    border: 1.5px solid #333333;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0px 3px 0px #1a1a1a;
+    transition: all 0.1s ease;
+}
+
+.btn-regresar:active {
+    transform: translateY(2px);
+    box-shadow: 0px 1px 0px #1a1a1a;
+}
+.logo-modal{
+    width: 180px;
+}
 
 #menu, .menus {
     display: none;
+    height: auto;
 }
-
-
-
-
 
 @media (max-width: 1024px) {
     .contenedorColumnas {

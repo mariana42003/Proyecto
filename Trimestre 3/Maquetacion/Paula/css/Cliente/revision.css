@@ -92,7 +92,45 @@ header h1 {
     color: #555555;      
     transition: color 0.3s ease; 
 }
+/* --- RESPONSIVE: SEPARACIÓN AUTOMÁTICA EN ESCRITORIO --- */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto !important;
+    }
+    
+    /* El contenedor de búsqueda se auto-margina centrándose y empujando el menú a la derecha */
+    .search-container {
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+}
+hr{
+    border: 2px solid;
+    color: rgb(95, 3, 95);
+    margin: 0;
+}
 
+.lista{
+    width: 150px;
+    padding: 5px;
+    border-radius: 7px;
+    background-color: #fcfcfc;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+option{
+    color: rgb(122, 122, 231);
+}
+header a{
+    width: 120px;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 8px;
+}
 
 
 /*------------------------------------------------*/
