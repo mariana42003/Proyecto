@@ -28,14 +28,14 @@ document.querySelector(".btn-iniciarSesion")
         }
 
 
-        if(usuarioI === "12345" &&  contraseña === "123"){
+        if(usuarioI === "proveedor@kronos.com" &&  contraseña === "123"){
            
         window.location.href = "pagesPaginaProveedor/principalProveedor.html";
            
-        }else if(usuarioI === "1234" && contraseña === "123"){
-            window.location.href = "PanelControl.html/Panel.html";
+        }else if(usuarioI === "jefe@kronos.com" && contraseña === "123"){
+            window.location.href = "Panel.html";
 
-        }else if(usuarioI === "123" && contraseña === "123"){
+        }else if(usuarioI === "cliente@kronos.com" && contraseña === "123"){
             window.location.href = "index.html";
 
         }else {
