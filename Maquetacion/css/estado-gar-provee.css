@@ -1,0 +1,485 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(235, 235, 231);
+    font-family: Arial, sans-serif;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+header {
+    height: 100px;
+    background-color: #7d7dd8;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+header img {
+    width: 280px;
+}
+
+.nombreUsuario {
+    position: absolute;
+    left: 20px;
+    top: 29px;
+}
+
+.nombreUsuario i {
+    color: rgb(210, 202, 255);
+    font-size: 36px;
+}
+
+.cerrarSesion {
+    position: absolute;
+    right: 20px;
+    top: 32px;
+}
+
+.cerrarSesion i {
+    color: rgb(212, 215, 250);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.contenedor aside {
+    width: 220px;
+    background-color: #c5d7f3;
+    border-radius: 6px;
+        min-height: calc(100vh - 100px); /* 100px = altura del header */
+
+}
+
+.opciones {
+    padding-top: 30px;
+}
+
+.opciones a, 
+.titulo-menu {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.opciones a i, 
+.titulo-menu i {
+    color: #6b2d91;
+    font-size: 22px;
+    margin-right: 11px;
+    vertical-align: middle;
+}
+
+.opciones a:hover, 
+.titulo-menu:hover {
+    border: 2px solid rgb(90, 90, 177);
+    border-radius: 20px;
+}
+
+.radio-check {
+    display: none;
+}
+
+
+.btn-actualiza:hover{
+    background-color: #1f3f8c;
+    color: white;
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    padding-left: 35px;
+    position: relative;
+    margin-left: 28px;
+}
+
+
+.submenu::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    border-left: 2px dashed #6b2d91;
+}
+
+.submenu a {
+    padding: 10px 10px 10px 20px !important;
+    font-size: 14px !important;
+    position: relative;
+}
+
+.submenu a::before {
+    content: '→';
+    position: absolute;
+    left: 2px;
+    color: #6b2d91;
+    font-weight: bold;
+}
+
+.radio-check:checked ~ .submenu {
+    max-height: 300px; 
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.contenedor main {
+    flex: 1;
+    padding: 30px;
+}
+
+.contenedor h1,
+.contenedor h2 {
+    color: #1f3f8c;
+}
+
+.contenedor h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contenedor main h1 {
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+main {
+    padding: 20px;
+    font-family: sans-serif;
+}
+/*-----------------------------------------------------*/
+/* Banner de Título (Copiado de tus vistas anteriores) */
+.banner-estado-solicitud {
+    background-color: #dee2e6 !important;
+    border: 2px solid #343a40 !important;
+    border-radius: 8px;
+}
+
+/* Contenedor principal de la tabla para aplicar el borde redondeado exterior */
+.container-tabla-comic {
+    border: 2px solid #5a5ca6 !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+/* --- ESTILO DE LA TABLA EXACTO A LA IMAGEN --- */
+.custom-table-estado {
+    border-collapse: collapse !important; /* Celdas juntas sin espacios */
+    margin-bottom: 0 !important;
+}
+
+/* Encabezados Morados */
+.custom-table-estado thead tr th {
+    background-color: #7c7ec2 !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+    border: 2px solid #5a5ca6 !important;
+    padding: 12px !important;
+}
+
+/* Celdas del cuerpo con sus bordes morados delgados */
+.custom-table-estado tbody tr td {
+    background-color: #ffffff !important;
+    border: 2px solid #5a5ca6 !important;
+    padding: 12px !important;
+    color: #333333;
+}
+/* --- BOTÓN ACTUALIZACIÓN (Color vino/magenta con relieve 3D) --- */
+.btn-ver-actualizacion {
+    background-color: #a24675 !important;
+    color: white !important;
+    font-weight: normal !important;
+    border: 2px solid #5b2141 !important;
+    border-radius: 8px !important;
+    padding: 6px 30px !important;
+    box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.3);
+}
+
+.btn-ver-actualizacion:hover {
+    background-color: #893b63 !important;
+    color: white !important;
+}
+
+/* Ajustes para que los textos de DataTable sigan la línea limpia */
+.dataTables_wrapper .dataTables_filter input,
+.dataTables_wrapper .dataTables_length select {
+    border: 1px solid #ced4da !important;
+    border-radius: 6px !important;
+    padding: 5px !important;
+}
+/* --- ESTILOS ADICIONALES PARA LOS MODALES --- */
+
+/* Tarjeta base blanca del modal */
+.card-modal-comic {
+    border: 2px solid #5a5ca6 !important;
+    border-radius: 12px !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Cajas contenedoras moradas de la información interna */
+.caja-info-modal {
+    border: 2px solid #7c7ec2 !important;
+    border-radius: 10px !important;
+    background-color: #fafafa;
+}
+
+/* Tipografía de la descripción */
+.text-modal-desc {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #3f3f46 !important;
+}
+
+/* --- BADGES INTERNOS DE ESTADO --- */
+.badge-status-comic {
+    font-weight: bold !important;
+    font-size: 1rem !important;
+    padding: 4px 12px !important;
+    border-radius: 6px !important;
+}
+.badge-status-comic.aprobado {
+    background-color: #e6f4ea !important;
+    color: #48bb78 !important; /* Verde */
+}
+.badge-status-comic.rechazado {
+    background-color: #fce8e6 !important;
+    color: #f56565 !important; /* Rojo */
+}
+
+/* --- BOTÓN VOLVER (Estilo Lavanda/Morado Claro con Relieve) --- */
+.btn-volver-modal {
+    background-color: #a78bfa !important; /* Color lavanda */
+    color: #2d3748 !important;
+    font-weight: bold !important;
+    border: 2px solid #4a4b82 !important;
+    border-radius: 8px !important;
+    padding: 6px 20px !important;
+    box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.2);
+    transition: all 0.1s ease;
+}
+
+.btn-volver-modal:active {
+    transform: translateY(2px);
+    box-shadow: inset 0 -1px 0px rgba(0, 0, 0, 0.2);
+}
+/* Control del tamaño y centrado del logo en el modal */
+.logo-modal-kronos {
+    max-height: 55px; /* Evita que sea gigante */
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
+
+/* En caso de que uses el nombre en texto estilizado de Kronos */
+.logo-texto-kronos {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    color: #4a4b82;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+}
+
+#menu, .menus {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    body {
+        overflow-x: hidden;
+        width: 100vw;
+    }
+
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+        height: 100px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    header img {
+        width: 200px;
+    }
+
+    .nombreUsuario,
+    .cerrarSesion {
+        position: absolute;
+        left: auto;
+        right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+    }
+
+    .nombreUsuario {
+        top: 15px;
+    }
+
+    .cerrarSesion {
+        top: 58px;
+    }
+
+    .nombreUsuario i {
+        font-size: 28px;
+    }
+
+    .cerrarSesion i {
+        font-size: 24px;
+    }
+
+    /* MENÚ HAMBURGUESA */
+    .menus {
+        display: block;
+        position: absolute;
+        top: 32px;
+        left: 20px;
+        z-index: 3000;
+        font-size: 35px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .contenedor aside {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 260px;
+        height: 100vh;
+        z-index: 2000;
+        transition: left 0.4s ease;
+        border-radius: 0;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #menu:checked ~ .contenedor aside {
+        left: 0;
+    }
+
+    .opciones {
+        margin-top: 50px;
+    }
+
+    /* MAIN */
+    .contenedor main {
+        width: 100%;
+        padding: 20px;
+        margin-left: 0;
+    }
+
+    .container-tabla-comic {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .custom-table-estado {
+        min-width: 700px;
+    }
+
+    .custom-table-estado th,
+    .custom-table-estado td {
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    .btn-ver-actualizacion {
+        padding: 6px 20px !important;
+    }
+
+    .modal-dialog {
+        margin: 20px;
+    }
+}
+@media (max-width: 600px) {
+    header {
+        height: 90px;
+    }
+
+    header img {
+        width: 150px;
+    }
+
+    .menus {
+        top: 25px;
+        font-size: 30px;
+    }
+
+    .nombreUsuario {
+        top: 12px;
+    }
+
+    .cerrarSesion {
+        top: 48px;
+    }
+
+    .nombreUsuario i {
+        font-size: 26px;
+    }
+
+    .cerrarSesion i {
+        font-size: 22px;
+    }
+
+    .contenedor main {
+        padding: 15px 10px;
+    }
+
+    .banner-estado-solicitud h2 {
+        font-size: 18px !important;
+    }
+
+    .btn-ver-actualizacion {
+        font-size: 12px;
+        padding: 6px 12px !important;
+    }
+
+    .card-modal-comic {
+        padding: 20px !important;
+    }
+
+    .logo-modal-kronos {
+        max-height: 45px;
+    }
+
+    .text-modal-desc {
+        font-size: 14px;
+    }
+
+    .badge-status-comic {
+        font-size: 13px !important;
+    }
+}
+

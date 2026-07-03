@@ -1,0 +1,681 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(235, 235, 231);
+    font-family: sans-serif;
+}
+
+/* Contenedor Grid Principal */
+.contenedor {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    grid-column: 1 / span 2;
+    height: 100px;
+    background-color: #7d7dd8;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header img {
+    width: 280px;
+    height: auto;
+}
+
+.nombreUsuario {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nombreUsuario i {
+    color: rgb(210, 202, 255);
+    font-size: 36px;
+}
+
+.cerrarSesion {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cerrarSesion a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.cerrarSesion i {
+    color: rgb(212, 215, 250);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Sidebar / Aside */
+.contenedor aside {
+    grid-column: 1;
+    background-color: #c5d7f3;
+    border-radius: 6px;
+}
+
+.opciones {
+    padding-top: 30px;
+}
+
+.opciones a {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.opciones a i {
+    color: #6b2d91;
+    font-size: 22px;
+    margin-right: 11px;
+}
+
+.opciones a:hover {
+    border: 2px solid rgb(90, 90, 177);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main */
+.contenedor main {
+    grid-column: 2;
+    padding: 30px;
+    min-width: 0; /* Previene desbordamientos */
+}
+
+.contenedor h1,
+.contenedor h2 {
+    color: #1f3f8c;
+}
+
+/*--------------------------------------------------------------*/
+/*--------------------------------------------------------------*/
+/*--------------------- GARANTIA APROBADA ----------------------*/
+/*--------------------------------------------------------------*/
+:root{
+    --azul-oscuro:#1f3fb8;
+    --azul:#3b5fe0;
+    --celeste:#cfe3f2;
+    --celeste-panel:#bfe1ea;
+    --verde:#1f8a3d;
+    --teal:#0f7a6e;
+    --tinta:#12233f;
+    --fondo:#eef2f8;
+  }
+   /* TOPBAR */
+  .topbar{
+    background:linear-gradient(90deg, var(--azul-oscuro), var(--azul));
+    color:#fff;
+  }
+  .brand{
+    font-weight:800;
+    font-size:14px;
+    letter-spacing:.3px;
+    line-height:1.15;
+  }
+  .btn-menu{
+    color:#fff;
+    border:none;
+    background:transparent;
+    font-size:22px;
+  }
+    .title-pill{
+    background:var(--celeste-panel);
+    border:1px solid #8fb9cf;
+    border-radius:22px;
+    font-size:22px;
+    font-weight:700;
+    color:var(--tinta);
+    max-width:620px;
+  }
+
+  .field{
+    border-radius:6px;
+    font-weight:700;
+    font-size:15px;
+  }
+  .field.order{ background:var(--azul); color:#fff; }
+  .field.plain{ background:var(--celeste); color:var(--tinta); }
+
+  h2.section-title{
+    color:var(--azul-oscuro);
+    font-size:22px;
+  }
+    .obs-box{
+    border:1.5px solid #8fa6c9;
+    border-radius:8px;
+    background:#fff;
+    font-size:15px;
+    line-height:1.65;
+    color:#22304f;
+  }
+  .obs-box b{color:var(--tinta);}
+
+  .btn-primary-kronos{
+    background:var(--azul);
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-weight:700;
+    font-size:14.5px;
+  }
+  .btn-primary-kronos:hover{background:var(--azul-oscuro); color:#fff;}
+  
+  /* PANEL */
+  /*=========================*/
+  /*---- PANEL EN REVISIÓN -----*/
+
+  
+/* ESTADOS */
+.revision-activa{
+     background:#e8d79b;
+    border-color:#cdb55b !important;
+}
+.estado{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:15px;
+
+    font-size:1.1rem;
+
+}
+
+.circulo{
+
+    width:20px;
+
+    height:20px;
+
+    border:2px solid #222;
+
+    border-radius:50%;
+
+}
+
+.verde{
+
+    background:#239640;
+
+    border-color:#239640 !important;
+
+}
+
+
+/* BOTON APROBADO */
+
+.btn-aprobada{
+
+    background:#188777;
+
+    color:#fff;
+
+    font-weight:bold;
+
+    padding:14px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.btn-aprobada:hover{
+
+    background:#136f62;
+
+    color:white;
+
+}
+
+
+
+
+
+/*--------------------------------------------------------*/
+/*------------------ PENDIENTE SOLICITUD -----------------*/
+/*--------------------------------------------------------*/
+/* =======================
+   PANEL GARANTÍA
+======================= */
+/* ESTADOS */
+.revision-activa{
+     background:#e8d79b;
+    border-color:#cdb55b !important;
+}
+.estado{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:15px;
+
+    font-size:1.1rem;
+
+}
+
+.circulo{
+
+    width:20px;
+
+    height:20px;
+
+    border:2px solid #222;
+
+    border-radius:50%;
+
+}
+
+.pendientee{
+
+    background: #ffd000;;
+
+    border-color:#ffd000 !important;
+
+}
+
+
+/* BOTON APROBADO */
+
+.btn-ac-re{
+    background-color: #c24c82;
+    color: #fff;
+    font-weight: bold;
+
+}
+
+.btn-ac-re:hover{
+    background: #90506d;
+    color: white;
+}
+
+.btn-ac{
+
+    background:#188777;
+
+    color:#fff;
+
+    font-weight:bold;
+
+  
+}
+
+
+.btn-ac:hover{
+
+    background:#136f62 !important;
+
+    color:white !important;
+
+}
+
+
+
+
+/*----------------------------------------------------------*/
+/*----------------------- RECHAZADA ------------------------*/
+/*----------------------------------------------------------*/
+/* TITULO */
+
+.titulo-garantia{
+
+    border:2px solid #3b82f6;
+    border-radius:8px;
+    padding:8px;
+
+    font-size:2rem;
+    font-weight:600;
+
+}
+
+
+/* DATOS */
+
+.dato{
+
+    display:inline-block;
+
+    background:#dbeafe;
+
+    padding:6px 12px;
+
+    margin-bottom:8px;
+
+    border-radius:4px;
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+}
+
+.orden{
+
+    background:#2457d6;
+
+    color:#fff;
+
+}
+
+
+/* OBSERVACIONES */
+
+.titulo-observaciones{
+
+    color:#233c8d;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+}
+
+.observaciones{
+
+    border:2px solid #8b5cf6;
+
+    border-radius:6px;
+
+    padding:20px;
+
+    font-size:1.1rem;
+
+    line-height:1.6;
+
+}
+
+
+/* BOTON */
+
+.btn-ver{
+
+    background:#5c50d6;
+
+    color:#fff;
+
+    font-weight:bold;
+
+    padding:10px 30px;
+
+}
+
+.btn-ver:hover{
+
+    background:#463ac2;
+    color:white;
+
+}
+
+
+/* CARD */
+
+.garantia-card{
+
+    border:2px solid #3b82f6;
+
+}
+
+.garantia-card .card-header{
+
+    background:#dbeafe;
+
+    text-align:center;
+
+    font-weight:bold;
+
+    font-size:1.6rem;
+
+}
+
+
+/* ESTADOS */
+
+.estado{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:15px;
+
+    font-size:1.1rem;
+
+}
+
+.circulo{
+
+    width:20px;
+
+    height:20px;
+
+    border:2px solid #222;
+
+    border-radius:50%;
+
+}
+
+.rojo{
+
+    background:#d62d2d;
+
+    border-color:#d62d2d;
+
+}
+
+
+/* BOTON RECHAZADA */
+
+.btn-rechazada{
+
+    background:#c24c82;
+
+    color:#fff;
+
+    font-weight:bold;
+
+    padding:14px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.btn-rechazada:hover{
+
+    background:#b53f74;
+
+    color:white;
+
+}
+
+
+
+/* Menú Toggle Invisible por defecto */
+/* Menú Toggle Invisible por defecto */
+#menu,
+.menus {
+    display: none;
+}
+
+/* ===========================
+   TABLETS (992px)
+=========================== */
+@media (max-width: 992px) {
+
+    .contenedor {
+        display: block;
+        position: relative;
+    }
+
+    /* HAMBURGUESA (SE DEJA IGUAL) */
+    .menus {
+        display: block;
+        position: absolute;
+        top: 32px;
+        left: 20px;
+        z-index: 3000;
+        font-size: 35px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .contenedor aside {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 240px;
+        height: 100vh;
+        z-index: 2000;
+        transition: left .4s ease;
+        border-radius: 0;
+    }
+
+    #menu:checked~.contenedor aside {
+        left: 0;
+    }
+
+    .opciones {
+        margin-top: 80px;
+    }
+
+    .contenedor header {
+        height: 100px;
+        padding: 0 20px;
+    }
+
+    .contenedor header img {
+        width: 200px;
+    }
+
+    .nombreUsuario {
+        left: auto;
+        right: 70px;
+    }
+
+    .cerrarSesion {
+        right: 20px;
+    }
+
+    .contenedor main {
+        padding: 20px;
+    }
+
+    .title-pill {
+        font-size: 20px;
+        max-width: 100%;
+    }
+
+    .garantia-card {
+        margin-top: 20px;
+    }
+
+    .btn-primary-kronos,
+    .btn-ac,
+    .btn-ac-re {
+        width: 100%;
+    }
+}
+
+
+/* ===========================
+   CELULARES (600px)
+=========================== */
+@media (max-width: 600px) {
+
+    .contenedor main {
+        padding: 15px;
+    }
+
+    .contenedor header img {
+        width: 150px;
+    }
+
+    .menus {
+        font-size: 32px;
+        top: 34px;
+    }
+
+    .title-pill {
+        font-size: 18px;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .field {
+        display: block !important;
+        width: 100%;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    h2.section-title {
+        font-size: 20px;
+    }
+
+    .obs-box {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .garantia-card {
+        margin-top: 25px;
+    }
+
+    .garantia-card .card-header {
+        font-size: 1.3rem;
+    }
+
+    .estado {
+        font-size: 1rem;
+        gap: 10px;
+    }
+
+    .circulo {
+        width: 18px;
+        height: 18px;
+    }
+
+    .btn-primary-kronos,
+    .btn-ac,
+    .btn-ac-re {
+        width: 100%;
+        font-size: 14px;
+    }
+}

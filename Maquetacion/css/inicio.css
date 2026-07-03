@@ -1,0 +1,872 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Fredoka', sans-serif;
+}
+
+header {
+    background: #E6DFFF;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+body, html {
+    background-color: #E6DFFF;
+    overflow-x: hidden;
+    width: 100%;
+}
+/* --- LOGO Y TÍTULO (CON LOGO TRANSPARENTE) --- */
+.navbar-brand {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+.logo {
+    width: 250px; 
+    max-width: 100%; 
+    height: auto;
+    display: block;
+    background-color: transparent !important;
+    background: transparent !important;
+    mix-blend-mode: multiply; 
+    transition: width 0.3s ease;
+}
+@media (min-width: 1200px) {
+
+    .navbar-brand {
+        flex: 0 0 350px !important; 
+        width: 350px !important; 
+    }
+
+    .logo {
+        width: 290px !important; 
+        max-width: 100%;
+    }
+
+
+    .navbar-brand h1 {
+        font-size: 22px !important; 
+    }
+}
+
+header h1 {
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(95, 3, 95);
+    margin: 0; 
+}
+
+/* --- BARRA DE BÚSQUEDA (ESTILO LUPA MORADA) --- */
+.search-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.btn-buscar-purple {
+    background-color: #7a61e6; 
+    color: white !important;
+    border: none !important;
+    border-radius: 0 6px 6px 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px; 
+}
+
+.btn-buscar-purple:hover {
+    background-color: #5b43c4 ; 
+    color: white !important;
+}
+
+/* --- NAVBAR Y MENÚ DE NAVEGACIÓN --- */
+.navbar-kronos {
+    padding: 10px 0;
+    width: 100%;
+}
+
+.marca {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.opcion{
+    text-decoration: none;
+    border: 2px solid black!important;
+}
+
+.opcion:hover{
+    color: darkblue;
+    transform: translateY(-4px);
+}
+
+.opcion-menu {
+    font-weight: 700;
+    font-size: 18px;
+    position: relative;
+    color: #000000; 
+    border: none;
+    border-radius: px;
+    height: 43px;
+    cursor: pointer;
+}
+
+.opcion-menu::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    transition: 0.3s;
+    
+}
+
+.opcion-menu:hover::after {
+    width: 100%;
+    
+}
+
+.login-jefe a{
+    background: transparent;
+}
+.bi-person-fill{
+    font-size: 30px;
+    color: white;
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+.opcion-carrito-vert{
+    background: linear-gradient(135deg, orange, rgb(243, 172, 41));
+}
+.bi-cart{
+    color: #ffffff;
+    font-size: 20px;
+    height: 25px;
+}
+
+.carrito-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100vh;
+    background-color: #f8f6fc;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1060; 
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out; 
+}
+
+/* Clase que añadiremos con JS para mostrarlo */
+.carrito-sidebar.active {
+    transform: translateX(0);
+}
+
+.carrito-body {
+    flex: 1;
+    overflow-y: auto; 
+}
+
+.redes{
+    margin-top:10px;
+    display:flex;
+    gap:10px;
+}
+.redes i{
+    font-size:20px;
+    cursor:pointer;
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 12px;
+    
+}
+
+.opcion-menu-select {
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+    cursor: pointer;                   
+    border: none;                  
+    padding: 6px 25px 6px 10px;      
+}
+
+.opcion-menu-select:hover {
+    color: #555555;      
+    transition: color 0.3s ease; 
+}
+
+
+/* --- BOTÓN LOGIN NAV --- */
+.btn-login-nav {
+    background-color: white; 
+    border-radius: 30px;
+    padding: 8px ;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-login-nav:hover {
+    background-color: rebeccapurple ;
+    border: solid 2px black;
+}
+
+/* --- MODAL Y OTROS ELEMENTOS --- */
+.btn-close {
+    background-color: rgb(235, 243, 243);
+    border-radius: 5px;
+    border: solid 2px rebeccapurple;
+}
+
+.model-header {
+    display: flex;
+}
+
+.model-login {
+    border-radius: 12px;
+}
+
+.modal-login h2 {
+    color: var(--negro, #000000);
+    font-weight: 700;
+}
+
+.btn-login {
+    color: white;
+    font-size: 15px;
+    font-weight: 752;
+}
+
+.btn-login:hover {
+    background: rgb(122, 122, 231);
+    color: white;
+}
+
+.link-login {
+    text-decoration: none;
+}
+
+.modal-title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Estilos del modal de Mis Pedidos */
+.b-modal-custom {
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+}
+
+/* Encabezado usando el morado principal de Kronos */
+.header-pedidos {
+    background-color: #6f42c1; 
+}
+
+/* Tarjetas de compras anteriores */
+.card-pedido {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card-pedido:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08) !important;
+}
+
+/* Miniaturas de los productos de ferretería */
+.img-historial-thumb {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 4px;
+    background-color: #fefefe;
+}
+
+/* Cantidad interna de cada miniatura */
+.badge-cantidad {
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    background-color: #6c757d;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+/* Color naranja para el botón */
+.btn-orange {
+    background-color: #fd7e14;
+    border-color: #fd7e14;
+}
+.btn-orange:hover {
+    background-color: #e46a07;
+    border-color: #e46a07;
+}
+
+/* Estilo y sombra para la burbuja del contador flotante */
+.btn-add-carrito .contador-badge {
+    font-size: 11px;
+    padding: 4px 7px;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* --- RESPONSIVE: SEPARACIÓN AUTOMÁTICA EN ESCRITORIO --- */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto !important;
+    }
+    
+    .search-container {
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+}
+
+/* --- DECORACIÓN REGISTRO DE USUARIO --- */
+
+.inicio-r{
+    text-align: center;
+}
+
+.inicio-r h2{
+    color: rgb(138, 1, 1);
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.inicio-r p{
+    color: #555555;
+}
+
+.form-label{
+    color: #0128a7;
+}
+
+.form-control{
+    border: 2px solid rgb(138, 1, 1);
+}
+
+.form-control2{
+    border: 2px solid rgb(148, 146, 146);
+    width: 290px;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.btn-ingresar{
+    background: rgb(0, 132, 255);
+}
+
+.link-login{
+    color: #0128a7;
+}
+
+.link-login2{
+    color: palevioletred;
+    text-decoration: none;
+}
+
+.link-login:hover{
+    color: rgb(95, 3, 95);
+}
+
+.link-login2:hover{
+    color: rgb(0, 132, 255);
+}
+
+hr{
+    border: 2px solid;
+    color: rgb(95, 3, 95);
+    margin: 0;
+}
+
+.lista{
+    width: 150px;
+    padding: 5px;
+    border-radius: 7px;
+    background-color: #fcfcfc;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+option{
+    color: rgb(122, 122, 231);
+}
+header a{
+    width: 120px;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 8px;
+}
+
+#carouselExampleInterval {
+    width: 100%;
+    overflow: hidden; 
+    position: relative; 
+}
+
+.banner, .banner2 {
+    width: 100%;
+    height: 400px; 
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    flex-direction: column;
+    padding-left: 10%;
+}
+
+.banner {
+    background-image: url(../img/Banner.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.banner2 {
+    background-image: url(../img/BannerOfertas.png);
+    background-size: cover;
+    background-position: right center;
+}
+
+.banner h1 {
+    font-size: 55px;
+    font-weight: 700;   
+    text-align: left;
+    margin-bottom: 15px; 
+    color: rgb(0, 0, 0); 
+}
+
+.banner p {
+    font-weight: 700;
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 25px; 
+    color: rgb(0, 0, 0);
+}
+
+.b-button {
+    background: linear-gradient(135deg, rgb(247, 166, 15), rgb(255, 166, 0));
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.b-button:hover{
+    background: linear-gradient(135deg, rgb(252, 176, 34), rgb(247, 182, 61));   
+    transition: color 0.5s; 
+}
+
+#carouselExampleInterval .carousel-control-prev,
+#carouselExampleInterval .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.3); 
+    border-radius: 50%;
+    z-index: 15;
+}
+
+#carouselExampleInterval .carousel-control-prev {
+    left: 20px !important; 
+}
+
+#carouselExampleInterval .carousel-control-next {
+    right: 20px !important; 
+}
+
+
+#carouselExampleInterval .carousel-control-prev-icon,
+#carouselExampleInterval .carousel-control-next-icon {
+    filter: none !important; 
+    width: 2rem;
+    height: 2rem;
+}
+
+
+.tienda-layout {
+    display: flex;
+    flex-direction: row; 
+    width: 100%;
+    background: rgb(224, 207, 243);
+    box-sizing: border-box;
+    padding: 20px 40px;
+    gap: 30px; 
+}
+.barra-lateral{
+    width: 240px;             
+    flex-shrink: 0;           
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+.opcion{
+    display: block;           
+    background-color: #b3a3fc;
+    color: white;
+    border: 4px solid black;
+    border-radius: 5px;
+    padding: 12px 20px;
+    text-align: left;         
+    width: 100%;              
+    box-sizing: border-box;   
+    cursor: pointer;
+    text-decoration: none;   
+    font-weight: bold;
+}
+
+.bi-stars{
+    font-size: 25px;
+    margin-left: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.ofertas{
+    background-color: rgb(255, 176, 31);
+    color: white;
+    margin-top: 35px;
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+}
+.oferta{
+    background: darkorange;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    margin-top: 15px;
+}
+.oferta:hover{
+    color: #4c2899;
+}
+.zona-derecha {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    min-width: 0;
+}
+
+/* --- BARRA DE PESTAÑAS CONTENEDORA --- */
+.notificacion {
+    display: flex;
+    gap: 40px;
+    border-bottom: 2px solid #b3a2df; 
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+    width: 100%;
+    list-style: none; 
+}
+
+/* --- BOTONES DE PESTAÑA --- */
+.notificacion .opciones {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4c2899 ; 
+    background: transparent ; 
+    border: none ;
+    border-bottom: 3px solid transparent;
+    padding: 0px 0px 6px 0px;
+    margin-bottom: -2px; 
+    transition: color 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+}
+
+
+.notificacion .opciones:hover {
+    color: #ff7a00 !important;
+}
+
+
+.notificacion .opciones.active {
+    color: #ff7a00 !important; 
+    border-bottom: 3px solid #ff7a00 !important; 
+    border-radius: 0px !important; 
+}
+
+/* --- ESTILOS DE CONTENIDO --- */
+.descripcion-bienvenida {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #222;
+    line-height: 1.4;
+}
+/* --- CARRUSEL PRODUCTOS --- */
+.encabezado-productos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #b3a2df;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.encabezado-productos h2 {
+    font-size: 22px;
+    margin: 0;
+    color: #111;
+}
+
+.contenedor-productos {
+    display: flex;
+    gap: 15px;
+}
+
+/* --- ENCABEZADO CON LÍNEA AL LADO --- */
+.encabezado-productos-lineal {
+    display: flex;
+    align-items: center; 
+    gap: 15px;          
+    width: 100%;        
+    margin-bottom: 25px; 
+}
+
+.encabezado-productos-lineal .linea-relleno {
+    flex-grow: 1;       
+    height: 2px;       
+    background-color: #b3a2df; 
+}
+
+/* --- DECORACIÓN PRODUCTOS CARRUSEL --- */
+.producto-t{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500px;
+}
+.card-title{
+    font-size: 20px;
+}
+
+.descrip{
+    font-size: 15px;
+}
+
+.agregar-b{
+    background-color: #FFE8A1;
+    color: #E06000;
+    border-color: #E06000;
+    border-radius: 5px;
+    width: 100%;
+    padding: 8px 16px;
+    text-align: center;
+}
+#carrusel .carousel-control-prev-icon,
+#carrusel .carousel-control-next-icon {
+    filter: invert(44%) sepia(91%) saturate(1814%) hue-rotate(5deg) brightness(94%) contrast(105%);
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+#carrusel .carousel-control-prev {
+    left: -60px !important; 
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#carrusel .carousel-control-next {
+    right: -60px !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+@media (max-width: 991.98px) {
+    header {
+        height: auto;
+        padding: 10px 0;
+    }
+.logo {
+    width: 250px !important;
+    height: auto !important;
+    min-width: 250px !important;
+}
+.navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+    flex: 0 0 260px !important; /* Mantiene un ancho fijo de 260px en PC */
+    width: 260px !important; /* Le reserva los 260px de espacio libre en la barra */
+}
+    
+    .navbar-brand h1 {
+        font-size: 16px;
+    }
+
+    /* Colapsa el buscador dentro del menú o lo ajusta al ancho completo */
+    .search-container {
+        flex: 1 !important; /* Ocupa de forma flexible el espacio del centro */
+    max-width: 550px !important; /* Evita que crezca de más hacia los lados */
+    margin: 0 auto !important;
+    }
+
+    /* Ajuste de los elementos del menú colapsado */
+    .navbar-collapse {
+        background-color: #E6DFFF;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-nav {
+        align-items: flex-start !important;
+        gap: 15px !important;
+    }
+
+    .navbar-nav .nav-item, 
+    .navbar-nav form, 
+    .opcion-menu-select {
+        width: 100%;
+    }
+
+    .opcion-carrito-vert {
+        flex-direction: row !important;
+        justify-content: center;
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .btn-login-nav {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Ajustes para el Banner principal */
+@media (max-width: 767.98px) {
+    .banner, .banner2 {
+        height: 300px;
+        padding-left: 5%;
+        background-position: center;
+    }
+
+    .banner h1 {
+        font-size: 32px;
+    }
+
+    .banner p {
+        font-size: 14px;
+        br {
+            display: none;
+        }
+    }
+
+    #carouselExampleInterval .carousel-control-prev,
+    #carouselExampleInterval .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Ajustes del Layout de la Tienda (Barra Lateral + Zona Derecha) */
+@media (max-width: 767.98px) {
+    .tienda-layout {
+        display: flex;         /* Asegura el comportamiento Flexbox */
+        flex-direction: column; 
+        padding: 15px;
+        gap: 20px;
+    }
+
+    /* Coloca los productos en primer lugar */
+    .zona-derecha {
+        padding: 10px 0;
+        order: 1;
+    }
+
+    /* Envía la barra lateral (con la información) abajo de los productos */
+    .barra-lateral {
+        width: 100%; 
+        order: 2;
+    }
+
+    .ofertas {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .oferta {
+        width: 100%; 
+    }
+
+    /* Navegación por pestañas scrolleable horizontalmente si no cabe */
+    .notificacion {
+        gap: 15px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 8px;
+    }
+
+    .notificacion .opciones {
+        font-size: 18px;
+    }
+}
+
+/* Ajuste del carrusel de productos de Bootstrap en móviles */
+@media (max-width: 991.98px) {
+
+    .tienda-layout .row-cols-lg-5 {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto; 
+        padding-bottom: 15px;
+        gap: 10px;
+    }
+
+    .tienda-layout .row-cols-lg-5 .col {
+        flex: 0 0 220px;
+        width: 220px;
+    }
+    
+
+    #carrusel .carousel-control-prev,
+    #carrusel .carousel-control-next {
+        display: none;
+    }
+}
+
+/* Ajuste del ancho del Sidebar del Carrito en pantallas pequeñas */
+@media (max-width: 400px) {
+    .carrito-sidebar {
+        width: 100%;
+    }
+}
+

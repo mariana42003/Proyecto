@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    
+  
+
+    <!-- Estilos de los DataTables -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/2.3.4/css/dataTables.bootstrap5.min.css"
+    />
+    <link rel="stylesheet" href="../css/proveedor.css" />
+    <title>Proveedores</title>
+  </head>
+  <body>
+    <input type="checkbox" id="menu" />
+
+    <label for="menu" class="menus">
+      <i class="bi bi-list"></i>
+    </label>
+
+    <div class="contenedor">
+<header class="w-100">
+    <h1 class="nombreUsuario">
+        <i class="bi bi-person-circle"></i>
+    </h1>
+
+    <img src="../img/logo.png" alt="">
+
+    <div class="cerrarSesion">
+        <a href="#" id="btnSalir">
+            <i class="bi bi-box-arrow-right"></i>
+        </a>
+    </div>
+</header>
+
+       <aside>
+            <div class="opciones">
+                <a href="principalProveedor.html"><i class="bi bi-speedometer"></i> Panel de control</a>
+                <a href="../pagesPaginaProveedor/ordenesCompra.html"><i class="bi bi-file-earmark-text-fill"></i>
+                    Ordenes de compra</a>
+                <a href="../pagesPaginaProveedor/estadoOrden.html"><i class="bi bi-truck"></i> Estado de entrega</a>
+                <a href="../pagesPaginaProveedor/principal-garantias.html"><i class="bi bi-shield-fill-check"></i>
+                    Garantias</a>
+            </div>
+        </aside>
+
+      <main> 
+        <h1><i class="bi bi-speedometer2"></i> Panel de control</h1>
+        <br /><br />
+
+        <div class="container-fluid p-0">
+          <div class="row g-4 align-items-start">
+            
+            <div class="col-12 col-md-5">
+              <div class="infoProveedor w-80">
+                <h2 class="w-70">Proveedor :</h2>
+                <p>Nombre: John Doe</p>
+                <p>Teléfono: 123-456-7890</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-7">
+              <div >
+                <table class="table table-hover mb-0 ">
+                  <thead>
+                    <tr>
+                      <th>Estado</th>
+                      <th>Cantidad</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  
+                    <tr>
+                      <td>Confirmadas</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>Pendiente</td>
+                      <td>6</td>
+                    </tr>
+                  </tbody>
+                </table> 
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <br /><br /><br />
+
+        <div class="ultimasOrdenes">
+          <h2>Ultimas ordenes</h2>
+          <br />
+          <div class="table-responsive">
+            <table class="table table-hover  tablaPersonalizada">
+              <thead>
+                <tr>
+                  <th>Numero de orden</th>
+                  <th>Fecha</th>
+                  <th>Comprador</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>12345</td>
+                  <td>2024-06-01</td>
+                  <td>Empresa XYZ</td>
+                  <td>Pendiente</td>
+                </tr>
+                <tr>
+                  <td>5432</td>
+                  <td>2024-06-01</td>
+                  <td>Empresa Z</td>
+                  <td>Enviado</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <br /><br /><br />
+
+        <h2>Notificaciones</h2>
+
+        <div class="cajaGrandeNotis row g-3 m-0">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="notis w-100 h-100 d-flex flex-column justify-content-between">
+              <p class="m-0">Nueva orden de compra recibida</p>
+              <i class="bi bi-bell text-end"></i>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="notis w-100 h-100 d-flex flex-column justify-content-between">
+              <p class="m-0">..............</p>
+              <i class="bi bi-bell text-end"></i>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="notis w-100 h-100 d-flex flex-column justify-content-between">
+              <p class="m-0">..............</p>
+              <i class="bi bi-bell text-end"></i>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="notis w-100 h-100 d-flex flex-column justify-content-between">
+              <p class="m-0">..............</p>
+              <i class="bi bi-bell text-end"></i>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+
+             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- JQuery, requerido para los DataTables -->
+    <script src="https://cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
+    <!-- Para que funcione el DataTable -->
+    <script src="https://cdn.datatables.net/2.3.4/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scrip mio -->
+
+    <script src="../js/jefe-proveedores.js"></script>
+
+
+  </body>
+</html>

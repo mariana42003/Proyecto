@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
+    <link rel="stylesheet" href="../css/estado-gar-provee.css">
+
+    <title>Kronos Inventory</title>
+</head>
+
+<body class="fondo">
+
+<input type="checkbox" id="menu">
+
+<label for="menu" class="menus">
+    <i class="bi bi-list"></i>
+</label>
+
+<div class="contenedor container-fluid p-0">
+
+    <!-- HEADER -->
+    <header class="w-100">
+
+        <h1 class="nombreUsuario">
+            <i class="bi bi-person-circle"></i>
+        </h1>
+
+        <img src="../img/logo.png" alt="Logo">
+
+          <div class="cerrarSesion">
+                <a href="#" id="btnSalir">
+                    <i class="bi bi-box-arrow-right"></i>
+                </a>
+            </div>
+
+    </header>
+
+    <!-- CONTENEDOR DEL ASIDE Y MAIN -->
+    <div class="d-flex align-items-stretch w-100 posicion-contenedor">
+
+        <!-- ASIDE -->
+    <aside>
+        <div class="opciones">
+          <!-- -- PANEL DE CONTROL -- -->
+
+          <a href="../Panel.html">
+            <i class="bi bi-eye"></i>
+            Panel de control
+          </a>
+
+          <!-- -- GESTION DE INVENTARIO -- -->
+
+          <div class="item-acordeon">
+            <input
+              type="radio"
+              name="menu-acordeon"
+              id="check-inventario"
+              class="radio-check"
+            />
+
+            <label for="check-inventario" class="titulo-menu">
+              <i class="bi bi-box-seam"></i>
+              Gestión de Inventario
+            </label>
+
+            <div class="submenu">
+              <a href="../gestionInventario/stock.html">
+                <i class="bi bi-journal-text"></i>
+                Stock
+              </a>
+
+              <a href="../gestionInventario/reportes.html">
+                <i class="bi bi-pencil"></i>
+                Reportes
+              </a>
+            </div>
+          </div>
+
+          <!-- -- MOVIMIENTOS DE ENTRADA Y SALIDA -- -->
+
+          <div class="item-acordeon">
+            <input
+              type="radio"
+              name="menu-acordeon"
+              id="check-movimientos"
+              class="radio-check"
+            />
+
+            <label for="check-movimientos" class="titulo-menu">
+              <i class="bi bi-cart"></i>
+              Movimientos de entrada/salida
+            </label>
+
+            <div class="submenu">
+              <a href="../Movimientos-index/Entrada.html">
+                <i class="bi bi-box-arrow-in-down"></i>
+                Registro de Entradas
+              </a>
+
+              <a href="../Movimientos-index/Salida.html">
+                <i class="bi bi-box-arrow-up"></i>
+                Registro de Salidas
+              </a>
+            </div>
+          </div>
+
+          <!-- -- PROVEEDORES -- -->
+
+          <div class="item-acordeon">
+            <input
+              type="radio"
+              name="menu-acordeon"
+              id="check-proveedores"
+              class="radio-check"
+            />
+
+            <label for="check-proveedores" class="titulo-menu">
+              <i class="bi bi-people"></i>
+              Proveedores
+            </label>
+
+            <div class="submenu">
+              <a href="../Pagesjefe/registrarProveedore.html">
+                <i class="bi bi-card-list"></i>
+                Registrar
+              </a>
+
+
+            </div>
+          </div>
+
+          <!-- -- ORDEN DE COMPRA -- -->
+
+          <div class="item-acordeon">
+            <input
+              type="radio"
+              name="menu-acordeon"
+              id="check-ordenes"
+              class="radio-check"
+            />
+
+            <label for="check-ordenes" class="titulo-menu">
+              <i class="bi bi-file-earmark-arrow-down"></i>
+              Generar orden de compra
+            </label>
+
+            <div class="submenu">
+              <a href="../pagesJefe/historialCompras.html">
+                <i class="bi bi-journal-check"></i>
+                Historial compras
+              </a>
+
+              <a href="../pagesJefe/materialCantidad.html">
+                <i class="bi bi-boxes"></i>
+                Asociar materiales
+              </a>
+
+              <a href="../pagesJefe/verificarEstado.html">
+                <i class="bi bi-arrow-repeat"></i>
+                Verificar estado
+              </a>
+            </div>
+          </div>
+
+          <!-- -- GARANTIAS -- -->
+
+          <div class="item-acordeon">
+            <input
+              type="radio"
+              name="menu-acordeon"
+              id="check-garantias"
+              class="radio-check"
+            />
+
+            <label for="check-garantias" class="titulo-menu">
+              <i class="bi bi-shield-check"></i>
+              Garantías
+            </label>
+
+            <div class="submenu">
+              <a href="../Garantias/SolicitudGarantias.html">
+                <i class="bi bi-pencil-square"></i>
+                Solicitudes de Garantía
+              </a>
+
+              <a href="../Garantias/consultarOrden.html">
+                <i class="bi bi-file-earmark-text"></i>
+                Consultar Orden
+              </a>
+
+              <a href="../Garantias/historial-garantias.html">
+                <i class="bi bi-clock-history"></i>
+                Historial
+              </a>
+
+              <a href="../Garantias/estado-gar-provee.html">
+                <i class="bi bi-arrow-left-right"></i>
+                Estado Garantía
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+      
+
+        <!-- MAIN -->
+        <main class="flex-grow-1 p-3 p-md-5 overflow-hidden">
+                 <div class="container-fluid mt-5 px-4">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            
+            <div class="text-center py-2 mb-5 banner-estado-solicitud">
+                <h2 class="mb-0 fs-4 text-dark">Estado de solicitud de garantía</h2>
+            </div>
+
+            <div class="table-responsive container-tabla-comic mx-auto">
+                <table id="tablaEstadoGarantia" class="table align-middle text-center custom-table-estado mb-0">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Proveedor</th>
+                            <th style="width: 20%;">Numero de Orden</th>
+                            <th style="width: 25%;">Fecha</th>
+                            <th style="width: 30%;">ESTADO DE LA ORDEN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Juan perez</td>
+                            <td class="fw-bold">C567</td>
+                            <td>08/07/2026</td>
+                            <td>
+                                <button class="btn btn-ver-actualizacion" data-bs-toggle="modal" data-bs-target="#modalAprobado">Ver actualizacion</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Taladros SAS</td>
+                            <td class="fw-bold">C333</td>
+                            <td>09/06/2026</td>
+                            <td>
+                                <button class="btn btn-ver-actualizacion" data-bs-toggle="modal" data-bs-target="#modalRechazado">Ver actualizacion</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pablito Hernandez</td>
+                            <td class="fw-bold">C211</td>
+                            <td>01/02/2026</td>
+                            <td>
+                                <button class="btn btn-ver-actualizacion" data-bs-toggle="modal" data-bs-target="#modalAprobado">Ver actualizacion</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Nernan Dario</td>
+                            <td class="fw-bold">C121</td>
+                            <td>01/02/2026</td>
+                            <td>
+                                <button class="btn btn-ver-actualizacion" data-bs-toggle="modal" data-bs-target="#modalRechazado">Ver actualizacion</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalAprobado" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content card-modal-comic p-4 text-center">
+            <div class="mb-3 text-center">
+                <img src="../img/logo.png" alt="Kronos Inventory Control" class="img-fluid logo-modal-kronos">
+                </div>
+            
+            <div class="mb-2">
+                <span class="fs-4">🔔</span> 
+                <span class="fw-bold text-dark fs-5 mx-2">Solicitud de garantia</span> 
+                <span class="fs-4">🔧</span>
+            </div>
+
+            <div class="caja-info-modal text-start p-3 mb-2">
+                <p class="mb-1 text-muted">Nombre de la orden : <span class="text-dark fw-normal">OC-1002</span></p>
+                <p class="mb-1 text-muted">Producto : <span class="text-dark fw-bold">Taladro</span></p>
+                <p class="mb-0 text-muted">Fecha de solicitud : <span class="text-dark fw-bold">08/03/2025</span></p>
+            </div>
+
+            <div class="caja-info-modal p-2 mb-2 d-flex align-items-center justify-content-center">
+                <span class="fw-bold text-muted me-2">Estado de la garantia:</span>
+                <span class="badge-status-comic aprobado">✓ APROBADA</span>
+            </div>
+
+            <div class="caja-info-modal p-3 mb-4 text-start">
+                <p class="mb-0 text-dark text-modal-desc text-center">
+                    Su solicitud de garantia ha sido aprobada el proveedor se encargara de gestionar la reparacion o cambio del producto
+                </p>
+            </div>
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="button" class="btn btn-volver-modal" data-bs-dismiss="modal">Volver</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalRechazado" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content card-modal-comic p-4 text-center">
+            <div class="mb-3 text-center">
+                <img src="../img/logo.png" alt="Kronos Inventory Control" class="img-fluid logo-modal-kronos">
+                </div>
+            
+            <div class="mb-2">
+                <span class="fs-4">🔔</span> 
+                <span class="fw-bold text-dark fs-5 mx-2">Solicitud de garantia</span> 
+                <span class="fs-4">🔧</span>
+            </div>
+
+            <div class="caja-info-modal text-start p-3 mb-2">
+                <p class="mb-1 text-muted">Nombre de la orden : <span class="text-dark fw-normal">OC-1002</span></p>
+                <p class="mb-1 text-muted">Producto : <span class="text-dark fw-bold">Taladro</span></p>
+                <p class="mb-0 text-muted">Fecha de solicitud : <span class="text-dark fw-bold">08/03/2025</span></p>
+            </div>
+
+            <div class="caja-info-modal p-2 mb-2 d-flex align-items-center justify-content-center">
+                <span class="fw-bold text-muted me-2">Estado de la garantia:</span>
+                <span class="badge-status-comic rechazado">✕ RECHAZADA</span>
+            </div>
+
+            <div class="caja-info-modal p-3 mb-4 text-start">
+                <p class="mb-0 text-dark text-modal-desc text-center">
+                    Su solicitud de garantia ha sido revisada. Lamentablemente la garantia no aplica para este producto.
+                </p>
+            </div>
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="button" class="btn btn-volver-modal" data-bs-dismiss="modal">Volver</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+              
+        </main>
+
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.3.2/js/dataTables.bootstrap5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>}
+        <script src="../js/jefe-proveedores.js"></script>
+
+
+</body>
+</html>
