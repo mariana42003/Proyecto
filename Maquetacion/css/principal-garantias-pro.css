@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(235, 235, 231);
+    font-family: sans-serif;
+}
+
+/* Contenedor Grid Principal */
+.contenedor {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    grid-column: 1 / span 2;
+    height: 100px;
+    background-color: #7d7dd8;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header img {
+    width: 280px;
+    height: auto;
+}
+
+.nombreUsuario {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nombreUsuario i {
+    color: rgb(210, 202, 255);
+    font-size: 36px;
+}
+
+.cerrarSesion {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cerrarSesion a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.cerrarSesion i {
+    color: rgb(212, 215, 250);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Sidebar / Aside */
+.contenedor aside {
+    grid-column: 1;
+    background-color: #c5d7f3;
+    border-radius: 6px;
+}
+
+.opciones {
+    padding-top: 30px;
+}
+
+.opciones a {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.opciones a i {
+    color: #6b2d91;
+    font-size: 22px;
+    margin-right: 11px;
+}
+
+.opciones a:hover {
+    border: 2px solid rgb(90, 90, 177);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main */
+.contenedor main {
+    grid-column: 2;
+    padding: 30px;
+    min-width: 0; /* Previene desbordamientos */
+}
+
+.contenedor h1,
+.contenedor h2 {
+    color: #1f3f8c;
+}
+
+
+/*-------------------------------------------*/
+/*----------- SOLICITUD GARANTIA ------------*/
+/*-------------------------------------------*/
+ :root{
+    --kronos-purple: #7b80d8;
+    --kronos-purple-dark: #6266c9;
+    --kronos-sidebar: #cdeafb;
+    --kronos-pink: #cf5fa0;
+    --kronos-pink-dark: #b84e8c;
+    --kronos-ink: #2f2f45;
+  }
+ /* ---------- Page title pill ---------- */
+  .page-title-pill{
+  background:var(--kronos-sidebar);
+    border:1px solid #8fb9cf;
+    border-radius:22px;
+    font-size:22px;
+    font-weight:700;
+    color:var(--kronos-ink);
+    max-width:620px;
+  }
+ /* ---------- Table ---------- */
+  .table-kronos thead th{
+    background: var(--kronos-purple);
+    color:#fff;
+    border-color: var(--kronos-purple-dark);
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .table-kronos td, .table-kronos th{
+    border: 1px solid var(--kronos-purple);
+    vertical-align:middle;
+  }
+  .btn-kronos-pink{
+    background: var(--kronos-pink);
+    border-color: var(--kronos-pink-dark);
+    color:#fff;
+    border-radius: 999px;
+    font-size:.82rem;
+    white-space:nowrap;
+  }
+  .btn-kronos-pink:hover{
+    background: var(--kronos-pink-dark);
+    color:#fff;
+  }
+/* ---------- Summary card ---------- */
+  .summary-card{
+    border: 2px solid var(--kronos-purple);
+    border-radius: .75rem;
+    background:#fff;
+  }
+  .summary-card .num{
+    font-size:2rem;
+    font-weight:800;
+    color: var(--kronos-ink);
+  }
+
+  .section-title{
+    color: var(--kronos-pink-dark);
+    font-weight:700;
+  }
+  .solicitudes-title{
+    color: var(--kronos-purple-dark);
+    font-weight:800;
+  }
+   /* ---------- Floating helper buttons ---------- */
+  .kronos-fab{
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    z-index: 1030;
+    display:flex;
+    flex-direction:column;
+    gap:.6rem;
+  }
+  .kronos-fab .btn{
+    width:48px;height:48px;
+    border-radius:50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  }
+
+
+
+
+/* Menú Toggle Invisible por defecto */
+#menu,
+.menus {
+    display: none;
+}
+
+/* ===========================
+   TABLETS (992px)
+=========================== */
+@media (max-width: 992px) {
+
+    .contenedor {
+        display: block;
+        position: relative;
+    }
+
+    /* HAMBURGUESA (SE DEJA IGUAL) */
+    .menus {
+        display: block;
+        position: absolute;
+        top: 32px;
+        left: 20px;
+        z-index: 3000;
+        font-size: 35px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .contenedor aside {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 240px;
+        height: 100vh;
+        z-index: 2000;
+        transition: left .4s ease;
+        border-radius: 0;
+    }
+
+    #menu:checked~.contenedor aside {
+        left: 0;
+    }
+
+    .opciones {
+        margin-top: 80px;
+    }
+
+    .contenedor header {
+        height: 100px;
+        padding: 0 20px;
+    }
+
+    .contenedor header img {
+        width: 200px;
+    }
+
+    .nombreUsuario {
+        left: auto;
+        right: 70px;
+    }
+
+    .cerrarSesion {
+        right: 20px;
+    }
+
+    .contenedor main {
+        padding: 20px;
+    }
+
+    .page-title-pill {
+        max-width: 100%;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .table {
+        font-size: 14px;
+    }
+
+    .btn-kronos-pink {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+
+    .summary-card {
+        margin-top: 10px;
+    }
+}
+
+
+/* ===========================
+   CELULARES (600px)
+=========================== */
+@media (max-width: 600px) {
+
+    .contenedor main {
+        padding: 15px;
+    }
+
+    .contenedor header img {
+        width: 150px;
+    }
+
+    .menus {
+        font-size: 32px;
+        top: 34px;
+    }
+
+    .page-title-pill {
+        max-width: 100%;
+        font-size: 18px;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .solicitudes-title,
+    .section-title {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .table {
+        font-size: 13px;
+    }
+
+    .btn-kronos-pink {
+        width: 100%;
+        white-space: normal;
+        font-size: 13px;
+    }
+
+    .summary-card {
+        width: 100%;
+    }
+
+    .summary-card .num {
+        font-size: 1.7rem;
+    }
+}

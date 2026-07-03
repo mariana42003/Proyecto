@@ -1,0 +1,193 @@
+
+.popup-aprobado{
+    width:500px;
+    padding:35px;
+    border-radius:15px;
+    background:#fff;
+}
+
+.aprobado-alert{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* Logo */
+
+.logo-kronos{
+    width:230px;
+    margin-bottom:25px;
+}
+
+/* Barra */
+
+.barra-aprobado{
+    width:100%;
+    background:#d8bfd8;
+    border-radius:8px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 18px;
+    color:#5b2d73;
+    margin-bottom:35px;
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
+}
+
+.barra-aprobado span{
+    flex:1;
+    text-align:center;
+    color:#222;
+    font-size:20px;
+    font-weight:500;
+}
+
+.barra-aprobado i{
+    font-size:22px;
+    color:#5b2d73;
+}
+
+/* Texto */
+
+.mensaje-aprobado{
+    font-size:22px;
+    color:#222;
+    text-align:center;
+    line-height:1.4;
+    margin-bottom:35px;
+}
+
+/* Icono rojo */
+
+.icono-aprobado{
+    width:72px;
+    height:72px;
+    background:#263d91;
+    border-radius: 10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:28px;
+}
+
+.icono-aprobado i{
+    color:#fff;
+    font-size:42px;
+}
+
+/* Botón */
+
+.btn-aprobado{
+    background:#fff;
+    border:2px solid #555;
+    color:#3247a8;
+    border-radius:8px;
+    padding:8px 22px;
+    font-size:17px;
+    transition:.3s;
+}
+
+.btn-aprobado:hover{
+    background:#3247a8;
+    color:#fff;
+    border-color:#3247a8;
+}
+
+/*---------------------------------------------*/
+/* ==========================
+        SWEET ALERT
+========================== */
+
+.popup-rechazo{
+    width:500px;
+    padding:35px;
+    border-radius:15px;
+    background:#fff;
+}
+
+.rechazo-alert{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* Logo */
+
+.logo-kronos{
+    width:230px;
+    margin-bottom:25px;
+}
+
+/* Barra */
+
+.barra-rechazo{
+    width:100%;
+    background:#d8bfd8;
+    border-radius:8px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 18px;
+    color:#5b2d73;
+    margin-bottom:35px;
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
+}
+
+.barra-rechazo span{
+    flex:1;
+    text-align:center;
+    color:#222;
+    font-size:20px;
+    font-weight:500;
+}
+
+.barra-rechazo i{
+    font-size:22px;
+    color:#5b2d73;
+}
+
+/* Texto */
+
+.mensaje-rechazo{
+    font-size:22px;
+    color:#222;
+    text-align:center;
+    line-height:1.4;
+    margin-bottom:35px;
+}
+
+/* Icono rojo */
+
+.icono-rechazo{
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    background:#d72626;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:28px;
+}
+
+.icono-rechazo i{
+    color:#fff;
+    font-size:42px;
+}
+
+/* Botón */
+
+.btn-rechazo{
+    background:#fff;
+    border:2px solid #555;
+    color:#3247a8;
+    border-radius:8px;
+    padding:8px 22px;
+    font-size:17px;
+    transition:.3s;
+}
+
+.btn-rechazo:hover{
+    background:#3247a8;
+    color:#fff;
+    border-color:#3247a8;
+}

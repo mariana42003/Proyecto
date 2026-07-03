@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Bootstrap 5-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!--Font Awesome-->
+
+    <script
+      src="https://kit.fontawesome.com/a0994db117.js"
+      crossorigin="anonymous"
+    ></script>
+
+  
+
+    <!--DataTables Bootstrap-->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/2.3.4/css/dataTables.bootstrap5.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+     <link rel="stylesheet" href="css/Panel.css" />
+    <title>Panel de Control</title>
+  </head>
+
+  <body>
+     <input type="checkbox" id="menu" />
+
+    <label for="menu" class="menus">
+      <i class="bi bi-list"></i>
+    </label>
+    
+    <div class="contenedor">
+      <!-- -- HEADER PRINCIPAL -- -->
+
+      <header>
+        <h1 class="nombreUsuario">
+          <i class="bi bi-person-circle"></i>
+        </h1>
+
+        <img src="../img/logo.png" alt="Logo" />
+
+  
+            <div class="cerrarSesion">
+                <a href="#" id="btnSalir">
+                    <i class="bi bi-box-arrow-right"></i>
+                </a>
+            </div>
+      </header>
+
+
+      <!-- -- MENU LATERAL -- -->
+
+     <aside>
+        <div class="opciones">
+          <!-- -- PANEL DE CONTROL -- -->
+
+          <a href="../Panel.html">
+            <i class="bi bi-eye"></i>
+            Panel de control
+          </a>
+
+          <!-- -- GESTION DE INVENTARIO -- -->
+
+          <div class="item-acordeon">
+            <input
+              type="radio"
+              name="menu-acordeon"
+              id="check-inventario"
+              class="radio-check"
+            />
+
+            <label for="check-inventario" class="titulo-menu">
+              <i class="bi bi-box-seam"></i>
+              Gestión de Inventario
+            </label>
+
+            <div class="submenu">
+              <a href="../gestionInventario/stock.html">
+                <i class="bi bi-journal-text"></i>
+                Stock
+              </a>
+
+              <a href="../gestionInventario/reportes.html">
+                <i class="bi bi-pencil"></i>
+                Reportes
+              </a>
+            </div>
+          </div>
+
+          <!-- -- MOVIMIENTOS DE ENTRADA Y SALIDA -- -->
+
+          <div class="item-acordeon">
+            <input
+              type="radio"
+              name="menu-acordeon"
+              id="check-movimientos"
+              class="radio-check"
+            />
+
+            <label for="check-movimientos" class="titulo-menu">
+              <i class="bi bi-cart"></i>
+              Movimientos de entrada/salida
+            </label>
+
+            <div class="submenu">
+              <a href="../Movimientos-index/Entrada.html">
+                <i class="bi bi-box-arrow-in-down"></i>
+                Registro de Entradas
+              </a>
+
+              <a href="../Movimientos-index/Salida.html">
+                <i class="bi bi-box-arrow-up"></i>
+                Registro de Salidas
+              </a>
+            </div>
+          </div>
+
+          <!-- -- PROVEEDORES -- -->
+
+          <div class="item-acordeon">
+            <input
+              type="radio"
+              name="menu-acordeon"
+              id="check-proveedores"
+              class="radio-check"
+            />
+
+            <label for="check-proveedores" class="titulo-menu">
+              <i class="bi bi-people"></i>
+              Proveedores
+            </label>
+
+            <div class="submenu">
+              <a href="../Pagesjefe/registrarProveedore.html">
+                <i class="bi bi-card-list"></i>
+                Registrar
+              </a>
+
+
+            </div>
+          </div>
+
+          <!-- -- ORDEN DE COMPRA -- -->
+
+          <div class="item-acordeon">
+            <input
+              type="radio"
+              name="menu-acordeon"
+              id="check-ordenes"
+              class="radio-check"
+            />
+
+            <label for="check-ordenes" class="titulo-menu">
+              <i class="bi bi-file-earmark-arrow-down"></i>
+              Generar orden de compra
+            </label>
+
+            <div class="submenu">
+              <a href="../pagesJefe/historialCompras.html">
+                <i class="bi bi-journal-check"></i>
+                Historial compras
+              </a>
+
+              <a href="../pagesJefe/materialCantidad.html">
+                <i class="bi bi-boxes"></i>
+                Asociar materiales
+              </a>
+
+              <a href="../pagesJefe/verificarEstado.html">
+                <i class="bi bi-arrow-repeat"></i>
+                Verificar estado
+              </a>
+            </div>
+          </div>
+
+          <!-- -- GARANTIAS -- -->
+
+          <div class="item-acordeon">
+            <input
+              type="radio"
+              name="menu-acordeon"
+              id="check-garantias"
+              class="radio-check"
+            />
+
+            <label for="check-garantias" class="titulo-menu">
+              <i class="bi bi-shield-check"></i>
+              Garantías
+            </label>
+
+            <div class="submenu">
+              <a href="../Garantias/SolicitudGarantias.html">
+                <i class="bi bi-pencil-square"></i>
+                Solicitudes de Garantía
+              </a>
+
+              <a href="../Garantias/consultarOrden.html">
+                <i class="bi bi-file-earmark-text"></i>
+                Consultar Orden
+              </a>
+
+              <a href="../Garantias/historial-garantias.html">
+                <i class="bi bi-clock-history"></i>
+                Historial
+              </a>
+
+              <a href="../Garantias/estado-gar-provee.html">
+                <i class="bi bi-arrow-left-right"></i>
+                Estado Garantía
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+      
+
+      <!-- -- CONTENIDO PRINCIPAL -- -->
+
+      <main>
+        <h2 class="titulo-panel">Panel de control</h2>
+        <br />
+        <section class="targetas-panel">
+          <div class="row g-3 w-100 m-0">
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="bloque-targeta w-100">
+                <p class="m-0">Total de productos</p>
+                <h3>1200</h3>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="bloque-targeta w-100">
+                <p class="m-0">Productos con bajo stock</p>
+                <h3>15</h3>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="bloque-targeta w-100">
+                <p class="m-0">Productos agotados</p>
+                <h3>5</h3>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="bloque-targeta w-100">
+                <p class="m-0">Movimientos recientes</p>
+                <h3>30</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--Tabla-->
+
+        <!-- ALERTAS DE STOCK -->
+
+        <section class="tabla-stock">
+          <h3 class="titulo-alertas">Alertas de stock</h3>
+          <div class="table-responsive">
+            <table
+              id="tablaProductos"
+              class="table table-hover table-bordered align-middle"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    <i class="fa-solid fa-box"></i>
+                    Producto
+                  </th>
+
+                  <th>
+                    <i class="fa-solid fa-layer-group"></i>
+                    Categoría
+                  </th>
+
+                  <th class="text-start">
+                    <i class="fa-solid fa-cubes"></i>
+                    Stock Actual
+                  </th>
+
+                  <th>
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    Estado
+                  </th>
+
+                  <th class="text-center">
+                    <i class="fa-solid fa-gear"></i>
+                    Acciones
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Martillo</td>
+
+                  <td>Herramientas</td>
+
+                  <td class="text-start">50</td>
+
+                  <td>
+                    <span class="badge-stock estable"> Stock estable </span>
+                  </td>
+
+                  <td class="text-center">
+                    <button
+                      class="btn-detalle"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalDetalleProducto"
+                    >
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Tornillo hexagonal</td>
+
+                  <td>Hardware</td>
+
+                  <td class="text-start">10</td>
+
+                  <td>
+                    <span class="badge-stock bajo-stock"> Bajo stock </span>
+                  </td>
+
+                  <td class="text-center">
+                    <button
+                      class="btn-detalle"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalDetalleProducto"
+                    >
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Taladro Bosch</td>
+
+                  <td>Herramientas</td>
+
+                  <td class="text-start">5</td>
+
+                  <td>
+                    <span class="badge-stock bajo-stock"> Bajo stock </span>
+                  </td>
+
+                  <td class="text-center">
+                    <button
+                      class="btn-detalle"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalDetalleProducto"
+                    >
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Tubo PVC</td>
+
+                  <td>Plomería</td>
+
+                  <td class="text-start">0</td>
+
+                  <td>
+                    <span class="badge-stock agotado"> Agotado </span>
+                  </td>
+
+                  <td class="text-center">
+                    <button
+                      class="btn-detalle"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalDetalleProducto"
+                    >
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!--MODAL DETALLE PRODUCTO-->
+
+        <div class="modal fade" id="modalDetalleProducto" tabindex="-1">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+              <!-- CABECERA -->
+
+              <div class="modal-header encabezado-ficha">
+                <div class="titulo-ficha">
+                  <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                  <h2 class="titulo-detalleF">
+                    Ficha Técnica: Tornillo Hexagonal
+                  </h2>
+                </div>
+
+                <img src="../img/logo.png" alt="Logo" class="logo-modal" />
+              </div>
+
+              <!-- CUERPO -->
+
+              <div class="modal-body">
+                <div class="datos-producto row g-3 text-dark">
+                  <div class="col-12 col-md-6">
+                    <p class="mt-2 mb-1"><strong>Referencia:</strong></p>
+                    <span>REF-1029</span>
+
+                    <p class="mt-2 mb-1"><strong>Categoría:</strong></p>
+                    <span>Herramientas</span>
+
+                    <p class="mt-2 mb-1">
+                      <strong>Ubicación en Bodega:</strong>
+                    </p>
+                    <span>Estantería A-12</span>
+                  </div>
+
+                  <div class="col-12 col-md-6">
+                    <p class="mt-2 mb-1"><strong>Precio Unitario:</strong></p>
+                    <span>$15.000</span>
+
+                    <p class="mt-2 mb-1"><strong>Proveedor:</strong></p>
+                    <span>Aceros del Caribe</span>
+
+                    <p class="mt-2 mb-1"><strong>Unidad de Medida:</strong></p>
+                    <span>Unidad / Kilogramos</span>
+                  </div>
+                </div>
+
+                <!-- PANEL ESTADO -->
+
+                <div class="panel-estado flex-wrap gap-3">
+                  <div>
+                    <h5 class="colorPanel">Panel de Estado Actual</h5>
+
+                    <strong class="text-dark">
+                      Stock Físico: 150 unidades
+                    </strong>
+                  </div>
+
+                  <span class="badge-stock estable m-0"> Stock estable </span>
+
+                  <button class="btn-alerta" id="btnModificarUmbralFicha">
+                    <i class="fa-solid fa-lock"></i>
+                    Modificar Umbral de Alerta
+                  </button>
+                </div>
+
+                <!-- DESCRIPCIÓN -->
+
+                <div class="descripcion-producto text-dark">
+                  <h4>Descripción:</h4>
+
+                  <p>
+                    Tornillo hexagonal de acero inoxidable con recubrimiento de
+                    zinc.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FOOTER -->
+
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn-cerrar-modal"
+                  data-bs-dismiss="modal"
+                >
+                  Cerrar Detalles
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Opciones Rapidas-->
+        <section class="opciones-rapidas">
+          <h3 class="titulo-opciones mb-3">Opciones rápidas</h3>
+
+          <div
+            class="d-flex justify-content-between align-items-center flex-wrap gap-3"
+          >
+            <div class="d-flex gap-3 flex-wrap">
+              <button
+                id="btnGenerarReporte"
+                class="btn-rapido btn-critico"
+                data-bs-toggle="modal"
+                data-bs-target="#modalGenerarReporte"
+              >
+                Generar Reporte de Materiales Críticos
+              </button>
+              <button
+                class="btn-rapido btn-alerta-config"
+                data-bs-toggle="modal"
+                data-bs-target="#modalConfigurarAlerta"
+              >
+                Configurar Alerta
+              </button>
+            </div>
+
+            <button
+              id="btnHistorialMovimientos"
+              class="btn-rapido btn-historial d-flex align-items-center gap-2"
+              data-bs-toggle="modal"
+              data-bs-target="#modalHistorialMovimientos"
+            >
+              Historial de Movimientos <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </section>
+
+        <!--PANEL DE REPORTE-->
+        <div
+          class="modal fade"
+          id="modalGenerarReporte"
+          tabindex="-1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content modal-content-reporte">
+              <div
+                class="modal-header header-reporte bg-white border-0 py-3 px-4 justify-content-between align-items-center"
+              >
+                <div class="d-flex align-items-center gap-3">
+                  <i class="bi bi-printer text-dark fs-2 border-0 p-0"></i>
+                  <h2 class="titulo-reporte m-0 text-dark fw-bold">
+                    Generación de Informes de Abastecimiento
+                  </h2>
+                </div>
+                <img
+                  src="../img/logo.png"
+                  alt="Logo"
+                  class="logo-modal-reporte"
+                  style="width: 180px"
+                />
+              </div>
+
+              <div class="modal-body body-reporte bg-white border-0 px-4">
+                <div class="contenedor-vista-previa p-4 mb-4">
+                  <h4 class="titulo-vista-previa mb-2">
+                    Vista Previa de Ítems en Alerta
+                  </h4>
+                  <p class="text-muted mb-3">
+                    Estado: El sistema ha filtrado automáticamente 2 productos
+                    con stock bajo o agotado
+                  </p>
+
+                  <table
+                    class="table table-hover align-middle table-preview mb-0"
+                  >
+                    <thead>
+                      <tr>
+                        <th>Nombre del Producto</th>
+                        <th>Stock</th>
+                        <th>Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Cemento Argos Gris (Saco 50kg)</td>
+                        <td>5</td>
+                        <td>
+                          <span class="badge-stock bajo-stock m-0"
+                            >Bajo stock</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Varilla Corrugada 1/2" (Tramo 6m)</td>
+                        <td>0</td>
+                        <td>
+                          <span class="badge-stock agotado m-0">Agotado</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="seccion-formatos mb-4">
+                  <p class="formato-descarga fw-semibold mb-3 fs-5">
+                    Seleccione el formato de descarga:
+                  </p>
+                  <div class="d-flex justify-content-center gap-5 my-4">
+                    <div
+                      class="opcion-formato text-center p-3"
+                      data-formato="pdf"
+                    >
+                      <i class="bi bi-filetype-pdf text-danger display-3"></i>
+                      <p class="mt-2 fw-semibold mb-0 text-dark">
+                        Descargar en PDF
+                      </p>
+                    </div>
+
+                    <div
+                      class="opcion-formato opcion-formato-seleccionada text-center p-3"
+                      data-formato="excel"
+                    >
+                      <i class="bi bi-filetype-xlsx text-success display-3"></i>
+                      <p class="mt-2 fw-semibold mb-0 text-dark">
+                        Descargar en Excel
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="alert alert-info-reporte d-flex align-items-center py-3 px-4 mb-4 rounded-3"
+                  role="alert"
+                >
+                  <i class="bi bi-info-circle-fill me-3 fs-4"></i>
+                  <div>
+                    <strong>Información:</strong> Si no se encuentran materiales
+                    con alertas activas. No es necesario generar un reporte.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="modal-footer footer-reporte bg-white border-0 px-4 pb-4 d-flex justify-content-between align-items-center"
+              >
+                <button type="button" class="btn-exportar">
+                  Finalizar y Exportar Documento
+                </button>
+                <button
+                  type="button"
+                  class="btn-cancelar-reporte"
+                  data-bs-dismiss="modal"
+                >
+                  Cancelar y volver al panel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Panel DE Umbrales de Alerta-->
+        <div
+          class="modal fade"
+          id="modalConfigurarAlerta"
+          tabindex="-1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content modal-content-umbrales">
+              <div
+                class="modal-header header-umbrales py-3 px-4 justify-content-between align-items-center"
+              >
+                <div class="d-flex align-items-center gap-3">
+                  <h2 class="titulo-umbrales m-0 fw-bold text-white">
+                    Umbrales de Alerta de Inventario
+                  </h2>
+                </div>
+                <img
+                  src="../img/logo.png"
+                  alt="Logo"
+                  class="logo-modal-umbrales"
+                  style="width: 160px; filter: brightness(0) invert(1)"
+                />
+              </div>
+
+              <div class="modal-body body-umbrales bg-white px-4 py-4">
+                <div class="mb-4">
+                  <label
+                    for="selectProductoAlerta"
+                    class="form-label label-seccion-umbrales"
+                    >Seleccionar Producto Registrado:</label
+                  >
+                  <select
+                    class="form-select select-custom-umbrales"
+                    id="selectProductoAlerta"
+                  >
+                    <option value="1" selected>Cemento Argos 50kg</option>
+                    <option value="2">Tornillo hexagonal</option>
+                    <option value="3">Taladro Bosch</option>
+                  </select>
+                </div>
+
+                <div class="contenedor-estado-actual p-3 mb-4">
+                  <p class="mb-2">
+                    Stock actual en bodega:
+                    <span class="fw-semibold">10 unidades</span>
+                  </p>
+                  <p class="mb-0">
+                    Estado actual:
+                    <span class="fw-semibold text-warning"
+                      >Bajo Stock (Amarillo)</span
+                    >
+                  </p>
+                </div>
+
+                <div class="mb-4 position-relative">
+                  <label
+                    for="inputNuevoLimite"
+                    class="form-label label-seccion-umbrales"
+                    >Nuevo Límite Mínimo Permitido</label
+                  >
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="w-100">
+                      <input
+                        type="text"
+                        class="form-input-umbrales"
+                        id="inputNuevoLimite"
+                        value="1a"
+                      />
+                      <div id="errorLimite" class="error-mensaje-umbrales mt-1">
+                        Formato inválido: Se requiere un valor entero positivo
+                      </div>
+                    </div>
+                    <i class="bi bi-info-circle text-muted fs-5"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="modal-footer footer-umbrales border-0 px-4 pb-4 bg-white d-flex justify-content-end gap-3"
+              >
+                <button
+                  type="button"
+                  class="btn-cancelar-umbrales"
+                  data-bs-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+                <button type="button" class="btn-guardar-umbrales">
+                  Guardar Cambios
+                </button>
+              </div>
+
+              <div
+                class="panel-restringido py-2 px-4 d-flex align-items-center gap-2"
+              >
+                <i class="bi bi-lock-fill"></i>
+                <span
+                  >Acceso Restringido: Solo el Administrador/Dueño puede
+                  modificar este campo</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Historial-Movimientos-->
+        <div
+          class="modal fade"
+          id="modalHistorialMovimientos"
+          tabindex="-1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content modal-content-historial">
+              <div
+                class="modal-header header-historial py-3 px-4 justify-content-between align-items-center"
+              >
+                <div class="d-flex align-items-center gap-3"></div>
+                <img
+                  src="../img/logo.png"
+                  alt="Logo"
+                  class="logo-modal-historial"
+                  style="width: 180px; filter: brightness(0) invert(1)"
+                />
+              </div>
+
+              <div class="modal-body bg-white px-4 pt-4 pb-3">
+                <h2 class="titulo-seccion-historial mb-4">
+                  Historial de Movimientos -
+                </h2>
+
+                <div class="row g-4 mb-4 align-items-start">
+                  <div class="col-lg-7">
+                    <div class="row g-3 mb-4">
+                      <div class="col-sm-6">
+                        <label class="form-label label-filtros"
+                          >Rango de Fechas:</label
+                        >
+                        <div class="input-group">
+                          <span
+                            class="input-group-text bg-white border-end-0 text-muted"
+                            >Desde:</span
+                          >
+                          <input
+                            type="date"
+                            class="form-control border-start-0 input-fecha-custom"
+                            value="2023-01-01"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <label class="form-label label-filtros invisible"
+                          >Hasta:</label
+                        >
+                        <div class="input-group">
+                          <span
+                            class="input-group-text bg-white border-end-0 text-muted"
+                            >Hasta:</span
+                          >
+                          <input
+                            type="date"
+                            class="form-control border-start-0 input-fecha-custom"
+                            value="2024-01-01"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="contenedor-metricas-historial p-4">
+                      <h5 class="titulo-metricas mb-3">Métricas de Control</h5>
+                      <div class="row g-3">
+                        <div class="col-sm-6">
+                          <div class="tarjeta-metrica bg-white p-3">
+                            <span class="text-muted d-block small fw-semibold"
+                              >Stock Actual:</span
+                            >
+                            <span class="valor-metrica text-azul-metrica"
+                              >150 unidades</span
+                            >
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="tarjeta-metrica bg-white p-3">
+                            <span class="text-muted d-block small fw-semibold"
+                              >Salidas Totales:</span
+                            >
+                            <span class="valor-metrica text-rojo-metrica"
+                              >75 unidades</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-5">
+                    <div class="mb-3">
+                      <label class="form-label label-filtros"
+                        >Tipo de Movimiento:</label
+                      >
+                      <select
+                        class="form-select select-historial-custom"
+                        id="selectTipoMovimiento"
+                      >
+                        <option value="todos" selected>Todos</option>
+                        <option value="entrada">
+                          + Entradas (Abastecimiento)
+                        </option>
+                        <option value="salida">- Salidas (Ventas)</option>
+                        <option value="retorno">
+                          R Retornos (Devoluciones)
+                        </option>
+                      </select>
+                    </div>
+                    <div class="d-flex justify-content-end mt-4">
+                      <button
+                        type="button"
+                        class="btn-aplicar-filtros-historial"
+                      >
+                        <i class="bi bi-funnel-fill me-2"></i>Aplicar Filtros
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="table-responsive border rounded-3 mb-3">
+                  <table
+                    class="table table-hover align-middle table-historial-content mb-0"
+                  >
+                    <thead>
+                      <tr>
+                        <th>Fecha</th>
+                        <th>Tipo de Movimiento</th>
+                        <th>Cantidad</th>
+                        <th>Motivo</th>
+                        <th>Responsable</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr data-tipo="entrada">
+                        <td>2023-10-26</td>
+                        <td class="fw-bold text-dark">
+                          <i class="bi bi-arrow-up me-1"></i> Entrada
+                        </td>
+                        <td>50</td>
+                        <td>Compra a Proveedor</td>
+                        <td>Juan Pérez</td>
+                      </tr>
+                      <tr data-tipo="salida">
+                        <td>2023-10-25</td>
+                        <td class="fw-bold text-dark">
+                          <i class="bi bi-arrow-down me-1"></i> Salida
+                        </td>
+                        <td>10</td>
+                        <td>Orden de Venta</td>
+                        <td>María García</td>
+                      </tr>
+                      <tr data-tipo="entrada">
+                        <td>2023-10-24</td>
+                        <td class="fw-bold text-dark">
+                          <i class="bi bi-arrow-up me-1"></i> Entrada
+                        </td>
+                        <td>20</td>
+                        <td>Devolución Cliente</td>
+                        <td>Carlos Ruiz</td>
+                      </tr>
+                      <tr data-tipo="salida">
+                        <td>2023-10-23</td>
+                        <td class="fw-bold text-dark">
+                          <i class="bi bi-arrow-down me-1"></i> Salida
+                        </td>
+                        <td>5</td>
+                        <td>Compra a Proveedor</td>
+                        <td>Ana López</td>
+                      </tr>
+                      <tr data-tipo="entrada">
+                        <td>2023-10-22</td>
+                        <td class="fw-bold text-dark">
+                          <i class="bi bi-arrow-up me-1"></i> Entrada
+                        </td>
+                        <td>30</td>
+                        <td>Orden de Venta</td>
+                        <td>Juan Pérez</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div
+                class="modal-footer footer-historial border-0 px-4 pb-4 bg-white d-flex justify-content-end"
+              >
+                <button
+                  type="button"
+                  class="btn-volver-panel"
+                  data-bs-dismiss="modal"
+                >
+                  Volver al Panel de Control
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!--jQuery-->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!--DataTables-->
+    <script src="https://cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
+
+    <!--DataTables + Bootstrap-->
+    <script src="https://cdn.datatables.net/2.3.4/js/dataTables.bootstrap5.min.js"></script>
+
+    <!--sweetalert2-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+   
+
+
+    <!-- Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+     <script src="js/PanelControl.js"></script>
+        <script src="../js/jefe-proveedores.js"></script>
+  </body>
+</html>

@@ -1,0 +1,877 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(235, 235, 231);
+    font-family: Arial, sans-serif;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+header {
+    height: 100px;
+    background-color: #7d7dd8;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+header img {
+    width: 280px;
+}
+
+.nombreUsuario {
+    position: absolute;
+    left: 20px;
+    top: 29px;
+}
+
+.nombreUsuario i {
+    color: rgb(210, 202, 255);
+    font-size: 36px;
+}
+
+.cerrarSesion {
+    position: absolute;
+    right: 20px;
+    top: 32px;
+}
+
+.cerrarSesion i {
+    color: rgb(212, 215, 250);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.contenedor aside {
+    width: 220px;
+    background-color: #c5d7f3;
+    border-radius: 6px;
+        min-height: calc(100vh - 100px); /* 100px = altura del header */
+
+}
+
+.opciones {
+    padding-top: 30px;
+}
+
+.opciones a, 
+.titulo-menu {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.opciones a i, 
+.titulo-menu i {
+    color: #6b2d91;
+    font-size: 22px;
+    margin-right: 11px;
+    vertical-align: middle;
+}
+
+.opciones a:hover, 
+.titulo-menu:hover {
+    border: 2px solid rgb(90, 90, 177);
+    border-radius: 20px;
+}
+
+.radio-check {
+    display: none;
+}
+
+
+.btn-actualiza:hover{
+    background-color: #1f3f8c;
+    color: white;
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    padding-left: 35px;
+    position: relative;
+    margin-left: 28px;
+}
+
+
+.submenu::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    border-left: 2px dashed #6b2d91;
+}
+
+.submenu a {
+    padding: 10px 10px 10px 20px !important;
+    font-size: 14px !important;
+    position: relative;
+}
+
+.submenu a::before {
+    content: '→';
+    position: absolute;
+    left: 2px;
+    color: #6b2d91;
+    font-weight: bold;
+}
+
+.radio-check:checked ~ .submenu {
+    max-height: 300px; 
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.contenedor main {
+    flex: 1;
+    padding: 30px;
+}
+
+.contenedor h1,
+.contenedor h2 {
+    color: #1f3f8c;
+}
+
+.contenedor h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contenedor main h1 {
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+main {
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+/*---------------------------------------------------------------*/
+/*--------------------------- CONTENIDO -------------------------*/
+/*---------------------------------------------------------------*/
+.form-consulta-card {
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+/* El banner azul celeste clarito de la cabecera */
+.bg-kronos-banner {
+    background-color: #cceeff !important; /* Tono celeste del diseño */
+    border-bottom: 1px solid #b3e0ff !important;
+}
+
+.titulo-consulta {
+    color: #1a3a5f !important; /* Azul oscuro nítido */
+    font-size: 26px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.titulo-consulta i {
+    font-size: 22px;
+}
+/* Labels e Inputs */
+.label-kronos {
+    color: #69477c;
+    font-size: 15px;
+    margin-bottom: 6px;
+    height: 40px;
+}
+
+.input-kronos {
+    padding: 10px 12px !important;
+    border: 1px solid #cccccc !important;
+    border-radius: 5px !important;
+    font-size: 14px;
+    background-color: gainsboro !important;
+    color: #333333 !important;
+
+}
+.input-kronos:focus {
+    border-color: #8b7ad6 !important;
+    box-shadow: 0 0 0 0.25rem rgba(139, 122, 214, 0.15) !important;
+}
+
+/* Botón de Buscar (Azul Intenso) */
+
+.btn-kronos-search a, .lick{
+    background-color: #0066ff !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    padding: 8px 24px !important;
+    transition: background 0.2s;
+    text-decoration: none;
+}
+.btn-kronos-search:hover {
+    background-color: #0066ff !important;
+}
+/* Botón de Limpiar (Gris Corporativo) */
+.btn-kronos-clear a, .lic {
+    background-color: #c19cc6 !important;
+    color: rgb(192, 125, 136) !important;
+    border: none !important;
+    border-radius: 5px !important;
+    padding: 8px 24px !important;
+    font-weight: 700;
+    text-decoration: none;
+
+}
+
+.btn-kronos-clear:hover {
+    background-color: #cb92d8 !important;
+}
+.icono{
+    border-radius: 6px;
+    border: 1px solid rgb(185, 128, 138);
+}
+/*----------------------------------------------------------------*/
+/* ==========================================
+   ESTILOS COMPROBANTE MODAL (KRONOS)
+============================================= */
+
+/* Caja contenedora blanca del modal */
+.custom-modal-content {
+    border-radius: 20px !important;
+    border: none !important;
+}
+
+/* Título de Comprobante */
+.comprobante-title {
+    color: #1a237e;
+    font-weight: 800;
+    font-size: 2.2rem;
+    font-family: sans-serif;
+}
+
+.brand-name {
+    color: #1a237e;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+/* Etiqueta de la Orden (Azul) */
+.order-box {
+    background-color: #bbdefb; /* Azul pálido suave */
+    color: #1a237e;
+    padding: 6px 20px;
+    border-radius: 8px;
+    border: 1.5px solid #1a237e;
+    font-weight: bold;
+}
+
+.fecha-text {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.cliente-info {
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.blue-line {
+    border-top: 2px solid #b0bec5;
+    opacity: 1;
+    margin-top: 5px;
+}
+
+/* Tabla interna del Comprobante */
+.comprobante-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #8e99f3;
+}
+
+.comprobante-table thead th {
+    background-color: #8e99f3 !important;
+    color: white !important;
+    text-align: center;
+    border: 1px solid white;
+    font-weight: 500;
+    padding: 10px;
+}
+
+.comprobante-table tbody td {
+    border: 1px solid #8e99f3;
+    text-align: center;
+    padding: 10px;
+    color: #444;
+}
+
+/* Fila del Total */
+.total-row {
+    border: 2px solid #8e99f3;
+    border-radius: 8px;
+    color: #1a237e;
+    font-size: 1.1rem;
+}
+
+/* Alerta Informativa (Orden generada con Éxito) */
+.success-alert-box {
+    background-color: #8e99f3;
+    color: white;
+    border-radius: 8px;
+    width: fit-content;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Leyenda inferior y Botón de cierre */
+.italic-note {
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+.btn-regresar {
+    background-color: #8e99f3;
+    color: white;
+    border: 1.5px solid #333333;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0px 3px 0px #1a1a1a;
+    transition: all 0.1s ease;
+}
+
+.btn-regresar:active {
+    transform: translateY(2px);
+    box-shadow: 0px 1px 0px #1a1a1a;
+}
+.logo-modal{
+    width: 180px;
+}
+/* --- BOTONES CON RELIEVE Y TAMAÑO FIJO (NO ESTIRADOS) --- */
+
+/* Botón azul "Ver" */
+.btn-ver {
+    background-color: #3b82f6 !important;
+    color: white !important;
+    font-weight: bold !important;
+    border: 1px solid #1d4ed8 !important; 
+    border-radius: 8px !important;
+    padding: 4px 22px !important;
+    box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.25); 
+    display: inline-block;
+}
+
+/* Botón "Validar Vigencia Garantía" */
+.btn-validar {
+    background-color: #3b82f6 !important;
+    color: white !important;
+    font-weight: bold !important;
+    border: 1px solid #1d4ed8 !important;
+    border-radius: 12px !important;
+    padding: 5px 25px !important;
+    box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.25);
+    font-size: 0.95rem !important;
+    display: inline-block;
+    max-width: 280px; /* Evita que el botón crezca de más hacia los lados */
+}
+
+/* Efecto presionado para ambos botones */
+.btn-ver:active, .btn-validar:active {
+    box-shadow: inset 0 2px 0px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+}
+
+/* Lupa */
+.bi-search {
+    -webkit-text-stroke: 0.3px black;
+}
+/* --- AJUSTE DE RECUADROS DE LA TABLA --- */
+.custom-table {
+    border-collapse: separate !important;
+    border-spacing: 0 !important; 
+    width: 100%;
+    margin-bottom: 0 !important;
+}
+
+/* Cabecera gris claro */
+.custom-table thead tr th {
+    background-color: #eaeef7 !important;
+    color: #222222 !important;
+    font-weight: bold !important;
+    border: 1px solid #b8b8b8 !important;
+    padding: 10px !important;
+}
+
+/* Celdas del cuerpo con bordes individuales */
+.custom-table tbody tr td {
+    background-color: #ffffff !important;
+    border: 1px solid #b8b8b8 !important;
+    padding: 12px !important;
+}
+
+/* Nombre de los productos */
+.text-product {
+    color: #333333 !important;
+    font-size: 1rem;
+}
+/* Fila de metadatos (Orden, Cliente, Fecha) */
+.metadata-row {
+    font-size: 1.1rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+/*------------------------------------------------------------*/
+/*------------------- BUSQUEDA NO ENCONTRADA------------------*/
+/*------------------------------------------------------------*/
+
+/* Encabezado Verde */
+.header-col {
+    background-color: gainsboro !important; 
+    border-bottom: 1px solid #b8b8b8 !important;
+    color: black;
+}
+.res-sul i{
+    color: #dc3545 !important;
+    border: 2px solid #dc3545;
+    border-radius: 6px;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+#menu, .menus {
+    display: none;
+}
+
+/*==================================================================*/
+/*   RESPONSIVE 992px: tamaños, paddings y fuentes se definen aca   */
+/*   una sola vez (sirven de base para tablet y tambien celular)    */
+/*==================================================================*/
+@media (max-width: 992px) {
+
+    /* Header */
+    header img {
+        width: 170px;
+    }
+
+    /* Título de la card de consulta */
+    .titulo-consulta {
+        font-size: 19px;
+        gap: 8px;
+    }
+
+    .form-consulta-card .card-body {
+        padding: 20px 15px !important;
+    }
+
+    .botones-consulta button {
+        white-space: nowrap;
+    }
+
+    /* Resultado */
+    .title-resultado {
+        font-size: 1.05rem;
+    }
+
+    .metadata-row {
+        font-size: 0.95rem;
+    }
+
+    /* Tabla de productos */
+    .custom-table thead tr th,
+    .custom-table tbody tr td {
+        padding: 8px !important;
+        font-size: 0.85rem;
+    }
+
+    .btn-validar {
+        font-size: 0.8rem !important;
+        padding: 5px 12px !important;
+        max-width: 100%;
+    }
+
+    .btn-ver {
+        padding: 4px 14px !important;
+    }
+
+    /* Modal comprobante */
+    .comprobante-title {
+        font-size: 1.5rem;
+    }
+
+    .logo-modal {
+        width: 110px;
+    }
+
+    .comprobante-table thead th,
+    .comprobante-table tbody td {
+        padding: 6px !important;
+        font-size: 0.8rem;
+    }
+
+    .order-box {
+        font-size: 0.85rem;
+        padding: 5px 12px;
+    }
+
+    .fecha-text,
+    .cliente-info {
+        font-size: 0.9rem;
+    }
+
+    .total-row {
+        font-size: 0.95rem;
+    }
+
+    .success-alert-box {
+        font-size: 0.8rem;
+    }
+
+    .italic-note {
+        font-size: 0.78rem;
+    }
+}
+
+/*==================================================================*/
+/*  RESPONSIVE 600px: solo lo que necesita cambiar de estructura    */
+/*  (apilar/centrar). Tamaños de fuente y padding ya quedaron       */
+/*  resueltos arriba, aca no se repiten.                            */
+/*==================================================================*/
+@media (max-width: 600px) {
+
+    .titulo-consulta {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .botones-consulta {
+        flex-direction: column;
+    }
+
+    .botones-consulta button {
+        width: 100%;
+    }
+
+    .metadata-row .col-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: left;
+        margin-bottom: 6px;
+    }
+
+    .modal-header-custom {
+        flex-direction: column;
+        align-items: center !important;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .orden-fecha-row {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 8px;
+    }
+
+    .orden-fecha-row .col,
+    .orden-fecha-row .col-auto {
+        width: 100%;
+        text-align: left !important;
+    }
+
+    .order-box {
+        width: fit-content;
+    }
+
+    .modal-footer-custom {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 12px;
+    }
+
+    .modal-footer-custom .btn-regresar {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+#menu, .menus {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .contenedorColumnas {
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+        gap: 25px;
+    }
+
+    .tabla1, 
+    .tarjetaEstado {
+        width: 100% !important;    
+        max-width: 100% !important;
+        box-sizing: border-box;    
+    }
+
+    .tabla1 table {
+        width: 100% !important;
+    }
+
+    .historialCompras input {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        width: 100vw;
+    }
+
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    header {
+        height: 110px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    header img {
+        width: 150px;
+    }
+
+    .nombreUsuario, .cerrarSesion {
+        position: absolute;
+        left: auto;
+        right: 20px;
+        transform: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+    }
+
+    .nombreUsuario {
+        top: 15px;
+    }
+
+    .nombreUsuario i {
+        font-size: 28px;
+    }
+
+    .cerrarSesion {
+        top: 60px;
+    }
+
+    .cerrarSesion i {
+        font-size: 24px;
+    }
+
+    .menus {
+        display: block;
+        position: absolute;
+        top: 40px;
+        left: 20px;
+        z-index: 3000;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .contenedor aside {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 260px;
+        height: 100vh;
+        z-index: 2000;
+        float: none;
+        transition: left 0.4s ease-in-out;
+        border-radius: 0;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #menu:checked ~ .contenedor aside {
+        left: 0;
+    }
+
+    .opciones{
+        margin-top: 50px;
+    }
+
+    .contenedor main {
+        margin-left: 0 !important;
+        padding: 20px 15px;
+        width: 100% !important;
+        max-width: 100vw;
+        overflow-x: hidden !important;
+        display: block;
+    }
+
+    .contenedor h1, 
+    .contenedor main h1 {
+        font-size: 22px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    .buscarOrden, 
+    .contenedorBusquedas, 
+    .historialCompras {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        padding: 20px;
+        width: 100% !important;
+    }
+
+    .datosProveedor {
+        width: 100% !important;
+    }
+
+    .buscarOrden input,
+    .datosProveedor input, 
+    .historialCompras input {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .buscarOrden i {
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .contenedorBusquedas button, 
+    .historialCompras button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .resultadoBusqueda,
+    .tablaHistorial,
+    .seccionTabla, 
+    .tablaProductos, 
+    .tabla1, 
+    .ordenesCompra {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        display: block !important;
+        -webkit-overflow-scrolling: touch !important;
+        margin-top: 25px;
+        padding: 0 0 10px 0 !important;
+    }
+
+    .contenedor main table {
+        display: table !important;
+        width: 100% !important;
+        min-width: 780px !important;
+        table-layout: auto !important;
+    }
+
+    .contenedor main table pacifist, 
+    .contenedor main div:has(> table) {
+        overflow-x: auto !important;
+        width: 100% !important;
+        display: block !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    .contenedor th,
+    .contenedor td {
+        word-wrap: normal !important;
+        white-space: nowrap !important;
+        padding: 12px 10px !important;
+        text-align: center !important;
+    }
+
+    .contenedor td.celdaAcciones {
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .btnEditar, 
+    .btnEliminar {
+        padding: 6px 15px !important;
+        font-size: 13px;
+        flex: none;
+    }
+
+    .resu, 
+    .infoOrden {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .infoOrden h2 {
+        width: 100%;
+        font-size: 18px;
+        padding: 5px 10px;
+    }
+
+    .registrarNuevo {
+        margin: 20px auto;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .confirmarMaterialesCantidades button, 
+    .confirmarPerdidoP button {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .confirmarPerdidoP {
+        margin-top: 40px;
+    }
+
+    .contenedorColumnas {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 40px;
+    }
+
+    .tarjetaEstado {
+        max-width: 100%;
+        min-width: 100%;
+        margin-top: 0;
+    }
+}

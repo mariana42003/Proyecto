@@ -1,0 +1,676 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+
+/* ----------- HEADER --------------- */ 
+/* --- LOGO Y TÍTULO (CON LOGO TRANSPARENTE) --- */
+/* ----------- EN GENERAL ---------------- */
+
+header {
+    background: rgb(224, 207, 243);
+}
+body{
+    background-color: #E6DFFF;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.navbar-brand {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+.logo {
+    width: 250px; 
+    max-width: 100%; 
+    height: auto;
+    display: block;
+    background-color: transparent !important;
+    background: transparent !important;
+    mix-blend-mode: multiply; 
+    transition: width 0.3s ease;
+}
+@media (min-width: 1200px) {
+
+    .navbar-brand {
+        flex: 0 0 350px !important; 
+        width: 340px !important; 
+    }
+
+    .logo {
+        width: 290px !important; 
+        max-width: 100%;
+    }
+
+
+    .navbar-brand h1 {
+        font-size: 22px !important; 
+    }
+}
+
+header h1 {
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(95, 3, 95);
+    margin: 0; 
+}
+
+/* --- BARRA DE BÚSQUEDA (ESTILO LUPA MORADA) --- */
+.search-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.btn-buscar-purple {
+    background-color: #7a61e6 !important; 
+    color: white !important;
+    border: none !important;
+    border-radius: 0 6px 6px 0 !important; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px; 
+}
+
+.btn-buscar-purple:hover {
+    background-color: #5b43c4 !important; 
+    color: white !important;
+}
+
+/* --- NAVBAR Y MENÚ DE NAVEGACIÓN --- */
+.marca {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.bi-person-fill{
+    font-size: 30px;
+    color: white;
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+.opcion-carrito-vert{
+    background: linear-gradient(135deg, orange, rgb(243, 172, 41));
+}
+.bi-cart{
+    color: #ffffff;
+    font-size: 20px;
+    height: 25px;
+}
+.opcion-menu-select {
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+}
+
+.opcion-menu-select:hover {
+    color: #555555;      
+    transition: color 0.3s ease; 
+}
+@media (min-width: 426px) and (max-width: 991.98px) {
+    /* Forzamos al contenedor a permitir el salto de línea */
+    .navbar-kronos .container {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+    }
+
+    /* Logo a la izquierda */
+    .navbar-brand {
+        display: flex !important;
+        align-items: center !important;
+        order: 1 !important;
+        flex: 0 0 260px !important;
+        width: 260px !important;
+    }
+
+    .logo {
+        width: 250px !important;
+        height: auto !important;
+        min-width: 250px !important;
+    }
+
+    /* Hamburguesa: Forzada AL EXTREMO DERÉCHO */
+    .navbar-toggler {
+        order: 2 !important;
+        margin-left: auto !important; 
+    }
+
+    /* Buscador: Baja a una segunda fila completa y se centra */
+    .search-container {
+        order: 3 !important;
+        flex: 0 0 100% !important; 
+        width: 100% !important;
+        max-width: 550px !important; 
+        margin: 12px auto 0 auto !important; 
+    }
+
+    /* Menú colapsable morado (Tu estilo base) */
+    .navbar-collapse {
+        order: 4 !important;
+        background-color: #E6DFFF;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        flex-basis: 100% !important;
+    }
+
+    .navbar-nav {
+        align-items: flex-start !important;
+        gap: 15px !important;
+    }
+
+    .navbar-nav .nav-item, .navbar-nav form, .opcion-menu-select {
+        width: 100%;
+    }
+
+    .opcion-carrito-vert {
+        flex-direction: row !important;
+        justify-content: center;
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+    }
+}
+@media (min-width: 426px) and (max-width: 991.98px) {
+    /* Convertimos el contenedor en un Grid de 2 columnas */
+    .navbar-kronos .container,
+    .navbar-kronos .container.d-flex {
+        display: grid !important;
+        grid-template-columns: 1fr auto !important; 
+        gap: 15px 0px !important;
+    }
+
+    /* Fila 1, Izquierda: El Logo ocupando su espacio */
+    .navbar-brand {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        margin: 0 !important;
+    }
+
+    .logo {
+        width: 250px !important;
+        min-width: 250px !important;
+        height: auto !important;
+    }
+
+    /* Fila 1, Derecha: La hamburguesa alineada perfectamente al extremo derecho */
+    .navbar-toggler {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        justify-self: end !important; 
+        display: block !important;
+    }
+
+    /* Fila 2, Centrado Abajo: El buscador ocupa el ancho completo de las 2 columnas */
+    .search-container {
+        grid-column: 1 / span 2 !important; 
+        grid-row: 2 !important;
+        width: 100% !important;
+        max-width: 550px !important; 
+        margin: 5px auto 0 auto !important; 
+    }
+
+    /* Fila 3: El menú colapsable morado cuando se abre */
+    .navbar-collapse {
+        grid-column: 1 / span 2 !important;
+        grid-row: 3 !important;
+        background-color: #E6DFFF;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 5px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Estilos internos de tu menú base del index */
+    .navbar-nav {
+        align-items: flex-start !important;
+        gap: 15px !important;
+    }
+    .navbar-nav .nav-item, .navbar-nav form, .opcion-menu-select {
+        width: 100%;
+    }
+    .opcion-carrito-vert {
+        flex-direction: row !important;
+        justify-content: center;
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 425px) {
+    /* Aplicamos el mismo sistema Grid exacto que funcionó en tablet */
+    .navbar-kronos .container,
+    .navbar-kronos .container.d-flex {
+        display: grid !important;
+        grid-template-columns: 1fr auto !important; 
+        gap: 12px 0px !important;
+    }
+
+    /* Fila 1, Izquierda: Reducimos el logo para panlas pequeñas */
+    .navbar-brand {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        margin: 0 !important;
+        width: auto !important;
+        flex: none !important;
+    }
+
+    .logo {
+        width: 180px !important; 
+        min-width: 180px !important;
+        height: auto !important;
+    }
+
+    /* Fila 1, Derecha: Hamburguesa al extremo derecho */
+    .navbar-toggler {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        justify-self: end !important;
+        display: block !important;
+    }
+
+    /* Fila 2: El Buscador BAJA COMPLETAMENTE y se estira al 100% */
+    .search-container {
+        grid-column: 1 / span 2 !important; 
+        grid-row: 2 !important;
+        width: 100% !important;
+        max-width: 100% !important; 
+        margin: 8px 0 0 0 !important; 
+    }
+
+    /* Fila 3: Menú desplegable morado */
+    .navbar-collapse {
+        grid-column: 1 / span 2 !important;
+        grid-row: 3 !important;
+        background-color: #E6DFFF;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 5px;
+    }
+    
+    .navbar-nav {
+        align-items: flex-start !important;
+        gap: 15px !important;
+    }
+    .navbar-nav .nav-item, .navbar-nav form, .opcion-menu-select {
+        width: 100%;
+    }
+}
+hr{
+    border: 2px solid;
+    color: rgb(95, 3, 95);
+    margin: 0;
+}
+
+.lista{
+    width: 150px;
+    padding: 5px;
+    border-radius: 7px;
+    background-color: #fcfcfc;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+option{
+    color: rgb(122, 122, 231);
+}
+header a{
+    width: 120px;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* ---------- Barra Lateral Opciones -------------*/
+
+.oferta{
+    margin-top:50px;
+    background:#e3bd9b;
+    border:1px solid #8b6de2;
+    border-radius:4px;
+    padding:15px;
+    text-align:center;
+}
+.oferta h4{
+    font-size:18px;
+    margin-bottom:15px;
+    color:#fff;
+}
+.oferta button{
+    width:100%;
+    background:#ff7b17;
+    color:white;
+    border:none;
+    padding:10px;
+    border-radius:4px;
+    cursor:pointer;
+}
+.informacion{
+    margin-top:80px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+.informacion a{
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+}
+.redes{
+    margin-top:10px;
+    display:flex;
+    gap:10px;
+}
+.redes i{
+    font-size:20px;
+    cursor:pointer;
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 12px;
+    
+}
+
+.btn-pedidos{
+    background-color: #b3a3fc;
+    border-color: #b3a3fc;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-pedidos:hover{
+    background-color: #9b87fa;
+    border-color: #9b87fa;
+    color: #fff;
+}
+
+/*--------------- Contenido del estado------------ */
+
+section{
+    font-family: 'Fredoka', sans-serif;
+    
+}
+
+.contenido{
+    border:1px solid #444;
+    padding:20px;
+    border-radius:5px;
+}
+.tabs{
+    display:flex;
+    gap:40px;
+    margin:20px 0;
+}
+.tabs a{
+    text-decoration:none;
+    color:#999;
+    padding-bottom:8px;
+    font-size: 22px;
+}
+.act{
+    color:#222;
+    border-bottom:3px solid #5d4bb7;
+    font-weight:bold;
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.act:hover{
+    color: #5d4bb7;
+}
+
+.entrega{
+    color: #0083b0;
+    margin-top: 15px;
+    font-size: 23px;
+}
+
+.card{
+    background-color: #fbfbfe;
+    border: 1px solid #b2b2b2;  
+    border-radius: 4px;         
+    padding: 12px 16px;      
+    display: flex;
+    flex-direction: column;     
+    gap: 8px;
+}
+
+.card p{
+    font-size: 25px;   
+}
+
+.info{
+    color:#999;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.producto{
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;  
+    border: 1px solid #dcdcdc;  
+    border-radius: 6px;        
+    padding: 15px;
+}
+
+.detalle-producto {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;                   
+    flex-grow: 1;               
+}
+
+
+
+.precio{
+    margin-top: 50px;
+    font-size: 22px;
+    color: #111;
+}
+
+.foto{
+    width: 135px;
+    height: 135px;
+    object-fit: contain;
+    margin-right: 30px;
+}
+
+.cantidad{
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px 10px;
+    background-color: #f9f9f9;
+    align-self: center;
+}
+
+@media (max-width: 991.98px) {
+    header {
+        height: auto;
+        padding: 10px 0;
+    }
+.logo {
+    width: 250px !important;
+    height: auto !important;
+    min-width: 250px !important;
+}
+.navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+    flex: 0 0 260px !important; 
+    width: 260px !important; 
+}
+    
+    .navbar-brand h1 {
+        font-size: 16px;
+    }
+
+    /* Colapsa el buscador dentro del menú o lo ajusta al ancho completo */
+    .search-container {
+        flex: 1 !important; 
+    max-width: 550px !important; 
+    margin: 0 auto !important;
+    }
+
+    /* Ajuste de los elementos del menú colapsado */
+    .navbar-collapse {
+        background-color: #E6DFFF;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-nav {
+        align-items: flex-start !important;
+        gap: 15px !important;
+    }
+
+    .navbar-nav .nav-item, 
+    .navbar-nav form, 
+    .opcion-menu-select {
+        width: 100%;
+    }
+
+    .opcion-carrito-vert {
+        flex-direction: row !important;
+        justify-content: center;
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .btn-login-nav {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .row.g-4 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contenido {
+        order: 1;
+    }
+
+    aside.col-lg-2 {
+        order: 2;
+        gap: 15px;
+        display: flex;
+        flex-direction: column; 
+    }
+
+    .oferta {
+        margin-top: 20px;
+        order: 2;
+    }
+
+    .informacion {
+        order: 3;
+        margin-top: 30px; 
+    }
+
+    /* Opcional para mejorar la vista de los productos en móvil */
+    .producto {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .foto {
+        margin-right: 0;
+    }
+    .precio {
+        margin-top: 15px;
+    }
+
+}
+
+.carrito-sidebar {
+    background-color: #fbfbfe !important;
+    font-family: 'Fredoka', sans-serif;
+    border-left: 2px solid #8b6de2 !important;
+    width: 400px !important; /* Ancho cómodo en computadoras */
+    max-width: 100% !important; /* Asegura adaptabilidad en celulares de 425px */
+}
+.carrito-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100vh;
+    background-color: #f8f6fc;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1060; 
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out; 
+}
+
+/* Clase que añadiremos con JS para mostrarlo */
+.carrito-sidebar.active {
+    transform: translateX(0);
+}
+
+.carrito-body {
+    flex: 1;
+    overflow-y: auto; 
+}
+
+.text-purple {
+    color: #7a61e6;
+}
+
+.carrito-item-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.btn-comprar-carrito {
+    background-color: #FF781F;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.btn-comprar-carrito:hover {
+    background-color: #5b43c4;
+    color: #ffffff;
+}
+
+

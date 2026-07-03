@@ -1,0 +1,780 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(235, 235, 231);
+    font-family: Arial, sans-serif;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+header {
+    height: 100px;
+    background-color: #7d7dd8;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+header img {
+    width: 280px;
+}
+
+.nombreUsuario {
+    position: absolute;
+    left: 20px;
+    top: 29px;
+}
+
+.nombreUsuario i {
+    color: rgb(210, 202, 255);
+    font-size: 36px;
+}
+
+.cerrarSesion {
+    position: absolute;
+    right: 20px;
+    top: 32px;
+}
+
+.cerrarSesion i {
+    color: rgb(212, 215, 250);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.contenedor aside {
+    width: 220px;
+    background-color: #c5d7f3;
+    border-radius: 6px;
+        min-height: calc(100vh - 100px); /* 100px = altura del header */
+
+}
+
+.opciones {
+    padding-top: 30px;
+}
+
+.opciones a, 
+.titulo-menu {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.opciones a i, 
+.titulo-menu i {
+    color: #6b2d91;
+    font-size: 22px;
+    margin-right: 11px;
+    vertical-align: middle;
+}
+
+.opciones a:hover, 
+.titulo-menu:hover {
+    border: 2px solid rgb(90, 90, 177);
+    border-radius: 20px;
+}
+
+.radio-check {
+    display: none;
+}
+
+
+.btn-actualiza:hover{
+    background-color: #1f3f8c;
+    color: white;
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    padding-left: 35px;
+    position: relative;
+    margin-left: 28px;
+}
+
+
+.submenu::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    border-left: 2px dashed #6b2d91;
+}
+
+.submenu a {
+    padding: 10px 10px 10px 20px !important;
+    font-size: 14px !important;
+    position: relative;
+}
+
+.submenu a::before {
+    content: '→';
+    position: absolute;
+    left: 2px;
+    color: #6b2d91;
+    font-weight: bold;
+}
+
+.radio-check:checked ~ .submenu {
+    max-height: 300px; 
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.contenedor main {
+    flex: 1;
+    padding: 30px;
+}
+
+.contenedor h1,
+.contenedor h2 {
+    color: #1f3f8c;
+}
+
+.contenedor h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contenedor main h1 {
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+main {
+    padding: 20px;
+    font-family: sans-serif;
+}
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+
+/*---------------------------------------------------------------------*/
+/*-------------  VIGENCIA PROOVEDOR- FERRETERIA------------------------*/
+/*---------------------------------------------------------------------*/
+
+/* Banner Superior de Orden Seleccionada */
+.banner-seleccionada {
+    background-color: #cbd5e1 !important; /* Gris suave */
+    border: 2px solid #4a5568 !important;
+    border-radius: 8px;
+}
+
+/* Inputs simulados (Deshabilitados pero legibles) */
+.custom-disabled-input {
+    background-color: #edf2f7 !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #2d3748 !important;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 8px;
+}
+/* --- TABLA MATERIAL / CANTIDAD (Estilo Morado) --- */
+.table-material {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    width: 100%;
+}
+
+.table-material thead tr th {
+    background-color: #7c7ec2 !important; /* Color Morado del Menú */
+    color: #ffffff !important;
+    font-weight: bold !important;
+    border: 2px solid #5a5ca6 !important;
+    padding: 10px !important;
+}
+
+.table-material tbody tr td {
+    background-color: #ffffff !important;
+    border: 2px solid #5a5ca6 !important;
+    padding: 12px !important;
+}
+/* --- DETALLES DE VIGENCIA DE GARANTÍA --- */
+.card-detalles-garantia {
+    border: 2px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+.info-row {
+    background-color: #ffffff;
+    font-size: 1rem;
+}
+
+.info-row:nth-child(even) {
+    background-color: #f8fafc; /* Alternancia de color sutil */
+}
+
+/* --- BANNER GARANTÍA VIGENTE --- */
+.banner-alerta-vigente {
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+.bg-success-light {
+    background-color: #c6f6d5 !important; /* Verde claro suave */
+    border: 2px solid #48bb78 !important;
+    border-bottom: none !important;
+}
+
+.card-body-alerta {
+    border: 2px solid #48bb78 !important;
+    border-top: none !important;
+    border-radius: 0 0 8px 8px;
+}
+/* Icono de check cuadrado de la maqueta */
+.check-box-icon {
+    background-color: #48bb78;
+    color: white;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: 1px solid #2f855a;
+}
+/* Botón de Registro de Observación con relieve y bordes redondeados */
+.btn-registro-observacion {
+    background-color: #3b82f6 !important; /* Azul corporativo */
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 1.05rem !important;
+    border: 1px solid #1d4ed8 !important; /* Borde oscuro tridimensional */
+    border-radius: 12px !important; /* Bordes muy redondeados como en el boceto */
+    padding: 8px 30px !important; /* Espaciado interno cómodo */
+    box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.1) !important; /* Sombra interna para el relieve inferior */
+    transition: all 0.1s ease;
+}
+
+/* Efecto al hacer clic (simula hundirse) */
+.btn-registro-observacion:active {
+    box-shadow: inset 0 2px 0px rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(2px);
+}
+/*------------------------------------------------------*/
+/*--------------------- RECHAZADA ----------------------*/
+/*------------------------------------------------------*/
+
+/* Icono de check cuadrado de la maqueta */
+.x-box-icon {
+    background-color: #e07d7d;
+    color: white;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: 1px solid #e07d7d;
+}
+
+.card-body-alert {
+    border: 2px solid #e26d6d !important;
+    border-top: none !important;
+    border-radius: 0 0 8px 8px;
+}
+
+#menu, .menus {
+    display: none;
+}
+
+/*==================================================================*/
+/*   RESPONSIVE 992px: tamaños, paddings y fuentes se definen aca   */
+/*   una sola vez (sirven de base para tablet y tambien celular)    */
+/*==================================================================*/
+ 
+/*==================================================================*/
+/*   RESPONSIVE 992px: tamaños, paddings y fuentes se definen aca   */
+/*   una sola vez (sirven de base para tablet y tambien celular)    */
+/*==================================================================*/
+@media (max-width: 992px) {
+ 
+    header img {
+        width: 170px;
+    }
+ 
+    /* --- Consultar Orden / Comprobante --- */
+    .titulo-consulta {
+        font-size: 19px;
+        gap: 8px;
+    }
+ 
+    .form-consulta-card .card-body {
+        padding: 20px 15px !important;
+    }
+ 
+    .botones-consulta button {
+        white-space: nowrap;
+    }
+ 
+    .title-resultado {
+        font-size: 1.05rem;
+    }
+ 
+    .metadata-row {
+        font-size: 0.95rem;
+    }
+ 
+    .custom-table thead tr th,
+    .custom-table tbody tr td {
+        padding: 8px !important;
+        font-size: 0.85rem;
+    }
+ 
+    .btn-validar {
+        font-size: 0.8rem !important;
+        padding: 5px 12px !important;
+        max-width: 100%;
+    }
+ 
+    .btn-ver {
+        padding: 4px 14px !important;
+    }
+ 
+    .comprobante-title {
+        font-size: 1.5rem;
+    }
+ 
+    .logo-modal {
+        width: 110px;
+    }
+ 
+    .comprobante-table thead th,
+    .comprobante-table tbody td {
+        padding: 6px !important;
+        font-size: 0.8rem;
+    }
+ 
+    .order-box {
+        font-size: 0.85rem;
+        padding: 5px 12px;
+    }
+ 
+    .fecha-text,
+    .cliente-info {
+        font-size: 0.9rem;
+    }
+ 
+    .total-row {
+        font-size: 0.95rem;
+    }
+ 
+    .success-alert-box {
+        font-size: 0.8rem;
+    }
+ 
+    .italic-note {
+        font-size: 0.78rem;
+    }
+ 
+    /* --- Vigencia de Garantía --- */
+    .banner-seleccionada h2 {
+        font-size: 1.15rem;
+    }
+ 
+    .custom-disabled-input {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+ 
+    .table-material thead tr th,
+    .table-material tbody tr td {
+        padding: 8px !important;
+        font-size: 0.9rem;
+    }
+ 
+    .title-vigencia {
+        font-size: 1.15rem;
+    }
+ 
+    .info-row {
+        font-size: 0.9rem;
+        padding: 8px !important;
+    }
+ 
+    .banner-alerta-vigente h5 {
+        font-size: 1rem;
+    }
+ 
+    .check-box-icon,
+    .x-box-icon {
+        width: 24px;
+        height: 24px;
+    }
+ 
+    .card-body-alerta p,
+    .card-body-alert p {
+        font-size: 0.9rem;
+    }
+ 
+    .btn-registro-observacion {
+        font-size: 0.95rem !important;
+        padding: 8px 20px !important;
+    }
+}
+ 
+/*==================================================================*/
+/*  RESPONSIVE 600px: solo lo que necesita cambiar de estructura    */
+/*  (apilar/centrar). Tamaños de fuente y padding ya quedaron       */
+/*  resueltos arriba, aca no se repiten.                            */
+/*==================================================================*/
+@media (max-width: 600px) {
+ 
+    /* --- Consultar Orden / Comprobante --- */
+    .titulo-consulta {
+        flex-direction: column;
+        text-align: center;
+    }
+ 
+    .botones-consulta {
+        flex-direction: column;
+    }
+ 
+    .botones-consulta button {
+        width: 100%;
+    }
+ 
+    .metadata-row .col-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: left;
+        margin-bottom: 6px;
+    }
+ 
+    .modal-header-custom {
+        flex-direction: column;
+        align-items: center !important;
+        text-align: center;
+        gap: 10px;
+    }
+ 
+    .orden-fecha-row {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 8px;
+    }
+ 
+    .orden-fecha-row .col,
+    .orden-fecha-row .col-auto {
+        width: 100%;
+        text-align: left !important;
+    }
+ 
+    .order-box {
+        width: fit-content;
+    }
+ 
+    .modal-footer-custom {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 12px;
+    }
+ 
+    .modal-footer-custom .btn-regresar {
+        width: 100%;
+        text-align: center;
+    }
+ 
+    /* --- Vigencia de Garantía --- */
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 2px;
+    }
+ 
+    .banner-alerta-vigente .card-header {
+        flex-wrap: wrap;
+    }
+ 
+    .footer-observacion {
+        justify-content: center !important;
+    }
+ 
+    .footer-observacion a,
+    .footer-observacion .btn-registro-observacion {
+        width: 100%;
+        text-align: center;
+    }
+}
+ 
+#menu, .menus {
+    display: none;
+}
+ 
+@media (max-width: 1024px) {
+    .contenedorColumnas {
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+        gap: 25px;
+    }
+ 
+    .tabla1, 
+    .tarjetaEstado {
+        width: 100% !important;    
+        max-width: 100% !important;
+        box-sizing: border-box;    
+    }
+ 
+    .tabla1 table {
+        width: 100% !important;
+    }
+ 
+    .historialCompras input {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+ 
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        width: 100vw;
+    }
+ 
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow-x: hidden;
+    }
+ 
+    header {
+        height: 110px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+ 
+    header img {
+        width: 150px;
+    }
+ 
+    .nombreUsuario, .cerrarSesion {
+        position: absolute;
+        left: auto;
+        right: 20px;
+        transform: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+    }
+ 
+    .nombreUsuario {
+        top: 15px;
+    }
+ 
+    .nombreUsuario i {
+        font-size: 28px;
+    }
+ 
+    .cerrarSesion {
+        top: 60px;
+    }
+ 
+    .cerrarSesion i {
+        font-size: 24px;
+    }
+ 
+    .menus {
+        display: block;
+        position: absolute;
+        top: 40px;
+        left: 20px;
+        z-index: 3000;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+    }
+ 
+    .contenedor aside {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 260px;
+        height: 100vh;
+        z-index: 2000;
+        float: none;
+        transition: left 0.4s ease-in-out;
+        border-radius: 0;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+ 
+    #menu:checked ~ .contenedor aside {
+        left: 0;
+    }
+ 
+    .opciones{
+        margin-top: 50px;
+    }
+ 
+    .contenedor main {
+        margin-left: 0 !important;
+        padding: 20px 15px;
+        width: 100% !important;
+        max-width: 100vw;
+        overflow-x: hidden !important;
+        display: block;
+    }
+ 
+    .contenedor h1, 
+    .contenedor main h1 {
+        font-size: 22px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+ 
+    .buscarOrden, 
+    .contenedorBusquedas, 
+    .historialCompras {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        padding: 20px;
+        width: 100% !important;
+    }
+ 
+    .datosProveedor {
+        width: 100% !important;
+    }
+ 
+    .buscarOrden input,
+    .datosProveedor input, 
+    .historialCompras input {
+        width: 100% !important;
+        max-width: 100%;
+    }
+ 
+    .buscarOrden i {
+        text-align: center;
+        margin-top: 5px;
+    }
+ 
+    .contenedorBusquedas button, 
+    .historialCompras button {
+        width: 100%;
+        margin-top: 10px;
+    }
+ 
+    .resultadoBusqueda,
+    .tablaHistorial,
+    .seccionTabla, 
+    .tablaProductos, 
+    .tabla1, 
+    .ordenesCompra {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        display: block !important;
+        -webkit-overflow-scrolling: touch !important;
+        margin-top: 25px;
+        padding: 0 0 10px 0 !important;
+    }
+ 
+    .contenedor main table {
+        display: table !important;
+        width: 100% !important;
+        min-width: 780px !important;
+        table-layout: auto !important;
+    }
+ 
+    .contenedor main table pacifist, 
+    .contenedor main div:has(> table) {
+        overflow-x: auto !important;
+        width: 100% !important;
+        display: block !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+ 
+    .contenedor th,
+    .contenedor td {
+        word-wrap: normal !important;
+        white-space: nowrap !important;
+        padding: 12px 10px !important;
+        text-align: center !important;
+    }
+ 
+    .contenedor td.celdaAcciones {
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 5px;
+    }
+ 
+    .btnEditar, 
+    .btnEliminar {
+        padding: 6px 15px !important;
+        font-size: 13px;
+        flex: none;
+    }
+ 
+    .resu, 
+    .infoOrden {
+        width: 100%;
+        max-width: 100%;
+    }
+ 
+    .infoOrden h2 {
+        width: 100%;
+        font-size: 18px;
+        padding: 5px 10px;
+    }
+ 
+    .registrarNuevo {
+        margin: 20px auto;
+        width: 100%;
+        max-width: 100%;
+    }
+ 
+    .confirmarMaterialesCantidades button, 
+    .confirmarPerdidoP button {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+ 
+    .confirmarPerdidoP {
+        margin-top: 40px;
+    }
+ 
+    .contenedorColumnas {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 40px;
+    }
+ 
+    .tarjetaEstado {
+        max-width: 100%;
+        min-width: 100%;
+        margin-top: 0;
+    }
+}
+ 

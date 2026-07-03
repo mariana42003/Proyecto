@@ -1,0 +1,905 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Fredoka', sans-serif;
+}
+body{
+    background: #E6DFFF;
+}
+
+header {
+    background: rgb(224, 207, 243);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+/* --- LOGO Y TÍTULO (CON LOGO TRANSPARENTE) --- */
+.navbar-brand {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+.logo {
+    width: 250px;
+    display: block;
+    background-color: transparent !important;
+    background: transparent !important;
+    mix-blend-mode: multiply; /* Mantiene el borrado mágico del fondo blanco interno del PNG */
+}
+
+header h1 {
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(95, 3, 95);
+    margin: 0; 
+}
+/* --- BARRA DE BÚSQUEDA (ESTILO LUPA MORADA) --- */
+.search-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.btn-buscar-purple {
+    background-color: #7a61e6 !important; /* El color morado de la lupa */
+    color: white !important;
+    border: none !important;
+    border-radius: 0 6px 6px 0 !important; /* Bordes redondeados solo a la derecha */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px; /* Asegura espacio suficiente para que se vea la lupa */
+}
+
+.btn-buscar-purple:hover {
+    background-color: #5b43c4 !important; /* Morado un poco más oscuro al pasar el cursor */
+    color: white !important;
+}
+/* --- NAVBAR Y MENÚ DE NAVEGACIÓN --- */
+.navbar-kronos {
+    padding: 10px 0;
+    width: 100%;
+}
+
+.marca {
+    font-size: 32px;
+    font-weight: 700;
+}
+.bi-person-fill{
+    font-size: 30px;
+    color: white;
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+.opcion-carrito-vert{
+    background: linear-gradient(135deg, orange, rgb(243, 172, 41));
+}
+.bi-cart{
+    color: #ffffff;
+    font-size: 20px;
+    height: 25px;
+}
+.opcion-menu-select {
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+    cursor: pointer;                   
+    border: none;                  
+    padding: 6px 25px 6px 10px;      
+}
+
+.opcion-menu-select:hover {
+    color: #555555;      
+    transition: color 0.3s ease; 
+}
+hr{
+    border: 2px solid;
+    color: rgb(95, 3, 95);
+    margin: 0;
+}
+option{
+    color: rgb(122, 122, 231);
+}
+header a{
+    width: 120px;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/*------------- HATA ACA EL HEADER ---------------*/
+
+/*------------------------------------------------*/
+/* ---------- Barra Lateral Opciones -------------*/
+/*------------------------------------------------*/
+
+.oferta{
+    margin-top:50px;
+    background:#e3bd9b;
+    border:1px solid #8b6de2;
+    border-radius:4px;
+    padding:15px;
+    text-align:center;
+}
+.oferta h4{
+    font-size:18px;
+    margin-bottom:15px;
+    color:#fff;
+}
+.oferta button{
+    width:100%;
+    background:#ff7b17;
+    color:white;
+    border:none;
+    padding:10px;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+.informacion{
+    margin-top:80px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+.informacion a{
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+}
+.redes i{
+    font-size:20px;
+    cursor:pointer;
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 12px;
+    
+}
+.btn-garantias{
+    background-color: #b3a3fc;
+    border-color: #b3a3fc;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-garantias:hover{
+    background-color: #9b87fa;
+    border-color: #9b87fa;
+    color: #fff;
+}
+
+/*------------ ACA TERMINA LA BARRA LATERAL-------------*/
+
+/*------------------------------------------------*/
+/*--------------- Contenido del estado------------ */
+/*------------------------------------------------*/
+
+.contenido{
+    border:1px solid #444;
+    padding:20px;
+    border-radius:5px;
+}
+.tabs{
+    display:flex;
+    gap:40px;
+    margin:20px 0;
+}
+.tabs a{
+    text-decoration:none;
+    color:#999;
+    padding-bottom:8px;
+    font-size: 22px;
+}
+.tabs a.act{
+    color:#222;
+    border-bottom:3px solid #5d4bb7;
+    font-weight:bold;
+}
+.producto{
+    background:#eee;
+    margin:15px;
+    padding:15px;
+    font-size:24px;
+    display:flex;
+    gap:20px;
+}
+.producto{
+    color: rgb(87, 37, 87);
+    font-weight: 700;
+    background: gainsboro;
+}
+.moro{
+    color: rgb(87, 37, 87);
+}
+/*----------------- HASTA ACA TERMINA EL CONTENIDO GENERAL---------------*/
+
+/*-------------------------------------------------*/
+/*-------------------- Aprobado--------------------*/
+/*-------------------------------------------------*/
+
+.encabezado-estado-ap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #79c579;
+    color: white;
+
+}
+.encabezado-estado-ap h2{
+    margin:0;
+}
+.estado-ap{
+    border:1px solid #ccc;
+    border-radius:5px;
+    overflow:hidden;
+}
+.estado-ap h2{
+    background: #79c579;
+    padding:15px;
+    color: white;
+}
+.apr,
+.estado-proceso-ap i{
+    color: #4CAF50;
+}
+.estado-reclamo-ap{
+    width: 120px;
+    height: 40px;
+    background-color: #c5d8c5;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-right: 20px;
+}
+.apr,
+.estado-reclamo-ap i{
+    color: #4CAF50;
+}
+.estado-proceso-ap {
+    width: 120px;
+    height: 50px;
+    background-color: #c5d8c5;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.user{
+    color: rgb(21, 225, 21);
+    font-size: 40px;
+}
+
+/*-------------------------------------------*/
+/*------------------ RECHAZO ----------------*/
+/*-------------------------------------------*/
+
+
+/* Rechazado */
+.encabezado-estado-re {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #e65858;
+    color: white;
+
+}
+.coloor{
+    margin:0;
+    color: #e65858;
+    font-weight: 700;
+}
+.estado-reclamo-re{
+    width: 120px;
+    height: 40px;
+    background-color: #deb4b4;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-right: 20px;
+}
+.estado-reclamo-re i, h3{
+    color: rgb(193, 41, 41);
+}
+.estado-proceso-re{
+    width: 120px;
+    height: 50px;
+    background: #deb4b4;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.estado-proceso-re i{
+    color: rgb(193, 41, 41);
+}
+.motivo{
+    color: rgb(192, 158, 38);
+    font-size: 20px;
+    align-items: center;
+}
+.dan{
+    color: red;
+    font-size: 23px;
+}
+
+/*----------------------- ACA SE TERMINA LO DE RECHAZADADOS --------------------*/
+
+/*--------------------------------------------------------*/
+/*----------------------- REVISION -----------------------*/
+/*--------------------------------------------------------*/
+
+.fotos h3{
+    color: black;
+}
+.imagenes{
+   display: flex;
+   gap: 15px;
+   margin-top: 10px;
+   width: 100%;
+}
+.imagenes img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+.estado-reclamo{
+    background:#ff8c1a;
+    color:white;
+    padding:8px 15px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:bold;
+}
+.estado-reclamo i{
+    font-size:18px;
+}
+.tabla-observaciones, th {
+  border-radius: 6px !important;
+    overflow: hidden !important;
+    border: 1px 1px solid #dee2e6;
+}
+.tabla-observaciones th {
+    background-color: #8b7ad6 !important; /* Tono morado claro */
+    color: #ffffff !important;            /* Letra blanca */
+    font-weight: 600;
+    padding: 12px 10px !important;       /* Un poco más de espacio vertical para los títulos */
+    text-align: left;
+}
+.tabla-observaciones td {
+    padding: 6px !important;              /* Espaciado de 6px solicitado */
+    vertical-align: middle;
+    color: #333333;
+}
+.encabezado-reclamo{
+    background: #bac5e8;
+}
+
+.hed{
+    background: gainsboro;
+}
+.producto{
+    color: rgb(87, 37, 87);
+    font-weight: 700;
+    background: gainsboro;
+}
+
+/*------------------------- ACA TERMINA TODO LO DE REVISION -------------------- */
+
+
+/*---------------------------------------------------------------------*/
+/*---------------------------- RECLAMO EXITOSO ------------------------*/
+/*---------------------------------------------------------------------*/
+
+.contenido-reclamoex{
+    background:#fff;
+    border:1px solid #d8d8d8;
+    border-radius:6px;
+    min-height:760px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:50px;
+}
+.mensaje-exito{
+    text-align: center;
+}
+.icono-exito{
+    width: 70px;
+    height: 70px;
+    background: #b25a8c;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icono-exito i{
+    color: white;
+    font-size: 35px;
+}
+.titulo-exito{
+    margin-top: 25px;
+    font-size: 45px;
+    font-weight: bold;
+}
+.rojo{
+    color: red;
+}
+.azul{
+    color: #0d4f8b;
+}
+.pedido{
+    margin-top: 35px;
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+}
+.total-pediidoo{
+    margin-top: 25px;
+    font-size: 28px;
+    line-height: 1.5;
+    color: #000;
+    text-align: center;
+}
+.btn-historial{
+    background: #ff7300;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    margin: 45px auto 0;
+
+}
+.btn-historial:hover{
+    opacity: 0.9;
+}
+.texto-respuesta{
+    margin-top: 70px;
+    color: #b25a8c;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* ===========================
+   RESUMEN GARANTIA
+=========================== */
+
+.tarjeta-resumen-garantia{
+    background: white;
+    border: 1px solid #cfcfcf;
+    padding: 15px;
+}
+
+.encabezado-revision{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.encabezado-revision i{
+    color: #4CAF50;
+    font-size: 24px;
+}
+
+.encabezado-revision h2{
+    font-size: 24px;
+    color: #000;
+    margin: 0;
+}
+
+.bloque-resumen-reclamo{
+    border: 1px solid #d8d8d8;
+}
+
+.titulo-seccion-resumen{
+    background: #e9e0f5;
+    padding: 10px;
+    font-size: 18px;
+    color: #555;
+    margin: 0;
+}
+
+.datos-pedido-resumen{
+    padding: 15px;
+}
+
+.divisor-resumen{
+    border: none;
+    border-top: 1px solid #d8d8d8;
+}
+
+.motivo-reclamo-seccion{
+    padding: 15px;
+}
+
+.fila-producto-mini{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.fila-producto-mini img{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+.info-mini{
+    flex: 1;
+}
+
+.nombre-prod-mini{
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.precio-mini{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.fila-descripcion-pulidora{
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.fila-descripcion-pulidora img{
+    width: 110px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.texto-descripcion-problema{
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.detalles-pedido-final{
+    padding: 15px;
+}
+
+.subtitulo-detalles{
+    margin-bottom: 10px;
+}
+
+.tarjeta-producto-final{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #d8d8d8;
+    padding: 8px;
+}
+
+.tarjeta-producto-final img{
+    width: 90px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.info-final-item{
+    font-size: 14px;
+}
+
+.meta-item{
+    margin-top: 5px;
+}
+
+.fila-total-resumen{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #d8d8d8;
+}
+
+.fila-total-resumen strong{
+    font-size: 22px;
+}
+
+/*---------------------------- ACA SE TERMINA LO DE RECLAMO EXITOSO ---------------------*/
+/*------------------------------------------------------*/
+/*----------------------- CARRITO ----------------------*/
+/*------------------------------------------------------*/
+.carrito-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100vh;
+    background-color: #f8f6fc;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1060; 
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out; 
+}
+
+/* Clase que añadiremos con JS para mostrarlo */
+.carrito-sidebar.active {
+    transform: translateX(0);
+}
+
+.carrito-body {
+    flex: 1;
+    overflow-y: auto; 
+}
+/*-------------------------------------------------------*/
+/*---------------------- RESPONSIVO ---------------------*/
+/*-------------------------------------------------------*/
+
+/* ==========================================================================
+   MEDIA QUERIES CONTROLADOS POR MEDIDAS EXACTAS (600px y 992px)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   VISTA MÓVIL / PEQUEÑA (Por debajo de 600px)
+   Por defecto, el Aside baja y las garantías se muestran de primeras
+-------------------------------------------------------------------------- */
+@media (max-width: 599.98px) {
+    /* Forzamos a la fila de Bootstrap a comportarse como columna vertical */
+    .row.g-4 {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Las Garantías se posicionan en primer lugar (Arriba) */
+    .contenido {
+        order: 1 !important;
+        width: 100% !important;
+    }
+
+    /* El bloque lateral pasa al segundo lugar (Abajo) */
+    aside.col-lg-2,
+    aside.col-lg-3 {
+        order: 2 !important;
+        width: 100% !important;
+        gap: 15px;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .oferta {
+        margin-top: 20px !important;
+        order: 2 !important;
+    }
+
+    .informacion {
+        order: 3 !important;
+        margin-top: 25px !important; 
+    }
+
+    /* Reducción del Logo y Navbar para pantallas muy pequeñas */
+    .logo {
+        width: 180px !important; 
+        min-width: 180px !important;
+        height: auto !important;
+    }
+
+    .navbar-kronos .container,
+    .navbar-kronos .container.d-flex {
+        display: grid !important;
+        grid-template-columns: 1fr auto !important; 
+        gap: 12px 0px !important;
+    }
+
+    .navbar-brand {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        margin: 0 !important;
+    }
+
+    .navbar-toggler {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        justify-self: end !important;
+    }
+
+    .search-container {
+        grid-column: 1 / span 2 !important; 
+        grid-row: 2 !important;
+        width: 100% !important;
+        margin: 8px 0 0 0 !important; 
+    }
+
+    .navbar-collapse {
+        grid-column: 1 / span 2 !important;
+        grid-row: 3 !important;
+        background-color: #E6DFFF;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    /* Adaptación interna de tarjetas de productos en móviles */
+    .producto {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 15px !important;
+        align-items: center !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   VISTA TABLET / PANTALLAS MEDIANAS (Desde 600px hasta 991.98px)
+   Aquí también se mantiene el Aside abajo y las Garantías arriba
+-------------------------------------------------------------------------- */
+@media (min-width: 600px) and (max-width: 991.98px) {
+    header {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    /* La fila se vuelve columna vertical para mandar el aside abajo */
+    .row.g-4 {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Garantías arriba */
+    .contenido {
+        order: 1 !important;
+        width: 100% !important;
+    }
+
+    /* Aside abajo */
+    aside.col-lg-2,
+    aside.col-lg-3 {
+        order: 2 !important;
+        width: 100% !important;
+        gap: 15px;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .oferta {
+        margin-top: 20px !important;
+        order: 2 !important;
+    }
+
+    .informacion {
+        order: 3 !important;
+        margin-top: 25px !important; 
+    }
+
+    /* Grid para organizar el Header de la Navbar ordenadamente */
+    .navbar-kronos .container,
+    .navbar-kronos .container.d-flex {
+        display: grid !important;
+        grid-template-columns: 1fr auto !important; 
+        gap: 15px 0px !important;
+    }
+
+    .navbar-brand {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        margin: 0 !important;
+    }
+
+    .logo {
+        width: 250px !important;
+        min-width: 250px !important;
+        height: auto !important;
+    }
+
+    .navbar-toggler {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        justify-self: end !important; 
+        display: block !important;
+    }
+
+    .search-container {
+        grid-column: 1 / span 2 !important; 
+        grid-row: 2 !important;
+        width: 100% !important;
+        max-width: 550px !important; 
+        margin: 5px auto 0 auto !important; 
+    }
+
+    .navbar-collapse {
+        grid-column: 1 / span 2 !important;
+        grid-row: 3 !important;
+        background-color: #E6DFFF;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-nav {
+        align-items: flex-start !important;
+        gap: 15px !important;
+    }
+
+    .navbar-nav .nav-item, 
+    .navbar-nav form, 
+    .opcion-menu-select {
+        width: 100%;
+    }
+
+    .opcion-carrito-vert {
+        flex-direction: row !important;
+        justify-content: center;
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   VISTA PC / PANTALLAS GRANDES (Desde 992px en adelante)
+   Aquí todo vuelve a su posición original: Aside a la izquierda y contenido a la derecha
+-------------------------------------------------------------------------- */
+@media (min-width: 992px) {
+    /* Forzamos que vuelva a ser una fila horizontal normal */
+    .row.g-4 {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+
+    /* Reseteamos el orden para que sigan el orden natural del HTML en PC */
+    .contenido {
+        order: 2 !important; /* Pasa a la derecha */
+    }
+
+    aside.col-lg-2,
+    aside.col-lg-3 {
+        order: 1 !important; /* Regresa a la izquierda */
+        display: block !important; /* Flujo normal de bloque */
+    }
+
+    /* Estilos del Header expandido para pantallas grandes */
+    .navbar-brand {
+        flex: 0 0 350px !important; 
+        width: 340px !important; 
+    }
+
+    .logo {
+        width: 290px !important; 
+        max-width: 100%;
+    }
+
+    .navbar-brand h1 {
+        font-size: 22px !important; 
+    }
+    
+}

@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(235, 235, 231);
+    font-family: Arial, sans-serif;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+header {
+    height: 100px;
+    background-color: #7d7dd8;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+header img {
+    width: 280px;
+}
+
+.nombreUsuario {
+    position: absolute;
+    left: 20px;
+    top: 29px;
+}
+
+.nombreUsuario i {
+    color: rgb(210, 202, 255);
+    font-size: 36px;
+}
+
+.cerrarSesion {
+    position: absolute;
+    right: 20px;
+    top: 32px;
+}
+
+.cerrarSesion i {
+    color: rgb(212, 215, 250);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.contenedor aside {
+    width: 220px;
+    background-color: #c5d7f3;
+    border-radius: 6px;
+        min-height: calc(100vh - 100px); /* 100px = altura del header */
+
+}
+
+.opciones {
+    padding-top: 30px;
+}
+
+.opciones a, 
+.titulo-menu {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.opciones a i, 
+.titulo-menu i {
+    color: #6b2d91;
+    font-size: 22px;
+    margin-right: 11px;
+    vertical-align: middle;
+}
+
+.opciones a:hover, 
+.titulo-menu:hover {
+    border: 2px solid rgb(90, 90, 177);
+    border-radius: 20px;
+}
+
+.radio-check {
+    display: none;
+}
+
+
+.btn-actualiza:hover{
+    background-color: #1f3f8c;
+    color: white;
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    padding-left: 35px;
+    position: relative;
+    margin-left: 28px;
+}
+
+
+.submenu::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    border-left: 2px dashed #6b2d91;
+}
+
+.submenu a {
+    padding: 10px 10px 10px 20px !important;
+    font-size: 14px !important;
+    position: relative;
+}
+
+.submenu a::before {
+    content: '→';
+    position: absolute;
+    left: 2px;
+    color: #6b2d91;
+    font-weight: bold;
+}
+
+.radio-check:checked ~ .submenu {
+    max-height: 300px; 
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.contenedor main {
+    flex: 1;
+    padding: 30px;
+}
+
+.contenedor h1,
+.contenedor h2 {
+    color: #1f3f8c;
+}
+
+.contenedor h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contenedor main h1 {
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+main {
+    padding: 20px;
+    font-family: sans-serif;
+}
+/*-----------------------------------------------------*/
+/* Banner de Título */
+.banner-historial {
+    background-color: #cbd5e1 !important;
+    border: 2px solid #4a5568 !important;
+    border-radius: 8px;
+}
+
+/* Tarjeta contenedora */
+.card-historial {
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 12px !important;
+    background-color: #ffffff;
+}
+/* --- ESTILOS DE LA TABLA ESTILO CÓMIC --- */
+.custom-table-historial {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    width: 100%;
+}
+
+/* Encabezado Morado */
+.custom-table-historial thead tr th {
+    background-color: #7c7ec2 !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+    border: 2px solid #5a5ca6 !important;
+    padding: 12px !important;
+}
+
+/* Celdas del cuerpo con bordes redondeados/definidos */
+.custom-table-historial tbody tr td {
+    background-color: #ffffff !important;
+    border: 2px solid #5a5ca6 !important;
+    padding: 12px !important;
+    color: #333333;
+}
+
+/* Color oscuro para las opciones de adentro al desplegar */
+#tablaHistorial .form-select.select-estado-fijo option {
+    background-color: #ffffff !important;
+    color: #333333 !important;
+}
+
+
+/* --- ESTILIZACIÓN DE COMPONENTES DATATABLES --- */
+.dataTables_wrapper .dataTables_filter input {
+    border: 2px solid #cbd5e1 ;
+    border-radius: 8px ;
+    padding: 6px 12px ;
+    background-color: #f8fafc ;
+    margin-left: 10px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    border: 2px solid #cbd5e1 ;
+    border-radius: 6px ;
+    padding: 4px 8px ;
+}
+
+.dataTables_wrapper .dataTables_info {
+    font-weight: bold;
+    color: #4a5568 ;
+    margin-top: 15px;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    margin-top: 15px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #7c7ec2 ;
+    color: white;
+    border: 2px solid #5a5ca6 ;
+    border-radius: 6px ;
+    font-weight: bold;
+}
+
+#menu, .menus {
+    display: none;
+}
+
+/* ==========================
+   TABLETS Y CELULARES
+========================== */
+@media (max-width: 992px) {
+
+    body {
+        overflow-x: hidden;
+        width: 100vw;
+    }
+
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+        height: 100px;
+        padding: 0 20px;
+        width: 100%;
+    }
+
+    header img {
+        width: 200px;
+    }
+
+    .nombreUsuario,
+    .cerrarSesion {
+        position: absolute;
+        left: auto;
+        right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nombreUsuario {
+        top: 18px;
+    }
+
+    .cerrarSesion {
+        top: 55px;
+    }
+
+    /* MENÚ HAMBURGUESA */
+    .menus {
+        display: block;
+        position: absolute;
+        top: 32px;
+        left: 20px;
+        z-index: 3000;
+        font-size: 35px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .contenedor aside {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 260px;
+        height: 100vh;
+        z-index: 2000;
+        transition: left 0.4s ease;
+        border-radius: 0;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    }
+
+    #menu:checked ~ .contenedor aside {
+        left: 0;
+    }
+
+    .opciones {
+        margin-top: 50px;
+    }
+
+    /* MAIN */
+    .contenedor main {
+        width: 100%;
+        padding: 20px;
+        margin-left: 0;
+    }
+
+    .card-historial {
+        padding: 20px !important;
+    }
+
+    .banner-historial h2 {
+        font-size: 22px;
+    }
+
+    /* TABLA RESPONSIVA */
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .custom-table-historial {
+        min-width: 800px;
+    }
+
+    .custom-table-historial th,
+    .custom-table-historial td {
+        white-space: nowrap;
+        font-size: 14px;
+    }
+}
+@media (max-width: 600px) {
+
+    header {
+        height: 90px;
+    }
+
+    header img {
+        width: 150px;
+    }
+
+    .menus {
+        top: 25px;
+        font-size: 30px;
+    }
+
+    .nombreUsuario {
+        top: 12px;
+    }
+
+    .cerrarSesion {
+        top: 48px;
+    }
+
+    .nombreUsuario i {
+        font-size: 26px;
+    }
+
+    .cerrarSesion i {
+        font-size: 22px;
+    }
+
+    .contenedor main {
+        padding: 15px 10px;
+    }
+
+    .banner-historial h2 {
+        font-size: 18px;
+    }
+
+    .card-historial {
+        padding: 12px !important;
+    }
+
+    .dataTables_wrapper .dataTables_filter input {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 8px;
+    }
+
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate {
+        text-align: center;
+    }
+}
