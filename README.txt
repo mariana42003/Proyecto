@@ -1,11 +1,8 @@
 **Proyecto Kronos-Inventario
-
-
-
 ¨¨¨¨ Integrantes¨¨¨¨
 - Mariana Martínez
 - Erick Vasquez
-- Manuel Vigoya
+- -Manuel Vigoya
 - Evert Arias
 - David Villanueva
 
