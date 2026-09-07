@@ -1,4 +1,4 @@
-** Proyecto Kronos-Inventario
+**Proyecto Kronos-Inventario
 
 ¨¨¨¨ Integrantes¨¨¨¨
 - Mariana Martínez
@@ -8,8 +8,8 @@
 - David Villanueva
 
 ¨¨¨¨ Módulos¨¨¨¨
-- Mariana – Gestión de Proveedores y Órdenes de Compra
-- Erick – Gestión de Materiales y Clasificación
+- Mariana - Gestión de Proveedores y Órdenes de Compra
+- Erick - Gestión de Materiales y Clasificación
 - Manuel - Gestión de Inventario (Entradas, Salidas y Alertas)
 - Evert - Gestión de Inventario (Entradas, Salidas y Alertas)
 - David - Gestión de Garantías
