@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "axios": "^1.20.0",
+    "bootstrap": "^5.3.8",
+    "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.3"
+  },
+  "name": "pro-kronos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "json-server db.json -m ./node_modules/json-server-auth --port 6000",
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext ks.jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite-preview" 
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^8.2.2",
+    "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0"
+  }
+}
