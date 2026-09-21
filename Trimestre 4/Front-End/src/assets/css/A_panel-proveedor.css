@@ -1,0 +1,1792 @@
+/* ==========================================================================
+   NOTA (integración a Kronos-Inventory_Control_V4):
+   Este archivo viene del proyecto "pro-kronos-Proveedores vista" (la
+   maqueta visual del portal de proveedor). Allí se cargaba como único
+   CSS global de toda esa mini-app. Como aquí conviven en el MISMO
+   bundle con el panel del jefe/cliente (panel-base.css, kronos-global.css,
+   M_index.css, etc.), y este archivo traía reglas globales (body, html,
+   *, .table, header, aside...) que chocarían con esas otras vistas, TODO
+   selector fue reescrito automáticamente para vivir bajo ".proveedor-scope"
+   (la clase raíz de <ProveedorLayout/>). No se tocó ningún valor, orden
+   de propiedades ni nombre de clase interno — solo el prefijo del
+   selector. Si necesitas agregar CSS nuevo para el portal de proveedor,
+   agrégalo aquí mismo con selectores empezando en ".proveedor-scope ...".
+   ========================================================================== */
+
+/* ==========================================================================
+   KRONOS · CSS UNIFICADO
+   Este archivo es la UNIÓN, en este orden exacto, de:
+     1) panel-base.css
+     2) proveedor.css
+     3) kronos-global.css
+   No se cambió ni se borró ningún nombre de clase ni de variable —
+   solo se pegaron uno después del otro. El orden importa: kronos-global.css
+   va al final porque pisa a los otros dos con !important (es el "tema
+   unificado"). Si necesitas separar de nuevo en 3 archivos algún día,
+   los separadores de abajo marcan exactamente dónde empieza cada uno.
+   ========================================================================== */
+
+/* ================== 1) panel-base.css ================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+.proveedor-scope {
+    --bg-main: #F3F1ED;
+    --bg-card: #FFFFFF;
+    --bg-header: #1B1D21;
+    --bg-aside: #1B1D21;
+    --dark-primary: #1B1D21;
+    --dark-secondary: #24272C;
+    --text-primary: #1B1B18;
+    --text-muted: #6C7278;
+    --border-color: #DDD8CF;
+    --orange-accent: #E8600C;
+    --orange-hover: #FF7318;
+}
+
+html[data-theme="dark"] .proveedor-scope {
+    --bg-main: #15171B;
+    --bg-card: #1D2025;
+    --bg-header: #0F1114;
+    --bg-aside: #1B1D21;
+    --dark-primary: #0F1114;
+    --dark-secondary: #24272C;
+    --text-primary: #F1F0EC;
+    --text-muted: #9BA1A9;
+    --border-color: #33383F;
+}
+
+.proveedor-scope * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.proveedor-scope {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+/* ---------- botón de tema (compartido con header) ---------- */
+.proveedor-scope .btn-theme-toggle {
+    background: transparent;
+    border: 2px solid var(--orange-accent);
+    color: var(--orange-accent);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+.proveedor-scope .btn-theme-toggle:hover {
+    background-color: var(--orange-accent);
+    color: #0d0f12;
+}
+
+/* ---------- layout general ---------- */
+.proveedor-scope .contenedor {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.proveedor-scope main {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+}
+
+/* ---------- HEADER PRINCIPAL (solo la barra del shell) ---------- */
+.proveedor-scope .contenedor > header {
+    width: 100%;
+    height: 80px;
+    background-color: var(--dark-primary);
+    border-bottom: 2px solid var(--orange-accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 20px;
+}
+
+.proveedor-scope .logo-header {
+    max-height: 55px;
+    width: auto;
+}
+
+.proveedor-scope .nombreUsuario {
+    position: absolute;
+    left: 20px;
+    font-size: 1.5rem;
+    color: var(--orange-accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.proveedor-scope .cerrarSesion {
+    position: absolute;
+    right: 20px;
+}
+
+.proveedor-scope .cerrarSesion a i {
+    color: var(--orange-accent);
+    font-size: 1.6rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.proveedor-scope .cerrarSesion a:hover i {
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+/* ---------- ASIDE (MENÚ LATERAL) ---------- */
+.proveedor-scope aside {
+    width: 250px;
+    min-height: 500vh !important;
+    background-color: var(--dark-secondary);
+    border-right: 1px solid #2a2e37;
+}
+
+.proveedor-scope .opciones {
+    padding-top: 15px;
+}
+
+.proveedor-scope .opcion-nav,
+.proveedor-scope .titulo-menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.proveedor-scope .opcion-nav i,
+.proveedor-scope .titulo-menu i {
+    color: var(--orange-accent);
+    font-size: 1.2rem;
+    margin-right: 12px;
+}
+
+.proveedor-scope .opcion-nav:hover,
+.proveedor-scope .titulo-menu:hover,
+.proveedor-scope .opcion-nav.activo {
+    background-color: rgba(232, 96, 12, 0.12);
+    color: #ffffff;
+    border-left: 4px solid var(--orange-accent);
+}
+
+.proveedor-scope .radio-check {
+    display: none;
+}
+
+.proveedor-scope .submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    background-color: #0f172a;
+}
+
+.proveedor-scope .submenu a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px 10px 45px;
+    font-size: 0.88rem;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.proveedor-scope .submenu a i {
+    font-size: 1rem;
+    margin-right: 10px;
+    color: var(--orange-accent);
+}
+.proveedor-scope .submenu a:hover { color: var(--orange-accent); }
+
+.proveedor-scope .submenu a.activo {
+    color: var(--orange-accent);
+    font-weight: 700;
+}
+
+.proveedor-scope .radio-check:checked ~ .submenu {
+    max-height: 320px;
+}
+
+/* ---------- títulos de sección genéricos ---------- */
+.proveedor-scope .titulo-panel,
+.proveedor-scope .page-title,
+.proveedor-scope .content-header,
+.proveedor-scope .content-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.3px;
+    color: var(--text-primary);
+    background: transparent;
+    height: auto;
+    border: 0;
+    justify-content: flex-start;
+}
+
+.proveedor-scope .content-header {
+    display: block;
+    width: 100%;
+    margin: 0 0 24px;
+    padding: 0;
+    position: static;
+}
+
+/* ---------- BOTONES REUTILIZABLES ---------- */
+.proveedor-scope .btn-rapido {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.proveedor-scope .btn-naranja {
+    background-color: var(--orange-accent);
+    color: var(--dark-primary);
+}
+.proveedor-scope .btn-naranja:hover {
+    background-color: var(--orange-hover);
+    color: #ffffff;
+}
+
+.proveedor-scope .btn-dark-custom {
+    background-color: var(--dark-secondary);
+    color: #ffffff;
+}
+.proveedor-scope .btn-dark-custom:hover { background-color: var(--dark-primary); }
+
+.proveedor-scope .btn-historial {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+.proveedor-scope .btn-historial:hover { background-color: #e2e8f0; }
+
+.proveedor-scope .btn-detalle {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--dark-secondary);
+    color: var(--orange-accent);
+    transition: all 0.2s ease;
+}
+.proveedor-scope .btn-detalle:hover {
+    background-color: var(--orange-accent);
+    color: var(--dark-primary);
+}
+
+/* ---------- BADGES DE ESTADO REUTILIZABLES ---------- */
+.proveedor-scope .badge-stock {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+}
+.proveedor-scope .bajo-stock { background-color: #fef3c7; color: #b45309; }
+.proveedor-scope .agotado { background-color: #fee2e2; color: #b91c1c; }
+.proveedor-scope .estable { background-color: #dcfce7; color: #15803d; }
+
+/* ---------- ENCABEZADOS DE MODAL REUTILIZABLES ---------- */
+.proveedor-scope .encabezado-ficha,
+.proveedor-scope .header-umbrales,
+.proveedor-scope .header-historial {
+    background-color: var(--dark-secondary);
+    border-bottom: 3px solid var(--orange-accent);
+    padding: 15px 20px;
+}
+.proveedor-scope .logo-modal { max-height: 45px; }
+.proveedor-scope .font-accent { color: var(--orange-accent); }
+
+/* ---------- RESPONSIVE / MÓVIL ---------- */
+.proveedor-scope #menu,
+.proveedor-scope .menus {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .proveedor-scope .contenedor { display: block; }
+
+    .proveedor-scope .menus {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 3000;
+        font-size: 2rem;
+        color: var(--orange-accent);
+        cursor: pointer;
+    }
+
+    .proveedor-scope aside {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 250px;
+        height: 100vh;
+        z-index: 2000;
+        transition: left 0.3s ease;
+    }
+
+    .proveedor-scope #menu:checked ~ .contenedor aside { left: 0; }
+
+    .proveedor-scope main { padding: 15px; }
+}
+
+/* Estilo para la opción activa del menú */
+.proveedor-scope aside .opciones .opcion-nav.activo,
+.proveedor-scope aside .opciones .submenu a.activo {
+    background-color: rgba(232, 96, 12, 0.25) !important;
+    color: #e8600c !important;
+    font-weight: 600;
+    border-left: 4px solid #e8600c;
+    border-radius: 4px;
+}
+
+.proveedor-scope #kronos-shell-top,
+.proveedor-scope #kronos-shell-panel {
+    display: contents;
+}
+
+/* ================== 2) proveedor.css ================== */
+
+.proveedor-scope {
+    --bg-body: rgb(235, 235, 231);
+    --k-orange: #e8600c;
+    --k-orange-soft: rgba(232, 96, 12, 0.15);
+    --navy-blue: #1f3f8c;
+    --navy-soft: #d5ddfc;
+    --navy-lighter: #edf2ff;
+    --color-text-muted: #666666;
+    --color-text-subtle: #777777;
+    --color-header-bg: #ffffff;
+    --color-border-light: #ececec;
+    --color-border-table: #cbd5e1;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-aside-bg: #c5d7f3;
+    --color-aside-hover: rgba(255, 255, 255, 0.2);
+    --color-aside-hover-border: rgb(90, 90, 177);
+    --color-icon-light: rgb(210, 202, 255);
+    --color-icon-light-nav: rgb(212, 215, 250);
+
+    /* Estados y insignias */
+    --badge-pend-bg: #fff2d7;
+    --badge-pend-color: #b88100;
+    --badge-env-bg: #dcf8e7;
+    --badge-env-color: #13814b;
+    --badge-canc-bg: #ffe0e0;
+    --badge-canc-color: #b62525;
+
+    /* Azul / Amarillo / Verde tarjetas resumen */
+    --card-azul-bg: #ffe8e9;
+    --card-azul-color: #c7303f;
+    --card-amarillo-bg: #fff5da;
+    --card-amarillo-color: #d49a00;
+    --card-verde-bg: #dcf7e7;
+    --card-verde-color: #14814c;
+
+    /* Notis / Info proveedor / Tarjetas */
+    --notis-bg: #dcd1df;
+    --infoprov-bg: #dfe2e9;
+    --tarjetas-bg: rgb(236, 238, 241);
+
+    /* Numero orden / Solicitante / Tabla */
+    --numorden-numcolor: rgb(35, 5, 143);
+    --infosol-bg: #e4e4ed;
+    --infosol-border: #8687b4;
+    --thead-bg: #8b8bda;
+
+    /* Botones sí / no / confirma / rechaza */
+    --si-bg: rgb(144, 226, 187);
+    --si-color: green;
+    --si-hover-bg: #062f08;
+    --no-bg: #f3a26b;
+    --no-color: #780f24;
+    --no-hover-bg: #780f24;
+    --confirma-bg: rgb(9, 66, 38);
+    --confirma-hover-bg: #062f08;
+    --rechaza-bg: #651a31;
+    --rechaza-hover-bg: #421020;
+
+    /* Sombras base */
+    --shadow-base: rgba(0, 0, 0, 0.08);
+    --shadow-heavy: rgba(0, 0, 0, 0.12);
+    --shadow-card: rgba(0, 0, 0, 0.50);
+}
+
+.proveedor-scope * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.proveedor-scope {
+    background-color: var(--bg-body);
+    font-family: sans-serif;
+}
+
+/* Nota: kronos-global.css fuerza .contenedor a display:flex con !important
+   para el shell compartido. Esta regla en grid queda de un layout anterior;
+   se deja por compatibilidad pero display:grid nunca llega a aplicarse
+   mientras kronos-global.css esté cargado. */
+.proveedor-scope .contenedor {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+}
+
+.proveedor-scope .btn-ver i {
+    font-size: 25px;
+    color: var(--navy-blue);
+    border: 2px solid var(--navy-blue);
+    padding: 0px 5px 0px 5px;
+    border-radius: 10px;
+}
+
+.proveedor-scope .btn-ver {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--navy-lighter);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: .3s;
+    border: none;
+    cursor: pointer;
+}
+
+.proveedor-scope .btn-ver i {
+    font-size: 20px;
+    color: var(--navy-blue);
+    border: none;
+    padding: 0;
+}
+
+.proveedor-scope .btn-ver:hover {
+    background: var(--k-orange);
+}
+
+.proveedor-scope .btn-ver:hover i {
+    color: #fff;
+}
+
+.proveedor-scope .encabezado-pagina {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 30px;
+    margin-bottom: 35px;
+    background: linear-gradient(90deg, #554431, #000000);
+    border-left: 7px solid var(--k-orange);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px var(--shadow-base);
+}
+
+.proveedor-scope .icono-pagina {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--k-orange-soft);
+}
+
+.proveedor-scope .icono-pagina i {
+    font-size: 42px;
+    color: var(--k-orange);
+}
+
+.proveedor-scope .texto-pagina h1 {
+    margin: 0;
+    text-align: left;
+    color: rgb(220, 205, 176) !important;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.proveedor-scope .texto-pagina p {
+    margin-top: 8px;
+    color: rgba(222, 218, 218, 0.772);
+    font-size: 17px;
+}
+
+.proveedor-scope .card-resumen {
+    border: none;
+    border-radius: 18px;
+    transition: .3s;
+}
+
+.proveedor-scope .card-resumen:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px var(--shadow-heavy) !important;
+}
+
+.proveedor-scope .card-resumen .card-body {
+    padding: 25px;
+}
+
+.proveedor-scope .card-resumen h6 {
+    color: var(--color-text-subtle);
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.proveedor-scope .card-resumen h2 {
+    color: var(--navy-blue);
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.proveedor-scope .icono-card {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proveedor-scope .icono-card i {
+    font-size: 28px;
+}
+
+.proveedor-scope .azul { background: var(--card-azul-bg); }
+.proveedor-scope .azul i { color: var(--card-azul-color); }
+
+.proveedor-scope .amarillo { background: var(--card-amarillo-bg); }
+.proveedor-scope .amarillo i { color: var(--card-amarillo-color); }
+
+.proveedor-scope .verde { background: var(--card-verde-bg); }
+.proveedor-scope .verde i { color: var(--card-verde-color); }
+
+.proveedor-scope .panelTabla {
+    border: none !important;
+    border-radius: 18px !important;
+    overflow: hidden;
+    box-shadow: 0 8px 20px var(--shadow-base) !important;
+}
+
+.proveedor-scope .panelTabla .card-header {
+    background: var(--color-header-bg);
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.proveedor-scope .panelTabla .card-header h3 {
+    margin: 0;
+    color: var(--navy-blue);
+    font-size: 24px;
+}
+
+.proveedor-scope .panelTabla .card-body {
+    padding: 25px;
+}
+
+.proveedor-scope .estado-pendiente {
+    background: var(--badge-pend-bg);
+    color: var(--badge-pend-color);
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-weight: 600;
+}
+
+.proveedor-scope .estado-enviado {
+    background: var(--badge-env-bg);
+    color: var(--badge-env-color);
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-weight: 600;
+}
+
+.proveedor-scope .estado-cancelado {
+    background: var(--badge-canc-bg);
+    color: var(--badge-canc-color);
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-weight: 600;
+}
+
+.proveedor-scope .notis {
+    border-left: 5px solid var(--k-orange);
+    padding: 30px;
+    border-radius: 19px;
+    background-color: var(--notis-bg);
+    box-shadow: 0px 1px 12px var(--shadow-card);
+}
+
+.proveedor-scope .notis i {
+    color: var(--navy-blue);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.proveedor-scope .infoProveedor {
+    border-top: 5px solid var(--k-orange);
+    padding: 10px 20px 9px 30px;
+    border-radius: 19px;
+    background-color: var(--infoprov-bg);
+    box-shadow: 0px 4px 19px var(--shadow-card);
+    transition: .3s;
+}
+
+.proveedor-scope .infoProveedor:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--shadow-heavy) !important;
+}
+
+.proveedor-scope .tarjetas {
+    background-color: var(--tarjetas-bg);
+    border-radius: 20px;
+    box-shadow: 0px 4px 19px var(--shadow-card);
+}
+
+.proveedor-scope header {
+    grid-column: 1 / span 2;
+    height: 100px;
+    background-color: var(--k-orange);
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.proveedor-scope header img {
+    width: 280px;
+    height: auto;
+}
+
+.proveedor-scope .nombreUsuario {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.proveedor-scope .nombreUsuario i {
+    color: var(--color-icon-light);
+    font-size: 36px;
+}
+
+.proveedor-scope .cerrarSesion {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.proveedor-scope .cerrarSesion a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.proveedor-scope .cerrarSesion i {
+    color: var(--color-icon-light-nav);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.proveedor-scope .contenedor aside {
+    grid-column: 1;
+    background-color: var(--color-aside-bg);
+    border-radius: 6px;
+}
+
+.proveedor-scope .opciones {
+    padding-top: 30px;
+}
+
+.proveedor-scope .opciones a {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.proveedor-scope .opciones a i {
+    color: var(--k-orange);
+    font-size: 22px;
+    margin-right: 11px;
+}
+
+.proveedor-scope .opciones a:hover {
+    border: 2px solid var(--color-aside-hover-border);
+    border-radius: 20px;
+    background-color: var(--color-aside-hover);
+}
+
+.proveedor-scope .contenedor main {
+    grid-column: 2;
+    padding: 30px;
+    min-width: 0;
+}
+
+.proveedor-scope .contenedor h1,
+.proveedor-scope .contenedor h2 {
+    color: var(--navy-blue);
+}
+
+.proveedor-scope .numeroOrden {
+    border: 4px dotted var(--k-orange);
+    border-radius: 20px;
+    background-color: var(--color-white);
+}
+
+.proveedor-scope .numeroOrden h2 {
+    color: var(--numorden-numcolor);
+    font-size: 24px;
+}
+
+.proveedor-scope .infoSolicitante {
+    background: linear-gradient(90deg, #554431, #000000);
+    padding: 25px;
+    border-radius: 20px;
+    border-top: 6px solid orange;
+    box-shadow: 0px 4px 19px var(--shadow-card);
+    color: whitesmoke;
+}
+.proveedor-scope .infoSolicitante p {
+    color: rgba(245, 245, 245, 0.742);
+}
+.proveedor-scope .infoSolicitante h4 {
+  color: wheat !important;
+}
+
+.proveedor-scope .infoSolicitante i {
+    color: var(--k-orange);
+    font-size: 24px;
+}
+
+.proveedor-scope .table-responsive {
+    width: 100%;
+    white-space: nowrap;
+}
+
+.proveedor-scope thead th {
+    background-color: var(--thead-bg) !important;
+    color: var(--color-white) !important;
+    border: 1px solid var(--k-orange);
+}
+
+.proveedor-scope tbody td {
+    border: 2px solid var(--color-border-table);
+    background-color: var(--color-white);
+}
+
+.proveedor-scope h1 {
+    text-align: center;
+}
+
+.proveedor-scope .si,
+.proveedor-scope .no {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 15px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.proveedor-scope .si {
+    background-color: var(--si-bg);
+    color: var(--si-color) !important;
+    margin-right: 5px;
+}
+
+.proveedor-scope .si:hover {
+    background-color: var(--si-hover-bg);
+    color: var(--color-white) !important;
+}
+
+.proveedor-scope .no {
+    background-color: var(--no-bg);
+    color: var(--no-color) !important;
+}
+
+.proveedor-scope .no:hover {
+    background-color: var(--no-hover-bg);
+    color: var(--color-white) !important;
+}
+
+.proveedor-scope .confirmaRechaza {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.proveedor-scope .confirmaRechaza button {
+    flex: 1;
+    max-width: 200px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    color: var(--color-white);
+    transition: background-color 0.2s ease;
+}
+
+.proveedor-scope .confirmaOrden { background-color: var(--confirma-bg); }
+.proveedor-scope .confirmaOrden:hover { background-color: var(--confirma-hover-bg); }
+
+.proveedor-scope .rechazaOrden { background-color: var(--rechaza-bg); }
+.proveedor-scope .rechazaOrden:hover { background-color: var(--rechaza-hover-bg); }
+
+.proveedor-scope #menu,
+.proveedor-scope .menus {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .proveedor-scope .contenedor {
+        display: block;
+        position: relative;
+    }
+
+    .proveedor-scope .menus {
+        display: block;
+        position: absolute;
+        top: 32px;
+        left: 20px;
+        z-index: 3000;
+        font-size: 35px;
+        color: var(--color-white);
+        cursor: pointer;
+    }
+
+    .proveedor-scope .contenedor aside {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 240px;
+        height: 100vh;
+        z-index: 2000;
+        transition: left .4s ease;
+        border-radius: 0;
+    }
+
+    .proveedor-scope .opciones {
+        margin-top: 50px;
+    }
+
+    .proveedor-scope #menu:checked ~ .contenedor aside {
+        left: 0;
+    }
+
+    .proveedor-scope .contenedor header {
+        height: 100px;
+        padding: 0 20px;
+    }
+
+    .proveedor-scope .contenedor header img {
+        width: 180px;
+    }
+
+    .proveedor-scope .nombreUsuario {
+        left: auto;
+        right: 70px;
+    }
+
+    .proveedor-scope .cerrarSesion {
+        right: 20px;
+    }
+
+    .proveedor-scope .contenedor main {
+        padding: 15px;
+    }
+
+    .proveedor-scope .confirmaRechaza {
+        flex-direction: column;
+    }
+
+    .proveedor-scope .confirmaRechaza button {
+        max-width: 100%;
+    }
+
+    .proveedor-scope .encabezado-pagina {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .proveedor-scope .texto-pagina h1 {
+        text-align: center;
+        font-size: 30px;
+        color: rgb(255, 252, 247) !important ;
+    }
+    
+ .proveedor-scope .texto-pagina p {
+        text-align: center;
+        font-size: 30px;
+        color: rgb(206, 190, 160) !important;
+    }
+    .proveedor-scope .icono-pagina {
+        width: 75px;
+        height: 75px;
+    }
+
+    .proveedor-scope .icono-pagina i {
+        font-size: 34px;
+    }
+}
+
+/* ================== 3) kronos-global.css ================== */
+
+/* ==========================================================
+   KRONOS · Apariencia y Tema Global Unificado (Stock + Entradas)
+   ========================================================== */
+.proveedor-scope,
+html[data-theme="light"] .proveedor-scope {
+    color-scheme: light;
+    --k-bg: #f3f1ed;
+    --k-card: #ffffff;
+    --k-surface: #f8f6f2;
+    --k-text: #1b1b18;
+    --k-muted: #625f58;
+    --k-border: #ddd8cf;
+    --k-header: #1b1d21;
+    --k-aside: #24272c;
+    --k-aside-hover: #30343a;
+    --k-orange: #e8600c;
+    --k-orange-hover: #ff7318;
+    --k-orange-soft: #fff0e4;
+    --k-focus: rgba(232, 96, 12, .28);
+    --bg-main: var(--k-bg);
+    --bg-card: var(--k-card);
+    --bg-header: var(--k-header);
+    --bg-aside: var(--k-aside);
+    --dark-primary: var(--k-header);
+    --dark-secondary: var(--k-aside);
+    --text-primary: var(--k-text);
+    --text-muted: var(--k-muted);
+    --border-color: var(--k-border);
+    --orange-accent: var(--k-orange);
+    --orange-hover: var(--k-orange-hover);
+
+    /* Variables de Stock / Estable */
+    --stock-color: #15803d;
+    --estable-bg: #dcfce7;
+    --estable-color: #15803d;
+}
+
+html[data-theme="dark"] .proveedor-scope {
+    color-scheme: dark;
+    --k-bg: #15171b;
+    --k-card: #1d2025;
+    --k-surface: #24282e;
+    --k-text: #f1f0ec;
+    --k-muted: #b8bcc2;
+    --k-border: #383d45;
+    --k-header: #0f1114;
+    --k-aside: #1b1d21;
+    --k-aside-hover: #2b3037;
+    --k-orange: #ff7a1a;
+    --k-orange-hover: #ff944d;
+    --k-orange-soft: rgba(255, 122, 26, .14);
+    --k-focus: rgba(255, 122, 26, .35);
+    --bg-main: var(--k-bg);
+    --bg-card: var(--k-card);
+    --bg-header: var(--k-header);
+    --bg-aside: var(--k-aside);
+    --dark-primary: var(--k-header);
+    --dark-secondary: var(--k-aside);
+    --text-primary: var(--k-text);
+    --text-muted: var(--k-muted);
+    --border-color: var(--k-border);
+    --orange-accent: var(--k-orange);
+    --orange-hover: var(--k-orange-hover);
+}
+
+.proveedor-scope { background: var(--k-bg); }
+.proveedor-scope { min-height: 100vh; background: var(--k-bg) !important; color: var(--k-text) !important; margin: 0; padding: 0; box-sizing: border-box; }
+.proveedor-scope *,
+.proveedor-scope *::before,
+.proveedor-scope *::after { box-sizing: border-box; }
+
+.proveedor-scope main h1,
+.proveedor-scope main h2,
+.proveedor-scope main h3,
+.proveedor-scope main h4,
+.proveedor-scope main h5,
+.proveedor-scope main h6,
+.proveedor-scope .titulo-panel,
+.proveedor-scope .titulo-alertas,
+.proveedor-scope .titulo-alertasG,
+.proveedor-scope .tituloProveedores h1,
+.proveedor-scope .content-header,
+.proveedor-scope .content-header h1,
+.proveedor-scope .titulo-pagina,
+.proveedor-scope .solicitudes-title,
+.proveedor-scope .page-title-pill,
+.proveedor-scope .titulo-consulta { color: var(--k-text) !important; }
+
+.proveedor-scope p,
+.proveedor-scope label,
+.proveedor-scope .form-label,
+.proveedor-scope .text-muted,
+.proveedor-scope .text-secondary,
+.proveedor-scope .tituloProveedores p,
+.proveedor-scope .advertenciaProductos span,
+.proveedor-scope .card-resumen h6,
+.proveedor-scope .card-resumen p,
+.proveedor-scope .bloque-targeta p { color: var(--k-muted); }
+
+.proveedor-scope .card,
+.proveedor-scope .modal-content,
+.proveedor-scope .report-form-container,
+.proveedor-scope .table-responsive,
+.proveedor-scope .container-fluid > .card,
+.proveedor-scope .nuevaContraseña,
+.proveedor-scope .tarjeta-formulario,
+.proveedor-scope .tarjeta-resumen,
+.proveedor-scope .contenido,
+.proveedor-scope .panelTabla,
+.proveedor-scope .numeroOrden,
+.proveedor-scope .infoProveedor,
+.proveedor-scope .notis,
+.proveedor-scope .tarjetas,
+.proveedor-scope .form-consulta-card,
+.proveedor-scope .estado-ap,
+.proveedor-scope .estado-reclamo,
+.proveedor-scope .estado-proceso,
+.proveedor-scope .card-header,
+.proveedor-scope .card-body,
+.proveedor-scope .formulario,
+.proveedor-scope .dashboard-card,
+.proveedor-scope .descripcion-producto,
+.proveedor-scope .panel-estado {
+    background-color: var(--k-card) !important;
+    color: var(--k-text) !important;
+    border-color: var(--k-border) !important;
+}
+
+.proveedor-scope .form-control,
+.proveedor-scope .form-select,
+.proveedor-scope .input-group-text,
+.proveedor-scope input,
+.proveedor-scope select,
+.proveedor-scope textarea,
+.proveedor-scope .control-formulario,
+.proveedor-scope .input-custom {
+    background-color: var(--k-card) !important;
+    color: var(--k-text) !important;
+    border-color: var(--k-border) !important;
+    border-radius: 6px;
+}
+.proveedor-scope .form-control::placeholder,
+.proveedor-scope input::placeholder,
+.proveedor-scope textarea::placeholder { color: var(--k-muted) !important; opacity: .78; }
+.proveedor-scope .form-control:focus,
+.proveedor-scope .form-select:focus,
+.proveedor-scope input:focus,
+.proveedor-scope select:focus,
+.proveedor-scope textarea:focus {
+    border-color: var(--k-orange) !important;
+    box-shadow: 0 0 0 .2rem var(--k-focus) !important;
+    outline: none;
+}
+
+.proveedor-scope .table {
+    --bs-table-bg: var(--k-card);
+    --bs-table-color: var(--k-text);
+    --bs-table-border-color: var(--k-border);
+    --bs-table-hover-bg: var(--k-orange-soft);
+    --bs-table-hover-color: var(--k-text);
+    color: var(--k-text) !important;
+}
+.proveedor-scope .table td,
+.proveedor-scope .table th,
+.proveedor-scope .table tbody td,
+.proveedor-scope .table tbody th {
+    color: var(--k-text) !important;
+    background-color: transparent !important;
+    border-color: var(--k-border) !important;
+}
+.proveedor-scope .table thead th,
+.proveedor-scope thead th {
+    background: var(--k-aside) !important;
+    color: #fff !important;
+    border-color: var(--k-aside) !important;
+}
+.proveedor-scope .table thead th i,
+.proveedor-scope thead th i { color: var(--k-orange) !important; }
+
+.proveedor-scope .stock-table td:nth-child(4) {
+    color: var(--stock-color) !important;
+    font-weight: 700;
+}
+
+/* ---------- SHELL UNIFICADO IDÉNTICO ENTRE STOCK Y ENTRADAS ---------- */
+.proveedor-scope .contenedor,
+.proveedor-scope .contenedor {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    min-height: 100vh;
+    gap: 0 !important;
+}
+
+.proveedor-scope .contenedor > header,
+.proveedor-scope header {
+    width: 100% !important;
+    height: 80px !important;
+    background: var(--k-header) !important;
+    border: 0 !important;
+    border-bottom: 3px solid var(--k-orange) !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative;
+    z-index: 1000;
+}
+
+.proveedor-scope .contenedor > header img,
+.proveedor-scope .contenedor > header .logo-header,
+.proveedor-scope header img {
+    max-height: 54px !important;
+    width: auto !important;
+}
+.proveedor-scope .contenedor > header .nombreUsuario,
+.proveedor-scope .contenedor > header .nombreUsuario i,
+.proveedor-scope .contenedor > header .cerrarSesion a i,
+.proveedor-scope .nombreUsuario i,
+.proveedor-scope .cerrarSesion i {
+    color: var(--k-orange) !important;
+}
+
+/* ASIDE UNIFICADO FLOTANTE / REDONDO IDÉNTICO */
+.proveedor-scope .contenedor > aside,
+.proveedor-scope .contenedor > .d-flex > aside,
+.proveedor-scope .contenedor aside,
+.proveedor-scope #kronos-shell-panel aside {
+    width: 250px !important;
+    min-width: 250px !important;
+    max-width: 250px !important;
+    background: var(--k-aside) !important;
+    color: #ffffff !important;
+    flex-shrink: 0 !important;
+    border-radius: 12px !important;
+    border: 1px solid var(--k-border) !important;
+    margin: 12px 0 12px 12px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+    overflow-y: auto !important;
+    align-self: flex-start !important;
+    min-height: 120vh !important;
+}
+
+.proveedor-scope .contenedor > main,
+.proveedor-scope .dashboard-main,
+.proveedor-scope main {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    background: var(--k-bg) !important;
+    padding: 24px 32px !important;
+}
+
+.proveedor-scope .contenedor > aside .opciones { padding: 14px 0 !important; }
+.proveedor-scope .contenedor > aside .opcion-nav,
+.proveedor-scope .contenedor > aside .titulo-menu,
+.proveedor-scope .contenedor > aside .opciones > a {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 18px !important;
+    margin: 2px 0;
+    color: #d6d9de !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-left: 4px solid transparent !important;
+    border-radius: 0 8px 8px 0 !important;
+    font-weight: 600;
+    text-align: left;
+    text-decoration: none;
+    transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+.proveedor-scope .contenedor > aside .opcion-nav i,
+.proveedor-scope .contenedor > aside .titulo-menu > i,
+.proveedor-scope .contenedor > aside .opciones > a i {
+    width: 20px;
+    margin: 0 !important;
+    color: var(--k-orange) !important;
+    font-size: 1.05rem;
+    text-align: center;
+}
+.proveedor-scope .contenedor > aside .opcion-nav:hover,
+.proveedor-scope .contenedor > aside .titulo-menu:hover,
+.proveedor-scope .contenedor > aside .opcion-nav.activo,
+.proveedor-scope .contenedor > aside .titulo-menu:has(+ .submenu a.activo) {
+    color: #fff !important;
+    background: var(--k-aside-hover) !important;
+    border-left-color: var(--k-orange) !important;
+}
+
+/* Ocultar radio check nativo feo del acordeón dentro del aside */
+.proveedor-scope aside .radio-check {
+    display: none !important;
+}
+
+/* ACORDEÓN / SUBMENÚS UNIFICADOS (Píldora Redonda + Árbol) */
+.proveedor-scope .item-acordeon .radio-check:checked ~ .submenu,
+.proveedor-scope .item-acordeon:has(.submenu a.activo),
+.proveedor-scope .item-acordeon:has(.submenu a.active) {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.proveedor-scope .item-acordeon .submenu {
+    display: none !important;
+    position: relative !important;
+    border-left: 2px dashed var(--k-orange) !important;
+    margin-left: 1.4rem !important;
+    padding-left: 0.75rem !important;
+    gap: 0.3rem !important;
+    margin-top: 0.2rem !important;
+    margin-bottom: 0.3rem !important;
+    background: transparent !important;
+}
+
+.proveedor-scope .item-acordeon .submenu a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 0.4rem 0.75rem !important;
+    border-radius: 9999px !important;
+    text-decoration: none !important;
+    color: #c3c8ce !important;
+    border: 1.5px solid transparent !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important;
+}
+
+.proveedor-scope .item-acordeon .submenu a:hover,
+.proveedor-scope .item-acordeon .submenu a.activo,
+.proveedor-scope .item-acordeon .submenu a.active {
+    background: var(--k-orange-soft) !important;
+    color: var(--k-orange) !important;
+    border: 1.5px solid var(--k-orange) !important;
+    font-weight: 600 !important;
+}
+
+/* Ficha / Modal / Panel específicos unificados */
+.proveedor-scope .encabezado-ficha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.proveedor-scope .titulo-ficha {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.proveedor-scope .titulo-ficha h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.proveedor-scope .titulo-ficha i {
+    color: var(--k-orange);
+}
+
+.proveedor-scope .logo-modal {
+    max-height: 42px;
+    width: auto;
+}
+
+.proveedor-scope .datos-producto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.proveedor-scope .datos-producto p {
+    margin: 0 0 3px;
+    color: var(--k-muted);
+    font-size: .78rem;
+    text-transform: uppercase;
+}
+
+.proveedor-scope .datos-producto span {
+    display: block;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.proveedor-scope .panel-estado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    margin: 8px 0 20px;
+    padding: 16px;
+    border: 1px solid var(--k-border);
+    border-radius: 8px;
+}
+
+.proveedor-scope .panel-estado h5 {
+    margin: 0 0 5px;
+    color: var(--k-orange);
+}
+
+.proveedor-scope .badge-stock {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 6px;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.proveedor-scope .estable {
+    background: var(--estable-bg) !important;
+    color: var(--estable-color) !important;
+}
+
+.proveedor-scope .btn-alerta,
+.proveedor-scope .btn-cerrar-modal {
+    border: 0;
+    border-radius: 7px;
+    padding: 9px 14px;
+    background: var(--dark-secondary);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Tarjeta / Título específico de Entrada para que calce perfecto */
+.proveedor-scope .titulo {
+    background-color: var(--k-card) !important;
+    color: var(--k-text) !important;
+    border: 1px solid var(--k-border);
+    border-bottom: 1px solid rgba(128,128,128,0.2);
+    border-radius: 10px 10px 0 0;
+    font-family: 'Oswald', Arial, sans-serif;
+    padding: 20px 25px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.proveedor-scope .titulo i { color: var(--k-orange); font-size: 24px; }
+.proveedor-scope .formulario {
+    border-top: none !important;
+    border-radius: 0 0 10px 10px !important;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+.proveedor-scope .contenedor-acciones {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 25px;
+}
+.proveedor-scope .confirmarRegistro {
+    background-color: var(--k-orange);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    height: 44px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0 28px;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+.proveedor-scope .confirmarRegistro:hover {
+    background-color: var(--k-orange-hover);
+    transform: translateY(-1px);
+}
+
+/* Botones genéricos unificados */
+.proveedor-scope .btn-primary,
+.proveedor-scope .btn-reporte,
+.proveedor-scope .btn-naranja,
+.proveedor-scope .btn-generate-report,
+.proveedor-scope .btn-buscar-kronos,
+.proveedor-scope .btn-kronos-search,
+.proveedor-scope .btn-continuar,
+.proveedor-scope .btn-enviar-resumen,
+.proveedor-scope .btn-volver-solicitud-lg,
+.proveedor-scope .btn-pedidos,
+.proveedor-scope .btn-garantias,
+.proveedor-scope .btn-primary-kronos {
+    background-color: var(--k-orange) !important;
+    border-color: var(--k-orange) !important;
+    color: #fff !important;
+}
+.proveedor-scope .btn-primary:hover,
+.proveedor-scope .btn-reporte:hover,
+.proveedor-scope .btn-naranja:hover,
+.proveedor-scope .btn-generate-report:hover,
+.proveedor-scope .btn-buscar-kronos:hover,
+.proveedor-scope .btn-kronos-search:hover,
+.proveedor-scope .btn-continuar:hover,
+.proveedor-scope .btn-enviar-resumen:hover,
+.proveedor-scope .btn-volver-solicitud-lg:hover,
+.proveedor-scope .btn-pedidos:hover,
+.proveedor-scope .btn-garantias:hover,
+.proveedor-scope .btn-primary-kronos:hover {
+    background-color: var(--k-orange-hover) !important;
+    border-color: var(--k-orange-hover) !important;
+    color: #fff !important;
+}
+
+.proveedor-scope [data-theme="dark"] .bg-white,
+.proveedor-scope [data-theme="dark"] .bg-light,
+.proveedor-scope [data-theme="dark"] .modal-body,
+.proveedor-scope [data-theme="dark"] .modal-footer,
+.proveedor-scope [data-theme="dark"] .dropdown-menu,
+.proveedor-scope [data-theme="dark"] .list-group-item,
+.proveedor-scope [data-theme="dark"] .input-group-text {
+    background-color: var(--k-card) !important;
+    color: var(--k-text) !important;
+    border-color: var(--k-border) !important;
+}
+.proveedor-scope [data-theme="dark"] .text-dark,
+.proveedor-scope [data-theme="dark"] .text-secondary,
+.proveedor-scope [data-theme="dark"] .text-muted { color: var(--k-muted) !important; }
+
+/* --- RESPONSIVE GLOBALES --- */
+@media (max-width: 576px) {
+    .proveedor-scope .datos-producto {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .proveedor-scope .panel-estado {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .proveedor-scope .contenedor,
+.proveedor-scope .contenedor { display: block !important; }
+    .proveedor-scope .contenedor > aside,
+.proveedor-scope .contenedor aside {
+        margin: 0 !important;
+        border-radius: 0 !important;
+        min-height: 100vh !important;
+        width: 240px !important;
+    }
+}
+
+.proveedor-scope .contenedor > header,
+.proveedor-scope header {
+    width: 100% !important;
+    height: 80px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+}
+
+/* ==========================================================
+   MODAL DE DETALLE DE GARANTÍA (proveedor)
+   Reutiliza el modal de Bootstrap (modal / modal-dialog /
+   modal-content) tal cual, controlado por estado de React
+   en vez de data-bs-toggle. Estas clases son las que le dan
+   la decoración: pill del título, campos, caja de motivo,
+   tarjeta de estado con "semáforo" y botones aprobar/rechazar.
+   ========================================================== */
+
+.proveedor-scope .title-pill {
+    width: fit-content;
+    background: var(--k-orange-soft);
+    color: var(--k-orange) !important;
+    border: 1px solid var(--k-orange);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.proveedor-scope .title-pill i {
+    color: var(--k-orange);
+}
+
+.proveedor-scope .field {
+    border-radius: 8px;
+    font-size: .92rem;
+    color: var(--k-text);
+    background: var(--k-surface);
+    border: 1px solid var(--k-border);
+}
+
+.proveedor-scope .field.order {
+    font-weight: 700;
+    border-color: var(--k-orange);
+    background: var(--k-orange-soft);
+    color: var(--k-orange) !important;
+}
+
+.proveedor-scope .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--k-orange) !important;
+}
+
+.proveedor-scope .obs-box {
+    background: var(--k-surface);
+    border: 1px solid var(--k-border);
+    border-radius: 10px;
+    color: var(--k-text) !important;
+    min-height: 90px;
+    line-height: 1.5;
+}
+
+.proveedor-scope .garantia-card {
+    border: 1px solid var(--k-border) !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+}
+
+.proveedor-scope .garantia-card .card-header {
+    background: var(--k-orange) !important;
+    color: #ffffff !important;
+    letter-spacing: .5px;
+}
+
+.proveedor-scope .estado {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: .92rem;
+    color: var(--k-muted) !important;
+}
+
+.proveedor-scope .circulo {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--k-border);
+    background: transparent;
+    flex-shrink: 0;
+    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.proveedor-scope .circulo.activo {
+    background: var(--k-orange);
+    border-color: var(--k-orange);
+    box-shadow: 0 0 0 4px var(--k-orange-soft);
+}
+
+.proveedor-scope .btn-ac {
+    background: #16a34a;
+    color: #ffffff;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    transition: background-color .2s ease, transform .1s ease;
+}
+.proveedor-scope .btn-ac:hover {
+    background: #15803d;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.proveedor-scope .btn-ac-re {
+    background: #dc2626;
+    color: #ffffff;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    transition: background-color .2s ease, transform .1s ease;
+}
+.proveedor-scope .btn-ac-re:hover {
+    background: #b91c1c;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* ==========================================================
+   MEJORAS VISUALES · TODOS LOS MODALES DE KRONOS
+   Esto NO renombra nada: solo le da más peso visual a las
+   clases de Bootstrap que ya se usan en todos los modales
+   (modal-backdrop, modal-content, modal-dialog), así que
+   TODOS los modales del panel (garantías, órdenes, el que
+   sigas haciendo) quedan bonitos automáticamente, sin tocar
+   cada componente uno por uno.
+   ========================================================== */
+
+/* Fondo desenfocado detrás del modal, en vez del negro plano */
+.proveedor-scope .modal-backdrop.show {
+    opacity: 1 !important;
+    background-color: rgba(10, 11, 13, .72) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Caja del modal: sombra marcada, esquinas más redondeadas,
+   ligero borde para que se despegue del fondo */
+.proveedor-scope .modal-content {
+    border: none !important;
+    border-radius: 20px !important;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, .55), 0 0 0 1px var(--k-border);
+    animation: kronosModalIn .22s ease-out;
+}
+
+@keyframes kronosModalIn {
+    from { opacity: 0; transform: translateY(14px) scale(.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Encabezado con el logo de Kronos, para los modales que lo usan
+   (className="modal-header-kronos" en el header del modal) */
+.proveedor-scope .modal-header-kronos {
+    background: linear-gradient(135deg, var(--k-header) 0%, #000000 140%);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--k-orange);
+}
+
+.proveedor-scope .modal-header-kronos .modal-kronos-logo {
+    max-height: 38px;
+    width: auto;
+}
+
+.proveedor-scope .modal-header-kronos .modal-kronos-marca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    letter-spacing: .3px;
+}
+
+.proveedor-scope .modal-header-kronos .modal-kronos-marca i {
+    color: var(--k-orange);
+    font-size: 1.3rem;
+}
+
+/* Un poco más de aire en el cuerpo de los modales grandes */
+.proveedor-scope .modal-dialog.modal-lg .modal-body {
+    padding: 24px 28px !important;
+}
+
+
+/* ==========================================================
+   MENÚ HAMBURGUESA · SIDEBAR EN PANTALLAS PEQUEÑAS
+   PEGAR AL FINAL del CSS unificado (después de kronos-global.css).
+   Tiene que ir al final porque kronos-global.css fuerza el aside con
+   !important (ancho, margen, alto) y solo gana lo que va después
+   con más especificidad.
+   ========================================================== */
+
+.proveedor-scope .menu-fondo {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    /* Botón hamburguesa / X */
+    .proveedor-scope .menus {
+        display: block;
+        position: absolute;
+        top: 24px;
+        left: 16px;
+        z-index: 3000;
+        font-size: 2rem;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .proveedor-scope .menus i {
+        color: var(--k-orange);
+    }
+
+    /* Sidebar: panel que se desliza desde la izquierda, a pantalla completa de alto */
+    .proveedor-scope #kronos-shell-panel aside {
+        position: fixed !important;
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        border-radius: 0 12px 12px 0 !important;
+        z-index: 2000;
+        /* Cerrado: fuera de pantalla y sin foco de teclado */
+        visibility: hidden;
+        transition: left .3s ease, visibility 0s linear .3s;
+    }
+
+    /* Abierto */
+    .proveedor-scope #menu:checked ~ .contenedor #kronos-shell-panel aside {
+        left: 0;
+        visibility: visible;
+        transition: left .3s ease, visibility 0s;
+    }
+
+    /* Fondo oscuro detrás del menú (toca para cerrar) */
+    .proveedor-scope .menu-fondo {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 1900;
+        background: rgba(10, 11, 13, .6);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s ease;
+    }
+
+    .proveedor-scope #menu:checked ~ .menu-fondo {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Con el menú abierto, la página de atrás no se desplaza */
+    .proveedor-scope body:has(#menu:checked) {
+        overflow: hidden;
+    }
+}

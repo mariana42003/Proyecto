@@ -1,0 +1,27 @@
+/* ==========================================================
+   KRONOS · index.css
+   Estilos globales mínimos de la aplicación. No compite con
+   Bootstrap ni con panel-base.css / kronos-global.css: solo
+   fija el reset base y el fondo por defecto antes de que el
+   layout del panel tome el control.
+   ========================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #f3f1ed;
+}
+
+a {
+  color: inherit;
+}
