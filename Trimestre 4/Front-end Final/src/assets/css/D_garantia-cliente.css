@@ -67,7 +67,7 @@
   outline: none;
 }
 
-/* ── BOTÓN PRINCIPAL (NEGRO con acento morado en focus) ──────────────── */
+/* ── BOTÓN PRINCIPAL (NEGRO con acento morado en focus) ── */
 .gk-root .gk-btn-primary {
   background-color: var(--gk-black);
   color: var(--gk-white);
@@ -89,7 +89,7 @@
   outline-offset: 2px;
 }
 
-/* ── BOTÓN CARRITO (NARANJA) ─────────────────────────────────────────── */
+/* ── BOTÓN CARRITO (NARANJA) ─*/
 .gk-root .gk-btn-cart {
   background-color: var(--gk-orange);
   color: var(--gk-white);
@@ -310,7 +310,7 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
 
-/* ── CABECERA DE MODAL: SIEMPRE NEGRA ────────────────────────────────── */
+/* ── CABECERA DE MODAL: SIEMPRE NEGRA ─── */
 .gk-root .gk-modal-header {
   background-color: var(--gk-black);
   color: var(--gk-white);
