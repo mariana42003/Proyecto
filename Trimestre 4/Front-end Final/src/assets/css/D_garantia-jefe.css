@@ -1,14 +1,3 @@
-/* ==========================================================
-   KRONOS · D_garantia-jefe.css
-   Estilos EXCLUSIVOS de las páginas de garantías del jefe:
-   D_solicitudGarantias.jsx y D_historial-garantias.jsx.
-   Migrado desde Actualizacion/Maquetacion/css/historial-garantias.css,
-   más un complemento propio para el modal de "Detalle de la
-   solicitud" (Pagesjefe/SolicitudGarantias.html), que en el HTML
-   original solo cargaba panel-base.css + Panel.css + kronos-global.css
-   y por eso se apoyaba casi enteramente en clases de Bootstrap.
-   ========================================================== */
-
 /* ---------- TÍTULO "SOLICITUDES DE GARANTÍAS" ---------- */
 
 .titulo-alertasG {
