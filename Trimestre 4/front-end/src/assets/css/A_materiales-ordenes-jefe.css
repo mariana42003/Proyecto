@@ -1,0 +1,185 @@
+/* ==========================================================
+   KRONOS · A_materiales-ordenes-jefe.css
+   Estilos EXCLUSIVOS de "Asociar Materiales" (generar orden
+   de compra). Migrado desde
+   Actualizacion/Maquetacion/css/vistaJefe-proveedores.css.
+   ========================================================== */
+
+.cabecera-tabla {
+    display: block;
+    width: 100%;
+    margin: 0 0 24px;
+}
+
+.tituloProveedores h1 {
+    margin: 0 0 4px;
+    color: var(--text-primary);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: .3px;
+    text-align: left;
+}
+
+.tituloProveedores h1 i {
+    color: var(--orange-accent);
+    margin-right: 6px;
+}
+
+.tituloProveedores p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: .95rem;
+    text-align: left;
+}
+
+.tablaProductos {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.tablaProductos h2 {
+    margin: 0 0 18px;
+    color: var(--text-primary);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.advertenciaProductos {
+    border-radius: 10px;
+    font-size: .95rem;
+}
+
+.advertenciaProductos span {
+    font-size: 1rem !important;
+}
+
+.buscarOrden {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.buscarOrden input {
+    flex: 1;
+    height: 42px;
+    border-radius: 6px;
+    padding: 10px 14px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.buscarOrden i {
+    font-size: 1.2rem;
+    color: var(--orange-accent);
+}
+
+/* ---------- CONTADOR DE MATERIALES SELECCIONADOS ---------- */
+
+.badge-contador {
+    background: rgba(232, 96, 12, .12);
+    color: var(--orange-accent);
+    border: 1px solid var(--orange-accent);
+    border-radius: 999px;
+    padding: 4px 14px;
+    font-size: .85rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* ---------- CARRITO DE MATERIALES ----------
+   Panel derecho con los materiales seleccionados; queda fijo
+   al hacer scroll para que "Confirmar" esté siempre visible. */
+
+.carritoMateriales {
+    position: sticky;
+    top: 20px;
+}
+
+.listaCarrito .itemCarrito {
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.listaCarrito .itemCarrito:last-child {
+    border-bottom: none;
+}
+
+.listaCarrito .itemCarrito p {
+    color: var(--text-primary);
+}
+
+.listaCarrito .bi-trash {
+    transition: transform .15s ease;
+}
+
+.listaCarrito .bi-trash:hover {
+    transform: scale(1.15);
+}
+
+/* ---------- ESTADO VACÍO ---------- */
+
+.estadoVacioSeleccion {
+    text-align: center;
+    padding: 30px 10px;
+    color: var(--text-muted);
+}
+
+.estadoVacioSeleccion i {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+    color: var(--orange-accent);
+}
+
+/* ---------- ESTADOS DE STOCK EN TABLA ---------- */
+
+.normal,
+.agotado {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.normal {
+    background-color: #dcfce7 !important;
+    color: #15803d !important;
+}
+
+.agotado {
+    background-color: #fee2e2 !important;
+    color: #b91c1c !important;
+}
+
+/* ---------- MODAL ASOCIAR PROVEEDORES ---------- */
+
+#modalAsociarProveedores {
+    background-color: rgba(36, 41, 53, 0.23) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.214) !important;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 992px) {
+    .carritoMateriales {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .tablaProductos {
+        padding: 16px;
+    }
+}
