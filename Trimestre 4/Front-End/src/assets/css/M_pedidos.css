@@ -1,0 +1,139 @@
+/* MODO OSCURO (Predeterminado) */
+.pagina-pedidos.modo-oscuro {
+  background-color: #121417;
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+.modo-oscuro .site-header {
+  background-color: #1a1d20;
+}
+
+.modo-oscuro .topbar {
+  background-color: #121417;
+}
+
+.modo-oscuro .pedido-contenedor,
+.modo-oscuro .producto-tarjeta,
+.modo-oscuro .informacion-box,
+.modo-oscuro .oferta-box {
+  background-color: #1a1d20;
+  border: 1px solid #2d3238;
+}
+
+.modo-oscuro .direccion-envio-panel {
+  background-color: #15181b;
+  border: 1px solid #2a2e33;
+  padding: 15px;
+  border-radius: 6px;
+  color: #c5c5c5;
+}
+
+/* MODO CLARO */
+.pagina-pedidos.modo-claro {
+  background-color: #f8f9fa;
+  color: #212529;
+  min-height: 100vh;
+}
+
+.modo-claro .site-header {
+  background-color: #ffffff;
+}
+
+.modo-claro .topbar {
+  background-color: #e9ecef;
+}
+
+.modo-claro .topbar-text {
+  color: #495057;
+}
+
+.modo-claro .pedido-contenedor,
+.modo-claro .producto-tarjeta,
+.modo-claro .informacion-box,
+.modo-claro .oferta-box {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+}
+
+.modo-claro .direccion-envio-panel {
+  background-color: #f1f3f5;
+  border: 1px solid #ced4da;
+  padding: 15px;
+  border-radius: 6px;
+  color: #333;
+}
+
+/* ESTILOS DEL ENCABEZADO Y TOPBAR */
+.site-header {
+  background-color: #1a1d20;
+}
+
+.topbar-text {
+  color: #b0b5ba; /* Blanco tenue legible */
+  font-size: 0.85rem;
+}
+
+.buscador-input::placeholder {
+  color: #6c757d;
+}
+
+.badge-cart {
+  font-size: 0.7rem;
+  padding: 3px 6px;
+  font-weight: 800;
+}
+
+/* BOTONES Y COMPONENTES */
+.btn-auth-naranja {
+  background-color: #ff6b00 !important;
+  color: #000000 !important;
+  border: none !important;
+  padding: 6px 16px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.btn-auth-naranja:hover {
+  background-color: #e05e00 !important;
+  color: #000000 !important;
+  opacity: 0.9;
+}
+
+.btn-naranja {
+  background-color: #ff6b00;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+}
+
+.btn-naranja:hover {
+  background-color: #e05e00;
+  color: #fff;
+}
+
+.btn-sidebar {
+  background-color: transparent;
+  border: 1px solid #3a3f45;
+  color: inherit;
+}
+
+.cantidad-badge {
+  background-color: #2b3036;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.foto-producto {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 4px;
+}

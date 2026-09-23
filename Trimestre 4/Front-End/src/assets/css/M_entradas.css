@@ -1,0 +1,84 @@
+/* ==========================================================
+   KRONOS · M_entradas.css
+   Estilos EXCLUSIVOS del formulario de registro de entradas.
+   Migrado desde Actualizacion/Maquetacion/css/Entrada.css,
+   quitando lo que ya vive en panel-base.css / kronos-global.css
+   (header, aside, .contenedor) para no pelear a punta de
+   !important contra el shell compartido.
+   ========================================================== */
+
+.dashboard-main {
+    background: var(--bg-main);
+}
+
+/* Tarjeta título + formulario */
+.titulo {
+    font-size: 22px;
+}
+
+.titulo i {
+    font-size: 24px;
+}
+
+.formulario .form-label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.formulario .form-control,
+.formulario .form-select {
+    height: 42px;
+    font-size: 14px;
+}
+
+/* Botón de confirmar / cancelar */
+.contenedor-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.confirmarRegistro,
+.cancelarSalida {
+    border: none;
+    border-radius: 6px;
+    height: 44px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0 28px;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.confirmarRegistro:hover {
+    transform: translateY(-1px);
+}
+
+.cancelarSalida {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.cancelarSalida:hover {
+    background-color: var(--border-color);
+}
+
+/* ---------- RESPONSIVO ---------- */
+@media (max-width: 768px) {
+    .confirmarRegistro,
+    .cancelarSalida {
+        width: 100%;
+    }
+
+    .contenedor-acciones {
+        flex-direction: column;
+    }
+}

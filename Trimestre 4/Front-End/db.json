@@ -1,0 +1,361 @@
+{
+  "direccion": [
+    {
+      "idDireccion": "D1",
+      "barrio": "San Pedro",
+      "ciudad": "Bogota",
+      "localidad": "Kennedy",
+      "direccionCompleta": "Calle 70 # 19"
+    },
+    {
+      "idDireccion": "D2",
+      "barrio": "San Francisco",
+      "ciudad": "Bogota",
+      "localidad": "Suba",
+      "direccionCompleta": "Calle 64 # 1"
+    },
+    {
+      "idDireccion": "D3",
+      "barrio": "El Poblado",
+      "ciudad": "Medellin",
+      "localidad": "El Poblado",
+      "direccionCompleta": "Carrera 43 # 10"
+    }
+  ],
+  "rol": [
+    {
+      "idRol": "R1",
+      "nombreRol": "Administrador"
+    },
+    {
+      "idRol": "R2",
+      "nombreRol": "Empleado"
+    },
+    {
+      "idRol": "R3",
+      "nombreRol": "Cliente"
+    },
+    {
+      "idRol": "R4",
+      "nombreRol": "Proveedor"
+    }
+  ],
+  "categoria": [
+    {
+      "idCategoria": "C1",
+      "nombreCategoria": "Herramientas"
+    },
+    {
+      "idCategoria": "C2",
+      "nombreCategoria": "Electricas"
+    },
+    {
+      "idCategoria": "C3",
+      "nombreCategoria": "Construccion"
+    }
+  ],
+  "marca": [
+    {
+      "idMarca": "M1",
+      "nombreMarca": "Truper"
+    },
+    {
+      "idMarca": "M2",
+      "nombreMarca": "Bosch"
+    },
+    {
+      "idMarca": "M3",
+      "nombreMarca": "Stanley"
+    }
+  ],
+  "unidadventa": [
+    {
+      "idUnidadVenta": "U1",
+      "nombreUnidadMedida": "Unidad"
+    },
+    {
+      "idUnidadVenta": "U2",
+      "nombreUnidadMedida": "Metro"
+    },
+    {
+      "idUnidadVenta": "U3",
+      "nombreUnidadMedida": "Caja"
+    }
+  ],
+  "usuario": [
+    {
+      "identificacion": "1001",
+      "nombre": "Mariana",
+      "apellidos": "Gomez",
+      "correoElectronico": "mariana@gmail.com",
+      "telefono": "3001112233",
+      "contrasena": "123456",
+      "rol_idRol": "R1",
+      "direccion_idDireccion": "D1"
+    },
+    {
+      "identificacion": "1002",
+      "nombre": "Carlos",
+      "apellidos": "Rodriguez",
+      "correoElectronico": "carlos@gmail.com",
+      "telefono": "3012223344",
+      "contrasena": "123456",
+      "rol_idRol": "R2",
+      "direccion_idDireccion": "D2"
+    },
+    {
+      "identificacion": "1003",
+      "nombre": "Laura",
+      "apellidos": "Martinez",
+      "correoElectronico": "laura@gmail.com",
+      "telefono": "3023334455",
+      "contrasena": "123456",
+      "rol_idRol": "R3",
+      "direccion_idDireccion": "D3"
+    }
+  ],
+  "cliente": [
+    {
+      "idCliente": "CL1",
+      "carritoActivo": 1,
+      "usuario_identificacion": "1003"
+    }
+  ],
+  "proveedor": [
+    {
+      "idProveedor": "P1",
+      "tipoProducto": "Herramientas",
+      "usuario_identificacion": "1002"
+    }
+  ],
+  "inventario": [
+    {
+      "codInventario": "I1",
+      "nombre": "Taladro",
+      "stock": 15,
+      "modelo": "GSB 550",
+      "unidadMedida_idUnidadMedida": "U1",
+      "marca_idMarca": "M2",
+      "categoria_idCategoria": "C2",
+      "proveedor_idProveedor": "P1"
+    },
+    {
+      "codInventario": "I2",
+      "nombre": "Martillo",
+      "stock": 25,
+      "modelo": "STHT",
+      "unidadMedida_idUnidadMedida": "U1",
+      "marca_idMarca": "M3",
+      "categoria_idCategoria": "C1",
+      "proveedor_idProveedor": "P1"
+    },
+    {
+      "codInventario": "I3",
+      "nombre": "Cable electrico",
+      "stock": 100,
+      "modelo": "THHN",
+      "unidadMedida_idUnidadMedida": "U2",
+      "marca_idMarca": "M2",
+      "categoria_idCategoria": "C2",
+      "proveedor_idProveedor": "P1"
+    }
+  ],
+  "alertas": [
+    {
+      "idAlertas": "A1",
+      "estado": "Bajo",
+      "inventario_codInventario": "I1"
+    },
+    {
+      "idAlertas": "A2",
+      "estado": "Normal",
+      "inventario_codInventario": "I2"
+    },
+    {
+      "idAlertas": "A3",
+      "estado": "Bajo",
+      "inventario_codInventario": "I3"
+    }
+  ],
+  "garantias": [
+    {
+      "id": "GAR-1790006239199",
+      "tipo": "Cliente",
+      "numero_orden": "SOL-2026-2501",
+      "cliente_destino": "Juan Pérez",
+      "cliente_id": "cli-101",
+      "correo": "juan.perez@example.com",
+      "numero_factura": "FAC-2026-001",
+      "producto": "Taladro Inalámbrico 20V",
+      "precio": 350000,
+      "tipo_falla": "Faltan piezas",
+      "motivo": "Faltan piezas específicas en el empaque y la caja",
+      "observacion_inicial": "",
+      "observacion_actual": "Se le hará reembolso",
+      "imagen_nombre": "TaladroInalambrico20V.jpg",
+      "estado": "Aprobado",
+      "fecha_creacion": "2026-09-21T15:57:19.198Z",
+      "fecha_finalizacion": "2026-09-21T16:23:42.186Z",
+      "observaciones": [
+        {
+          "id": "obs-1790006239199",
+          "texto": "Solicitud registrada por el cliente.",
+          "autor": "Cliente",
+          "fecha": "2026-09-21T15:57:19.198Z"
+        },
+        {
+          "id": "obs-1790007822186-ybb1",
+          "texto": "Se le hará reembolso",
+          "estado": "Aprobado",
+          "responsable": "Jefe de Garantías",
+          "fecha": "2026-09-21T16:23:42.186Z"
+        }
+      ],
+      "bitacora": [
+        {
+          "id": "bit-1790006239199",
+          "accion": "Creación de Solicitud",
+          "estado": "Pendiente",
+          "fecha": "2026-09-21T15:57:19.198Z",
+          "detalle": "Solicitud radicada en el portal de cliente."
+        },
+        {
+          "id": "bit-1790007822186-8d6z",
+          "accion": "Cambio de estado",
+          "estado": "Aprobado",
+          "responsable": "Jefe de Garantías",
+          "fecha": "2026-09-21T16:23:42.186Z",
+          "observacion": "Se le hará reembolso"
+        }
+      ]
+    },
+    {
+      "id": "GAR-1790009101852",
+      "tipo": "Cliente",
+      "numero_orden": "SOL-2026-2567",
+      "numero_solicitud": "SOL-2026-2567",
+      "cliente_destino": "Juan Pérez",
+      "cliente_nombre": "Juan Pérez",
+      "cliente_id": "cli-101",
+      "correo": "juan.perez@example.com",
+      "numero_factura": "FAC-2026-001",
+      "producto": "Taladro Inalámbrico 20V",
+      "precio": 350000,
+      "tipo_falla": "Eléctrico",
+      "motivo": "No enciende y se apaga cuando lo hace",
+      "observacion_inicial": "",
+      "observacion_actual": "",
+      "imagen_nombre": "AmoladoraesEsmeril.jpeg",
+      "estado": "Pendiente",
+      "fecha_creacion": "2026-09-21T16:45:01.852Z",
+      "fecha_finalizacion": null,
+      "observaciones": [
+        {
+          "id": "obs-1790009101852",
+          "texto": "Solicitud registrada por el cliente.",
+          "autor": "Cliente",
+          "fecha": "2026-09-21T16:45:01.852Z"
+        }
+      ],
+      "bitacora": [
+        {
+          "id": "bit-1790009101852",
+          "accion": "Creación de Solicitud",
+          "estado": "Pendiente",
+          "fecha": "2026-09-21T16:45:01.852Z",
+          "detalle": "Solicitud radicada en el portal de cliente."
+        },
+        {
+          "id": "bit-1790013265892",
+          "accion": "Actualización de Solicitud",
+          "estado": "Pendiente",
+          "fecha": "2026-09-21T17:54:25.892Z",
+          "detalle": "El cliente actualizó el motivo/evidencia de la solicitud."
+        }
+      ]
+    }
+  ],
+  "venta": [
+    {
+      "idVenta": "V1",
+      "descuento": 0,
+      "fechaVenta": "2026-09-08",
+      "estado": "Pagado",
+      "totalVenta": 150000,
+      "comprobantePago": "CP001",
+      "metodoPago": "Efectivo",
+      "cliente_idCliente": "CL1"
+    },
+    {
+      "idVenta": "V2",
+      "descuento": 10,
+      "fechaVenta": "2026-09-08",
+      "estado": "Pendiente",
+      "totalVenta": 200000,
+      "comprobantePago": "CP002",
+      "metodoPago": "Transferencia",
+      "cliente_idCliente": "CL1"
+    }
+  ],
+  "detalleventa": [
+    {
+      "idDetalleVenta": "DV1",
+      "subTotal": 120000,
+      "cantidad": 1,
+      "precioUnitario": 120000,
+      "venta_idVenta": "V1",
+      "inventario_codInventario": "I1"
+    },
+    {
+      "idDetalleVenta": "DV2",
+      "subTotal": 30000,
+      "cantidad": 2,
+      "precioUnitario": 15000,
+      "venta_idVenta": "V1",
+      "inventario_codInventario": "I2"
+    },
+    {
+      "idDetalleVenta": "DV3",
+      "subTotal": 200000,
+      "cantidad": 2,
+      "precioUnitario": 100000,
+      "venta_idVenta": "V2",
+      "inventario_codInventario": "I3"
+    }
+  ],
+  "movimiento": [
+    {
+      "idMovimiento": "MO1",
+      "fechaMovimiento": "2026-09-01",
+      "precioUnitario": 100000,
+      "cantidad": 10,
+      "subtotal": 1000000,
+      "tipoMovimiento": "Entrada",
+      "usuario_identificacion": "1002",
+      "inventario_codInventario": "I1",
+      "detalleVenta_idDetalleVenta": "DV1"
+    },
+    {
+      "idMovimiento": "MO2",
+      "fechaMovimiento": "2026-09-08",
+      "precioUnitario": 120000,
+      "cantidad": 1,
+      "subtotal": 120000,
+      "tipoMovimiento": "Salida",
+      "usuario_identificacion": "1002",
+      "inventario_codInventario": "I1",
+      "detalleVenta_idDetalleVenta": "DV1"
+    },
+    {
+      "idMovimiento": "MO3",
+      "fechaMovimiento": "2026-09-08",
+      "precioUnitario": 15000,
+      "cantidad": 2,
+      "subtotal": 30000,
+      "tipoMovimiento": "Salida",
+      "usuario_identificacion": "1002",
+      "inventario_codInventario": "I2",
+      "detalleVenta_idDetalleVenta": "DV2"
+    }
+  ]
+}

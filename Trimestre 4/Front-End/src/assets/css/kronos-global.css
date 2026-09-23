@@ -1,0 +1,472 @@
+/* ==========================================================
+   KRONOS · Apariencia y Tema Global Unificado
+   Migrado desde Actualizacion/Maquetacion/css/kronos-global.css
+   ========================================================== */
+:root,
+[data-theme="light"] {
+    color-scheme: light;
+    --k-bg: #f3f1ed;
+    --k-card: #ffffff;
+    --k-surface: #f8f6f2;
+    --k-text: #1b1b18;
+    --k-muted: #625f58;
+    --k-border: #ddd8cf;
+    --k-header: #1b1d21;
+    --k-aside: #24272c;
+    --k-aside-hover: #30343a;
+    --k-orange: #e8600c;
+    --k-orange-hover: #ff7318;
+    --k-orange-soft: #fff0e4;
+    --k-focus: rgba(232, 96, 12, .28);
+    --bg-main: var(--k-bg);
+    --bg-card: var(--k-card);
+    --bg-header: var(--k-header);
+    --bg-aside: var(--k-aside);
+    --dark-primary: var(--k-header);
+    --dark-secondary: var(--k-aside);
+    --text-primary: var(--k-text);
+    --text-muted: var(--k-muted);
+    --border-color: var(--k-border);
+    --orange-accent: var(--k-orange);
+    --orange-hover: var(--k-orange-hover);
+ 
+    /* Variables de Stock / Estable */
+    --stock-color: #15803d;
+    --estable-bg: #dcfce7;
+    --estable-color: #15803d;
+}
+ 
+[data-theme="dark"] {
+    color-scheme: dark;
+    --k-bg: #15171b;
+    --k-card: #1d2025;
+    --k-surface: #24282e;
+    --k-text: #f1f0ec;
+    --k-muted: #b8bcc2;
+    --k-border: #383d45;
+    --k-header: #0f1114;
+    --k-aside: #1b1d21;
+    --k-aside-hover: #2b3037;
+    --k-orange: #ff7a1a;
+    --k-orange-hover: #ff944d;
+    --k-orange-soft: rgba(255, 122, 26, .14);
+    --k-focus: rgba(255, 122, 26, .35);
+    --bg-main: var(--k-bg);
+    --bg-card: var(--k-card);
+    --bg-header: var(--k-header);
+    --bg-aside: var(--k-aside);
+    --dark-primary: var(--k-header);
+    --dark-secondary: var(--k-aside);
+    --text-primary: var(--k-text);
+    --text-muted: var(--k-muted);
+    --border-color: var(--k-border);
+    --orange-accent: var(--k-orange);
+    --orange-hover: var(--k-orange-hover);
+}
+ 
+html { background: var(--k-bg); }
+body { min-height: 100vh; background: var(--k-bg) !important; color: var(--k-text) !important; margin: 0; padding: 0; box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; }
+ 
+main h1, main h2, main h3, main h4, main h5, main h6,
+.titulo-panel, .titulo-alertas, .titulo-alertasG,
+.tituloProveedores h1, .texto-pagina h1, .encabezado-pagina h1,
+.content-header, .content-header h1, .titulo-pagina, .solicitudes-title,
+.page-title-pill, .titulo-consulta { color: var(--k-text) !important; }
+ 
+p, label, .form-label, .text-muted, .text-secondary, .texto-pagina p,
+.tituloProveedores p, .advertenciaProductos span, .card-resumen h6,
+.card-resumen p, .bloque-targeta p { color: var(--k-muted); }
+ 
+.card, .modal-content, .report-form-container, .table-responsive,
+.container-fluid > .card, .nuevaContraseña, .tarjeta-formulario,
+.tarjeta-resumen, .contenido, .panelTabla, .numeroOrden, .infoProveedor,
+.notis, .tarjetas, .form-consulta-card, .estado-ap, .estado-reclamo,
+.estado-proceso, .card-header, .card-body, .formulario, .dashboard-card,
+.descripcion-producto, .panel-estado {
+    background-color: var(--k-card) !important;
+    color: var(--k-text) !important;
+    border-color: var(--k-border) !important;
+}
+ 
+.form-control, .form-select, .input-group-text, input, select, textarea,
+.control-formulario, .input-custom {
+    background-color: var(--k-card) !important;
+    color: var(--k-text) !important;
+    border-color: var(--k-border) !important;
+    border-radius: 6px;
+}
+.form-control::placeholder, input::placeholder, textarea::placeholder { color: var(--k-muted) !important; opacity: .78; }
+.form-control:focus, .form-select:focus, input:focus, select:focus, textarea:focus {
+    border-color: var(--k-orange) !important;
+    box-shadow: 0 0 0 .2rem var(--k-focus) !important;
+    outline: none;
+}
+ 
+.table {
+    --bs-table-bg: var(--k-card);
+    --bs-table-color: var(--k-text);
+    --bs-table-border-color: var(--k-border);
+    --bs-table-hover-bg: var(--k-orange-soft);
+    --bs-table-hover-color: var(--k-text);
+    color: var(--k-text) !important;
+}
+.table td, .table th, .table tbody td, .table tbody th {
+    color: var(--k-text) !important;
+    background-color: transparent !important;
+    border-color: var(--k-border) !important;
+}
+.table thead th, thead th {
+    background: var(--k-aside) !important;
+    color: #fff !important;
+    border-color: var(--k-aside) !important;
+}
+.table thead th i, thead th i { color: var(--k-orange) !important; }
+ 
+.stock-table td:nth-child(4) {
+    color: var(--stock-color) !important;
+    font-weight: 700;
+}
+ 
+/* ---------- SHELL UNIFICADO IDÉNTICO ENTRE PÁGINAS ---------- */
+body > .contenedor, .contenedor {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    min-height: 100vh;
+    gap: 0 !important;
+}
+ 
+/* Antes incluía ", header" suelto (sin ámbito), lo que también le
+   aplicaba estos !important (altura 80px, línea naranja inferior,
+   etc.) al <header> de la tienda (M_index.jsx). Se deja solo con
+   ámbito a ".contenedor", el shell del panel del jefe. */
+body > .contenedor > header {
+    width: 100% !important;
+    height: 80px !important;
+    background: var(--k-header) !important;
+    border: 0 !important;
+    border-bottom: 3px solid var(--k-orange) !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative;
+    z-index: 1000;
+}
+ 
+body > .contenedor > header img, body > .contenedor > header .logo-header {
+    max-height: 54px !important;
+    width: auto !important;
+}
+body > .contenedor > header .nombreUsuario,
+body > .contenedor > header .nombreUsuario i,
+body > .contenedor > header .cerrarSesion a i,
+.nombreUsuario i, .cerrarSesion i {
+    color: var(--k-orange) !important;
+}
+ 
+/* ASIDE UNIFICADO FLOTANTE / REDONDO IDÉNTICO */
+body > .contenedor > aside,
+body > .contenedor > .d-flex > aside,
+.contenedor aside,
+#kronos-shell-panel aside {
+    width: 250px !important;
+    min-width: 250px !important;
+    max-width: 250px !important;
+    background: var(--k-aside) !important;
+    color: #ffffff !important;
+    flex-shrink: 0 !important;
+    border-radius: 12px !important;
+    border: 1px solid var(--k-border) !important;
+    margin: 12px 0 12px 12px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+    overflow-y: auto !important;
+    align-self: flex-start !important;
+    min-height: 120vh !important;
+}
+ 
+body > .contenedor > main, .dashboard-main, main {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    background: var(--k-bg) !important;
+    padding: 24px 32px !important;
+}
+ 
+body > .contenedor > aside .opciones { padding: 14px 0 !important; }
+body > .contenedor > aside .opcion-nav,
+body > .contenedor > aside .titulo-menu,
+body > .contenedor > aside .opciones > a {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 18px !important;
+    margin: 2px 0;
+    color: #d6d9de !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-left: 4px solid transparent !important;
+    border-radius: 0 8px 8px 0 !important;
+    font-weight: 600;
+    text-align: left;
+    text-decoration: none;
+    transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+body > .contenedor > aside .opcion-nav i,
+body > .contenedor > aside .titulo-menu > i,
+body > .contenedor > aside .opciones > a i {
+    width: 20px;
+    margin: 0 !important;
+    color: var(--k-orange) !important;
+    font-size: 1.05rem;
+    text-align: center;
+}
+body > .contenedor > aside .opcion-nav:hover,
+body > .contenedor > aside .titulo-menu:hover,
+body > .contenedor > aside .opcion-nav.activo,
+body > .contenedor > aside .titulo-menu:has(+ .submenu a.activo) {
+    color: #fff !important;
+    background: var(--k-aside-hover) !important;
+    border-left-color: var(--k-orange) !important;
+}
+ 
+/* Ocultar radio check nativo feo del acordeón dentro del aside */
+aside .radio-check {
+    display: none !important;
+}
+ 
+/* ACORDEÓN / SUBMENÚS UNIFICADOS (Píldora Redonda + Árbol).
+   ".abierto" es la clase que React agrega al ítem del acordeón
+   activo; sustituye al ":checked" del <input type="radio"> original. */
+.item-acordeon .radio-check:checked ~ .submenu,
+.item-acordeon.abierto .submenu,
+.item-acordeon:has(.submenu a.activo),
+.item-acordeon:has(.submenu a.active) {
+    display: flex !important;
+    flex-direction: column !important;
+}
+ 
+.item-acordeon .submenu {
+    display: none !important;
+    position: relative !important;
+    border-left: 2px dashed var(--k-orange) !important;
+    margin-left: 1.4rem !important;
+    padding-left: 0.75rem !important;
+    gap: 0.3rem !important;
+    margin-top: 0.2rem !important;
+    margin-bottom: 0.3rem !important;
+    background: transparent !important;
+}
+ 
+.item-acordeon .submenu a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 0.4rem 0.75rem !important;
+    border-radius: 9999px !important;
+    text-decoration: none !important;
+    color: #c3c8ce !important;
+    border: 1.5px solid transparent !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important;
+}
+ 
+.item-acordeon .submenu a:hover,
+.item-acordeon .submenu a.activo,
+.item-acordeon .submenu a.active {
+    background: var(--k-orange-soft) !important;
+    color: var(--k-orange) !important;
+    border: 1.5px solid var(--k-orange) !important;
+    font-weight: 600 !important;
+}
+ 
+/* Ficha / Modal / Panel específicos unificados */
+.encabezado-ficha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.titulo-ficha {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+ 
+.titulo-ficha h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+ 
+.titulo-ficha i {
+    color: var(--k-orange);
+}
+ 
+.logo-modal {
+    max-height: 42px;
+    width: auto;
+}
+ 
+.datos-producto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+ 
+.datos-producto p {
+    margin: 0 0 3px;
+    color: var(--k-muted);
+    font-size: .78rem;
+    text-transform: uppercase;
+}
+ 
+.datos-producto span {
+    display: block;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+ 
+.panel-estado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    margin: 8px 0 20px;
+    padding: 16px;
+    border: 1px solid var(--k-border);
+    border-radius: 8px;
+}
+ 
+.panel-estado h5 {
+    margin: 0 0 5px;
+    color: var(--k-orange);
+}
+ 
+.badge-stock {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 6px;
+    font-size: .8rem;
+    font-weight: 700;
+}
+ 
+.estable {
+    background: var(--estable-bg) !important;
+    color: var(--estable-color) !important;
+}
+ 
+.btn-alerta,
+.btn-cerrar-modal {
+    border: 0;
+    border-radius: 7px;
+    padding: 9px 14px;
+    background: var(--dark-secondary);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+ 
+/* Tarjeta / Título específico de formularios (Entrada/Salida) */
+.titulo {
+    background-color: var(--k-card) !important;
+    color: var(--k-text) !important;
+    border: 1px solid var(--k-border);
+    border-bottom: 1px solid rgba(128,128,128,0.2);
+    border-radius: 10px 10px 0 0;
+    font-family: 'Oswald', Arial, sans-serif;
+    padding: 20px 25px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.titulo i { color: var(--k-orange); font-size: 24px; }
+.formulario {
+    border-top: none !important;
+    border-radius: 0 0 10px 10px !important;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+.contenedor-acciones {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 25px;
+}
+.confirmarRegistro {
+    background-color: var(--k-orange);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    height: 44px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0 28px;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+.confirmarRegistro:hover {
+    background-color: var(--k-orange-hover);
+    transform: translateY(-1px);
+}
+ 
+/* Botones genéricos unificados */
+.btn-primary, .btn-reporte, .btn-naranja, .btn-generate-report,
+.btn-buscar-kronos, .btn-kronos-search, .btn-continuar, .btn-enviar-resumen,
+.btn-volver-solicitud-lg, .btn-pedidos, .btn-garantias,
+.btn-primary-kronos {
+    background-color: var(--k-orange) !important;
+    border-color: var(--k-orange) !important;
+    color: #fff !important;
+}
+.btn-primary:hover, .btn-reporte:hover, .btn-naranja:hover,
+.btn-generate-report:hover, .btn-buscar-kronos:hover, .btn-kronos-search:hover,
+.btn-continuar:hover, .btn-enviar-resumen:hover, .btn-volver-solicitud-lg:hover,
+.btn-pedidos:hover, .btn-garantias:hover, .btn-primary-kronos:hover {
+    background-color: var(--k-orange-hover) !important;
+    border-color: var(--k-orange-hover) !important;
+    color: #fff !important;
+}
+ 
+[data-theme="dark"] .bg-white, [data-theme="dark"] .bg-light,
+[data-theme="dark"] .modal-body, [data-theme="dark"] .modal-footer,
+[data-theme="dark"] .dropdown-menu, [data-theme="dark"] .list-group-item,
+[data-theme="dark"] .input-group-text {
+    background-color: var(--k-card) !important;
+    color: var(--k-text) !important;
+    border-color: var(--k-border) !important;
+}
+[data-theme="dark"] .text-dark,
+[data-theme="dark"] .text-secondary,
+[data-theme="dark"] .text-muted { color: var(--k-muted) !important; }
+ 
+/* --- RESPONSIVE GLOBALES --- */
+@media (max-width: 576px) {
+    .datos-producto {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .panel-estado {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+ 
+@media (max-width: 768px) {
+    body > .contenedor, .contenedor { display: block !important; }
+    body > .contenedor > aside, .contenedor aside {
+        margin: 0 !important;
+        border-radius: 0 !important;
+        min-height: 100vh !important;
+        width: 240px !important;
+    }
+}
+ 
