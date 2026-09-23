@@ -80,7 +80,7 @@ CREATE TABLE `clientes` (
   PRIMARY KEY (`idCliente`),
   KEY `fk_cliente_usuario` (`usuario_identificacion`),
   CONSTRAINT `fk_cliente_usuario` FOREIGN KEY (`usuario_identificacion`) REFERENCES `usuarios` (`identificacion`)
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -89,7 +89,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (1,1,1001),(2,0,1002),(3,1,1003),(4,0,1004),(5,1,1005),(6,0,1006),(7,1,1007),(8,0,1008),(9,1,1009),(10,0,1010),(11,1,1011),(12,0,1012),(13,1,1013),(14,0,1014),(15,1,1015),(16,0,1016),(17,1,1017),(18,0,1018),(19,1,1019),(20,0,1020),(21,1,1021),(22,0,1022),(23,1,1023),(24,0,1024),(25,1,1025),(26,0,1026),(27,1,1027),(28,0,1028),(29,1,1029),(30,0,1030),(31,1,1031),(32,0,1032),(33,1,1033),(34,0,1034),(35,1,1035),(36,0,1036),(37,1,1037),(38,0,1038),(39,1,1039),(40,0,1040),(41,1,1041),(42,0,1042),(43,1,1043),(44,0,1044),(45,1,1045),(46,0,1046),(47,1,1047),(48,0,1048),(49,1,1049),(50,0,1050),(51,1,10101234),(52,1,10101235);
+INSERT INTO `clientes` VALUES (1,1,1001),(2,0,1002),(3,1,1003),(4,0,1004),(5,1,1005),(6,0,1006),(7,1,1007),(8,0,1008),(9,1,1009),(10,0,1010),(11,1,1011),(12,0,1012),(13,1,1013),(14,0,1014),(15,1,1015),(16,0,1016),(17,1,1017),(18,0,1018),(19,1,1019),(20,0,1020),(21,1,1021),(22,0,1022),(23,1,1023),(24,0,1024),(25,1,1025),(26,0,1026),(27,1,1027),(28,0,1028),(29,1,1029),(30,0,1030),(31,1,1031),(32,0,1032),(33,1,1033),(34,0,1034),(35,1,1035),(36,0,1036),(37,1,1037),(38,0,1038),(39,1,1039),(40,0,1040),(41,1,1041),(42,0,1042),(43,1,1043),(44,0,1044),(45,1,1045),(46,0,1046),(47,1,1047),(48,0,1048),(49,1,1049),(50,0,1050),(51,1,10101234),(52,1,10101235),(53,1,10101236),(54,1,10101237),(55,1,10101243),(56,1,10101244);
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -425,7 +425,7 @@ CREATE TABLE `proveedores` (
   PRIMARY KEY (`idProveedor`),
   KEY `fk_proveedor_usuario` (`usuario_identificacion`),
   CONSTRAINT `fk_proveedor_usuario` FOREIGN KEY (`usuario_identificacion`) REFERENCES `usuarios` (`identificacion`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -434,7 +434,7 @@ CREATE TABLE `proveedores` (
 
 LOCK TABLES `proveedores` WRITE;
 /*!40000 ALTER TABLE `proveedores` DISABLE KEYS */;
-INSERT INTO `proveedores` VALUES (1,'Cemento y agregados',1051),(2,'Herramientas manuales',1052),(3,'Herramientas electricas',1053),(4,'Pinturas',1054),(5,'Tornilleria',1055),(6,'Perfiles metalicos',1056),(7,'Tuberias PVC',1057),(8,'Material electrico',1058),(9,'Elementos de seguridad',1059),(10,'Abrasivos',1060),(11,'Pegantes y adhesivos',1061),(12,'Siliconas',1062),(13,'Lijas',1063),(14,'Brocas',1064),(15,'Discos de corte',1065),(16,'Discos de pulido',1066),(17,'Alambres',1067),(18,'Mallas metalicas',1068),(19,'Angulos metalicos',1069),(20,'Platinas metalicas',1070),(21,'Canales metalicos',1071),(22,'Tejas',1072),(23,'Impermeabilizantes',1073),(24,'Yeso y estuco',1074),(25,'Cal y cemento',1075),(26,'Arena y grava',1076),(27,'Ladrillos',1077),(28,'Bloques',1078),(29,'Madera',1079),(30,'Material de plomeria',1080),(31,'Llaves y griferia',1081),(32,'Valvulas',1082),(33,'Cables electricos',1083),(34,'Interruptores',1084),(35,'Tomacorrientes',1085),(36,'Bombillos',1086),(37,'Linternas',1087),(38,'Guantes de trabajo',1088),(39,'Cascos de seguridad',1089),(40,'Gafas de seguridad',1090),(41,'Protectores auditivos',1091),(42,'Botas de seguridad',1092),(43,'Cintas metricas',1093),(44,'Niveles y flexometros',1094),(45,'Destornilladores',1095),(46,'Llaves y alicates',1096),(47,'Martillos',1097),(48,'Serruchos',1098),(49,'Cuchillas',1099),(50,'Equipos de soldadura',1100),(51,'1',10101235);
+INSERT INTO `proveedores` VALUES (1,'Cemento y agregados',1051),(2,'Herramientas manuales',1052),(3,'Herramientas electricas',1053),(4,'Pinturas',1054),(5,'Tornilleria',1055),(6,'Perfiles metalicos',1056),(7,'Tuberias PVC',1057),(8,'Material electrico',1058),(9,'Elementos de seguridad',1059),(10,'Abrasivos',1060),(11,'Pegantes y adhesivos',1061),(12,'Siliconas',1062),(13,'Lijas',1063),(14,'Brocas',1064),(15,'Discos de corte',1065),(16,'Discos de pulido',1066),(17,'Alambres',1067),(18,'Mallas metalicas',1068),(19,'Angulos metalicos',1069),(20,'Platinas metalicas',1070),(21,'Canales metalicos',1071),(22,'Tejas',1072),(23,'Impermeabilizantes',1073),(24,'Yeso y estuco',1074),(25,'Cal y cemento',1075),(26,'Arena y grava',1076),(27,'Ladrillos',1077),(28,'Bloques',1078),(29,'Madera',1079),(30,'Material de plomeria',1080),(31,'Llaves y griferia',1081),(32,'Valvulas',1082),(33,'Cables electricos',1083),(34,'Interruptores',1084),(35,'Tomacorrientes',1085),(36,'Bombillos',1086),(37,'Linternas',1087),(38,'Guantes de trabajo',1088),(39,'Cascos de seguridad',1089),(40,'Gafas de seguridad',1090),(41,'Protectores auditivos',1091),(42,'Botas de seguridad',1092),(43,'Cintas metricas',1093),(44,'Niveles y flexometros',1094),(45,'Destornilladores',1095),(46,'Llaves y alicates',1096),(47,'Martillos',1097),(48,'Serruchos',1098),(49,'Cuchillas',1099),(50,'Equipos de soldadura',1100),(51,'1',10101235),(52,'1',10101236),(53,'1',10101237),(54,'Herramientas',10101238),(55,'Herramientas',10101239),(56,'Herramientas',10101240),(57,NULL,10101241),(58,NULL,10101242);
 /*!40000 ALTER TABLE `proveedores` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -545,7 +545,7 @@ CREATE TABLE `usuarios` (
   KEY `fk_usuario_direccion` (`direccion_idDireccion`),
   CONSTRAINT `fk_usuario_direccion` FOREIGN KEY (`direccion_idDireccion`) REFERENCES `direcciones` (`idDireccion`),
   CONSTRAINT `fk_usuario_rol` FOREIGN KEY (`rol_idRol`) REFERENCES `roles` (`idRol`)
-) ENGINE=InnoDB AUTO_INCREMENT=10101236 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10101245 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -554,7 +554,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1001,'Carlos','Pérez Gómez','carlos1@solmet.com','3001000001','Clave001',1,1),(1002,'Laura','Rodríguez Martínez','laura2@solmet.com','3001000002','Clave002',1,2),(1003,'Andrés','López Ruiz','andres3@solmet.com','3001000003','Clave003',1,3),(1004,'María','García Torres','maria4@solmet.com','3001000004','Clave004',1,4),(1005,'Juan','Hernández Ramírez','juan5@solmet.com','3001000005','Clave005',1,5),(1006,'Sofía','Castro Moreno','sofia6@solmet.com','3001000006','Clave006',1,6),(1007,'Pedro','Vargas Rojas','pedro7@solmet.com','3001000007','Clave007',1,7),(1008,'Valentina','Díaz Mendoza','valentina8@solmet.com','3001000008','Clave008',1,8),(1009,'Diego','Sánchez Cárdenas','diego9@solmet.com','3001000009','Clave009',1,9),(1010,'Camila','Torres Navarro','camila10@solmet.com','3001000010','Clave010',1,10),(1011,'Luis','Pérez Gómez','luis11@solmet.com','3001000011','Clave011',1,11),(1012,'Daniela','Rodríguez Martínez','daniela12@solmet.com','3001000012','Clave012',1,12),(1013,'Jorge','López Ruiz','jorge13@solmet.com','3001000013','Clave013',1,13),(1014,'Natalia','García Torres','natalia14@solmet.com','3001000014','Clave014',1,14),(1015,'Sebastián','Hernández Ramírez','sebastian15@solmet.com','3001000015','Clave015',1,15),(1016,'Paula','Castro Moreno','paula16@solmet.com','3001000016','Clave016',1,16),(1017,'Ricardo','Vargas Rojas','ricardo17@solmet.com','3001000017','Clave017',1,17),(1018,'Alejandra','Díaz Mendoza','alejandra18@solmet.com','3001000018','Clave018',1,18),(1019,'Felipe','Sánchez Cárdenas','felipe19@solmet.com','3001000019','Clave019',1,19),(1020,'Diana','Torres Navarro','diana20@solmet.com','3001000020','Clave020',1,20),(1021,'Mauricio','Pérez Gómez','mauricio21@solmet.com','3001000021','Clave021',1,21),(1022,'Juliana','Rodríguez Martínez','juliana22@solmet.com','3001000022','Clave022',1,22),(1023,'Óscar','López Ruiz','oscar23@solmet.com','3001000023','Clave023',1,23),(1024,'Carolina','García Torres','carolina24@solmet.com','3001000024','Clave024',1,24),(1025,'Santiago','Hernández Ramírez','santiago25@solmet.com','3001000025','Clave025',1,25),(1026,'Manuela','Castro Moreno','manuela26@solmet.com','3001000026','Clave026',1,26),(1027,'Héctor','Vargas Rojas','hector27@solmet.com','3001000027','Clave027',1,27),(1028,'Gabriela','Díaz Mendoza','gabriela28@solmet.com','3001000028','Clave028',1,28),(1029,'Esteban','Sánchez Cárdenas','esteban29@solmet.com','3001000029','Clave029',1,29),(1030,'Sara','Torres Navarro','sara30@solmet.com','3001000030','Clave030',1,30),(1031,'Wilson','Pérez Gómez','wilson31@solmet.com','3001000031','Clave031',1,31),(1032,'Tatiana','Rodríguez Martínez','tatiana32@solmet.com','3001000032','Clave032',1,32),(1033,'Nicolás','López Ruiz','nicolas33@solmet.com','3001000033','Clave033',1,33),(1034,'Luisa','García Torres','luisa34@solmet.com','3001000034','Clave034',1,34),(1035,'Cristian','Hernández Ramírez','cristian35@solmet.com','3001000035','Clave035',1,35),(1036,'Mónica','Castro Moreno','monica36@solmet.com','3001000036','Clave036',1,36),(1037,'David','Vargas Rojas','david37@solmet.com','3001000037','Clave037',1,37),(1038,'Adriana','Díaz Mendoza','adriana38@solmet.com','3001000038','Clave038',1,38),(1039,'Miguel','Sánchez Cárdenas','miguel39@solmet.com','3001000039','Clave039',1,39),(1040,'Karen','Torres Navarro','karen40@solmet.com','3001000040','Clave040',1,40),(1041,'Jhon','Pérez Gómez','jhon41@solmet.com','3001000041','Clave041',1,41),(1042,'Lorena','Rodríguez Martínez','lorena42@solmet.com','3001000042','Clave042',1,42),(1043,'Fernando','López Ruiz','fernando43@solmet.com','3001000043','Clave043',1,43),(1044,'Andrea','García Torres','andrea44@solmet.com','3001000044','Clave044',1,44),(1045,'Samuel','Hernández Ramírez','samuel45@solmet.com','3001000045','Clave045',1,45),(1046,'Claudia','Castro Moreno','claudia46@solmet.com','3001000046','Clave046',1,46),(1047,'Álvaro','Vargas Rojas','alvaro47@solmet.com','3001000047','Clave047',1,47),(1048,'Viviana','Díaz Mendoza','viviana48@solmet.com','3001000048','Clave048',1,48),(1049,'Mateo','Sánchez Cárdenas','mateo49@solmet.com','3001000049','Clave049',1,49),(1050,'Patricia','Torres Navarro','patricia50@solmet.com','3001000050','Clave050',1,50),(1051,'Carlos','Pérez Gómez','carlos51@solmet.com','3001000051','Clave051',2,1),(1052,'Laura','Rodríguez Martínez','laura52@solmet.com','3001000052','Clave052',2,2),(1053,'Andrés','López Ruiz','andres53@solmet.com','3001000053','Clave053',2,3),(1054,'María','García Torres','maria54@solmet.com','3001000054','Clave054',2,4),(1055,'Juan','Hernández Ramírez','juan55@solmet.com','3001000055','Clave055',2,5),(1056,'Sofía','Castro Moreno','sofia56@solmet.com','3001000056','Clave056',2,6),(1057,'Pedro','Vargas Rojas','pedro57@solmet.com','3001000057','Clave057',2,7),(1058,'Valentina','Díaz Mendoza','valentina58@solmet.com','3001000058','Clave058',2,8),(1059,'Diego','Sánchez Cárdenas','diego59@solmet.com','3001000059','Clave059',2,9),(1060,'Camila','Torres Navarro','camila60@solmet.com','3001000060','Clave060',2,10),(1061,'Luis','Pérez Gómez','luis61@solmet.com','3001000061','Clave061',2,11),(1062,'Daniela','Rodríguez Martínez','daniela62@solmet.com','3001000062','Clave062',2,12),(1063,'Jorge','López Ruiz','jorge63@solmet.com','3001000063','Clave063',2,13),(1064,'Natalia','García Torres','natalia64@solmet.com','3001000064','Clave064',2,14),(1065,'Sebastián','Hernández Ramírez','sebastian65@solmet.com','3001000065','Clave065',2,15),(1066,'Paula','Castro Moreno','paula66@solmet.com','3001000066','Clave066',2,16),(1067,'Ricardo','Vargas Rojas','ricardo67@solmet.com','3001000067','Clave067',2,17),(1068,'Alejandra','Díaz Mendoza','alejandra68@solmet.com','3001000068','Clave068',2,18),(1069,'Felipe','Sánchez Cárdenas','felipe69@solmet.com','3001000069','Clave069',2,19),(1070,'Diana','Torres Navarro','diana70@solmet.com','3001000070','Clave070',2,20),(1071,'Mauricio','Pérez Gómez','mauricio71@solmet.com','3001000071','Clave071',2,21),(1072,'Juliana','Rodríguez Martínez','juliana72@solmet.com','3001000072','Clave072',2,22),(1073,'Óscar','López Ruiz','oscar73@solmet.com','3001000073','Clave073',2,23),(1074,'Carolina','García Torres','carolina74@solmet.com','3001000074','Clave074',2,24),(1075,'Santiago','Hernández Ramírez','santiago75@solmet.com','3001000075','Clave075',2,25),(1076,'Manuela','Castro Moreno','manuela76@solmet.com','3001000076','Clave076',2,26),(1077,'Héctor','Vargas Rojas','hector77@solmet.com','3001000077','Clave077',2,27),(1078,'Gabriela','Díaz Mendoza','gabriela78@solmet.com','3001000078','Clave078',2,28),(1079,'Esteban','Sánchez Cárdenas','esteban79@solmet.com','3001000079','Clave079',2,29),(1080,'Sara','Torres Navarro','sara80@solmet.com','3001000080','Clave080',2,30),(1081,'Wilson','Pérez Gómez','wilson81@solmet.com','3001000081','Clave081',2,31),(1082,'Tatiana','Rodríguez Martínez','tatiana82@solmet.com','3001000082','Clave082',2,32),(1083,'Nicolás','López Ruiz','nicolas83@solmet.com','3001000083','Clave083',2,33),(1084,'Luisa','García Torres','luisa84@solmet.com','3001000084','Clave084',2,34),(1085,'Cristian','Hernández Ramírez','cristian85@solmet.com','3001000085','Clave085',2,35),(1086,'Mónica','Castro Moreno','monica86@solmet.com','3001000086','Clave086',2,36),(1087,'David','Vargas Rojas','david87@solmet.com','3001000087','Clave087',2,37),(1088,'Adriana','Díaz Mendoza','adriana88@solmet.com','3001000088','Clave088',2,38),(1089,'Miguel','Sánchez Cárdenas','miguel89@solmet.com','3001000089','Clave089',2,39),(1090,'Karen','Torres Navarro','karen90@solmet.com','3001000090','Clave090',2,40),(1091,'Jhon','Pérez Gómez','jhon91@solmet.com','3001000091','Clave091',2,41),(1092,'Lorena','Rodríguez Martínez','lorena92@solmet.com','3001000092','Clave092',2,42),(1093,'Fernando','López Ruiz','fernando93@solmet.com','3001000093','Clave093',2,43),(1094,'Andrea','García Torres','andrea94@solmet.com','3001000094','Clave094',2,44),(1095,'Samuel','Hernández Ramírez','samuel95@solmet.com','3001000095','Clave095',2,45),(1096,'Claudia','Castro Moreno','claudia96@solmet.com','3001000096','Clave096',2,46),(1097,'Álvaro','Vargas Rojas','alvaro97@solmet.com','3001000097','Clave097',2,47),(1098,'Viviana','Díaz Mendoza','viviana98@solmet.com','3001000098','Clave098',2,48),(1099,'Mateo','Sánchez Cárdenas','mateo99@solmet.com','3001000099','Clave099',2,49),(1100,'Patricia','Torres Navarro','patricia100@solmet.com','3001000100','Clave100',2,50),(1101,'Roberto','Martínez Silva','roberto1101@solmet.com','3001010101','Clave101',4,49),(1102,'Patricia','Torres Navarro','patricia1102@solmet.com','3001010102','Clave102',3,50),(10101234,'Carlos','Gómez','carlos@mail.com','3001234567','c29fd9aadb3ca3610af4c20fd0056de452048fce6d7ac82ba91146ea8e9b70e2',1,1),(10101235,'luisa','Morales','mor@gmail.com','31731383','3295e484ca99298deaa3081049922c4d2eefcdf9f7e9cd16c469504075485062',1,8888);
+INSERT INTO `usuarios` VALUES (1001,'Carlos','Pérez Gómez','carlos1@solmet.com','3001000001','Clave001',1,1),(1002,'Laura','Rodríguez Martínez','laura2@solmet.com','3001000002','Clave002',1,2),(1003,'Andrés','López Ruiz','andres3@solmet.com','3001000003','Clave003',1,3),(1004,'María','García Torres','maria4@solmet.com','3001000004','Clave004',1,4),(1005,'Juan','Hernández Ramírez','juan5@solmet.com','3001000005','Clave005',1,5),(1006,'Sofía','Castro Moreno','sofia6@solmet.com','3001000006','Clave006',1,6),(1007,'Pedro','Vargas Rojas','pedro7@solmet.com','3001000007','Clave007',1,7),(1008,'Valentina','Díaz Mendoza','valentina8@solmet.com','3001000008','Clave008',1,8),(1009,'Diego','Sánchez Cárdenas','diego9@solmet.com','3001000009','Clave009',1,9),(1010,'Camila','Torres Navarro','camila10@solmet.com','3001000010','Clave010',1,10),(1011,'Luis','Pérez Gómez','luis11@solmet.com','3001000011','Clave011',1,11),(1012,'Daniela','Rodríguez Martínez','daniela12@solmet.com','3001000012','Clave012',1,12),(1013,'Jorge','López Ruiz','jorge13@solmet.com','3001000013','Clave013',1,13),(1014,'Natalia','García Torres','natalia14@solmet.com','3001000014','Clave014',1,14),(1015,'Sebastián','Hernández Ramírez','sebastian15@solmet.com','3001000015','Clave015',1,15),(1016,'Paula','Castro Moreno','paula16@solmet.com','3001000016','Clave016',1,16),(1017,'Ricardo','Vargas Rojas','ricardo17@solmet.com','3001000017','Clave017',1,17),(1018,'Alejandra','Díaz Mendoza','alejandra18@solmet.com','3001000018','Clave018',1,18),(1019,'Felipe','Sánchez Cárdenas','felipe19@solmet.com','3001000019','Clave019',1,19),(1020,'Diana','Torres Navarro','diana20@solmet.com','3001000020','Clave020',1,20),(1021,'Mauricio','Pérez Gómez','mauricio21@solmet.com','3001000021','Clave021',1,21),(1022,'Juliana','Rodríguez Martínez','juliana22@solmet.com','3001000022','Clave022',1,22),(1023,'Óscar','López Ruiz','oscar23@solmet.com','3001000023','Clave023',1,23),(1024,'Carolina','García Torres','carolina24@solmet.com','3001000024','Clave024',1,24),(1025,'Santiago','Hernández Ramírez','santiago25@solmet.com','3001000025','Clave025',1,25),(1026,'Manuela','Castro Moreno','manuela26@solmet.com','3001000026','Clave026',1,26),(1027,'Héctor','Vargas Rojas','hector27@solmet.com','3001000027','Clave027',1,27),(1028,'Gabriela','Díaz Mendoza','gabriela28@solmet.com','3001000028','Clave028',1,28),(1029,'Esteban','Sánchez Cárdenas','esteban29@solmet.com','3001000029','Clave029',1,29),(1030,'Sara','Torres Navarro','sara30@solmet.com','3001000030','Clave030',1,30),(1031,'Wilson','Pérez Gómez','wilson31@solmet.com','3001000031','Clave031',1,31),(1032,'Tatiana','Rodríguez Martínez','tatiana32@solmet.com','3001000032','Clave032',1,32),(1033,'Nicolás','López Ruiz','nicolas33@solmet.com','3001000033','Clave033',1,33),(1034,'Luisa','García Torres','luisa34@solmet.com','3001000034','Clave034',1,34),(1035,'Cristian','Hernández Ramírez','cristian35@solmet.com','3001000035','Clave035',1,35),(1036,'Mónica','Castro Moreno','monica36@solmet.com','3001000036','Clave036',1,36),(1037,'David','Vargas Rojas','david37@solmet.com','3001000037','Clave037',1,37),(1038,'Adriana','Díaz Mendoza','adriana38@solmet.com','3001000038','Clave038',1,38),(1039,'Miguel','Sánchez Cárdenas','miguel39@solmet.com','3001000039','Clave039',1,39),(1040,'Karen','Torres Navarro','karen40@solmet.com','3001000040','Clave040',1,40),(1041,'Jhon','Pérez Gómez','jhon41@solmet.com','3001000041','Clave041',1,41),(1042,'Lorena','Rodríguez Martínez','lorena42@solmet.com','3001000042','Clave042',1,42),(1043,'Fernando','López Ruiz','fernando43@solmet.com','3001000043','Clave043',1,43),(1044,'Andrea','García Torres','andrea44@solmet.com','3001000044','Clave044',1,44),(1045,'Samuel','Hernández Ramírez','samuel45@solmet.com','3001000045','Clave045',1,45),(1046,'Claudia','Castro Moreno','claudia46@solmet.com','3001000046','Clave046',1,46),(1047,'Álvaro','Vargas Rojas','alvaro47@solmet.com','3001000047','Clave047',1,47),(1048,'Viviana','Díaz Mendoza','viviana48@solmet.com','3001000048','Clave048',1,48),(1049,'Mateo','Sánchez Cárdenas','mateo49@solmet.com','3001000049','Clave049',1,49),(1050,'Patricia','Torres Navarro','patricia50@solmet.com','3001000050','Clave050',1,50),(1051,'Carlos','Pérez Gómez','carlos51@solmet.com','3001000051','Clave051',2,1),(1052,'Laura','Rodríguez Martínez','laura52@solmet.com','3001000052','Clave052',2,2),(1053,'Andrés','López Ruiz','andres53@solmet.com','3001000053','Clave053',2,3),(1054,'María','García Torres','maria54@solmet.com','3001000054','Clave054',2,4),(1055,'Juan','Hernández Ramírez','juan55@solmet.com','3001000055','Clave055',2,5),(1056,'Sofía','Castro Moreno','sofia56@solmet.com','3001000056','Clave056',2,6),(1057,'Pedro','Vargas Rojas','pedro57@solmet.com','3001000057','Clave057',2,7),(1058,'Valentina','Díaz Mendoza','valentina58@solmet.com','3001000058','Clave058',2,8),(1059,'Diego','Sánchez Cárdenas','diego59@solmet.com','3001000059','Clave059',2,9),(1060,'Camila','Torres Navarro','camila60@solmet.com','3001000060','Clave060',2,10),(1061,'Luis','Pérez Gómez','luis61@solmet.com','3001000061','Clave061',2,11),(1062,'Daniela','Rodríguez Martínez','daniela62@solmet.com','3001000062','Clave062',2,12),(1063,'Jorge','López Ruiz','jorge63@solmet.com','3001000063','Clave063',2,13),(1064,'Natalia','García Torres','natalia64@solmet.com','3001000064','Clave064',2,14),(1065,'Sebastián','Hernández Ramírez','sebastian65@solmet.com','3001000065','Clave065',2,15),(1066,'Paula','Castro Moreno','paula66@solmet.com','3001000066','Clave066',2,16),(1067,'Ricardo','Vargas Rojas','ricardo67@solmet.com','3001000067','Clave067',2,17),(1068,'Alejandra','Díaz Mendoza','alejandra68@solmet.com','3001000068','Clave068',2,18),(1069,'Felipe','Sánchez Cárdenas','felipe69@solmet.com','3001000069','Clave069',2,19),(1070,'Diana','Torres Navarro','diana70@solmet.com','3001000070','Clave070',2,20),(1071,'Mauricio','Pérez Gómez','mauricio71@solmet.com','3001000071','Clave071',2,21),(1072,'Juliana','Rodríguez Martínez','juliana72@solmet.com','3001000072','Clave072',2,22),(1073,'Óscar','López Ruiz','oscar73@solmet.com','3001000073','Clave073',2,23),(1074,'Carolina','García Torres','carolina74@solmet.com','3001000074','Clave074',2,24),(1075,'Santiago','Hernández Ramírez','santiago75@solmet.com','3001000075','Clave075',2,25),(1076,'Manuela','Castro Moreno','manuela76@solmet.com','3001000076','Clave076',2,26),(1077,'Héctor','Vargas Rojas','hector77@solmet.com','3001000077','Clave077',2,27),(1078,'Gabriela','Díaz Mendoza','gabriela78@solmet.com','3001000078','Clave078',2,28),(1079,'Esteban','Sánchez Cárdenas','esteban79@solmet.com','3001000079','Clave079',2,29),(1080,'Sara','Torres Navarro','sara80@solmet.com','3001000080','Clave080',2,30),(1081,'Wilson','Pérez Gómez','wilson81@solmet.com','3001000081','Clave081',2,31),(1082,'Tatiana','Rodríguez Martínez','tatiana82@solmet.com','3001000082','Clave082',2,32),(1083,'Nicolás','López Ruiz','nicolas83@solmet.com','3001000083','Clave083',2,33),(1084,'Luisa','García Torres','luisa84@solmet.com','3001000084','Clave084',2,34),(1085,'Cristian','Hernández Ramírez','cristian85@solmet.com','3001000085','Clave085',2,35),(1086,'Mónica','Castro Moreno','monica86@solmet.com','3001000086','Clave086',2,36),(1087,'David','Vargas Rojas','david87@solmet.com','3001000087','Clave087',2,37),(1088,'Adriana','Díaz Mendoza','adriana88@solmet.com','3001000088','Clave088',2,38),(1089,'Miguel','Sánchez Cárdenas','miguel89@solmet.com','3001000089','Clave089',2,39),(1090,'Karen','Torres Navarro','karen90@solmet.com','3001000090','Clave090',2,40),(1091,'Jhon','Pérez Gómez','jhon91@solmet.com','3001000091','Clave091',2,41),(1092,'Lorena','Rodríguez Martínez','lorena92@solmet.com','3001000092','Clave092',2,42),(1093,'Fernando','López Ruiz','fernando93@solmet.com','3001000093','Clave093',2,43),(1094,'Andrea','García Torres','andrea94@solmet.com','3001000094','Clave094',2,44),(1095,'Samuel','Hernández Ramírez','samuel95@solmet.com','3001000095','Clave095',2,45),(1096,'Claudia','Castro Moreno','claudia96@solmet.com','3001000096','Clave096',2,46),(1097,'Álvaro','Vargas Rojas','alvaro97@solmet.com','3001000097','Clave097',2,47),(1098,'Viviana','Díaz Mendoza','viviana98@solmet.com','3001000098','Clave098',2,48),(1099,'Mateo','Sánchez Cárdenas','mateo99@solmet.com','3001000099','Clave099',2,49),(1100,'Patricia','Torres Navarro','patricia100@solmet.com','3001000100','Clave100',2,50),(1101,'Roberto','Martínez Silva','roberto1101@solmet.com','3001010101','Clave101',4,49),(1102,'Patricia','Torres Navarro','patricia1102@solmet.com','3001010102','Clave102',3,50),(10101234,'Carlos','Gómez','carlos@mail.com','3001234567','c29fd9aadb3ca3610af4c20fd0056de452048fce6d7ac82ba91146ea8e9b70e2',1,1),(10101235,'luisa','Morales','mor@gmail.com','31731383','3295e484ca99298deaa3081049922c4d2eefcdf9f7e9cd16c469504075485062',1,8888),(10101236,'luisa','mil','mal@gmail.com','383883','4f7162098bcee4eae10bae763b241c2810fe28fec61a93aaa2865d52e10814ce',1,1),(10101237,'Mari','Gonzales','Mari@gmail.com','31838138','b9934e8eb6b48d6311d6e2b69a58d0c35e94552606e6e2dac1907cf83fdb44fe',1,1),(10101238,'Mari','Mar','mari@hsa.vom','82372837','9a69029929b079a0919379027039542db0099af9f39b7448b4cad6b33a31ea51',2,1),(10101239,'Mari','Mar','mari@hsa.vom','82372837','21946f4fc61e076ef26f8ba4934864fe31922500627a3f1e00f311d1f6aaabe5',2,1),(10101240,'ola','Mar','mari@hsa.vom','82372837','b11221ac5ca68bf16af6d8bf168c960adac8befe69952d8c9e8e7b7b75bd7001',2,1),(10101241,'ola','Mar','mari@hsa.vom','82372837','f4877a58807f60b9a98a5ce2655868e0f0e358fcd2f0111919efed92b968fa39',2,1),(10101242,'chao','Mar','mari@hsa.vom','82372837','0ac28a6945219f85310f4472c0a64d51cc96ecca50d9257d2235c01e01452e5a',2,1),(10101243,'MArmar','duarduar','mar@hash.com','23193813','07b2530ad357471bb29de12dabcbc76ab8542a6a2b99192537953fdcd7a91f9e',1,1),(10101244,'brandon','guveara','barn@gmail.com','3183813718','cd479dae3ffc13077ae4d5944b0c73f1348d678fdfb717faf1e88e0a3528880a',1,1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -960,7 +960,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `registrarUsuario` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -981,58 +981,30 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `registrarUsuario`(
     IN p_tipoProducto VARCHAR(45)
 )
 BEGIN
-
     DECLARE nuevoUsuario INT;
 
-    -- Registrar el usuario padre
+    -- Valores por defecto cuando no aplican según el rol
+    SET p_carritoActivo = IFNULL(p_carritoActivo, 0);
+    SET p_tipoProducto  = IFNULL(p_tipoProducto, '');
+
     INSERT INTO usuarios (
-        nombre,
-        apellidos,
-        correoElectronico,
-        telefono,
-        contrasena,
-        rol_idRol,
-        direccion_idDireccion
+        nombre, apellidos, correoElectronico, telefono,
+        contrasena, rol_idRol, direccion_idDireccion
     )
     VALUES (
-        p_nombre,
-        p_apellidos,
-        p_correo,
-        p_telefono,
-        generarHash(p_contrasena),
-        p_rol_idRol,
-        p_direccion_idDireccion
+        p_nombre, p_apellidos, p_correo, p_telefono,
+        generarHash(p_contrasena), p_rol_idRol, p_direccion_idDireccion
     );
 
-    -- Obtener la identificación generada automáticamente
     SET nuevoUsuario = LAST_INSERT_ID();
 
-    -- Crear cliente si corresponde
-    IF p_carritoActivo IS NOT NULL THEN
+    IF p_rol_idRol = 2 THEN
+        INSERT INTO proveedores (tipoProducto, usuario_identificacion)
+        VALUES (p_tipoProducto, nuevoUsuario);
 
-        INSERT INTO clientes (
-            carritoActivo,
-            usuario_identificacion
-        )
-        VALUES (
-            p_carritoActivo,
-            nuevoUsuario
-        );
-
-    END IF;
-
-    -- Crear proveedor si corresponde
-    IF p_tipoProducto IS NOT NULL THEN
-
-        INSERT INTO proveedores (
-            tipoProducto,
-            usuario_identificacion
-        )
-        VALUES (
-            p_tipoProducto,
-            nuevoUsuario
-        );
-
+    ELSEIF p_rol_idRol = 1 THEN
+        INSERT INTO clientes (carritoActivo, usuario_identificacion)
+        VALUES (p_carritoActivo, nuevoUsuario);
     END IF;
 
 END ;;
@@ -1078,4 +1050,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-09-20 23:48:28
+-- Dump completed on 2026-09-22 23:08:33
