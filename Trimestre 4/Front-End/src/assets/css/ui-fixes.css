@@ -1,0 +1,107 @@
+/* ==========================================================
+   KRONOS · ui-fixes.css
+   Correcciones globales de accesibilidad / contraste / overlays
+   solicitadas en la auditoría (sección 8 del prompt):
+   1) Fondo casi negro/opaco de SweetAlert2 y modales.
+   2) Texto invisible en botones secundarios (ej. "Historial de
+      Movimientos") al alternar modo claro/oscuro.
+   3) Scroll horizontal garantizado en tablas.
+   ========================================================== */
+
+/* 1) Overlay de SweetAlert2: antes quedaba prácticamente negro sólido.
+   Se homogeniza con una opacidad suave + blur, y se fuerza el z-index
+   por encima de cualquier modal de Bootstrap abierto detrás. */
+.swal2-container.swal2-backdrop-show,
+.swal2-container.swal2-noanimation {
+    background-color: rgba(15, 17, 20, 0.45) !important;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 20000 !important;
+}
+
+.swal2-popup {
+    background-color: var(--k-card, var(--bg-card, #ffffff)) !important;
+    color: var(--k-text, var(--text-primary, #1b1b18)) !important;
+}
+
+.swal2-html-container,
+.swal2-title {
+    color: var(--k-text, var(--text-primary, #1b1b18)) !important;
+}
+
+/* Bootstrap modal backdrop también se suaviza para que combine con el
+   overlay de SweetAlert cuando ambos se solapan (ej. reporte -> swal). */
+.modal-backdrop.show {
+    opacity: 0.55 !important;
+}
+
+/* 2) Contraste de botones secundarios / claros en ambos temas.
+   ".btn-historial" (Panel de Control) y cualquier botón con fondo
+   claro deben mostrar SIEMPRE texto oscuro y legible, sin depender de
+   que herede el color de texto general de la página. */
+.btn-historial,
+.btn-light,
+.btn-outline-light:not(:hover),
+.btn-secondary-light {
+    color: #111827 !important;
+}
+
+[data-theme="dark"] .btn-historial,
+[data-theme="dark"] .btn-light {
+    background-color: #e9ecef !important;
+    color: #111827 !important;
+    border-color: #d7dbe0 !important;
+}
+
+/* Badges de estado: aseguran contraste propio, independiente del tema. */
+.badge-stock.bajo-stock,
+.bajo-stock { background-color: #fef3c7 !important; color: #92400e !important; }
+.badge-stock.agotado,
+.agotado    { background-color: #fee2e2 !important; color: #991b1b !important; }
+.badge-stock.estable,
+.estable    { background-color: #dcfce7 !important; color: #166534 !important; }
+
+/* Opciones del menú lateral: mantener legibles en ambos temas incluso
+   cuando el fondo del aside cambie con las variables de tema. */
+aside .opcion-nav,
+aside .titulo-menu,
+aside .submenu a {
+    color: #d6d9de !important;
+}
+aside .opcion-nav:hover,
+aside .titulo-menu:hover,
+aside .opcion-nav.activo,
+aside .submenu a:hover,
+aside .submenu a.activo {
+    color: #ffffff !important;
+}
+
+/* 3) Scroll horizontal garantizado para cualquier tabla del panel,
+   aunque la página específica olvide envolverla en .table-responsive. */
+table {
+    max-width: 100%;
+}
+.table-responsive,
+.tabla-scroll,
+.panelTabla {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 4) Radios y checkboxes: kronos-global.css fuerza `background-color` con
+   !important sobre TODO `input`, lo que borraba el relleno del estado
+   "checked" de Bootstrap (se veían siempre vacíos, sin saber cuál opción
+   estaba seleccionada). Se restaura con mayor especificidad. */
+.form-check-input:not(:checked),
+.form-check-input:not(:checked):focus {
+    background-color: var(--k-card, #ffffff) !important;
+    color: inherit !important;
+}
+.form-check-input:checked,
+.form-check-input:checked:focus {
+    background-color: var(--k-orange, #e8600c) !important;
+    border-color: var(--k-orange, #e8600c) !important;
+}
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(232, 96, 12, 0.25);
+}
