@@ -1,0 +1,255 @@
+/* ==========================================================
+   KRONOS · D_garantia-jefe.css
+   Estilos EXCLUSIVOS de las páginas de garantías del jefe:
+   D_solicitudGarantias.jsx y D_historial-garantias.jsx.
+   Migrado desde Actualizacion/Maquetacion/css/historial-garantias.css,
+   más un complemento propio para el modal de "Detalle de la
+   solicitud" (Pagesjefe/SolicitudGarantias.html), que en el HTML
+   original solo cargaba panel-base.css + Panel.css + kronos-global.css
+   y por eso se apoyaba casi enteramente en clases de Bootstrap.
+   ========================================================== */
+
+/* ---------- TÍTULO "SOLICITUDES DE GARANTÍAS" ---------- */
+
+.titulo-alertasG {
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: .3px;
+}
+
+/* ---------- MODAL · DETALLE DE LA SOLICITUD ---------- */
+
+.modal-content-solicitud {
+    border: 0;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.header-solicitud {
+    background-color: #f8f6f2;
+}
+
+.titulo-solicitud {
+    font-family: 'Oswald', sans-serif;
+}
+
+.linea-divisoria {
+    border-color: var(--border-color);
+}
+
+.font-motivo {
+    color: var(--text-primary);
+}
+
+.img-solicitud-preview {
+    max-height: 120px;
+    object-fit: contain;
+}
+
+.contenedor-resumen-pedido {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd8cf;
+}
+
+.total-solicitud-valor {
+    font-size: 1.05rem;
+}
+
+.footer-solicitud {
+    background-color: #ffffff;
+}
+
+.btn-volver-solicitud-lg {
+    border: 0;
+}
+
+/* ---------- CONTENEDOR / BANNER DEL HISTORIAL ---------- */
+
+.container-historial {
+    width: 100%;
+}
+
+.banner-historial {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.banner-historial h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.card-historial {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+}
+
+/* ---------- BARRA DE BÚSQUEDA ---------- */
+
+.buscarOrden {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 340px;
+    margin-bottom: 20px;
+}
+
+.buscarOrden input {
+    flex: 1;
+    height: 42px;
+    border-radius: 6px;
+    padding: 10px 14px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.buscarOrden input:focus {
+    border-color: var(--orange-accent);
+    box-shadow: 0 0 0 .2rem rgba(232, 96, 12, .28);
+    outline: none;
+}
+
+.buscarOrden i {
+    font-size: 1.3rem;
+    color: var(--orange-accent);
+}
+
+/* ---------- TABLA DEL HISTORIAL ---------- */
+
+.custom-table-historial {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    width: 100%;
+}
+
+.custom-table-historial thead tr th {
+    background-color: rgb(201, 167, 105) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border: none !important;
+    padding: 14px 12px !important;
+}
+
+.custom-table-historial thead tr th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.custom-table-historial thead tr th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.custom-table-historial tbody tr td {
+    background-color: var(--bg-card) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 12px !important;
+    color: var(--text-primary);
+}
+
+.custom-table-historial tbody tr:hover td {
+    background-color: rgba(232, 96, 12, .06) !important;
+}
+
+/* ---------- BOTÓN "VER ACTUALIZACIÓN" ---------- */
+
+.btn-ver-actualizacion {
+    background-color: var(--orange-accent) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 7px 20px !important;
+    font-size: .85rem;
+    transition: background-color .2s ease, transform .1s ease;
+}
+
+.btn-ver-actualizacion:hover {
+    background-color: var(--orange-hover) !important;
+    transform: translateY(-1px);
+}
+
+/* ---------- BADGES DE ESTADO (usados dentro del modal) ---------- */
+
+.badge-status-comic {
+    font-weight: 700 !important;
+    font-size: .95rem !important;
+    padding: 5px 14px !important;
+    border-radius: 999px !important;
+    display: inline-block;
+}
+
+.badge-status-comic.aprobado   { background: #dcfce7 !important; color: #15803d !important; }
+.badge-status-comic.rechazado  { background: #fee2e2 !important; color: #b91c1c !important; }
+.badge-status-comic.revision   { background: #dbeafe !important; color: #1d4ed8 !important; }
+.badge-status-comic.no-aplica  { background: #e5e7eb !important; color: #4b5563 !important; }
+
+/* ---------- MODAL DE ESTADO ---------- */
+
+.card-modal-comic {
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    background: var(--bg-card) !important;
+    color: var(--text-primary);
+}
+
+.caja-info-modal {
+    border: 1px solid var(--orange-accent) !important;
+    border-radius: 8px !important;
+    background: rgba(232, 96, 12, .05);
+    color: var(--text-primary);
+}
+
+.text-modal-desc {
+    font-size: .95rem;
+    line-height: 1.5;
+    color: var(--text-primary) !important;
+}
+
+.logo-modal-kronos {
+    max-height: 55px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    mix-blend-mode: luminosity;
+}
+
+.btn-volver-modal {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+    font-weight: 700 !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 6px !important;
+    padding: 7px 20px !important;
+    transition: background-color .2s ease;
+}
+
+.btn-volver-modal:hover {
+    background: var(--border-color) !important;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+    .card-historial {
+        padding: 16px !important;
+    }
+
+    .custom-table-historial {
+        min-width: 700px;
+    }
+
+    .banner-historial h2 {
+        font-size: 1.1rem;
+    }
+
+    .buscarOrden {
+        max-width: none;
+        flex-wrap: wrap;
+    }
+}

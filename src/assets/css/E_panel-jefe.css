@@ -1,0 +1,196 @@
+/* ==========================================================
+   KRONOS · E_panel-jefe.css
+   Estilos EXCLUSIVOS del contenido del Panel de Control.
+   Migrado desde Actualizacion/Maquetacion/css/Panel.css.
+
+   REGLA DE ORO:
+   Este archivo NO declara :root, NO toca aside, NO toca
+   .contenedor, NO toca header ni main. Esos los controlan
+   panel-base.css + kronos-global.css.
+   ========================================================== */
+
+/* ---------- TÍTULOS DEL PANEL ---------- */
+
+.titulo-panel {
+    margin: 0 0 24px;
+    color: var(--text-primary);
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: .3px;
+}
+
+.titulo-alertas,
+.titulo-opciones {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: .3px;
+}
+
+/* ---------- TARJETAS DE RESUMEN ---------- */
+
+.targetas-panel {
+    width: 100%;
+}
+
+.bloque-targeta {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 118px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.bloque-targeta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .10);
+}
+
+.bloque-targeta p {
+    color: var(--text-muted);
+    font-size: .88rem;
+    font-weight: 600;
+    margin-bottom: 8px !important;
+}
+
+.bloque-targeta h3 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+}
+
+/* ---------- TARJETAS CON ALERTA ---------- */
+
+.tarjeta-alerta-warning {
+    border-left: 4px solid #f59e0b;
+}
+.tarjeta-alerta-warning h3 {
+    color: #f59e0b;
+}
+
+.tarjeta-alerta-danger {
+    border-left: 4px solid #ef4444;
+}
+.tarjeta-alerta-danger h3 {
+    color: #ef4444;
+}
+
+/* ---------- TABLA DE ALERTAS ---------- */
+
+.tabla-stock {
+    width: 100%;
+}
+
+.tabla-stock .table-responsive {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px;
+}
+
+.tabla-stock tbody tr:hover {
+    background-color: rgba(232, 96, 12, .06);
+}
+
+/* ---------- MODAL · DETALLE DEL PRODUCTO ---------- */
+
+.titulo-ficha h4 {
+    margin: 0;
+}
+
+.logo-modal {
+    max-height: 42px;
+    width: auto;
+}
+
+/* ---------- MODAL · REPORTES ----------
+   Los modales son siempre claros a propósito (van a papel).
+   Por eso llevan colores fijos y no tokens de tema. */
+
+.modal-content-reporte,
+.body-reporte,
+.table-preview {
+    background-color: #ffffff;
+}
+
+.header-reporte {
+    border-bottom: 2px solid var(--orange-accent) !important;
+}
+
+.titulo-reporte {
+    color: #1b1b18;
+}
+
+.logo-modal-reporte,
+.logo-modal-umbrales,
+.logo-modal-historial {
+    max-height: 45px;
+    width: auto;
+}
+
+.contenedor-vista-previa {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd8cf;
+    border-radius: 10px;
+}
+
+.titulo-vista-previa {
+    color: var(--orange-accent);
+}
+
+.opcion-formato {
+    cursor: pointer;
+    width: 165px;
+    transition: border-color .2s ease, transform .2s ease;
+}
+
+.opcion-formato:hover {
+    border-color: var(--orange-accent) !important;
+    transform: translateY(-2px);
+}
+
+.opcion-formato-seleccionada {
+    border: 2px solid var(--orange-accent) !important;
+    box-shadow: 0 4px 12px rgba(232, 96, 12, .15);
+}
+
+/* ---------- MODAL · UMBRALES E HISTORIAL ---------- */
+
+.modal-content-umbrales,
+.modal-content-historial,
+.table-historial-content {
+    background-color: #ffffff;
+}
+
+.label-seccion-umbrales {
+    color: #1b1b18;
+}
+
+.contenedor-estado-actual {
+    background-color: #f8f9fa;
+    border-color: #ddd8cf !important;
+}
+
+.form-input-umbrales {
+    border-color: #ddd8cf;
+}
+
+.is-invalid-custom {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 .2rem rgba(220, 53, 69, .25) !important;
+}
+
+/* ---------- RESPONSIVE DEL CONTENIDO ---------- */
+
+@media (max-width: 768px) {
+    .bloque-targeta {
+        min-height: 104px;
+    }
+}

@@ -1,0 +1,479 @@
+/* ==========================================================================
+   KRONOS · kronos-theme-fix.css
+   Corrección global del tema claro / oscuro (index + todos los paneles).
+
+   CÓMO USARLO
+   1) Copia este archivo a src/assets/css/ (junto a los demás CSS).
+   2) Impórtalo de ÚLTIMO en main.jsx / index.jsx, después de todos los demás:
+        import './assets/css/kronos-theme-fix.css';
+   3) Asegúrate de que el tema se escriba en <html data-theme="light|dark">
+      (ver el script para index.html en las instrucciones).
+
+   QUÉ ARREGLA (causas reales encontradas en tus CSS)
+   A) kronos-global.css fuerza `color: var(--k-text) !important` en tarjetas,
+      tablas, modales, etc. En oscuro ese texto es CLARO, pero varios CSS
+      pintan fondos fijos claros (#fff, #f8f9fa, #f8f6f2): texto claro sobre
+      fondo claro = invisible.  (D_garantia-jefe, E_panel-jefe, D_garantia-cliente)
+   B) Al revés: E_panel-jefe fija texto #1b1b18 (oscuro) que en tema oscuro
+      queda invisible sobre fondo oscuro.
+   C) D_garantia-cliente (.gk-root) solo tiene paleta clara: no cambia de tema.
+   D) M_pedidos usa clases .modo-oscuro/.modo-claro y NO el data-theme global.
+   E) M_index define --rojo solo en oscuro; en claro queda sin valor.
+   F) Submenú del aside en tema claro: naranja sobre crema (poco contraste).
+   G) .proveedor-scope tbody td tenía fondo blanco fijo (texto claro en oscuro).
+   H) Flecha de <select> y botón de cerrar de Bootstrap invisibles en oscuro.
+   I) Encabezado dorado de la tabla de historial: texto blanco sobre dorado.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   0) TOKENS EXTRA (se suman a los --k-* existentes, no los reemplazan)
+   -------------------------------------------------------------------------- */
+:root,
+html[data-theme="light"] {
+    --k-surface-2: #f1f3f5;
+    --k-on-accent: #ffffff;
+    --k-warn-text: #b45309;
+    --k-danger-text: #b91c1c;
+    --k-ok-text: #15803d;
+    --k-select-arrow: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+html[data-theme="dark"] {
+    --k-surface-2: #2b3037;
+    --k-on-accent: #ffffff;
+    --k-warn-text: #fbbf24;
+    --k-danger-text: #f87171;
+    --k-ok-text: #4ade80;
+    --k-select-arrow: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23f1f0ec' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+
+/* --------------------------------------------------------------------------
+   1) INDEX / TIENDA (M_index.css + index.css)
+   -------------------------------------------------------------------------- */
+
+/* E) --rojo no existía en tema claro */
+html[data-theme="light"] {
+    --rojo: #b42318;
+}
+
+/* index.css fijaba #f3f1ed aunque el tema fuera oscuro */
+html,
+body,
+#root {
+    background-color: var(--k-bg, #f3f1ed);
+}
+
+/* kronos-global.css aplica `header { height:80px; fondo oscuro; flex }` a TODO
+   <header>. Si el <header> del index envuelve a .nav-principal, el texto
+   (que usa --texto) queda oscuro sobre fondo oscuro en tema claro. */
+header:has(.nav-principal) {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    background: var(--bg, var(--k-bg)) !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--borde, var(--k-border)) !important;
+}
+
+
+
+/* --------------------------------------------------------------------------
+   2) COMPONENTES BOOTSTRAP COMUNES (ambos temas)
+   -------------------------------------------------------------------------- */
+
+/* H) flecha de <select> */
+.form-select,
+select.form-control {
+    background-image: var(--k-select-arrow) !important;
+    background-repeat: no-repeat !important;
+    background-position: right .75rem center !important;
+    background-size: 16px 12px !important;
+}
+
+html[data-theme="dark"] .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.modal-header,
+.modal-footer {
+    border-color: var(--k-border) !important;
+}
+
+.dropdown-menu {
+    background-color: var(--k-card) !important;
+    border-color: var(--k-border) !important;
+}
+.dropdown-item {
+    color: var(--k-text) !important;
+}
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: var(--k-surface) !important;
+    color: var(--k-text) !important;
+}
+
+.page-link {
+    background-color: var(--k-card) !important;
+    color: var(--k-text) !important;
+    border-color: var(--k-border) !important;
+}
+.page-item.active .page-link {
+    background-color: var(--k-orange) !important;
+    border-color: var(--k-orange) !important;
+    color: #fff !important;
+}
+.page-item.disabled .page-link {
+    color: var(--k-muted) !important;
+    opacity: .6;
+}
+
+hr {
+    border-color: var(--k-border);
+    opacity: 1;
+}
+
+
+/* --------------------------------------------------------------------------
+   3) ASIDE (siempre oscuro): submenú legible en tema CLARO  (F)
+   -------------------------------------------------------------------------- */
+html[data-theme="light"] .item-acordeon .submenu a:hover,
+html[data-theme="light"] .item-acordeon .submenu a.activo,
+html[data-theme="light"] .item-acordeon .submenu a.active,
+html[data-theme="light"] aside .submenu a:hover,
+html[data-theme="light"] aside .submenu a.activo {
+    background: rgba(232, 96, 12, .20) !important;
+    color: #ff9a55 !important;
+    border-color: #ff7a1a !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   4) PANEL JEFE · E_panel-jefe.css  (A y B)
+   Fondos y textos fijos -> tokens del tema
+   -------------------------------------------------------------------------- */
+.modal-content-reporte,
+.body-reporte,
+.table-preview,
+.modal-content-umbrales,
+.modal-content-historial,
+.table-historial-content {
+    background-color: var(--k-card) !important;
+    color: var(--k-text) !important;
+}
+
+.titulo-reporte,
+.label-seccion-umbrales {
+    color: var(--k-text) !important;
+}
+
+.contenedor-vista-previa,
+.contenedor-estado-actual {
+    background-color: var(--k-surface) !important;
+    border-color: var(--k-border) !important;
+    color: var(--k-text) !important;
+}
+
+.form-input-umbrales {
+    border-color: var(--k-border) !important;
+}
+
+/* Títulos de alertas: en claro el ámbar/rojo claros no contrastan con blanco */
+html[data-theme="light"] .tarjeta-alerta-warning h3 { color: var(--k-warn-text); }
+html[data-theme="light"] .tarjeta-alerta-danger  h3 { color: var(--k-danger-text); }
+
+
+/* --------------------------------------------------------------------------
+   5) GARANTÍAS JEFE · D_garantia-jefe.css  (A, I)
+   -------------------------------------------------------------------------- */
+.header-solicitud,
+.footer-solicitud {
+    background-color: var(--k-surface) !important;
+    color: var(--k-text) !important;
+    border-color: var(--k-border) !important;
+}
+
+.contenedor-resumen-pedido {
+    background-color: var(--k-surface) !important;
+    border-color: var(--k-border) !important;
+    color: var(--k-text) !important;
+}
+
+/* Blanco sobre dorado ≈ 2.2:1 -> texto oscuro (≈ 8:1) */
+.custom-table-historial thead tr th {
+    color: #1b1b18 !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   6) GARANTÍAS CLIENTE · D_garantia-cliente.css (.gk-root)  (C)
+   Solo tenía paleta clara: se agrega la paleta oscura.
+   -------------------------------------------------------------------------- */
+html[data-theme="dark"] .gk-root {
+    --gk-bg: var(--k-bg);
+    --gk-white: var(--k-card);
+    --gk-text: var(--k-text);
+    --gk-muted: var(--k-muted);
+    --gk-border: var(--k-border);
+    --gk-black: #2b3037;
+    --gk-black-hover: #3a4049;
+
+    --gk-revision-bg:    rgba(122, 97, 230, .16);
+    --gk-revision-bdr:   rgba(122, 97, 230, .40);
+    --gk-revision-pill:  rgba(122, 97, 230, .28);
+    --gk-aprobado-bg:    rgba(34, 197, 94, .14);
+    --gk-aprobado-bdr:   rgba(34, 197, 94, .40);
+    --gk-aprobado-pill:  rgba(34, 197, 94, .26);
+    --gk-rechazado-bg:   rgba(239, 68, 68, .14);
+    --gk-rechazado-bdr:  rgba(239, 68, 68, .40);
+    --gk-rechazado-pill: rgba(239, 68, 68, .26);
+}
+
+/* Fondos fijos claros */
+html[data-theme="dark"] .gk-root .gk-product-row,
+html[data-theme="dark"] .gk-root .gk-modal-sub-head,
+html[data-theme="dark"] .gk-root .gk-table th,
+html[data-theme="dark"] .gk-root .gk-social i {
+    background-color: var(--k-surface) !important;
+    color: var(--k-text) !important;
+}
+
+/* Textos que eran var(--gk-white) sobre fondo "negro": en oscuro --gk-white
+   pasó a ser el color de las tarjetas, así que se fuerza blanco real. */
+html[data-theme="dark"] .gk-root .gk-btn-primary,
+html[data-theme="dark"] .gk-root .gk-btn-primary:hover,
+html[data-theme="dark"] .gk-root .gk-btn-cart,
+html[data-theme="dark"] .gk-root .gk-btn-cart:hover,
+html[data-theme="dark"] .gk-root .gk-btn-sidebar,
+html[data-theme="dark"] .gk-root .gk-btn-sidebar:hover,
+html[data-theme="dark"] .gk-root .gk-btn-sidebar.active,
+html[data-theme="dark"] .gk-root .gk-modal-header,
+html[data-theme="dark"] .gk-root .gk-modal-close,
+html[data-theme="dark"] .gk-root .gk-social i:hover {
+    color: #ffffff !important;
+}
+
+/* Pestañas: antes usaban --gk-black (casi negro) como color activo */
+html[data-theme="dark"] .gk-root .gk-tab:hover,
+html[data-theme="dark"] .gk-root .gk-tab.active {
+    color: var(--k-text) !important;
+    border-bottom-color: var(--k-orange) !important;
+}
+
+/* Etiquetas de estado con buen contraste sobre fondo translúcido */
+html[data-theme="dark"] .gk-root .gk-pill--revision  { color: #c4b8ff; }
+html[data-theme="dark"] .gk-root .gk-pill--aprobado  { color: #4ade80; }
+html[data-theme="dark"] .gk-root .gk-pill--rechazado { color: #f87171; }
+
+
+/* --------------------------------------------------------------------------
+   7) PEDIDOS · M_pedidos.css  (D)
+   Esta página usaba .modo-oscuro / .modo-claro. Ahora sigue el data-theme
+   global (mayor especificidad que las reglas originales).
+   -------------------------------------------------------------------------- */
+html[data-theme] .pagina-pedidos {
+    background-color: var(--k-bg);
+    color: var(--k-text);
+}
+
+html[data-theme] .pagina-pedidos .site-header {
+    background-color: var(--k-card);
+}
+html[data-theme] .pagina-pedidos .topbar {
+    background-color: var(--k-surface);
+}
+html[data-theme] .pagina-pedidos .topbar-text {
+    color: var(--k-muted);
+}
+
+html[data-theme] .pagina-pedidos .pedido-contenedor,
+html[data-theme] .pagina-pedidos .producto-tarjeta,
+html[data-theme] .pagina-pedidos .informacion-box,
+html[data-theme] .pagina-pedidos .oferta-box {
+    background-color: var(--k-card);
+    border: 1px solid var(--k-border);
+    color: var(--k-text);
+}
+
+html[data-theme] .pagina-pedidos .direccion-envio-panel {
+    background-color: var(--k-surface);
+    border: 1px solid var(--k-border);
+    color: var(--k-text);
+}
+
+html[data-theme] .pagina-pedidos .btn-sidebar {
+    border-color: var(--k-border);
+    color: var(--k-text);
+}
+
+
+/* --------------------------------------------------------------------------
+   8) PORTAL PROVEEDOR · A_panel-proveedor.css  (G)
+   -------------------------------------------------------------------------- */
+.proveedor-scope tbody td {
+    background-color: transparent;
+    color: var(--k-text);
+}
+
+.proveedor-scope .numeroOrden {
+    background-color: var(--k-card) !important;
+    color: var(--k-text) !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   9) RECUPERACIÓN DE ACCESO (pantallas siempre oscuras)
+   Evita que el texto del tema claro (oscuro) se herede sobre su fondo oscuro.
+   -------------------------------------------------------------------------- */
+.pantalla-recuperacion {
+    color: var(--rec-texto, #f1f0ec);
+    color-scheme: dark;
+}
+.pantalla-recuperacion :is(p, label, small) {
+    color: inherit;
+}
+
+
+/* --------------------------------------------------------------------------
+   10) ACCESIBILIDAD: foco visible en ambos temas
+   -------------------------------------------------------------------------- */
+:focus-visible {
+    outline: 2px solid var(--k-orange);
+    outline-offset: 2px;
+}
+
+
+/* --------------------------------------------------------------------------
+   11) REPORTES · S_reportes.css
+   S_reportes activaba su paleta oscura con CUALQUIERA de estos selectores:
+   body.dark-mode, body.dark, body.modo-oscuro, [data-theme="dark"],
+   [data-bs-theme="dark"]. Si alguno quedaba activo mientras el tema global
+   era claro (p. ej. data-bs-theme de Bootstrap o una clase vieja en <body>),
+   los títulos salían en gris claro sobre fondo claro.
+   Aquí la paleta depende SOLO de <html data-theme="...">.
+   -------------------------------------------------------------------------- */
+html[data-theme="light"] .reportes-page {
+    --rep-card: #ffffff;
+    --rep-borde: #e5e7eb;
+    --rep-fila-hover: #fafafa;
+    --rep-texto: #1f2937;
+    --rep-suave: #4b5563;
+    --rep-acento-suave: #fdeee4;
+    --rep-ok: #15803d;
+    --rep-ok-bg: #dcfce7;
+    --rep-warn: #b45309;
+    --rep-warn-bg: #fef3c7;
+    --rep-danger: #b91c1c;
+    --rep-danger-bg: #fee2e2;
+    --rep-pista: #eef0f3;
+}
+
+html[data-theme="dark"] .reportes-page {
+    --rep-card: #1c1d20;
+    --rep-borde: #33353a;
+    --rep-fila-hover: #25272b;
+    --rep-texto: #e5e7eb;
+    --rep-suave: #9ca3af;
+    --rep-acento-suave: #3a2415;
+    --rep-ok: #4ade80;
+    --rep-ok-bg: #12351f;
+    --rep-warn: #fbbf24;
+    --rep-warn-bg: #3a2c0b;
+    --rep-danger: #f87171;
+    --rep-danger-bg: #3d1414;
+    --rep-pista: #2b2d32;
+}
+
+/* Títulos y textos de la página: siempre con la paleta de arriba
+   (ganan a `main h1..h6 { color: var(--k-text) !important }`) */
+.reportes-page .rep-titulo,
+.reportes-page .rep-card-titulo h2,
+.reportes-page h1,
+.reportes-page h2,
+.reportes-page h3,
+.reportes-page h4 {
+    color: var(--rep-texto) !important;
+}
+.reportes-page .rep-header p,
+.reportes-page .rep-kpi-texto small {
+    color: var(--rep-suave) !important;
+}
+.reportes-page .rep-kpi,
+.reportes-page .rep-card {
+    background: var(--rep-card) !important;
+    color: var(--rep-texto) !important;
+    border-color: var(--rep-borde) !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   12) <header> DENTRO DE PÁGINAS (causa del título oscuro en Reportes)
+   kronos-global.css aplica a TODO <header> la barra superior del panel:
+   fondo oscuro, 80px de alto, borde naranja y contenido centrado en fila.
+   Si una página usa <header className="rep-header"> para su título, el
+   título queda dentro de esa barra oscura. Se restablece solo para los
+   <header> que están dentro de <main> (la barra real del panel NO está
+   dentro de <main>, así que no se ve afectada).
+   -------------------------------------------------------------------------- */
+main header,
+.reportes-page header,
+.reportes-page .rep-header {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-bottom: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    position: static !important;
+}
+
+.reportes-page .rep-header {
+    margin-bottom: 20px !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   13) TIENDA · animación verde del botón "Agregar" y del contador del carrito
+   (se usa desde M_index.jsx con las clases tarjeta-producto__btn--agregado
+   y badge-carrito--bump)
+   -------------------------------------------------------------------------- */
+.tarjeta-producto__btn {
+    transition: background .2s ease, border-color .2s ease, color .2s ease, transform .15s ease;
+}
+
+.tarjeta-producto__btn.tarjeta-producto__btn--agregado,
+.tarjeta-producto__btn.tarjeta-producto__btn--agregado:hover {
+    background: #16a34a !important;
+    border-color: #16a34a !important;
+    color: #ffffff !important;
+    animation: kr-agregado-pop .45s ease;
+}
+
+@keyframes kr-agregado-pop {
+    0%   { transform: scale(1);    box-shadow: 0 0 0 0 rgba(22, 163, 74, .55); }
+    40%  { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(22, 163, 74, 0); }
+    100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+}
+
+.badge-carrito.badge-carrito--bump {
+    animation: kr-badge-bump .4s ease;
+}
+
+@keyframes kr-badge-bump {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.5); background: #16a34a; color: #fff; }
+    100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tarjeta-producto__btn.tarjeta-producto__btn--agregado,
+    .badge-carrito.badge-carrito--bump {
+        animation: none;
+    }
+}

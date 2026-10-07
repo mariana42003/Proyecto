@@ -1,0 +1,441 @@
+.gk-root {
+  --gk-purple:        #7a61e6;
+  --gk-purple-hover:  #684fd1;
+  --gk-black:         #0d0d0d;
+  --gk-black-hover:   #222222;
+  --gk-orange:        #ff7b17;
+  --gk-orange-hover:  #e56c10;
+  --gk-bg:            #f4f6f9;
+  --gk-white:         #ffffff;
+  --gk-text:          #2b2b2b;
+  --gk-muted:         #6c757d;
+  --gk-border:        #e2e8f0;
+  --gk-success:       #198754;
+  --gk-danger:        #dc3545;
+
+  /* Estados de tarjeta */
+  --gk-revision-bg:   #f3f0ff;
+  --gk-revision-bdr:  #e2d9f3;
+  --gk-revision-pill: #e5deff;
+  --gk-aprobado-bg:   #e8f5e9;
+  --gk-aprobado-bdr:  #c8e6c9;
+  --gk-aprobado-pill: #c8e6c9;
+  --gk-rechazado-bg:  #ffebee;
+  --gk-rechazado-bdr: #ffcdd2;
+  --gk-rechazado-pill:#ffcdd2;
+
+  background-color: var(--gk-bg);
+  color: var(--gk-text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+/* ── UTILIDAD DE COLOR MORADO ─────────────────────────────────────────── */
+.gk-root .gk-moro {
+  color: var(--gk-purple);
+}
+
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
+.gk-root .gk-navbar {
+  background-color: var(--gk-white);
+  border-bottom: 1px solid var(--gk-border);
+}
+
+.gk-root .gk-logo {
+  max-height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Buscador del header */
+.gk-root .gk-search-header {
+  max-width: 400px;
+  width: 100%;
+}
+
+.gk-root .gk-input {
+  border-radius: 8px 0 0 8px !important;
+  border: 1px solid var(--gk-border);
+  font-size: 0.9rem;
+}
+
+.gk-root .gk-input:focus {
+  border-color: var(--gk-purple);
+  box-shadow: 0 0 0 2px rgba(122, 97, 230, 0.15);
+  outline: none;
+}
+
+/* ── BOTÓN PRINCIPAL (NEGRO con acento morado en focus) ──────────────── */
+.gk-root .gk-btn-primary {
+  background-color: var(--gk-black);
+  color: var(--gk-white);
+  border: 2px solid var(--gk-black);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.gk-root .gk-btn-primary:hover {
+  background-color: var(--gk-black-hover);
+  border-color: var(--gk-black-hover);
+  color: var(--gk-white);
+}
+
+.gk-root .gk-btn-primary:focus-visible {
+  outline: 3px solid var(--gk-purple);
+  outline-offset: 2px;
+}
+
+/* ── BOTÓN CARRITO (NARANJA) ─────────────────────────────────────────── */
+.gk-root .gk-btn-cart {
+  background-color: var(--gk-orange);
+  color: var(--gk-white);
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.gk-root .gk-btn-cart:hover {
+  background-color: var(--gk-orange-hover);
+  color: var(--gk-white);
+}
+
+/* Select del menú */
+.gk-root .gk-menu-select {
+  border-radius: 8px;
+  border: 1px solid var(--gk-border);
+  font-size: 0.9rem;
+  padding: 0.4rem 2rem 0.4rem 0.75rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   ASIDE — BARRA LATERAL
+   ========================================================================== */
+.gk-root .gk-btn-sidebar {
+  background-color: var(--gk-black);
+  color: var(--gk-white);
+  font-weight: 600;
+  border: 2px solid var(--gk-black);
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.gk-root .gk-btn-sidebar:hover,
+.gk-root .gk-btn-sidebar.active {
+  background-color: var(--gk-black-hover);
+  color: var(--gk-white);
+  border-color: var(--gk-black-hover);
+}
+
+/* Acento morado lateral izquierdo para indicar activo */
+.gk-root .gk-btn-sidebar.active {
+  border-left: 4px solid var(--gk-purple);
+}
+
+.gk-root .gk-oferta {
+  background-color: var(--gk-white);
+  border: 1px dashed var(--gk-orange);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.gk-root .gk-oferta h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gk-text);
+  margin-bottom: 0.75rem;
+}
+
+.gk-root .gk-info-box {
+  background-color: var(--gk-white);
+  border: 1px solid var(--gk-border);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.gk-root .gk-info-box a {
+  display: block;
+  color: var(--gk-muted);
+  font-size: 0.85rem;
+  text-decoration: none;
+  margin-bottom: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.gk-root .gk-info-box a:hover {
+  color: var(--gk-purple);
+}
+
+.gk-root .gk-social i {
+  background-color: #f8f9fa;
+  color: var(--gk-black);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gk-root .gk-social i:hover {
+  background-color: var(--gk-black);
+  color: var(--gk-white);
+}
+
+/* ==========================================================================
+   SECCIÓN PRINCIPAL
+   ========================================================================== */
+.gk-root .gk-section {
+  padding: 1.5rem;
+}
+
+/* ── TABS ─────────────────────────────────────────────────────────────── */
+.gk-root .gk-tabs {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.gk-root .gk-tab {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gk-muted);
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.gk-root .gk-tab:hover {
+  color: var(--gk-black);
+}
+
+.gk-root .gk-tab.active {
+  color: var(--gk-black);
+  border-bottom-color: var(--gk-black);
+}
+
+/* ==========================================================================
+   TARJETAS DE GARANTÍA
+   ========================================================================== */
+.gk-root .gk-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--gk-white);
+  border: 1px solid var(--gk-border);
+}
+
+.gk-root .gk-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezados por estado */
+.gk-root .gk-card-head {
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.gk-root .gk-card-head--revision  { background-color: var(--gk-revision-bg);  border-bottom: 1px solid var(--gk-revision-bdr); }
+.gk-root .gk-card-head--aprobado  { background-color: var(--gk-aprobado-bg);  border-bottom: 1px solid var(--gk-aprobado-bdr); }
+.gk-root .gk-card-head--rechazado { background-color: var(--gk-rechazado-bg); border-bottom: 1px solid var(--gk-rechazado-bdr); }
+
+/* Pills de estado */
+.gk-root .gk-pill {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.gk-root .gk-pill--revision  { background-color: var(--gk-revision-pill);  color: var(--gk-purple); }
+.gk-root .gk-pill--aprobado  { background-color: var(--gk-aprobado-pill);  color: var(--gk-success); }
+.gk-root .gk-pill--rechazado { background-color: var(--gk-rechazado-pill); color: var(--gk-danger); }
+
+/* Producto dentro de la tarjeta */
+.gk-root .gk-product-row {
+  background-color: #f8f9fa;
+  border: 1px solid var(--gk-border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ==========================================================================
+   MODALES
+   ========================================================================== */
+.gk-root .gk-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.gk-root .gk-modal {
+  background-color: var(--gk-white);
+  border-radius: 14px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* ── CABECERA DE MODAL: SIEMPRE NEGRA ────────────────────────────────── */
+.gk-root .gk-modal-header {
+  background-color: var(--gk-black);
+  color: var(--gk-white);
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Franja de acento de color según estado (borde izquierdo de 4px) */
+.gk-root .gk-modal-header--revision  { border-left: 5px solid var(--gk-purple); }
+.gk-root .gk-modal-header--aprobado  { border-left: 5px solid var(--gk-success); }
+.gk-root .gk-modal-header--rechazado { border-left: 5px solid var(--gk-danger); }
+.gk-root .gk-modal-header--new       { border-left: 5px solid var(--gk-orange); }
+
+.gk-root .gk-modal-header h5 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.gk-root .gk-modal-close {
+  background: none;
+  border: none;
+  color: var(--gk-white);
+  font-size: 1.25rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+  line-height: 1;
+  padding: 0;
+}
+
+.gk-root .gk-modal-close:hover { opacity: 1; }
+
+.gk-root .gk-modal-body {
+  padding: 1.25rem 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.gk-root .gk-modal-footer {
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid var(--gk-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  background-color: var(--gk-white);
+}
+
+/* Subencabezado dentro del modal */
+.gk-root .gk-modal-sub-head {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid var(--gk-border);
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--gk-purple);
+}
+
+/* Tabla de observaciones */
+.gk-root .gk-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.gk-root .gk-table th {
+  background-color: #f1f3f5;
+  color: var(--gk-text);
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 2px solid var(--gk-border);
+}
+
+.gk-root .gk-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--gk-border);
+  vertical-align: top;
+}
+
+/* Imágenes de evidencia */
+.gk-root .gk-evidence-img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--gk-border);
+  transition: transform 0.2s ease;
+}
+
+.gk-root .gk-evidence-img:hover {
+  transform: scale(1.05);
+}
+
+/* Previsualización de imágenes cargadas */
+.gk-root .gk-preview-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--gk-border);
+}
+
+/* ==========================================================================
+   CARRITO SIDEBAR
+   ========================================================================== */
+.gk-root .gk-cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  max-width: 100%;
+  height: 100vh;
+  background-color: var(--gk-white);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 1055;
+  display: flex;
+  flex-direction: column;
+}
+
+.gk-root .gk-cart-body {
+  flex: 1;
+  overflow-y: auto;
+}

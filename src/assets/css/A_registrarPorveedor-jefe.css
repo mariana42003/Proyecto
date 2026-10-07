@@ -1,0 +1,196 @@
+/* ==========================================================
+   KRONOS · A_registrarPorveedor-jefe.css
+   Estilos EXCLUSIVOS del contenido de "Registrar Proveedor".
+   Migrado desde Actualizacion/Maquetacion/css/vistaJefe-proveedores.css.
+
+   REGLA DE ORO:
+   No declara :root, no toca aside, .contenedor, header ni main.
+   No redeclara submenús ni acordeón (viven en kronos-global.css).
+   ========================================================== */
+
+.cabecera-tabla {
+    display: block;
+    width: 100%;
+    margin: 0 0 24px;
+}
+
+.tituloProveedores h1 {
+    margin: 0 0 4px;
+    color: var(--text-primary);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: .3px;
+    text-align: left;
+}
+
+.tituloProveedores h1 i {
+    color: var(--orange-accent);
+    margin-right: 6px;
+}
+
+.tituloProveedores p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: .95rem;
+    text-align: left;
+}
+
+.panelTabla {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+/* ---------- BOTÓN AÑADIR / GUARDAR ---------- */
+
+.btn-añadir {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.btn-guardarPv,
+.btn-guardarP {
+    background-color: var(--orange-accent) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    padding: 10px 26px !important;
+    border: none !important;
+    transition: background-color .2s ease, transform .1s ease;
+}
+
+.btn-guardarPv:hover,
+.btn-guardarP:hover {
+    background-color: var(--orange-hover) !important;
+    transform: translateY(-1px);
+}
+
+/* ---------- BOTONES DE ACCIÓN EN TABLA ---------- */
+
+.btn-editar,
+.btnEditar,
+.btn-eliminar,
+.btnEliminar {
+    padding: 7px 18px !important;
+    font-size: .85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.btn-editar,
+.btnEditar {
+    background-color: transparent !important;
+    color: #2563eb !important;
+    border: 1px solid #2563eb !important;
+}
+
+.btn-editar:hover,
+.btnEditar:hover {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+.btn-eliminar,
+.btnEliminar {
+    background-color: transparent !important;
+    color: #dc2626 !important;
+    border: 1px solid #dc2626 !important;
+}
+
+.btn-eliminar:hover,
+.btnEliminar:hover {
+    background-color: #dc2626 !important;
+    color: #ffffff !important;
+}
+
+/* ---------- TABLA PERSONALIZADA (búsqueda + orden + paginación) ---------- */
+
+#tablaProveedores th {
+    background-color: var(--orange-hover);
+}
+
+.buscarOrden {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 340px;
+    margin-bottom: 20px;
+}
+
+.buscarOrden input {
+    flex: 1;
+    height: 42px;
+    border-radius: 6px;
+    padding: 10px 14px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.buscarOrden i {
+    font-size: 1.2rem;
+    color: var(--orange-accent);
+}
+
+.tabla-paginacion {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    padding: 14px;
+}
+
+.tabla-paginacion button {
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: .85rem;
+    cursor: pointer;
+}
+
+.tabla-paginacion button.activa {
+    background: var(--orange-accent);
+    border-color: var(--orange-accent);
+    color: #fff;
+    font-weight: 700;
+}
+
+.tabla-paginacion button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+/* ---------- MODAL NUEVO PROVEEDOR ---------- */
+
+.modal-tittle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.modal-tittle i {
+    color: var(--orange-accent);
+    margin-left: 8px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+    .panelTabla {
+        padding: 16px;
+    }
+
+    .buscarOrden {
+        max-width: none;
+        flex-wrap: wrap;
+    }
+}
