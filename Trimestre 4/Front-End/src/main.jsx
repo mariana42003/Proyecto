@@ -9,6 +9,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap"; // JS de Bootstrap (una sola copia, la misma que usan `import { Modal } from "bootstrap"`)
 import "./assets/css/index.css";
 import "./assets/css/ui-fixes.css";
+import './assets/css/kronos-theme-fix.css';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

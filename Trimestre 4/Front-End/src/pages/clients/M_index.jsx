@@ -116,6 +116,15 @@ export default function M_index() {
   const [busquedaCatalogo, setBusquedaCatalogo] = useState('');
   const [enviandoCompra, setEnviandoCompra] = useState(false);
 
+  // Id del producto cuyo botón "Agregar" se muestra en verde (animación
+  // de confirmación). Se limpia solo a los 1,4 segundos.
+  const [agregadoId, setAgregadoId] = useState(null);
+
+  const marcarAgregado = (id) => {
+    setAgregadoId(id);
+    setTimeout(() => setAgregadoId((actual) => (actual === id ? null : actual)), 1400);
+  };
+
   const banners = [bannerActualizadoImg, bannerOfertasImg];
 
   useEffect(() => {
@@ -206,6 +215,34 @@ export default function M_index() {
   }, [banners.length]);
 
   const agregarAlCarrito = (producto) => {
+    // 1) Sin sesión: se pide iniciar sesión antes de agregar.
+    if (!usuario) {
+      Swal.fire({
+        title: "Inicia sesión para agregar productos",
+        text: "Necesitas una cuenta de cliente para usar el carrito.",
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonText: "Iniciar sesión",
+        cancelButtonText: "Ahora no",
+        confirmButtonColor: "#E8600C",
+      }).then((resultado) => {
+        if (resultado.isConfirmed) setModalLoginAbierto(true);
+      });
+      return;
+    }
+
+    // 2) Con sesión pero con rol interno: no puede comprar.
+    if (rol && rol !== "cliente") {
+      Swal.fire({
+        title: "Cuenta no habilitada",
+        text: "Esta cuenta tiene un rol interno; usa una cuenta de cliente para comprar.",
+        icon: "warning",
+        confirmButtonColor: "#E8600C",
+      });
+      return;
+    }
+
+    // 3) Cliente con sesión: se agrega y se muestra la animación verde.
     setCarrito((prevCarrito) => {
       const existe = prevCarrito.find((item) => item.id === producto.id);
       if (existe) {
@@ -215,6 +252,7 @@ export default function M_index() {
       }
       return [...prevCarrito, { ...producto, cantidad: 1 }];
     });
+    marcarAgregado(producto.id);
   };
 
   const cambiarCantidad = (id, delta) => {
@@ -398,7 +436,12 @@ export default function M_index() {
                 onClick={() => setCarritoAbierto(true)}
               >
                 <IconCart size={18} />
-                <span className="badge-carrito">{totalCantidadItems}</span>
+                <span
+                  key={totalCantidadItems}
+                  className={`badge-carrito ${totalCantidadItems > 0 ? 'badge-carrito--bump' : ''}`}
+                >
+                  {totalCantidadItems}
+                </span>
               </button>
 
               {usuario ? (
@@ -575,7 +618,7 @@ export default function M_index() {
           </div>
 
           <div className="hero__panel">
-            <img src={Kitherramientas} alt="Maletín de herramientas Kronos" />
+            <img src={SetbrocasImg} alt="Juego de herramientas Pretul de 83 piezas" />
           </div>
         </section>
 
@@ -676,10 +719,10 @@ export default function M_index() {
                     </div>
                     <button
                       type="button"
-                      className="tarjeta-producto__btn"
+                      className={`tarjeta-producto__btn ${agregadoId === prod.id ? 'tarjeta-producto__btn--agregado' : ''}`}
                       onClick={() => agregarAlCarrito(prod)}
                     >
-                      🛒 Agregar
+                      {agregadoId === prod.id ? '✓ Agregado' : '🛒 Agregar'}
                     </button>
                   </div>
                 </article>
