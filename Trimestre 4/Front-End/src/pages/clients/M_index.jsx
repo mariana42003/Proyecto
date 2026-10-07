@@ -8,7 +8,7 @@ import TaladroInalambrico20V from "../../assets/img/TaladroInalambrico20V.jpg";
 import Kitherramientas from "../../assets/img/Kit herramientas.jpeg";
 import AmoladoraesEsmeril from "../../assets/img/AmoladoraesEsmeril.jpeg";
 import SetbrocasImg from "../../assets/img/Setbrocas.jpg";
-import KitProteccionImg from "../../assets/img/KitdeProteccion.webp"; 
+import KitProteccionImg from "../../assets/img/KitdeProteccion.webp";
 import cajaGrandeImg from "../../assets/img/Caja de Herramientas Grande.jpg";
 import TaladroElectrico from "../../assets/img/Taladro Electrico.webp";
 import Login from '../auth/login';
@@ -50,7 +50,7 @@ const PRODUCTOS_BASE = [
     precioAntes: 149900,
     etiqueta: "Oferta",
     estado: "oferta",
-    imagen: AmoladoraesEsmeril 
+    imagen: AmoladoraesEsmeril
   },
   {
     id: 4,
@@ -98,6 +98,28 @@ const PRODUCTOS_BASE = [
   }
 ];
 
+const ETIQUETA_ESTADO = {
+  pendiente: "Pendiente",
+  confirmada: "Confirmada",
+  rechazada: "Rechazada",
+};
+
+const COLOR_ESTADO = {
+  pendiente: "#f59e0b",
+  confirmada: "#10b981",
+  rechazada: "#ef4444",
+};
+
+// Los códigos nuevos son "PED-123456-<idProducto>"; se quita el sufijo para
+// agrupar todos los productos de una misma compra.
+const codigoDePedido = (fila) =>
+  String(fila.codigo ?? fila.id).replace(/-\d+$/, "");
+
+const imagenDeProducto = (nombre) =>
+  PRODUCTOS_BASE.find((p) => p.nombre === nombre)?.imagen || null;
+
+const formatearMoneda = (valor) => `$${Number(valor || 0).toLocaleString("es-CO")}`;
+
 export default function M_index() {
   const navigate = useNavigate();
   const onNavegarAPedidos = () => navigate("/cliente/pedidos");
@@ -109,12 +131,16 @@ export default function M_index() {
   const [modalPerfilAbierto, setModalPerfilAbierto] = useState(false);
   const [carritoAbierto, setCarritoAbierto] = useState(false);
   const [menuMovilAbierto, setMenuMovilAbierto] = useState(false);
-  
+
   const [filtroActivo, setFiltroActivo] = useState('todos');
   const [carruselIndex, setCarruselIndex] = useState(0);
   const [carrito, setCarrito] = useState([]);
   const [busquedaCatalogo, setBusquedaCatalogo] = useState('');
   const [enviandoCompra, setEnviandoCompra] = useState(false);
+
+  // Pedidos reales del cliente (tabla ordenes_compra)
+  const [pedidosCliente, setPedidosCliente] = useState([]);
+  const [cargandoPedidos, setCargandoPedidos] = useState(false);
 
   // Id del producto cuyo botón "Agregar" se muestra en verde (animación
   // de confirmación). Se limpia solo a los 1,4 segundos.
@@ -133,10 +159,7 @@ export default function M_index() {
   }, [tema]);
 
   // Bloquea el scroll de fondo mientras el carrito (o cualquier otro
-  // overlay) está abierto. La clase "modal-activo" ya existía en
-  // M_index.css (body.modal-activo { overflow: hidden; }) pero nunca
-  // se llegaba a aplicar desde aquí, así que con el carrito abierto la
-  // página de atrás seguía haciendo scroll detrás del panel.
+  // overlay) está abierto.
   useEffect(() => {
     const hayOverlayAbierto =
       carritoAbierto || modalLoginAbierto || modalRegistroAbierto || modalPedidosAbierto || modalPerfilAbierto;
@@ -144,8 +167,55 @@ export default function M_index() {
     return () => document.body.classList.remove('modal-activo');
   }, [carritoAbierto, modalLoginAbierto, modalRegistroAbierto, modalPedidosAbierto, modalPerfilAbierto]);
 
+  // Carga los pedidos del cliente al abrir el modal y los mantiene
+  // actualizados en tiempo real mientras está abierto.
+  useEffect(() => {
+    if (!modalPedidosAbierto || !usuario?.id) return;
+
+    let activo = true;
+    const cargar = async () => {
+      setCargandoPedidos(true);
+      const { data } = await supabase
+        .from("ordenes_compra")
+        .select("*")
+        .eq("cliente_id", usuario.id)
+        .order("fecha", { ascending: false });
+      if (activo) {
+        setPedidosCliente(data ?? []);
+        setCargandoPedidos(false);
+      }
+    };
+    cargar();
+
+    const canal = supabase
+      .channel(`modal-pedidos-${usuario.id}`)
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "ordenes_compra", filter: `cliente_id=eq.${usuario.id}` },
+        cargar
+      )
+      .subscribe();
+
+    return () => {
+      activo = false;
+      supabase.removeChannel(canal);
+    };
+  }, [modalPedidosAbierto, usuario?.id]);
+
+  // Cada fila de ordenes_compra es un material; se agrupan por compra.
+  const pedidosAgrupados = Object.values(
+    pedidosCliente.reduce((acc, fila) => {
+      const clave = codigoDePedido(fila);
+      if (!acc[clave]) {
+        acc[clave] = { codigo: clave, fecha: fila.fecha, estado: fila.estado, items: [] };
+      }
+      acc[clave].items.push(fila);
+      return acc;
+    }, {})
+  );
+
   // Icono de usuario: si hay sesión de cliente activa, abre "Mi perfil";
-  // si no, abre el login (comportamiento anterior).
+  // si no, abre el login.
   const alPulsarIconoUsuario = () => {
     if (usuario) {
       setModalPerfilAbierto(true);
@@ -154,13 +224,7 @@ export default function M_index() {
     }
   };
 
-  // Botón/enlace "Garantía": antes era un <a href="/garantias">, una
-  // ruta que no existe en App.jsx (la real es "/cliente/garantias"),
-  // así que el navegador hacía una recarga completa a esa URL, caía en
-  // la ruta comodín "*" y terminaba devolviendo al usuario a "/" sin
-  // avisar nada. Por eso "no dejaba entrar a garantías directamente".
-  // Ahora navega por React Router a la ruta protegida real, pidiendo
-  // login primero si hace falta (igual que ya se hace para comprar).
+  // Navega por React Router a la ruta protegida real de garantías.
   const irAGarantias = () => {
     setMenuMovilAbierto(false);
     if (!usuario) {
@@ -185,6 +249,22 @@ export default function M_index() {
     navigate("/cliente/garantias");
   };
 
+  // "Mis pedidos": pide sesión antes de abrir el modal
+  const abrirPedidos = () => {
+    setMenuMovilAbierto(false);
+    if (!usuario) {
+      Swal.fire({
+        title: "Inicia sesión para continuar",
+        text: "Necesitas una cuenta de cliente para ver tus pedidos.",
+        icon: "info",
+        confirmButtonColor: "#E8600C",
+      });
+      setModalLoginAbierto(true);
+      return;
+    }
+    setModalPedidosAbierto(true);
+  };
+
   const alCerrarSesion = () => {
     Swal.fire({
       title: "¿Cerrar sesión?",
@@ -200,6 +280,7 @@ export default function M_index() {
         try {
           await cerrarSesion();
           setMenuMovilAbierto(false);
+          setPedidosCliente([]);
         } catch (error) {
           Swal.fire({ title: "No se pudo cerrar sesión", text: error.message, icon: "error", confirmButtonColor: "#E8600C" });
         }
@@ -303,12 +384,19 @@ export default function M_index() {
 
     setEnviandoCompra(true);
     try {
+      // Un solo código base por compra: así todos los productos del
+      // mismo pedido se agrupan juntos en "Mis Pedidos".
+      const codigoBase = `PED-${Date.now().toString().slice(-6)}`;
+      const nombreCliente = perfil?.nombre
+        ? `${perfil.nombre} ${perfil.apellido || ""}`.trim()
+        : usuario.email;
+
       const filas = carrito.map((item) => ({
-        codigo: `PED-${Date.now().toString().slice(-6)}-${item.id}`,
+        codigo: `${codigoBase}-${item.id}`,
         producto_nombre: item.nombre,
         cantidad: item.cantidad,
         cliente_id: usuario.id,
-        cliente_nombre: perfil?.nombre ? `${perfil.nombre} ${perfil.apellido || ""}`.trim() : usuario.email,
+        cliente_nombre: nombreCliente,
         precio_unitario: item.precio,
         origen: "cliente",
         estado: "pendiente",
@@ -319,9 +407,7 @@ export default function M_index() {
 
       // La salida de material (descuento de stock + fila en "movimientos")
       // la registra la base de datos con un trigger sobre "ordenes_compra"
-      // (ver salida-automatica.sql), porque las políticas RLS no dejan
-      // escribir en "productos"/"movimientos" desde la sesión del cliente.
-      // El jefe la ve en Panel de Control > Historial de Movimientos.
+      // (ver salida-automatica.sql).
       setCarrito([]);
       setCarritoAbierto(false);
       Swal.fire({
@@ -496,7 +582,7 @@ export default function M_index() {
         <button
           type="button"
           className="menu-movil__accion"
-          onClick={() => { setModalPedidosAbierto(true); setMenuMovilAbierto(false); }}
+          onClick={abrirPedidos}
         >
           <IconBox size={16} /> Mis pedidos
         </button>
@@ -629,8 +715,11 @@ export default function M_index() {
               <a href="#catalogo" className="opcion opcion--activa">
                 <IconTags size={16} /> Categorías
               </a>
-              <button type="button" className={`opcion ${modalPedidosAbierto ? 'opcion--activa' : ''}`}
-                 onClick={() => setModalPedidosAbierto(true)}>
+              <button
+                type="button"
+                className={`opcion ${modalPedidosAbierto ? 'opcion--activa' : ''}`}
+                onClick={abrirPedidos}
+              >
                 <IconBoxOpen size={16} /> Mis pedidos
               </button>
               <button type="button" className="opcion" onClick={irAGarantias}>
@@ -857,7 +946,7 @@ export default function M_index() {
         alCerrar={() => setModalPerfilAbierto(false)}
       />
 
-      {/* MODAL MIS PEDIDOS */}
+      {/* MODAL MIS PEDIDOS (datos reales de ordenes_compra) */}
       <div className={`kr-modal modal--pedidos ${modalPedidosAbierto ? 'activo' : ''}`}>
         <div className="modal-pedidos__header">
           <div className="d-flex align-items-center gap-2">
@@ -876,82 +965,77 @@ export default function M_index() {
         </div>
 
         <div className="modal-pedidos__body">
-          <div className="card-pedido">
-            <div className="card-pedido__header">
-              <span className="card-pedido__fecha">
-                📋 Entregado el 25 de junio, 2026
-              </span>
-              <span className="badge-estado badge-completado">Completado</span>
-            </div>
+          {cargandoPedidos && pedidosAgrupados.length === 0 ? (
+            <p className="text-center text-secondary py-4">Cargando tus pedidos…</p>
+          ) : pedidosAgrupados.length === 0 ? (
+            <p className="text-center text-secondary py-4">Aún no has realizado ningún pedido.</p>
+          ) : (
+            pedidosAgrupados.map((pedido) => {
+              const total = pedido.items.reduce(
+                (suma, i) => suma + Number(i.precio_unitario || 0) * Number(i.cantidad || 0),
+                0
+              );
+              const unidades = pedido.items.reduce((s, i) => s + Number(i.cantidad || 0), 0);
+              const estado = pedido.estado || "pendiente";
 
-            <div className="card-pedido__content">
-              <div className="miniaturas-grid">
-                <div className="miniatura-wrapper">
-                  <img src={AmoladoraesEsmeril} alt="Pulidora" />
-                  <span className="badge-cantidad">x1</span>
+              return (
+                <div className="card-pedido" key={pedido.codigo}>
+                  <div className="card-pedido__header">
+                    <span className="card-pedido__fecha">
+                      📋 Pedido #{pedido.codigo} ·{" "}
+                      {pedido.fecha
+                        ? new Date(pedido.fecha).toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" })
+                        : "—"}
+                    </span>
+                    <span
+                      className={`badge-estado ${estado === "confirmada" ? "badge-completado" : ""}`}
+                      style={estado === "confirmada" ? undefined : { background: COLOR_ESTADO[estado] || COLOR_ESTADO.pendiente, color: "#fff" }}
+                    >
+                      {ETIQUETA_ESTADO[estado] || "Pendiente"}
+                    </span>
+                  </div>
+
+                  <div className="card-pedido__content">
+                    <div className="miniaturas-grid">
+                      {pedido.items.map((item) => {
+                        const imagen = imagenDeProducto(item.producto_nombre);
+                        return (
+                          <div className="miniatura-wrapper" key={item.id} title={item.producto_nombre}>
+                            {imagen ? (
+                              <img src={imagen} alt={item.producto_nombre} />
+                            ) : (
+                              <span style={{ fontSize: "1.4rem" }}>📦</span>
+                            )}
+                            <span className="badge-cantidad">x{item.cantidad}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    <div className="card-pedido__precios">
+                      <span className="precio-total">{formatearMoneda(total)}</span>
+                      <span className="cantidad-articulos">
+                        {unidades} {unidades === 1 ? "artículo" : "artículos"}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="card-pedido__footer">
+                    <button
+                      type="button"
+                      className="btn-ver-detalles"
+                      onClick={() => {
+                        setModalPedidosAbierto(false);
+                        onNavegarAPedidos();
+                      }}
+                    >
+                      🛒 Ver Detalles
+                    </button>
+                  </div>
                 </div>
-                <div className="miniatura-wrapper">
-                  <img src={TaladroInalambrico20V} alt="Taladro" />
-                  <span className="badge-cantidad">x2</span>
-                </div>
-              </div>
-
-              <div className="card-pedido__precios">
-                <span className="precio-antes">$627.000</span>
-                <span className="precio-total">$539.500</span>
-                <span className="cantidad-articulos">3 artículos</span>
-              </div>
-            </div>
-
-            <div className="card-pedido__footer">
-              <button
-                type="button"
-                className="btn-ver-detalles"
-                onClick={() => {
-                  setModalPedidosAbierto(false);
-                  if (onNavegarAPedidos) onNavegarAPedidos();
-                }}
-              >
-                🛒 Ver Detalles
-              </button>
-            </div>
-          </div>
-
-          <div className="card-pedido">
-            <div className="card-pedido__header">
-              <span className="card-pedido__fecha">
-                📋 Entregado el 12 de mayo, 2026
-              </span>
-              <span className="badge-estado badge-completado">Completado</span>
-            </div>
-
-            <div className="card-pedido__content">
-              <div className="miniaturas-grid">
-                <div className="miniatura-wrapper">
-                  <img src={Kitherramientas} alt="Kit de herramientas" />
-                  <span className="badge-cantidad">x1</span>
-                </div>
-              </div>
-
-              <div className="card-pedido__precios">
-                <span className="precio-total">$248.100</span>
-                <span className="cantidad-articulos">1 artículo</span>
-              </div>
-            </div>
-
-            <div className="card-pedido__footer">
-              <button
-                type="button"
-                className="btn-ver-detalles"
-                onClick={() => {
-                  setModalPedidosAbierto(false);
-                  if (onNavegarAPedidos) onNavegarAPedidos();
-                }}
-              >
-                🛒 Ver Detalles
-              </button>
-            </div>
-          </div>
+              );
+            })
+          )}
         </div>
 
         <div className="modal-pedidos__footer">

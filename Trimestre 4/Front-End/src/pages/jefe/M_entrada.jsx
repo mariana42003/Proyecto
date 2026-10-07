@@ -4,6 +4,7 @@ import "../../assets/css/M_entradas.css";
 import { supabase } from "../../api/supabase";
 import { useRealtimeTable } from "../../hooks/useRealtimeTable";
 import { useAuth } from "../../context/AuthContext";
+import { useCategorias } from "../../hooks/useCategorias";
 
 /**
  * Movimientos · Registrar entrada de material — ahora con afectación
@@ -23,6 +24,9 @@ import { useAuth } from "../../context/AuthContext";
  *       · Material EXISTENTE -> se precargan con los valores actuales; si el
  *         usuario los cambia se actualizan, y si los deja vacíos NO se borra
  *         lo que ya había.
+ *   - Categorías: se leen en tiempo real de la tabla `categorias` de Supabase
+ *     (hook useCategorias), así que las que se crean o eliminan en Stock se
+ *     reflejan aquí al instante.
  */
 
 const ESTADO_INICIAL = {
@@ -33,13 +37,14 @@ const ESTADO_INICIAL = {
   precio: "",
   ubicacion: "",
   modelo: "",
-  categoria: "Tornillería",
+  categoria: "",
 };
 
 function M_entrada() {
   const [form, setForm] = useState(ESTADO_INICIAL);
   const [guardando, setGuardando] = useState(false);
   const { datos: productos } = useRealtimeTable("productos");
+  const { categorias } = useCategorias();
   const { perfil, usuario } = useAuth();
 
   const actualizarCampo = (campo) => (evento) => {
@@ -111,6 +116,17 @@ function M_entrada() {
       Swal.fire({
         title: "Faltan datos del material nuevo",
         text: "Para dar de alta un material nuevo indica su precio unitario y su ubicación en bodega.",
+        icon: "warning",
+        confirmButtonColor: "#E8600C",
+      });
+      return;
+    }
+
+    // Un material nuevo también necesita categoría (la lista viene de Supabase).
+    if (!productoExistente && !form.categoria) {
+      Swal.fire({
+        title: "Falta la categoría",
+        text: "Selecciona la categoría del material nuevo.",
         icon: "warning",
         confirmButtonColor: "#E8600C",
       });
@@ -304,10 +320,10 @@ function M_entrada() {
                 value={form.categoria}
                 onChange={actualizarCampo("categoria")}
               >
-                <option>Tornillería</option>
-                <option>Herramientas</option>
-                <option>Medición</option>
-                <option>Varios</option>
+                <option value="" disabled>Selecciona una categoría…</option>
+                {categorias.map((c) => (
+                  <option key={c.id} value={c.nombre}>{c.nombre}</option>
+                ))}
               </select>
             </div>
           </div>

@@ -1,13 +1,6 @@
 /* ==========================================================
    KRONOS · S_stock.css
    Estilos EXCLUSIVOS del contenido de Stock.
-   Migrado desde Actualizacion/Maquetacion/css/stock.css.
-   No existía un archivo dedicado en el proyecto React
-   (S_stock.jsx no tenía CSS propio), así que se crea aquí.
-
-   REGLA DE ORO:
-   No declara :root, no toca aside, no toca el acordeón ni
-   los submenús. Todo eso ya vive en kronos-global.css.
    ========================================================== */
 
 .page-title,
@@ -37,7 +30,7 @@
     background-color: rgba(232, 96, 12, .06);
 }
 
-/* ---------- BARRA DE BÚSQUEDA + PAGINACIÓN (tabla propia en React) ---------- */
+/* ---------- BARRA DE BÚSQUEDA + PAGINACIÓN ---------- */
 
 .buscador-stock {
     display: flex;
@@ -190,7 +183,256 @@
     cursor: pointer;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ---------- CATEGORÍAS (tarjetas de filtro) ---------- */
+
+.filtro-categorias {
+    margin-bottom: 24px;
+}
+
+.filtro-categorias-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.filtro-categorias-titulo h3 {
+    margin: 0 0 2px;
+    color: var(--text-primary);
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: .3px;
+}
+
+.filtro-categorias-titulo small {
+    color: var(--text-muted);
+    font-size: .85rem;
+}
+
+.filtro-categorias-acciones {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-chip-accion {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: .85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color .15s, color .15s, background-color .15s;
+}
+
+.btn-chip-accion:hover {
+    border-color: var(--orange-accent);
+    color: var(--orange-accent);
+}
+
+.btn-chip-accion i {
+    color: var(--orange-accent);
+}
+
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 12px;
+}
+
+.categoria-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 68px;
+    padding: 12px 40px 12px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, .04);
+    color: var(--text-primary);
+    text-align: left;
+    cursor: pointer;
+    transition: border-color .15s, background-color .15s, box-shadow .15s, transform .15s;
+}
+
+.categoria-card:hover {
+    border-color: var(--orange-accent);
+    box-shadow: 0 4px 12px rgba(232, 96, 12, .15);
+    transform: translateY(-1px);
+}
+
+.categoria-card.activa {
+    border-color: var(--orange-accent);
+    background: rgba(232, 96, 12, .08);
+    box-shadow: 0 0 0 2px rgba(232, 96, 12, .18);
+}
+
+.categoria-check {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.categoria-card:has(.categoria-check:focus-visible) {
+    outline: 2px solid var(--orange-accent);
+    outline-offset: 2px;
+}
+
+.categoria-icono {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(232, 96, 12, .12);
+    color: var(--orange-accent);
+    font-size: 1.2rem;
+}
+
+.categoria-card.activa .categoria-icono {
+    background: var(--orange-accent);
+    color: #fff;
+}
+
+.categoria-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    line-height: 1.25;
+}
+
+.categoria-nombre {
+    font-size: .92rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.categoria-desc {
+    font-size: .75rem;
+    color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.categoria-cantidad {
+    position: absolute;
+    right: 40px;
+    top: 8px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--orange-accent);
+    color: #fff;
+    font-size: .7rem;
+    white-space: nowrap;
+}
+
+.categoria-eliminar {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: background-color .15s, color .15s;
+}
+
+.categoria-eliminar:hover {
+    background: rgba(220, 38, 38, .12);
+    color: #dc2626;
+}
+
+.categoria-card.categoria-nueva {
+    justify-content: center;
+    padding: 12px 14px;
+    background: transparent;
+    border: 1px dashed var(--orange-accent);
+    box-shadow: none;
+    color: var(--orange-accent);
+    font-weight: 600;
+    font-size: .92rem;
+}
+
+.categoria-card.categoria-nueva i {
+    font-size: 1.2rem;
+}
+
+.categoria-card.categoria-nueva:hover {
+    background: rgba(232, 96, 12, .08);
+    transform: none;
+}
+
+.resumen-categorias {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: rgba(232, 96, 12, .08);
+    color: var(--text-primary);
+    font-size: .88rem;
+}
+
+.resumen-categorias i {
+    color: var(--orange-accent);
+}
+
+/* ---------- MODAL · NUEVA CATEGORÍA (selector de iconos) ---------- */
+
+.selector-iconos {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+}
+
+.icono-opcion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-card);
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: border-color .15s, color .15s, background-color .15s;
+}
+
+.icono-opcion:hover {
+    border-color: var(--orange-accent);
+    color: var(--orange-accent);
+}
+
+.icono-opcion.activa {
+    background: var(--orange-accent);
+    border-color: var(--orange-accent);
+    color: #fff;
+}
+
+/* ---------- RESPONSIVE (siempre al final) ---------- */
 
 @media (max-width: 576px) {
     .datos-producto {
@@ -201,5 +443,13 @@
     .panel-estado {
         align-items: flex-start;
         flex-direction: column;
+    }
+
+    .categorias-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .selector-iconos {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
