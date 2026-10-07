@@ -1,29 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../assets/css/M_index.css";
 import "../../assets/css/M_pedidos.css";
 import logoImg from "../../assets/img/logo.png";
 import { useAuth } from "../../context/AuthContext";
-import { useRealtimeTable } from "../../hooks/useRealtimeTable";
 import useCerrarSesion from "../../hooks/useCerrarSesion";
+import { supabase } from "../../api/supabase";
 
 /**
- * Portal del cliente · Mis Pedidos — conectado en tiempo real a
- * `ordenes_compra` (fila = un material comprado por este cliente).
- * Gracias a la política RLS "el cliente ve y crea las suyas" (ver
- * ESQUEMA_SUPABASE.sql), esta consulta ya devuelve solo los pedidos
- * de la persona autenticada; no hace falta filtrar por cliente_id en
- * el cliente.
- *
- * Corrige además dos bugs del componente original migrado desde el
- * proyecto de referencia:
- *   - <HeaderKronos /> se llamaba sin pasarle modoOscuro/toggleModo/
- *     onAbrirCarrito, así que el botón de tema y el del carrito
- *     lanzaban "is not a function" al hacer clic. Ahora el header
- *     maneja su propio tema (igual que Navbar.jsx) y el carrito
- *     enlaza de vuelta a la tienda ("/"), donde vive el carrito real.
- *   - Enlaces a "/register" y "/M_index" que no existen como rutas;
- *     ahora usan "/registro" y "/".
+ * Portal del cliente · Mis Pedidos — conectado en tiempo real a `ordenes_compra`.
+ * Carga los pedidos del cliente, escucha cambios y recarga al volver a la pestaña.
  */
 
 const ETIQUETA_ESTADO = {
@@ -138,10 +124,52 @@ function SidebarLateral({ onIrGarantias }) {
 export default function M_pedidos() {
   const navigate = useNavigate();
   const { perfil, usuario } = useAuth();
-  const { datos: pedidos, cargando, error } = useRealtimeTable("ordenes_compra", {
-    orderBy: "fecha",
-    ascending: false,
-  });
+
+  const [pedidos, setPedidos] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [error, setError] = useState("");
+
+  const cargarPedidos = useCallback(async () => {
+    if (!usuario?.id) return;
+    const { data, error: errorSelect } = await supabase
+      .from("ordenes_compra")
+      .select("*")
+      .eq("cliente_id", usuario.id)
+      .order("fecha", { ascending: false, nullsFirst: true });
+
+    if (errorSelect) setError(errorSelect.message);
+    else {
+      setError("");
+      setPedidos(data ?? []);
+    }
+    setCargando(false);
+  }, [usuario?.id]);
+
+  useEffect(() => {
+    if (!usuario?.id) return;
+    cargarPedidos();
+
+    // Tiempo real: cualquier cambio en los pedidos de este cliente recarga la lista
+    const canal = supabase
+      .channel(`pedidos-${usuario.id}`)
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "ordenes_compra", filter: `cliente_id=eq.${usuario.id}` },
+        () => cargarPedidos()
+      )
+      .subscribe();
+
+    // Respaldo: recargar al volver a la pestaña
+    const alVolver = () => {
+      if (document.visibilityState === "visible") cargarPedidos();
+    };
+    document.addEventListener("visibilitychange", alVolver);
+
+    return () => {
+      supabase.removeChannel(canal);
+      document.removeEventListener("visibilitychange", alVolver);
+    };
+  }, [usuario?.id, cargarPedidos]);
 
   const nombreEnvio = perfil?.nombre ? `${perfil.nombre} ${perfil.apellido || ""}`.trim() : usuario?.email;
 
