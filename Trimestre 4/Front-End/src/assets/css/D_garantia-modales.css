@@ -1,0 +1,306 @@
+/* ---------- CAJA DEL MODAL ---------- */
+
+.modal-garantia .modal-content {
+    border: 1px solid var(--k-border) !important;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
+    animation: gmEntrada .22s ease-out;
+}
+
+@keyframes gmEntrada {
+    from { opacity: 0; transform: translateY(14px) scale(.98); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* Fondo desenfocado solo mientras hay un modal de garantías abierto */
+body:has(.modal-garantia.show) .modal-backdrop.show {
+    opacity: 1 !important;
+    background-color: rgba(10, 11, 13, .72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* ---------- CABECERA (igual que Stock) ---------- */
+
+.modal-garantia .encabezado-ficha {
+    background-color: var(--dark-secondary);
+    border-bottom: 3px solid var(--orange-accent) !important;
+    padding: 15px 20px;
+}
+
+.modal-garantia .titulo-ficha h2 {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    letter-spacing: .3px;
+}
+
+.modal-garantia .titulo-ficha i {
+    color: var(--orange-accent);
+    font-size: 1.3rem;
+}
+
+.modal-garantia .logo-modal {
+    max-height: 40px;
+    width: auto;
+}
+
+/* ---------- CUERPO Y PIE ---------- */
+
+.modal-garantia .modal-body {
+    padding: 22px 24px;
+}
+
+.modal-garantia .modal-footer {
+    padding: 14px 24px;
+    gap: 10px;
+}
+
+.modal-garantia .form-label {
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--k-muted);
+    margin-bottom: 4px;
+}
+
+/* ---------- PESTAÑAS ---------- */
+
+.gm-tabs {
+    display: flex;
+    gap: 4px;
+    padding: 0 20px;
+    background-color: var(--k-card);
+    border-bottom: 1px solid var(--k-border);
+    overflow-x: auto;
+}
+
+.gm-tab {
+    background: none;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+    padding: 12px 16px;
+    color: var(--k-muted);
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: color .15s ease, border-color .15s ease;
+}
+
+.gm-tab:hover {
+    color: var(--k-text);
+}
+
+.gm-tab.activa {
+    color: var(--k-orange);
+    border-bottom-color: var(--k-orange);
+}
+
+/* ---------- DATOS Y CAJAS ---------- */
+
+.gm-datos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 24px;
+}
+
+.gm-dato small {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--k-muted);
+    font-size: .74rem;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+}
+
+.gm-dato span {
+    font-weight: 600;
+    word-break: break-word;
+}
+
+.gm-dato--ancho {
+    grid-column: 1 / -1;
+}
+
+.gm-caja {
+    padding: 14px 16px;
+    border: 1px solid var(--k-border);
+    border-radius: 10px;
+    background-color: var(--k-surface);
+}
+
+.gm-caja--acento {
+    border-color: var(--k-orange);
+    background-color: var(--k-orange-soft);
+}
+
+.gm-caja h6 {
+    margin-bottom: 10px;
+    color: var(--k-orange);
+    font-weight: 700;
+}
+
+.gm-mensaje {
+    text-align: center;
+    line-height: 1.5;
+}
+
+.gm-producto {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.gm-producto img {
+    width: 72px;
+    height: 72px;
+    padding: 4px;
+    border: 1px solid var(--k-border);
+    border-radius: 10px;
+    background-color: #fff;
+    object-fit: contain;
+}
+
+.gm-producto small {
+    display: block;
+    color: var(--k-muted);
+    font-size: .74rem;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+}
+
+.gm-producto h5 {
+    margin: 0;
+    font-weight: 700;
+}
+
+/* ---------- VIGENCIA DE LA GARANTÍA ---------- */
+
+.gm-vigencia {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: .82rem;
+    font-weight: 600;
+}
+
+.gm-vigencia--ok     { background: rgba(25, 135, 84, .15); color: #198754; }
+.gm-vigencia--vencida { background: rgba(220, 53, 69, .15); color: #dc3545; }
+
+html[data-theme="dark"] .gm-vigencia--ok      { color: #4ade80; }
+html[data-theme="dark"] .gm-vigencia--vencida { color: #f87171; }
+
+/* ---------- OBSERVACIONES Y BITÁCORA ---------- */
+
+.gm-obs-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--k-border);
+}
+
+.gm-obs-item:first-child { padding-top: 0; }
+.gm-obs-item:last-child  { padding-bottom: 0; border-bottom: 0; }
+
+.gm-cabecera-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 2px;
+}
+
+.gm-fecha {
+    color: var(--k-muted);
+    font-size: .78rem;
+    white-space: nowrap;
+}
+
+.gm-linea {
+    margin: 0;
+    padding: 0 0 0 18px;
+    list-style: none;
+    border-left: 2px solid var(--k-border);
+}
+
+.gm-linea li {
+    position: relative;
+    padding: 0 0 16px 14px;
+}
+
+.gm-linea li:last-child {
+    padding-bottom: 0;
+}
+
+.gm-linea li::before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--k-orange);
+    box-shadow: 0 0 0 3px var(--k-card);
+}
+
+.gm-vacio {
+    margin: 0;
+    padding: 8px 0;
+    text-align: center;
+    color: var(--k-muted);
+}
+
+/* ---------- BOTONES (misma forma que .btn-cerrar-modal de Stock) ---------- */
+
+.gm-btn-primario,
+.gm-btn-secundario {
+    border: 0;
+    border-radius: 7px;
+    padding: 9px 16px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .15s ease, transform .1s ease;
+}
+
+.gm-btn-primario {
+    background-color: var(--k-orange);
+}
+
+.gm-btn-primario:hover:not(:disabled) {
+    background-color: var(--k-orange-hover);
+    transform: translateY(-1px);
+}
+
+.gm-btn-secundario {
+    background-color: var(--dark-secondary);
+}
+
+.gm-btn-secundario:hover {
+    background-color: var(--k-aside-hover);
+}
+
+.gm-btn-primario:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 576px) {
+    .gm-datos {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-garantia .modal-body {
+        padding: 16px;
+    }
+
+    .modal-garantia .logo-modal {
+        display: none;
+    }
+}
