@@ -1,0 +1,497 @@
+/* ==========================================================
+   KRONOS · Recuperación de acceso
+   ==========================================================
+   Estilos de las 4 pantallas de recuperación:
+     · OlvidoContra            (/recuperar-contrasena)
+     · RestablecimientoContra  (/restablecimiento-contrasena)
+     · ModificarCorreo         (/modificar-correo)
+     · CambiarContra           (/cambiar-contrasena)
+
+   Diseño tomado de las capturas de las maquetas originales
+   (pagesLogin/*.html): fondo en degradé gris → café oscuro,
+   tarjeta oscura translúcida con borde fino, títulos en Oswald,
+   campos casi negros y botones naranja.
+
+   Todo está encapsulado dentro de `.pantalla-recuperacion` y con
+   sus propios colores (variables --rec-*) por dos motivos:
+     1) Estas pantallas se ven SIEMPRE oscuras, sin importar el tema
+        claro/oscuro elegido en la tienda o en el panel.
+     2) kronos-global.css (panel del jefe) fuerza estilos con
+        !important sobre `input`, `body`, etc. en TODA la app, así
+        que aquí hay que responder con más especificidad (y !important
+        solo donde hace falta) para que los campos no cambien de color.
+
+   No se tocan login.jsx ni Registrarse.jsx (siguen con M_index.css).
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ---------- Pantalla (fondo + variables) ---------- */
+
+.pantalla-recuperacion {
+    --rec-borde: #33383f;
+    --rec-borde-fuerte: #454b53;
+    --rec-bloque: #15171b;
+    --rec-campo: #0b0e14;
+    --rec-texto: #f1f0ec;
+    --rec-suave: #aab1bf;
+    --rec-acento: #e8600c;
+    --rec-acento-hover: #ff7318;
+    --rec-acero: #2c70b0;
+
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(180deg, #67615b 0%, #2c1f02 51%, #3a290a 100%);
+    color: var(--rec-texto);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.55;
+    color-scheme: dark;
+}
+
+/* Variante de "¿Olvidó su contraseña?": el degradé arranca oscuro y
+   la tarjeta queda centrada en la pantalla. */
+.pantalla-recuperacion--olvido {
+    background: linear-gradient(180deg, #191411 0%, #2c1f02 51%, #3a290a 100%);
+}
+
+/* ---------- Tarjeta ---------- */
+
+.pantalla-recuperacion .tarjeta-recuperacion {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 2rem 1.75rem;
+    background: rgba(11, 14, 20, 0.52);
+    border: 1px solid var(--rec-borde);
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+    color: var(--rec-texto);
+}
+
+.pantalla-recuperacion .acceso-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 1.25rem;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rec-borde);
+}
+
+.pantalla-recuperacion .acceso-brand__logo {
+    display: block;
+    height: 60px;
+    width: auto;
+    max-width: 100%;
+}
+
+.pantalla-recuperacion .enlace-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--rec-acento);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.pantalla-recuperacion .enlace-boton:hover {
+    color: var(--rec-acento-hover);
+    text-decoration: underline;
+}
+
+.pantalla-recuperacion .tarjeta-recuperacion hr {
+    margin: 1rem 0 1.5rem;
+    border: 0;
+    border-top: 1px solid var(--rec-borde);
+    opacity: 1;
+}
+
+/* ---------- Encabezado ---------- */
+
+.pantalla-recuperacion .recuperacion-encabezado {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.pantalla-recuperacion .recuperacion-encabezado h1 {
+    margin: 0 0 0.5rem;
+    font-family: "Oswald", "Arial Narrow", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.pantalla-recuperacion .recuperacion-encabezado p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--rec-suave);
+}
+
+.pantalla-recuperacion .recuperacion-encabezado p strong {
+    color: var(--rec-texto);
+}
+
+/* Subtítulo en negrita (pantalla "Actualizar correo electrónico") */
+.pantalla-recuperacion .recuperacion-encabezado p.subtitulo-fuerte {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* "¿No tiene acceso al correo?" */
+.pantalla-recuperacion .rec-pregunta {
+    margin: 0 0 1rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(241, 240, 236, 0.32);
+}
+
+/* ---------- Bloques de ayuda ---------- */
+
+.pantalla-recuperacion .bloque-ayuda {
+    margin-bottom: 1.25rem;
+    padding: 1.25rem;
+    background: var(--rec-bloque);
+    border: 1px solid var(--rec-borde);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.pantalla-recuperacion .bloque-ayuda > i {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    line-height: 1.55;
+    color: var(--rec-acento);
+}
+
+.pantalla-recuperacion .bloque-ayuda--acero > i {
+    color: var(--rec-acero);
+}
+
+.pantalla-recuperacion .bloque-ayuda p {
+    margin: 0 0 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--rec-suave);
+}
+
+.pantalla-recuperacion .bloque-ayuda p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------- Formularios ---------- */
+
+.pantalla-recuperacion .campo {
+    margin-bottom: 1.25rem;
+}
+
+.pantalla-recuperacion .campo label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--rec-texto);
+}
+
+.pantalla-recuperacion .campo input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 0.8rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    line-height: normal;
+    background-color: var(--rec-campo) !important;
+    color: #fff !important;
+    border: 1px solid var(--rec-borde-fuerte) !important;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.pantalla-recuperacion .campo input::placeholder {
+    color: #fff !important;
+    opacity: 1;
+}
+
+.pantalla-recuperacion .campo input:focus {
+    outline: none;
+    border-color: var(--rec-acento) !important;
+    box-shadow: 0 0 0 3px rgba(232, 96, 12, 0.2) !important;
+}
+
+/* ---------- Botones ---------- */
+
+.pantalla-recuperacion .btn-primario--full {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 0.35rem;
+    padding: 0.8rem 1rem;
+    background: var(--rec-acento);
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.25;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.pantalla-recuperacion .btn-primario--full:hover {
+    background: var(--rec-acento-hover);
+    color: #fff;
+}
+
+.pantalla-recuperacion .btn-primario--full:active {
+    transform: translateY(1px);
+}
+
+.pantalla-recuperacion .btn-primario--full:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* Botón dentro de un bloque de ayuda (más bajito) */
+.pantalla-recuperacion .btn-primario--compacto {
+    margin-top: 0;
+    padding: 0.5rem 1rem;
+    line-height: 1.55;
+}
+
+/* Botón con contorno naranja ("Restablecer contraseña") */
+.pantalla-recuperacion .btn-rec-contorno {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.7rem 1rem;
+    background: transparent;
+    border: 1px solid var(--rec-acento);
+    border-radius: 8px;
+    color: var(--rec-acento);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.55;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.pantalla-recuperacion .btn-rec-contorno:hover {
+    background: rgba(232, 96, 12, 0.12);
+    color: var(--rec-acento-hover);
+}
+
+.pantalla-recuperacion .recuperacion-mensaje {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.92rem;
+}
+
+.pantalla-recuperacion .recuperacion-mensaje.exito { color: #5fa372; }
+.pantalla-recuperacion .recuperacion-mensaje.error { color: #dd6f6f; }
+
+/* ==========================================================
+   "¿Olvidó su contraseña?" — tarjeta de dos columnas
+   (formulario a la izquierda, imagen "Kronos Security" a la derecha)
+   ========================================================== */
+
+.pantalla-recuperacion--olvido .tarjeta-olvido {
+    width: 100%;
+    max-width: 864px;
+    min-height: 480px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    overflow: hidden;
+    background: rgba(11, 14, 20, 0.54);
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+}
+
+.pantalla-recuperacion .olvido-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.pantalla-recuperacion .olvido-form__logo {
+    align-self: flex-start;
+    height: 63px;
+    width: auto;
+    margin-bottom: 1.6rem;
+}
+
+.pantalla-recuperacion .olvido-form h1 {
+    margin: 0 0 0.5rem;
+    font-family: "Arial Narrow", "Liberation Sans Narrow", "Nimbus Sans Narrow", "Roboto Condensed", Arial, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.pantalla-recuperacion .olvido-form__texto {
+    margin: 0 0 1.75rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #b8bcc2;
+}
+
+.pantalla-recuperacion .olvido-form label {
+    display: block;
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f8f9fa;
+}
+
+.pantalla-recuperacion .olvido-form input {
+    display: block;
+    width: 100%;
+    padding: 0.7rem 0.75rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    line-height: normal;
+    background-color: #1d2025 !important;
+    color: #fff !important;
+    border: 1px solid #383d45 !important;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.pantalla-recuperacion .olvido-form input::placeholder {
+    color: #969a9f !important;
+    opacity: 1;
+}
+
+.pantalla-recuperacion .olvido-form input:focus {
+    outline: none;
+    border-color: #ff6b00 !important;
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2) !important;
+}
+
+.pantalla-recuperacion .olvido-form .btn-primario--full {
+    margin-top: 1.5rem;
+    padding: 0.7rem 1rem;
+    background: #ff6b00;
+    font-size: 0.95rem;
+}
+
+.pantalla-recuperacion .olvido-form .btn-primario--full:hover {
+    background: #ff8533;
+}
+
+.pantalla-recuperacion .olvido-form__volver {
+    align-self: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #b8bcc2;
+    text-decoration: none;
+}
+
+.pantalla-recuperacion .olvido-form__volver:hover {
+    color: #fff;
+}
+
+/* Panel derecho: imagen + degradé oscuro */
+.pantalla-recuperacion .olvido-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    background:
+        linear-gradient(135deg, rgba(30, 28, 30, 0.55) 0%, rgba(21, 23, 27, 0.75) 50%, rgba(10, 14, 28, 0.92) 100%),
+        url('../img/olvidoContra.jpg') center / cover no-repeat;
+}
+
+.pantalla-recuperacion .olvido-panel__icono {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 96px;
+    height: 96px;
+    margin-bottom: 1rem;
+    background: #212529;
+    border-radius: 50%;
+    font-size: 2.8rem;
+    color: #ff6b00;
+}
+
+/* Escudo: capa tenue completa + escudo "mitad" encima */
+.pantalla-recuperacion .olvido-panel__icono i {
+    grid-area: 1 / 1;
+    line-height: 1;
+}
+
+.pantalla-recuperacion .olvido-panel__icono i:first-child {
+    opacity: 0.15;
+}
+
+.pantalla-recuperacion .olvido-panel h2 {
+    margin: 0 0 0.5rem;
+    font-family: "Arial Narrow", "Liberation Sans Narrow", "Nimbus Sans Narrow", "Roboto Condensed", Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.pantalla-recuperacion .olvido-panel p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+    .pantalla-recuperacion--olvido .tarjeta-olvido {
+        grid-template-columns: 1fr;
+        min-height: 0;
+    }
+
+    .pantalla-recuperacion .olvido-panel {
+        display: none;
+    }
+
+    .pantalla-recuperacion .olvido-form {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .pantalla-recuperacion .tarjeta-recuperacion {
+        padding: 1.5rem 1.25rem;
+    }
+}

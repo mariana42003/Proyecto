@@ -1,0 +1,90 @@
+/* ==========================================================
+   KRONOS · S_reportes.css
+   Estilos EXCLUSIVOS del contenido de Reportes.
+   Migrado desde Actualizacion/Maquetacion/css/reportes.css.
+   No existía un archivo dedicado en el proyecto React, se crea
+   aquí (S_reportes.jsx no tenía CSS propio).
+   ========================================================== */
+
+:root {
+    --alert-warn-bg: #fffbeb;
+    --alert-warn-border: #fcd34d;
+    --alert-warn-color: #92400e;
+    --alert-warn-dark-bg: #33260c;
+    --alert-warn-dark-color: #fde68a;
+    --alert-warn-dark-border: #7c5d0d;
+}
+
+[data-theme='dark'] {
+    --alert-warn-bg: var(--alert-warn-dark-bg);
+    --alert-warn-color: var(--alert-warn-dark-color);
+    --alert-warn-border: var(--alert-warn-dark-border);
+}
+
+.page-title {
+    margin: 0 0 24px;
+    color: var(--text-primary);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.dashboard-card {
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, .04);
+}
+
+.dashboard-card .card-header {
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.report-form-container {
+    padding: 24px;
+}
+
+.alert-warning-custom {
+    padding: 15px;
+    border: 1px solid var(--alert-warn-border);
+    border-left: 5px solid var(--orange-accent);
+    border-radius: 8px;
+    background: var(--alert-warn-bg);
+    color: var(--alert-warn-color);
+}
+
+.btn-reporte {
+    border: 0;
+    border-radius: 8px;
+    padding: 11px 18px;
+    background: var(--orange-accent);
+    color: #1b1b18;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-reporte:hover {
+    background: var(--orange-hover);
+    color: #fff;
+}
+
+#tablaReportes td:last-child {
+    text-align: center;
+}
+
+.btn-eliminar {
+    background: #dc2626 !important;
+    color: #ffffff;
+    border: 0;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+[data-theme='dark'] .alert-warning-custom {
+    background: var(--alert-warn-dark-bg);
+    color: var(--alert-warn-dark-color);
+    border-color: var(--alert-warn-dark-border);
+}

@@ -1,0 +1,205 @@
+/* ==========================================================
+   KRONOS · S_stock.css
+   Estilos EXCLUSIVOS del contenido de Stock.
+   Migrado desde Actualizacion/Maquetacion/css/stock.css.
+   No existía un archivo dedicado en el proyecto React
+   (S_stock.jsx no tenía CSS propio), así que se crea aquí.
+
+   REGLA DE ORO:
+   No declara :root, no toca aside, no toca el acordeón ni
+   los submenús. Todo eso ya vive en kronos-global.css.
+   ========================================================== */
+
+.page-title,
+.cabecera-tabla h1 {
+    margin: 0 0 24px;
+    color: var(--text-primary);
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: .3px;
+}
+
+.dashboard-card {
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, .04);
+}
+
+.stock-table td:nth-child(4) {
+    color: var(--stock-color, #15803d);
+    font-weight: 700;
+}
+
+.stock-table tbody tr:hover {
+    background-color: rgba(232, 96, 12, .06);
+}
+
+/* ---------- BARRA DE BÚSQUEDA + PAGINACIÓN (tabla propia en React) ---------- */
+
+.buscador-stock {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 340px;
+    margin-bottom: 18px;
+}
+
+.buscador-stock input {
+    flex: 1;
+    height: 42px;
+    border-radius: 6px;
+    padding: 10px 14px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.buscador-stock i {
+    font-size: 1.1rem;
+    color: var(--orange-accent);
+}
+
+.stock-orden-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.stock-orden-btn i {
+    font-size: .8rem;
+    color: var(--text-muted);
+}
+
+.stock-paginacion {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    padding: 14px;
+}
+
+.stock-paginacion button {
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: .85rem;
+    cursor: pointer;
+}
+
+.stock-paginacion button.activa {
+    background: var(--orange-accent);
+    border-color: var(--orange-accent);
+    color: #fff;
+    font-weight: 700;
+}
+
+.stock-paginacion button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+/* ---------- MODAL · FICHA TÉCNICA ---------- */
+
+.encabezado-ficha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo-ficha {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.titulo-ficha h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.titulo-ficha i {
+    color: var(--orange-accent);
+}
+
+.logo-modal {
+    max-height: 42px;
+    width: auto;
+}
+
+.datos-producto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.datos-producto p {
+    margin: 0 0 3px;
+    color: var(--text-muted);
+    font-size: .78rem;
+    text-transform: uppercase;
+}
+
+.datos-producto span {
+    display: block;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.panel-estado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    margin: 8px 0 20px;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.panel-estado h5 {
+    margin: 0 0 5px;
+    color: var(--orange-accent);
+}
+
+.descripcion-producto {
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.btn-alerta,
+.btn-cerrar-modal {
+    border: 0;
+    border-radius: 7px;
+    padding: 9px 14px;
+    background: var(--dark-secondary);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 576px) {
+    .datos-producto {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .panel-estado {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
